@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Elianto';
+  src: local('Elianto'), url(./fonts/Elianto-Regular.otf) format('opentype');
+}
+@font-face {
+  font-family: 'PP Neue Machina';
+  src: local('PP Neue Machina'), url(./fonts/Neue_Machina.otf) format('opentype');
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +14,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: radial-gradient(ellipse at center, #FFFFFF 0%, #F1F1F1 100%);
 }
 
 code {
