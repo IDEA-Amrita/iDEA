@@ -1,4 +1,4 @@
-import { Navbar } from "../construction";
+import { Navbar } from "../byte";
 
 function Landing() {
   return (

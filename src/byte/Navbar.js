@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navbar } from "../pieces";
+import { Navbar } from "../bit";
 
 export default function Nav() {
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Title, Link, TopTitle, Nav, TopContainer, BottomTitle, LightIcon, DarkIcon, IconContainer} from "../navbar/styles/navbar";
+import { Container, Title, Link, TopTitle, Nav, TopContainer, BottomTitle, LightIcon, DarkIcon, IconContainer} from "./styles/navbar";
 
 
 
