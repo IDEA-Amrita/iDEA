@@ -4,8 +4,6 @@ import {BsFillMoonStarsFill, BsSun} from "react-icons/bs";
 //centered navbar
 
 export const Nav = styled.div`
-  height: 100vh;
-  width: auto;
 `;
 
 export const TopContainer = styled.div`
@@ -23,11 +21,17 @@ export const Container = styled.div`
   height: 80vh;
   margin: 0 80px;
 `;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+
 export const Title = styled.h1`
   line-height: 179px;
   font-size: 175px;
   font-weight: 400;
-  color: #424242;
+  color: ${props => props.color};
   font-family: "PP Neue Machina";
   cursor: pointer;
   font-style: normal;
@@ -52,7 +56,7 @@ export const TopTitle = styled.h1`
   font-size: 25px;
   line-height: 50px;
   letter-spacing: 0.5em;
-  color: #292929;
+  color: ${props => props.color};
 `;
 
 export const BottomTitle = styled.h1`
@@ -62,7 +66,7 @@ export const BottomTitle = styled.h1`
   font-size: 25px;
   line-height: 50px;
   letter-spacing: 0.1em;
-  color: #292929;
+  color: ${props => props.color};
 `;
 
 export const IconContainer = styled.div`
