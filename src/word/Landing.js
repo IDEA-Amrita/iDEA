@@ -15,7 +15,7 @@ function Landing() {
     height: 100vh;
     width: auto;
     background-color: ${isLight
-      ? "#B4B4A0"
+      ? "radial-gradient(ellipse at center, #FFFFFF 0%, #F1F1F1 100%)"
       : "#000"} !important;
     color: ${isLight ? "#000" : "#fff"};
   `;
