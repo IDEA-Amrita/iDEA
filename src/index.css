@@ -6,6 +6,10 @@
   font-family: 'PP Neue Machina';
   src: local('PP Neue Machina'), url(./fonts/Neue_Machina.otf) format('opentype');
 }
+@font-face {
+  font-family: 'FiraCode';
+  src: local('FiraCode'), url(./fonts/FiraCode-VariableFont_wght.ttf) format('truetype');
+}
 
 body {
   margin: 0;

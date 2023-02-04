@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Title, Link, TopTitle, Nav, TopContainer, BottomTitle, TitleContainer, LightIcon, DarkIcon, IconContainer} from "./styles/navbar";
+import {EmptyDivLeft, EmptyDivRight, Container, Title, Link, TopTitle, Nav, TopContainer, BottomTitle, TitleContainer, LightIcon, DarkIcon, IconContainer} from "./styles/navbar";
 
 
 export default function Navbar({children, ...restProps}){
@@ -47,4 +47,12 @@ Navbar.LightIcon = function NavbarLightIcon({children, ...restProps}){
 
 Navbar.DarkIcon = function NavbarDarkIcon({children, ...restProps}){
     return <DarkIcon {...restProps}>{children}</DarkIcon>
+}
+
+Navbar.EmptyDivL = function NavbarEmptyDiv({children, ...restProps}){
+    return <EmptyDivLeft {...restProps}>{children}</EmptyDivLeft>
+}
+
+Navbar.EmptyDivR = function NavbarEmptyDiv({children, ...restProps}){
+    return <EmptyDivRight {...restProps}>{children}</EmptyDivRight>
 }

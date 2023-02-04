@@ -15,7 +15,7 @@ function Landing() {
     height: 100vh;
     width: auto;
     background-color: ${isLight
-      ? "radial-gradient(ellipse at center, #FFFFFF 0%, #F1F1F1 100%)"
+      ? "#B4B4A0"
       : "#000"} !important;
     color: ${isLight ? "#000" : "#fff"};
   `;
@@ -24,11 +24,17 @@ function Landing() {
     <Container>
       <Navbar mode={isLight}/>
       <Nav.IconContainer>
+        <Nav.EmptyDivL/>
+        <Nav.EmptyDivL/>
+        <Nav.EmptyDivL/>
         {isLight ? (
           <Nav.LightIcon onClick={handleClick} />
         ) : (
           <Nav.DarkIcon onClick={handleClick} />
         )}
+        <Nav.EmptyDivR/>
+        <Nav.EmptyDivR/>
+        <Nav.EmptyDivR/>
       </Nav.IconContainer>
     </Container>
   );

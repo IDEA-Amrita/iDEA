@@ -1,25 +1,23 @@
 import styled from "styled-components";
-import {BsFillMoonStarsFill, BsSun} from "react-icons/bs";
-
-//centered navbar
+import {BsSun} from "react-icons/bs";
+import {MdOutlineDarkMode} from "react-icons/md"
 
 export const Nav = styled.div`
 `;
 
 export const TopContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   width: auto;
   height: 80px;
 `;
 
 export const Container = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: auto;
   height: 80vh;
-  margin: 0 80px;
 `;
 
 export const TitleContainer = styled.div`
@@ -32,7 +30,7 @@ export const Title = styled.h1`
   font-size: 175px;
   font-weight: 400;
   color: ${props => props.color};
-  font-family: "PP Neue Machina";
+  font-family: "FiraCode";
   cursor: pointer;
   font-style: normal;
 `;
@@ -50,7 +48,7 @@ export const Link = styled.a`
   }
 `;
 export const TopTitle = styled.h1`
-  font-family: "PP Neue Machina";
+  font-family: "FiraCode";
   font-style: normal;
   font-weight: 400;
   font-size: 25px;
@@ -60,7 +58,7 @@ export const TopTitle = styled.h1`
 `;
 
 export const BottomTitle = styled.h1`
-  font-family: "PP Neue Machina";
+  font-family: "FiraCode";
   font-style: normal;
   font-weight: 400;
   font-size: 25px;
@@ -71,10 +69,10 @@ export const BottomTitle = styled.h1`
 
 export const IconContainer = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 `
-export const LightIcon = styled(BsFillMoonStarsFill)`
+export const LightIcon = styled(MdOutlineDarkMode)`
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -84,3 +82,9 @@ export const DarkIcon = styled(BsSun)`
     height: 30px;
     cursor: pointer;
 `;
+export const EmptyDivLeft = styled.div`
+    width: 51.583333px;
+`
+export const EmptyDivRight = styled.div`
+    width: 68.183333px;
+`
