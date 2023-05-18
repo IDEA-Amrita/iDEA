@@ -20,6 +20,12 @@ export const Container = styled.div`
   height: 80vh;
 `;
 
+export const CenterContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+`
+
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -27,10 +33,10 @@ export const TitleContainer = styled.div`
 
 export const Title = styled.h1`
   line-height: 179px;
-  font-size: 180px;
+  font-size: 100px;
   font-weight: 400;
   color: ${(props) => props.color};
-  font-family: "FiraCode";
+  font-family: "Archer Gage";
   cursor: pointer;
   font-style: normal;
 

@@ -10,6 +10,10 @@
   font-family: 'FiraCode';
   src: local('FiraCode'), url(./fonts/FiraCode-VariableFont_wght.ttf) format('truetype');
 }
+@font-face {
+  font-family: 'Archer Gage';
+  src: local('Archer Gage'), url(./fonts/Archer_Gage.ttf) format('truetype');
+}
 
 body {
   margin: 0;

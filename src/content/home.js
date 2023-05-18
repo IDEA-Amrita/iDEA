@@ -39,17 +39,17 @@ const Home = ({
           socials={socials}
         />
         <Nav.IconContainer>
+          {/* <Nav.EmptyDivL />
           <Nav.EmptyDivL />
-          <Nav.EmptyDivL />
-          <Nav.EmptyDivL />
+          <Nav.EmptyDivL /> */}
           {isLight ? (
             <Nav.LightIcon onClick={handleClick} />
           ) : (
             <Nav.DarkIcon onClick={handleClick} />
           )}
+          {/* <Nav.EmptyDivR />
           <Nav.EmptyDivR />
-          <Nav.EmptyDivR />
-          <Nav.EmptyDivR />
+          <Nav.EmptyDivR /> */}
         </Nav.IconContainer>
       </Container>
     </>

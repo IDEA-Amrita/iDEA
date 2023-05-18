@@ -1,5 +1,5 @@
 import React from "react";
-import {EmptyDivLeft, EmptyDivRight, Container, Title, Link, TopTitle, Nav, TopContainer, BottomTitle, TitleContainer, LightIcon, DarkIcon, IconContainer} from "./styles/navbar";
+import {EmptyDivLeft, EmptyDivRight, CenterContainer, Container, Title, Link, TopTitle, Nav, TopContainer, BottomTitle, TitleContainer, LightIcon, DarkIcon, IconContainer} from "./styles/navbar";
 
 
 export default function Navbar({children, ...restProps}){
@@ -22,6 +22,10 @@ Navbar.TitleContainer = function NavbarTitleContainer({children, ...restProps}){
 
 Navbar.Title = function NavbarTitle({children, ...restProps}){
     return <Title {...restProps}>{children}</Title>
+}
+
+Navbar.CenterContainer = function NavbarCenterContainer({children, ...restProps}) {
+    return <CenterContainer {...restProps}>{children}</CenterContainer>
 }
 
 
