@@ -9,9 +9,6 @@ const Home = ({
   setIsLight,
   about,
   roadmap,
-  github,
-  docs,
-  socials,
 }) => {
   const handleClick = (event) => {
     event.preventDefault();
@@ -34,9 +31,6 @@ const Home = ({
           mode={isLight}
           about={about}
           roadmap={roadmap}
-          github={github}
-          docs={docs}
-          socials={socials}
         />
         <Nav.IconContainer>
           {/* <Nav.EmptyDivL />

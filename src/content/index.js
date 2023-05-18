@@ -1,6 +1,3 @@
 export {default as Home} from './home'
 export {default as About} from './about'
 export {default as Roadmap} from './Roadmap'
-export {default as Docs} from './docs'
-export {default as Socials} from './socials'
-export {default as Github} from './github'
