@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Navbar } from "../bit";
+import { useState, useEffect } from "react";
+import { Navbar } from "../subcomponents";
 
 export default function Nav(props) {
   const [isLight, setIsLight] = useState(props.mode);
@@ -19,8 +19,8 @@ export default function Nav(props) {
       </Navbar.TopContainer>
       <Navbar.Center>
         <Navbar.Link>Home</Navbar.Link>
-        <Navbar.Link>About</Navbar.Link>
-        <Navbar.Link>Roadmap</Navbar.Link>
+        <Navbar.Link onClick={props.about}>About</Navbar.Link>
+        <Navbar.Link onClick={props.roadmap}>Roadmap</Navbar.Link>
         <Navbar.TitleContainer>
           <Navbar.Title
             color={isLight ? color1 : color2}
@@ -43,9 +43,9 @@ export default function Nav(props) {
             A
           </Navbar.Title>
         </Navbar.TitleContainer>
-        <Navbar.Link>GitHub</Navbar.Link>
-        <Navbar.Link>Documentation</Navbar.Link>
-        <Navbar.Link>Socials</Navbar.Link>
+        <Navbar.Link onClick={props.github}>GitHub</Navbar.Link>
+        <Navbar.Link onClick={props.docs}>Documentation</Navbar.Link>
+        <Navbar.Link onClick={props.socials}>Socials</Navbar.Link>
       </Navbar.Center>
       <Navbar.TopContainer>
         <Navbar.EmptyDivL />
