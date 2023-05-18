@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import { Home, About, Roadmap, Github, Docs, Socials } from "../content";
+import { Home, About, Roadmap } from "../content";
 
 function Landing() {
   const [isLight, setIsLight] = useState(true);
@@ -20,7 +20,7 @@ function Landing() {
 
   return (
     <Parallax
-      pages={6}
+      pages={3}
       ref={ref}
       className={isLight ? "light" : "dark"}
       style={{ top: "0", left: "0" }}
@@ -29,9 +29,6 @@ function Landing() {
         <Home
           about={() => scroll(1)}
           roadmap={() => scroll(2)}
-          github={() => scroll(3)}
-          docs={() => scroll(4)}
-          socials={() => scroll(5)}
           isLight={isLight}
           setIsLight={setIsLight}
         />
@@ -41,15 +38,6 @@ function Landing() {
       </ParallaxLayer>
       <ParallaxLayer offset={2} speed={0.4}>
         <Roadmap up={() => scroll(1)} down={() => scroll(3)}  />
-      </ParallaxLayer>
-      <ParallaxLayer offset={3} speed={0.3}>
-        <Github up={() => scroll(2)} down={() => scroll(4)} />
-      </ParallaxLayer>
-      <ParallaxLayer offset={4} speed={0.2}>
-        <Docs up={() => scroll(3)} down={() => scroll(5)}  />
-      </ParallaxLayer>
-      <ParallaxLayer offset={5} speed={0.2}>
-        <Socials up={() => scroll(4)} />
       </ParallaxLayer>
     </Parallax>
   );

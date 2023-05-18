@@ -58,10 +58,12 @@ export const Link = styled.a`
   font-weight: 400;
   font-size: 15px;
   line-height: 15px;
+  text-decoration: none !important;
+  color: ${props => props.color} !important;
 
   &:hover {
-    color: #ff6b6b;
-    text-decoration: underline;
+    color: #ff6b6b !important;
+    text-decoration: underline !important;
     cursor: pointer;
   }
 
