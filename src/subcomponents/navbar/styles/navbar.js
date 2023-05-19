@@ -24,11 +24,74 @@ export const CenterContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-`
+`;
 
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: row;
+`;
+
+export const SocialsTopLeft = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: ${(props) => props.backgroundColor};
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: auto;
+  width: 24%;
+  padding: 1em;
+`;
+
+export const SocialsText = styled.p`
+  color: ${(props) => props.mainColor};
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  font-size: 32px;
+  font-family: "Archer Gage";
+`;
+
+export const TimelineBarLeft = styled.div`
+  position: absolute;
+  left: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8%;
+  margin-right: 20%;
+  height: 100%;
+  width: auto;
+`;
+
+export const Circle = styled.div`
+  width: ${(props) => (props.size ? "3rem" : "2rem")};
+  height: ${(props) => (props.size ? "3rem" : "2rem")};
+  border-radius: 50%;
+  background-color: #000;
+  opacity: ${(props) => (props.size ? "80%" : "50%")};
+`;
+
+export const Stick = styled.div`
+  margin: 0;
+  height: 16%;
+  width: 1%;
+  border-left: 1px solid #000;
+`;
+
+export const SocialsTopLeftInnerContainer = styled.div`
+  width: 50%;
+  float: right;
+  display: flex;
+  flex-direction: row;
+  margin-left: 10%;
+  justify-content: space-evenly;
+  align-items: center;
+  * {
+    font-size: 24px;
+    cursor: pointer;
+  }
 `;
 
 export const Title = styled.h1`
@@ -40,7 +103,7 @@ export const Title = styled.h1`
   cursor: pointer;
   font-style: normal;
 
-  @media (max-width: 920px){
+  @media (max-width: 920px) {
     font-size: 120px;
   }
 
@@ -59,7 +122,7 @@ export const Link = styled.a`
   font-size: 15px;
   line-height: 15px;
   text-decoration: none !important;
-  color: ${props => props.color} !important;
+  color: ${(props) => props.color} !important;
 
   &:hover {
     color: #ff6b6b !important;
