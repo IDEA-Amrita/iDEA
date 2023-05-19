@@ -1,8 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Navbar } from "../subcomponents";
-import {AiOutlineInstagram, AiOutlineTwitter, AiOutlineMedium} from 'react-icons/ai'
-import {FaFacebook} from 'react-icons/fa'
-import { CDropdown, CDropdownItem, CDropdownMenu, CDropdownToggle, CDropdownDivider } from "@coreui/react";
+import {
+  AiOutlineInstagram,
+  AiOutlineTwitter,
+  AiOutlineMedium,
+} from "react-icons/ai";
+import { FaFacebook } from "react-icons/fa";
+import {
+  CDropdown,
+  CDropdownItem,
+  CDropdownMenu,
+  CDropdownToggle,
+  CDropdownDivider,
+} from "@coreui/react";
 
 export default function Nav(props) {
   const [isLight, setIsLight] = useState(props.mode);
@@ -15,16 +25,25 @@ export default function Nav(props) {
         {/* <Navbar.EmptyDivL />
         <Navbar.EmptyDivL />
         <Navbar.EmptyDivL /> */}
-        <Navbar.TopTitle>IDEA</Navbar.TopTitle>
+        <Navbar.TopTitle>
+          IDEA
+        </Navbar.TopTitle>
         {/* <Navbar.EmptyDivR />
         <Navbar.EmptyDivR />
         <Navbar.EmptyDivR /> */}
       </Navbar.TopContainer>
       <Navbar.Center>
         <Navbar.CenterContainer>
-          <Navbar.Link color={isLight ? "#000": "#fff"}>Home</Navbar.Link>
-          <Navbar.Link color={isLight ? "#000": "#fff"} onClick={props.about}>About</Navbar.Link>
-          <Navbar.Link color={isLight ? "#000": "#fff"} onClick={props.roadmap}>Roadmap</Navbar.Link>
+          <Navbar.Link color={isLight ? "#000" : "#fff"}>Home</Navbar.Link>
+          <Navbar.Link color={isLight ? "#000" : "#fff"} onClick={props.about}>
+            About
+          </Navbar.Link>
+          <Navbar.Link
+            color={isLight ? "#000" : "#fff"}
+            onClick={props.roadmap}
+          >
+            Roadmap
+          </Navbar.Link>
         </Navbar.CenterContainer>
         <Navbar.TitleContainer>
           <Navbar.Title color={isLight ? color1 : color2}>i</Navbar.Title>
@@ -33,20 +52,41 @@ export default function Nav(props) {
           <Navbar.Title color={isLight ? color1 : color2}>A</Navbar.Title>
         </Navbar.TitleContainer>
         <Navbar.CenterContainer>
-          <Navbar.Link color={isLight ? "#000": "#fff"} href="https://github.com/IDEA-Amrita" target="_blank">
+          <Navbar.Link
+            color={isLight ? "#000" : "#fff"}
+            href="https://github.com/IDEA-Amrita"
+            target="_blank"
+          >
             GitHub
           </Navbar.Link>
-          <Navbar.Link color={isLight ? "#000": "#fff"} href="https://github.com/IDEA-Amrita" target="_blank">
+          <Navbar.Link
+            color={isLight ? "#000" : "#fff"}
+            href="https://github.com/IDEA-Amrita"
+            target="_blank"
+          >
             Documentation
           </Navbar.Link>
-          <Navbar.Link color={isLight ? "#000": "#fff"}>
-            <CDropdown dark variant="nav-item" style={{listStyleType: "none"}} direction="center">
+          <Navbar.Link color={isLight ? "#000" : "#fff"}>
+            <CDropdown
+              dark
+              variant="nav-item"
+              style={{ listStyleType: "none" }}
+              direction="center"
+            >
               <CDropdownToggle>Socials</CDropdownToggle>
               <CDropdownMenu>
-                <CDropdownItem href="#"><AiOutlineInstagram/> Instagram</CDropdownItem>
-                <CDropdownItem href="#"><AiOutlineTwitter/> Twitter</CDropdownItem>
-                <CDropdownItem href="#"><FaFacebook/> Facebook</CDropdownItem>
-                <CDropdownItem href="#"><AiOutlineMedium/> Medium</CDropdownItem>
+                <CDropdownItem href="#">
+                  <AiOutlineInstagram /> Instagram
+                </CDropdownItem>
+                <CDropdownItem href="#">
+                  <AiOutlineTwitter /> Twitter
+                </CDropdownItem>
+                <CDropdownItem href="#">
+                  <FaFacebook /> Facebook
+                </CDropdownItem>
+                <CDropdownItem href="#">
+                  <AiOutlineMedium /> Medium
+                </CDropdownItem>
               </CDropdownMenu>
             </CDropdown>
           </Navbar.Link>

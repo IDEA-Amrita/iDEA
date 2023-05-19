@@ -20,7 +20,7 @@ function Landing() {
 
   return (
     <Parallax
-      pages={3}
+      pages={4}
       ref={ref}
       className={isLight ? "light" : "dark"}
       style={{ top: "0", left: "0" }}
@@ -34,10 +34,20 @@ function Landing() {
         />
       </ParallaxLayer>
       <ParallaxLayer offset={1} speed={0.6}>
-        <About up={() => scroll(0)} down={() => scroll(2)} />
+        <About
+          up={() => scroll(0)}
+          down={() => scroll(2)}
+          isLight={isLight}
+          setIsLight={setIsLight}
+        />
       </ParallaxLayer>
       <ParallaxLayer offset={2} speed={0.4}>
-        <Roadmap up={() => scroll(1)} down={() => scroll(3)}  />
+        <Roadmap
+          up={() => scroll(1)}
+          down={() => scroll(3)}
+          isLight={isLight}
+          setIsLight={setIsLight}
+        />
       </ParallaxLayer>
     </Parallax>
   );
