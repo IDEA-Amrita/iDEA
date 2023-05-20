@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container, Title, CircleStickLineMapContainer, Paragraph, Circle, ParagraphContainer, InnerContainer, Stick } from './styles/generic'
+import { Container, Title, TopRightTitle, TopRightMottoText, TopRightTitleContainer, Paragraph, Circle, ParagraphContainer, InnerContainer, Stick } from './styles/generic'
 
 export default function Generic({children, ...restProps}) {
     return (
@@ -28,8 +28,16 @@ Generic.Stick = function AboutStick({children, ...restProps}){
     return <Stick {...restProps}>{children}</Stick>
 }
 
-Generic.CircleStickLineMapContainer = function CircleStickLineMapContainer({children, ...restProps}){
-    return <CircleStickLineMapContainer{...restProps}>{children}</CircleStickLineMapContainer>
+Generic.TopRightTitle = function AboutTopRightTitle({children, ...restProps}){
+    return <TopRightTitle {...restProps}>{children}</TopRightTitle>
+}
+
+Generic.TopRightTitleContainer = function AboutTopRightTitleContainer({children, ...restProps}){
+    return <TopRightTitleContainer {...restProps}>{children}</TopRightTitleContainer>
+}
+
+Generic.TopRightMottoText = function AboutTopRightMottoText({children, ...restProps}){
+    return <TopRightMottoText {...restProps}>{children}</TopRightMottoText>
 }
 
 Generic.InnerContainer = function AboutInnerContainer({children, ...restProps}){

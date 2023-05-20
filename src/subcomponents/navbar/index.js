@@ -19,7 +19,8 @@ import {
   TimelineBarLeft,
   Circle,
   Stick,
-  SocialsText
+  SocialsText,
+  LengthStick
 } from "./styles/navbar";
 
 export default function Navbar({ children, ...restProps }) {
@@ -80,6 +81,11 @@ Navbar.Circle = function NavbarCircle({children, ...restProps}) {
 Navbar.Stick = function NavbarStick({children, ...restProps}) {
     return (
         <Stick {...restProps}>{children}</Stick>
+    )
+}
+Navbar.LengthStick = function NavbarLengthStick({children, ...restProps}) {
+    return (
+        <LengthStick {...restProps}>{children}</LengthStick>
     )
 }
 

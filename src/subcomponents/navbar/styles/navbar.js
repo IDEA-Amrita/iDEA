@@ -71,6 +71,7 @@ export const Circle = styled.div`
   border-radius: 50%;
   background-color: #000;
   opacity: ${(props) => (props.size ? "80%" : "50%")};
+  cursor: pointer;
 `;
 
 export const Stick = styled.div`
@@ -78,6 +79,13 @@ export const Stick = styled.div`
   height: 16%;
   width: 1%;
   border-left: 1px solid #000;
+`;
+
+export const LengthStick = styled.div`
+  margin: 0;
+  height: 0.5%;
+  width: 8%;
+  border-bottom: 1px solid #000;
 `;
 
 export const SocialsTopLeftInnerContainer = styled.div`

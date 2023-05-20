@@ -20,7 +20,7 @@ function Landing() {
 
   return (
     <Parallax
-      pages={4}
+      pages={3}
       ref={ref}
       className={isLight ? "light" : "dark"}
       style={{ top: "0", left: "0" }}

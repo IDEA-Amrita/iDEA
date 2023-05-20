@@ -112,7 +112,7 @@ const AboutPage = (props) => {
             >
               iDEA is a student driven community that aims to brings{" "}
               <u>ideas</u> to life. It hopes to achieve this by helping students
-              develop and showcase their ideas through community driver support.
+              develop and showcase their ideas through community support.
             </Generic.Paragraph>
           </Generic.ParagraphContainer>
         </Generic.InnerContainer>
