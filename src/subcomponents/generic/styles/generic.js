@@ -9,7 +9,8 @@ export const Container = styled.div`
 
 export const InnerContainer = styled.div`
   height: 80%;
-  width: 100%;
+  width: 40%;
+  margin-left: 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,7 +40,7 @@ export const Title = styled.h1`
   font-family: "PP Neue Machina";
   font-style: normal;
   font-weight: 400;
-  font-size: 100px;
+  font-size: 64px;
   color: ${(props) => props.color};
   cursor: pointer;
 
@@ -55,6 +56,17 @@ export const Title = styled.h1`
     font-size: 48px;
   }
 `;
+
+export const Image = styled.img`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  width: 40%;
+  object-fit: cover;
+  object-position: center;
+  `;
 
 export const TopRightTitleContainer = styled.div`
   position: absolute;
@@ -119,7 +131,7 @@ export const ParagraphContainer = styled.div`
 export const Paragraph = styled.p`
   font-family: "PP Neue Machina";
   font-weight: 400;
-  font-size: 50px;
+  font-size: 24px;
   line-height: 1.5em;
   letter-spacing: 0.05em;
   color: ${(props) => props.color};

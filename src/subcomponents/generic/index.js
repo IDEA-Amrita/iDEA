@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container, Title, TopRightTitle, TopRightMottoText, TopRightTitleContainer, Paragraph, Circle, ParagraphContainer, InnerContainer, Stick } from './styles/generic'
+import { Container, Title, TopRightTitle, Image, TopRightMottoText, TopRightTitleContainer, Paragraph, Circle, ParagraphContainer, InnerContainer, Stick } from './styles/generic'
 
 export default function Generic({children, ...restProps}) {
     return (
@@ -18,6 +18,9 @@ Generic.ParagraphContainer = function AboutParagraphContainer({children, ...rest
 
 Generic.Paragraph = function AboutParagraph({children, ...restProps}){
     return <Paragraph {...restProps}>{children}</Paragraph>
+}
+Generic.Image = function AboutImage({children, ...restProps}){
+    return <Image {...restProps}>{children}</Image>
 }
 
 Generic.Circle = function AboutCircle({children, ...restProps}){
