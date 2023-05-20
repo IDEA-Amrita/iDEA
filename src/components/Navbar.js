@@ -11,13 +11,18 @@ import {
   CDropdownItem,
   CDropdownMenu,
   CDropdownToggle,
-  CDropdownDivider,
 } from "@coreui/react";
+import useElementOnScreen from "../animations";
+
 
 export default function Nav(props) {
   const [isLight, setIsLight] = useState(props.mode);
   const [color1, setColor1] = useState("#424242");
   const [color2, setColor2] = useState("#ff6b6b");
+
+
+  const ref = useRef(null);
+  const onScreen = useElementOnScreen(ref);
 
   return (
     <Navbar>

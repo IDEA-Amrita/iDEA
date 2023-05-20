@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Generic, Navbar } from "../subcomponents";
+import { Generic, Navbar, Roadmap } from "../subcomponents";
 import { FaFacebook } from "react-icons/fa";
 import {
   AiOutlineArrowUp,
@@ -40,7 +40,7 @@ const AboutPage = (props) => {
               style={{
                 width: onScreen ? "1%" : "0",
                 translate: onScreen ? "none" : "0 10rem",
-                transition: "1000ms ease-in-out",
+                transition: "2000ms ease-in-out",
                 border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
               }}
             />
@@ -110,26 +110,123 @@ const AboutPage = (props) => {
             <Generic.Circle color={"#000"} />
             <Generic.Stick color={"#000"} />
           </Generic.CircleStickLineMapContainer> */}
-          <Generic.Title
-            ref={ref}
-            style={{
-              opacity: onScreen ? 1 : 0,
-              translate: onScreen ? "none" : "0 2rem",
-              transition: "1000ms ease-in-out",
-            }}
-          >
-            Roadmap
-          </Generic.Title>
-          <Generic.ParagraphContainer>
-            <Generic.Paragraph
+          <Generic.TopRightTitleContainer>
+            <Generic.TopRightTitle
               ref={ref}
               style={{
                 opacity: onScreen ? 1 : 0,
                 translate: onScreen ? "none" : "0 2rem",
                 transition: "1000ms ease-in-out",
               }}
-            ></Generic.Paragraph>
-          </Generic.ParagraphContainer>
+            >
+              Roadmap
+            </Generic.TopRightTitle>
+            <Generic.TopRightMottoText
+              ref={ref}
+              style={{
+                opacity: onScreen ? 1 : 0,
+                translate: onScreen ? "none" : "0 2rem",
+                transition: "1000ms ease-in-out",
+              }}
+            >
+              At iDEA, we believe in and thrive on, well defined
+            </Generic.TopRightMottoText>
+            <Generic.TopRightMottoText
+              ref={ref}
+              style={{
+                opacity: onScreen ? 1 : 0,
+                translate: onScreen ? "none" : "0 2rem",
+                transition: "1000ms ease-in-out",
+                alignSelf: "flex-end",
+              }}
+            >
+              goals
+            </Generic.TopRightMottoText>
+          </Generic.TopRightTitleContainer>
+          <Roadmap>
+            <Roadmap.AngledBoxContainer backgroundColor={props.isLight ? "#000" : "#fff"} color = {props.isLight? "#fff": "#000"}>
+              <Roadmap.TextDate>xy-09-2023</Roadmap.TextDate>
+              <Roadmap.TextTitle>INCEPTION</Roadmap.TextTitle>
+            </Roadmap.AngledBoxContainer>
+            <Navbar.LengthStick
+              style={{
+                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+                backgroundColor: props.isLight ? "#000" : "#fff",
+                opacity: 0.5,
+              }}
+            />
+            <Navbar.Circle
+              style={{
+                backgroundColor: props.isLight ? "#000" : "#fff",
+                opacity: 1,
+              }}
+            />
+            <Navbar.LengthStick
+              style={{
+                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+                backgroundColor: props.isLight ? "#000" : "#fff",
+                opacity: 0.5,
+              }}
+            />
+            <Navbar.Circle
+              style={{
+                backgroundColor: props.isLight ? "#000" : "#fff",
+                opacity: 1,
+              }}
+            />
+            <Navbar.LengthStick
+              style={{
+                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+                backgroundColor: props.isLight ? "#000" : "#fff",
+                opacity: 0.5,
+              }}
+            />
+            <Navbar.Circle
+              style={{
+                backgroundColor: props.isLight ? "#000" : "#fff",
+                opacity: 1,
+              }}
+            />
+            <Navbar.LengthStick
+              style={{
+                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+                backgroundColor: props.isLight ? "#000" : "#fff",
+                opacity: 0.5,
+              }}
+            />
+            <Navbar.Circle
+              style={{
+                backgroundColor: props.isLight ? "#000" : "#fff",
+                opacity: 1,
+              }}
+            />
+            <Navbar.LengthStick
+              style={{
+                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+                backgroundColor: props.isLight ? "#000" : "#fff",
+                opacity: 0.5,
+              }}
+            />
+            <Navbar.Circle
+              style={{
+                backgroundColor: props.isLight ? "#000" : "#fff",
+                opacity: 1,
+              }}
+            />
+            <Navbar.LengthStick
+              style={{
+                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+                backgroundColor: props.isLight ? "#000" : "#fff",
+                opacity: 0.5,
+              }}
+            />
+            <Navbar.Circle
+              style={{
+                backgroundColor: props.isLight ? "#000" : "#fff",
+                opacity: 1,
+              }}
+            />
+          </Roadmap>
         </Generic.InnerContainer>
       </Generic>
     </>
