@@ -8,6 +8,7 @@ import {
   AiOutlineTwitter,
   AiOutlineMedium,
   AiFillYoutube,
+  AiFillLinkedin
 } from "react-icons/ai";
 import useElementOnScreen from "../animations";
 import { SocialsText } from "../subcomponents/navbar/styles/navbar";
@@ -25,24 +26,45 @@ const AboutPage = (props) => {
       <Generic>
         <Navbar.TopContainer>
           <Navbar.TimelineBarLeft>
-            <Navbar.Circle size={true} style={{backgroundColor: props.isLight ? "#000" : "#fff"}}/>
+            <Navbar.Circle
+              size={true}
+              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+            />
             <Navbar.Stick
               ref={ref}
               style={{
                 width: onScreen ? "1%" : "0",
                 translate: onScreen ? "none" : "0 10rem",
                 transition: "1000ms ease-in-out",
-                border: `1px solid ${props.isLight ? "#000" : "#fff"}`
+                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
               }}
             />
-            <Navbar.Circle style={{backgroundColor: props.isLight ? "#000" : "#fff"}}/>
-            <Navbar.Stick style = {{border: `1px solid ${props.isLight ? "#000" : "#fff"}`}}/>
-            <Navbar.Circle style={{backgroundColor: props.isLight ? "#000" : "#fff"}}/>
-            <Navbar.Stick style = {{border: `1px solid ${props.isLight ? "#000" : "#fff"}`}}/>
-            <Navbar.Circle style={{backgroundColor: props.isLight ? "#000" : "#fff"}}/>
-            <Navbar.Stick style = {{border: `1px solid ${props.isLight ? "#000" : "#fff"}`}}/>
-            <Navbar.Circle style={{backgroundColor: props.isLight ? "#000" : "#fff"}}/>
-            <Navbar.Stick style = {{border: `1px solid ${props.isLight ? "#000" : "#fff"}`}}/>
+            <Navbar.Circle
+              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              onClick={props.roadmap}
+            />
+            <Navbar.Stick
+              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+            />
+            <Navbar.Circle
+              onClick={props.team}
+              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+            />
+            <Navbar.Stick
+              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+            />
+            <Navbar.Circle
+              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+            />
+            <Navbar.Stick
+              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+            />
+            <Navbar.Circle
+              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+            />
+            <Navbar.Stick
+              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+            />
           </Navbar.TimelineBarLeft>
           <Navbar.SocialsTopLeft
             style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
@@ -53,7 +75,7 @@ const AboutPage = (props) => {
                 opacity: onScreen ? 1 : 0,
                 translate: onScreen ? "none" : "0 2rem",
                 transition: "600ms ease-in-out",
-                color: props.isLight ? "#fff" : "#000"
+                color: props.isLight ? "#fff" : "#000",
               }}
             >
               iDEA
@@ -79,11 +101,14 @@ const AboutPage = (props) => {
               <AiFillYoutube
                 style={{ color: props.isLight ? "#fff" : "#000" }}
               />
+              <AiFillLinkedin
+                style={{ color: props.isLight ? "#fff" : "#000" }}
+              />
             </Navbar.SocialsTopLeftInnerContainer>
           </Navbar.SocialsTopLeft>
           <Navbar.TopTitle>
-            <AiOutlineArrowDown onClick={props.down} />
-            <AiOutlineArrowUp onClick={props.up} />
+            {/* <AiOutlineArrowDown onClick={props.down} /> */}
+            <AiOutlineArrowUp onClick={props.up} style={{cursor: "pointer"}}/>
           </Navbar.TopTitle>
         </Navbar.TopContainer>
         <Generic.InnerContainer>
@@ -116,6 +141,7 @@ const AboutPage = (props) => {
             </Generic.Paragraph>
           </Generic.ParagraphContainer>
         </Generic.InnerContainer>
+        <Generic.Image src="/images/frame.png" />
       </Generic>
     </>
   );
