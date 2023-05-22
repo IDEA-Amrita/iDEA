@@ -11,6 +11,13 @@ import {
   UserInfoContainer,
   Designation,
   About,
+  OtherTeamsContainer,
+  OtherTeamsSpecificContainer,
+  OtherTeamsTitle,
+  OtherTeamsSpecificInnerContainer,
+  OtherTeamsImage,
+  Line,
+  TeamYears,
 } from "./styles/team";
 
 export default function Team({ children, ...restProps }) {
@@ -80,4 +87,53 @@ Team.Designation = function TeamDesignation({ children, ...restProps }) {
 
 Team.About = function TeamAbout({ children, ...restProps }) {
   return <About {...restProps}>{children}</About>;
+};
+
+Team.OtherTeamsContainer = function TeamOtherTeamsContainer({
+  children,
+  ...restProps
+}) {
+  return <OtherTeamsContainer {...restProps}>{children}</OtherTeamsContainer>;
+};
+
+Team.OtherTeamsSpecificContainer = function TeamOtherTeamsSpecificContainer({
+  children,
+  ...restProps
+}) {
+  return (
+    <OtherTeamsSpecificContainer {...restProps}>
+      {children}
+    </OtherTeamsSpecificContainer>
+  );
+};
+
+Team.OtherTeamsTitle = function TeamOtherTeamsTitle({
+  children,
+  ...restProps
+}) {
+  return <OtherTeamsTitle {...restProps}>{children}</OtherTeamsTitle>;
+};
+
+Team.OtherTeamsSpecificInnerContainer =
+  function TeamOtherTeamsSpecificInnerContainer({ children, ...restProps }) {
+    return (
+      <OtherTeamsSpecificInnerContainer {...restProps}>
+        {children}
+      </OtherTeamsSpecificInnerContainer>
+    );
+  };
+
+Team.OtherTeamsImage = function TeamOtherTeamsImage({
+  children,
+  ...restProps
+}) {
+  return <OtherTeamsImage {...restProps}>{children}</OtherTeamsImage>;
+};
+
+Team.Line = function TeamLine({ children, ...restProps }) {
+  return <Line {...restProps}>{children}</Line>;
+};
+
+Team.TeamYears = function TeamTeamYears({ children, ...restProps }) {
+  return <TeamYears {...restProps}>{children}</TeamYears>;
 };
