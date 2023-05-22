@@ -2,8 +2,6 @@ import React, { useRef, useState } from "react";
 import { Generic, Navbar, Roadmap } from "../subcomponents";
 import { FaFacebook } from "react-icons/fa";
 import {
-  AiOutlineArrowUp,
-  AiOutlineArrowDown,
   AiOutlineInstagram,
   AiOutlineTwitter,
   AiOutlineMedium,

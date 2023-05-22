@@ -49,6 +49,12 @@ export default function Nav(props) {
           >
             Roadmap
           </Navbar.Link>
+          <Navbar.Link
+            color={isLight ? "#000" : "#fff"}
+            onClick={props.team}
+          >
+            Team
+          </Navbar.Link>
         </Navbar.CenterContainer>
         <Navbar.TitleContainer>
           <Navbar.Title color={isLight ? color1 : color2}>i</Navbar.Title>
@@ -57,6 +63,12 @@ export default function Nav(props) {
           <Navbar.Title color={isLight ? color1 : color2}>A</Navbar.Title>
         </Navbar.TitleContainer>
         <Navbar.CenterContainer>
+          <Navbar.Link
+            color={isLight ? "#000" : "#fff"}
+            onClick={props.projects}
+          >
+            Projects
+          </Navbar.Link>
           <Navbar.Link
             color={isLight ? "#000" : "#fff"}
             href="https://github.com/IDEA-Amrita"
