@@ -20,7 +20,7 @@ import {
   Circle,
   Stick,
   SocialsText,
-  LengthStick
+  LengthStick,
 } from "./styles/navbar";
 
 export default function Navbar({ children, ...restProps }) {
@@ -69,25 +69,22 @@ Navbar.SocialsTopLeftInnerContainer =
     );
   };
 
-Navbar.TimelineBarLeft = function NavbarTimelineBarLeft({children, ...restProps}){
-    return <TimelineBarLeft {...restProps}>{children}</TimelineBarLeft>
-}
+Navbar.TimelineBarLeft = function NavbarTimelineBarLeft({
+  children,
+  ...restProps
+}) {
+  return <TimelineBarLeft {...restProps}>{children}</TimelineBarLeft>;
+};
 
-Navbar.Circle = function NavbarCircle({children, ...restProps}) {
-    return (
-        <Circle {...restProps}>{children}</Circle>
-    )
-}
-Navbar.Stick = function NavbarStick({children, ...restProps}) {
-    return (
-        <Stick {...restProps}>{children}</Stick>
-    )
-}
-Navbar.LengthStick = function NavbarLengthStick({children, ...restProps}) {
-    return (
-        <LengthStick {...restProps}>{children}</LengthStick>
-    )
-}
+Navbar.Circle = function NavbarCircle({ children, ...restProps }) {
+  return <Circle {...restProps}>{children}</Circle>;
+};
+Navbar.Stick = function NavbarStick({ children, ...restProps }) {
+  return <Stick {...restProps}>{children}</Stick>;
+};
+Navbar.LengthStick = function NavbarLengthStick({ children, ...restProps }) {
+  return <LengthStick {...restProps}>{children}</LengthStick>;
+};
 
 Navbar.Link = function NavbarLink({ children, ...restProps }) {
   return <Link {...restProps}>{children}</Link>;
@@ -101,9 +98,9 @@ Navbar.BottomTitle = function NavbarBottomTitle({ children, ...restProps }) {
   return <BottomTitle {...restProps}>{children}</BottomTitle>;
 };
 
-Navbar.SocialsText = function NavbarSocialsText({children, ...restProps}) {
-    return <SocialsText {...restProps}>{children}</SocialsText>
-}
+Navbar.SocialsText = function NavbarSocialsText({ children, ...restProps }) {
+  return <SocialsText {...restProps}>{children}</SocialsText>;
+};
 
 Navbar.IconContainer = function NavbarIconContainer({
   children,

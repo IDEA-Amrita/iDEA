@@ -4,14 +4,7 @@ import styled from "styled-components";
 import { Navbar } from "../components";
 import { Navbar as Nav } from "../subcomponents";
 
-const Home = ({
-  isLight,
-  setIsLight,
-  about,
-  roadmap,
-  team,
-  projects
-}) => {
+const Home = ({ isLight, setIsLight, about, roadmap, team, projects }) => {
   const handleClick = (event) => {
     event.preventDefault();
     setIsLight((isLight) => !isLight);

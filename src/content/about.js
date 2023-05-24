@@ -3,12 +3,11 @@ import { Generic, Navbar } from "../subcomponents";
 import { FaFacebook } from "react-icons/fa";
 import {
   AiOutlineArrowUp,
-  AiOutlineArrowDown,
   AiOutlineInstagram,
   AiOutlineTwitter,
   AiOutlineMedium,
   AiFillYoutube,
-  AiFillLinkedin
+  AiFillLinkedin,
 } from "react-icons/ai";
 import useElementOnScreen from "../animations";
 import { SocialsText } from "../subcomponents/navbar/styles/navbar";
@@ -54,6 +53,7 @@ const AboutPage = (props) => {
               style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
             />
             <Navbar.Circle
+              onClick={props.projects}
               style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
             />
             <Navbar.Stick
@@ -108,7 +108,10 @@ const AboutPage = (props) => {
           </Navbar.SocialsTopLeft>
           <Navbar.TopTitle>
             {/* <AiOutlineArrowDown onClick={props.down} /> */}
-            <AiOutlineArrowUp onClick={props.up} style={{cursor: "pointer"}}/>
+            <AiOutlineArrowUp
+              onClick={props.up}
+              style={{ cursor: "pointer" }}
+            />
           </Navbar.TopTitle>
         </Navbar.TopContainer>
         <Generic.InnerContainer>

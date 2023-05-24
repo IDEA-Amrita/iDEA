@@ -14,12 +14,10 @@ import {
 } from "@coreui/react";
 import useElementOnScreen from "../animations";
 
-
 export default function Nav(props) {
   const [isLight, setIsLight] = useState(props.mode);
   const [color1, setColor1] = useState("#424242");
   const [color2, setColor2] = useState("#ff6b6b");
-
 
   const ref = useRef(null);
   const onScreen = useElementOnScreen(ref);
@@ -30,9 +28,7 @@ export default function Nav(props) {
         {/* <Navbar.EmptyDivL />
         <Navbar.EmptyDivL />
         <Navbar.EmptyDivL /> */}
-        <Navbar.TopTitle>
-          IDEA
-        </Navbar.TopTitle>
+        <Navbar.TopTitle>IDEA</Navbar.TopTitle>
         {/* <Navbar.EmptyDivR />
         <Navbar.EmptyDivR />
         <Navbar.EmptyDivR /> */}
@@ -49,10 +45,7 @@ export default function Nav(props) {
           >
             Roadmap
           </Navbar.Link>
-          <Navbar.Link
-            color={isLight ? "#000" : "#fff"}
-            onClick={props.team}
-          >
+          <Navbar.Link color={isLight ? "#000" : "#fff"} onClick={props.team}>
             Team
           </Navbar.Link>
         </Navbar.CenterContainer>
