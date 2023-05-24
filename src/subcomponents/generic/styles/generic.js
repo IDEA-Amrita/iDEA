@@ -66,7 +66,7 @@ export const Image = styled.img`
   width: 40%;
   object-fit: cover;
   object-position: center;
-  `;
+`;
 
 export const TopRightTitleContainer = styled.div`
   position: absolute;
@@ -75,7 +75,7 @@ export const TopRightTitleContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  p{
+  p {
     margin: 0;
   }
 `;

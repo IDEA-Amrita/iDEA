@@ -1,35 +1,41 @@
 @font-face {
-  font-family: 'Elianto';
-  src: local('Elianto'), url(./fonts/Elianto-Regular.otf) format('opentype');
+  font-family: "Elianto";
+  src: local("Elianto"), url(./fonts/Elianto-Regular.otf) format("opentype");
 }
 @font-face {
-  font-family: 'PP Neue Machina';
-  src: local('PP Neue Machina'), url(./fonts/Neue_Machina.otf) format('opentype');
+  font-family: "PP Neue Machina";
+  src: local("PP Neue Machina"),
+    url(./fonts/Neue_Machina.otf) format("opentype");
 }
 @font-face {
-  font-family: 'FiraCode';
-  src: local('FiraCode'), url(./fonts/FiraCode-VariableFont_wght.ttf) format('truetype');
+  font-family: "FiraCode";
+  src: local("FiraCode"),
+    url(./fonts/FiraCode-VariableFont_wght.ttf) format("truetype");
 }
 @font-face {
-  font-family: 'Archer Gage';
-  src: local('Archer Gage'), url(./fonts/Archer_Gage.ttf) format('truetype');
+  font-family: "Archer Gage";
+  src: local("Archer Gage"), url(./fonts/Archer_Gage.ttf) format("truetype");
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.light{
-  background-color: radial-gradient(ellipse at center, #FFFFFF 0%, #F1F1F1 100%);
+.light {
+  background-color: radial-gradient(
+    ellipse at center,
+    #ffffff 0%,
+    #f1f1f1 100%
+  );
   color: #000;
 }
 
 .dark {
   background-color: #000;
-  color: #FFF;
+  color: #fff;
 }

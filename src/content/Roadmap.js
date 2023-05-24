@@ -124,6 +124,7 @@ const AboutPage = (props) => {
               style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
             />
             <Navbar.Circle
+              onClick={props.projects}
               style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
             />
             <Navbar.Stick

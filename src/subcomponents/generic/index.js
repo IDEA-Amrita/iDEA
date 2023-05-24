@@ -1,48 +1,75 @@
-import React from 'react'
+import React from "react";
 
-import { Container, Title, TopRightTitle, Image, TopRightMottoText, TopRightTitleContainer, Paragraph, Circle, ParagraphContainer, InnerContainer, Stick } from './styles/generic'
+import {
+  Container,
+  Title,
+  TopRightTitle,
+  Image,
+  TopRightMottoText,
+  TopRightTitleContainer,
+  Paragraph,
+  Circle,
+  ParagraphContainer,
+  InnerContainer,
+  Stick,
+} from "./styles/generic";
 
-export default function Generic({children, ...restProps}) {
-    return (
-        <Container {...restProps}>{children}</Container>
-    )
+export default function Generic({ children, ...restProps }) {
+  return <Container {...restProps}>{children}</Container>;
 }
 
-Generic.Title = function AboutTitle({children, ...restProps}){
-    return <Title {...restProps}>{children}</Title>
-}
+Generic.Title = function AboutTitle({ children, ...restProps }) {
+  return <Title {...restProps}>{children}</Title>;
+};
 
-Generic.ParagraphContainer = function AboutParagraphContainer({children, ...restProps}){
-    return <ParagraphContainer {...restProps}>{children}</ParagraphContainer>
-}
+Generic.ParagraphContainer = function AboutParagraphContainer({
+  children,
+  ...restProps
+}) {
+  return <ParagraphContainer {...restProps}>{children}</ParagraphContainer>;
+};
 
-Generic.Paragraph = function AboutParagraph({children, ...restProps}){
-    return <Paragraph {...restProps}>{children}</Paragraph>
-}
-Generic.Image = function AboutImage({children, ...restProps}){
-    return <Image {...restProps}>{children}</Image>
-}
+Generic.Paragraph = function AboutParagraph({ children, ...restProps }) {
+  return <Paragraph {...restProps}>{children}</Paragraph>;
+};
+Generic.Image = function AboutImage({ children, ...restProps }) {
+  return <Image {...restProps}>{children}</Image>;
+};
 
-Generic.Circle = function AboutCircle({children, ...restProps}){
-    return <Circle {...restProps}>{children}</Circle>
-}
+Generic.Circle = function AboutCircle({ children, ...restProps }) {
+  return <Circle {...restProps}>{children}</Circle>;
+};
 
-Generic.Stick = function AboutStick({children, ...restProps}){
-    return <Stick {...restProps}>{children}</Stick>
-}
+Generic.Stick = function AboutStick({ children, ...restProps }) {
+  return <Stick {...restProps}>{children}</Stick>;
+};
 
-Generic.TopRightTitle = function AboutTopRightTitle({children, ...restProps}){
-    return <TopRightTitle {...restProps}>{children}</TopRightTitle>
-}
+Generic.TopRightTitle = function AboutTopRightTitle({
+  children,
+  ...restProps
+}) {
+  return <TopRightTitle {...restProps}>{children}</TopRightTitle>;
+};
 
-Generic.TopRightTitleContainer = function AboutTopRightTitleContainer({children, ...restProps}){
-    return <TopRightTitleContainer {...restProps}>{children}</TopRightTitleContainer>
-}
+Generic.TopRightTitleContainer = function AboutTopRightTitleContainer({
+  children,
+  ...restProps
+}) {
+  return (
+    <TopRightTitleContainer {...restProps}>{children}</TopRightTitleContainer>
+  );
+};
 
-Generic.TopRightMottoText = function AboutTopRightMottoText({children, ...restProps}){
-    return <TopRightMottoText {...restProps}>{children}</TopRightMottoText>
-}
+Generic.TopRightMottoText = function AboutTopRightMottoText({
+  children,
+  ...restProps
+}) {
+  return <TopRightMottoText {...restProps}>{children}</TopRightMottoText>;
+};
 
-Generic.InnerContainer = function AboutInnerContainer({children, ...restProps}){
-    return <InnerContainer {...restProps}>{children}</InnerContainer>
-}
+Generic.InnerContainer = function AboutInnerContainer({
+  children,
+  ...restProps
+}) {
+  return <InnerContainer {...restProps}>{children}</InnerContainer>;
+};
