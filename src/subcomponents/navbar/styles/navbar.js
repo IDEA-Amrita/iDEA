@@ -8,7 +8,7 @@ export const TopContainer = styled.div`
   display: flex;
   justify-content: space-around;
   width: auto;
-  height: 80px;
+  height: auto;
 `;
 
 export const Container = styled.div`
@@ -42,6 +42,17 @@ export const SocialsTopLeft = styled.div`
   height: auto;
   width: 24%;
   padding: 1em;
+
+  @media (max-width: 654px) {
+    width: 60%;
+    height: 10%;
+  }
+
+  @media (max-width: 820px) {
+    width: 60%;
+    height: 10%;
+  }
+
 `;
 
 export const SocialsText = styled.p`
@@ -51,15 +62,19 @@ export const SocialsText = styled.p`
   padding: 0;
   font-size: 32px;
   font-family: "Archer Gage";
+
+  @media (max-width: 820px) {
+    font-size: 24px;
+  }
 `;
 
 export const TimelineBarLeft = styled.div`
   position: absolute;
   left: 4%;
+  top: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 8%;
   margin-right: 20%;
   height: 100%;
   width: auto;
@@ -72,6 +87,16 @@ export const Circle = styled.div`
   background-color: #000;
   opacity: ${(props) => (props.size ? "80%" : "50%")};
   cursor: pointer;
+
+  @media (max-width: 820px) {
+    width: ${(props) => (props.size ? "3rem" : "2rem")};
+    height: ${(props) => (props.size ? "3rem" : "2rem")};
+  }
+
+  @media (max-width: 654px) {
+    width: ${(props) => (props.size ? "2rem" : "1rem")};
+    height: ${(props) => (props.size ? "2rem" : "1rem")};
+  }
 `;
 
 export const Stick = styled.div`
@@ -79,6 +104,14 @@ export const Stick = styled.div`
   height: 16%;
   width: 1%;
   border-left: 1px solid #000;
+
+  @media (max-width: 820px) {
+    height: 20%;
+  }
+
+  @media (max-width: 654px) {
+    height: 24%;
+  }
 `;
 
 export const LengthStick = styled.div`
@@ -103,7 +136,6 @@ export const SocialsTopLeftInnerContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-  line-height: 179px;
   font-size: 100px;
   font-weight: 400;
   color: ${(props) => props.color};
@@ -111,16 +143,12 @@ export const Title = styled.h1`
   cursor: pointer;
   font-style: normal;
 
-  @media (max-width: 920px) {
-    font-size: 120px;
-  }
-
   @media (max-width: 820px) {
-    font-size: 96px;
+    font-size: 64px;
   }
 
-  @media (max-width: 540px) {
-    font-size: 48px;
+  @media (max-width: 654px) {
+    font-size: 36px;
   }
 `;
 export const Link = styled.a`
@@ -142,7 +170,7 @@ export const Link = styled.a`
     font-size: 12px;
   }
 
-  @media (max-width: 540px) {
+  @media (max-width: 654px) {
     font-size: 8px;
   }
 `;
@@ -159,7 +187,7 @@ export const TopTitle = styled.h1`
     font-size: 20px;
   }
 
-  @media (max-width: 540px) {
+  @media (max-width: 654px) {
     font-size: 15px;
   }
 `;
@@ -169,15 +197,13 @@ export const BottomTitle = styled.h1`
   font-style: normal;
   font-weight: 400;
   font-size: 25px;
-  line-height: 50px;
-  letter-spacing: 0.1em;
   color: ${(props) => props.color};
 
   @media (max-width: 840px) {
     font-size: 20px;
   }
 
-  @media (max-width: 540px) {
+  @media (max-width: 654px) {
     font-size: 15px;
   }
 `;
@@ -186,16 +212,27 @@ export const IconContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-top: 3%;
 `;
 export const LightIcon = styled(MdOutlineDarkMode)`
   width: 30px;
   height: 30px;
   cursor: pointer;
+
+  @media (max-width: 654px) {
+    width: 20px;
+    height: 20px;
+  }
 `;
 export const DarkIcon = styled(BsSun)`
   width: 30px;
   height: 30px;
   cursor: pointer;
+
+  @media (max-width: 654px) {
+    width: 20px;
+    height: 20px;
+  }
 `;
 export const EmptyDivLeft = styled.div`
   width: 51.583333px;
@@ -204,7 +241,7 @@ export const EmptyDivLeft = styled.div`
     width: 0;
   }
 
-  @media (max-width: 540px) {
+  @media (max-width: 654px) {
     width: 0;
   }
 `;
@@ -215,7 +252,7 @@ export const EmptyDivRight = styled.div`
     width: 0;
   }
 
-  @media (max-width: 540px) {
+  @media (max-width: 654px) {
     width: 0;
   }
 `;

@@ -36,14 +36,6 @@ Generic.Image = function AboutImage({ children, ...restProps }) {
   return <Image {...restProps}>{children}</Image>;
 };
 
-Generic.Circle = function AboutCircle({ children, ...restProps }) {
-  return <Circle {...restProps}>{children}</Circle>;
-};
-
-Generic.Stick = function AboutStick({ children, ...restProps }) {
-  return <Stick {...restProps}>{children}</Stick>;
-};
-
 Generic.TopRightTitle = function AboutTopRightTitle({
   children,
   ...restProps

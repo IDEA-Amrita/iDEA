@@ -156,7 +156,12 @@ const TeamPage = (props) => {
               <Team.CrossedBordersContainer>
                 <Team.CrossedBorders onScreen={onScreen}>
                   <Team.CrossedBordersInnerContainer>
-                    <Team.CrossedBordersImage src="/images/user.png" />
+                    <Team.CrossedBordersImage src="/images/user.png" ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}/>
                     <Team.UserInfoContainer>
                       <Team.SubTitle
                         ref={ref}
@@ -207,58 +212,12 @@ const TeamPage = (props) => {
               <Team.CrossedBordersContainer>
                 <Team.CrossedBorders onScreen={onScreen}>
                   <Team.CrossedBordersInnerContainer>
-                    <Team.CrossedBordersImage src="/images/user.png" />
-                    <Team.UserInfoContainer>
-                      <Team.SubTitle
-                        ref={ref}
+                    <Team.CrossedBordersImage src="/images/user.png" ref={ref}
                         style={{
                           opacity: onScreen ? 1 : 0,
                           translate: onScreen ? "none" : "0 2rem",
                           transition: "600ms ease-in-out",
-                        }}
-                      >
-                        John Doe
-                      </Team.SubTitle>
-                      <Team.Designation
-                        ref={ref}
-                        style={{
-                          opacity: onScreen ? 1 : 0,
-                          translate: onScreen ? "none" : "0 2rem",
-                          transition: "600ms ease-in-out",
-                        }}
-                      >
-                        4th year, B. Tech CSE
-                      </Team.Designation>
-                      <Team.About
-                        ref={ref}
-                        style={{
-                          opacity: onScreen ? 1 : 0,
-                          translate: onScreen ? "none" : "0 2rem",
-                          transition: "600ms ease-in-out",
-                        }}
-                      >
-                        5 words they chose to go here
-                      </Team.About>
-                    </Team.UserInfoContainer>
-                  </Team.CrossedBordersInnerContainer>
-                </Team.CrossedBorders>
-              </Team.CrossedBordersContainer>
-            </Team.Section>
-            <Team.Section>
-              <Team.SubTitle
-                ref={ref}
-                style={{
-                  opacity: onScreen ? 1 : 0,
-                  translate: onScreen ? "none" : "0 2rem",
-                  transition: "600ms ease-in-out",
-                }}
-              >
-                Management Lead
-              </Team.SubTitle>
-              <Team.CrossedBordersContainer>
-                <Team.CrossedBorders onScreen={onScreen}>
-                  <Team.CrossedBordersInnerContainer>
-                    <Team.CrossedBordersImage src="/images/user.png" />
+                        }}/>
                     <Team.UserInfoContainer>
                       <Team.SubTitle
                         ref={ref}
@@ -309,7 +268,12 @@ const TeamPage = (props) => {
               <Team.CrossedBordersContainer>
                 <Team.CrossedBorders onScreen={onScreen}>
                   <Team.CrossedBordersInnerContainer>
-                    <Team.CrossedBordersImage src="/images/user.png" />
+                    <Team.CrossedBordersImage src="/images/user.png" ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}/>
                     <Team.UserInfoContainer>
                       <Team.SubTitle
                         ref={ref}
@@ -361,7 +325,12 @@ const TeamPage = (props) => {
                 HR
               </Team.OtherTeamsTitle>
               <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage src="/images/user.png" />
+                <Team.OtherTeamsImage src="/images/user.png" ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}/>
                 <Team.UserInfoContainer>
                   <Team.SubTitle
                     ref={ref}
@@ -387,7 +356,12 @@ const TeamPage = (props) => {
               </Team.OtherTeamsSpecificInnerContainer>
               <Team.Line backgroundColor={props.isLight ? "#000" : "#fff"} />
               <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage src="/images/user.png" />
+                <Team.OtherTeamsImage src="/images/user.png" ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}/>
                 <Team.UserInfoContainer>
                   <Team.SubTitle
                     ref={ref}
@@ -413,7 +387,12 @@ const TeamPage = (props) => {
               </Team.OtherTeamsSpecificInnerContainer>
               <Team.Line backgroundColor={props.isLight ? "#000" : "#fff"} />
               <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage src="/images/user.png" />
+                <Team.OtherTeamsImage src="/images/user.png"ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }} />
                 <Team.UserInfoContainer>
                   <Team.SubTitle
                     ref={ref}
@@ -439,7 +418,12 @@ const TeamPage = (props) => {
               </Team.OtherTeamsSpecificInnerContainer>
               <Team.Line backgroundColor={props.isLight ? "#000" : "#fff"} />
               <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage src="/images/user.png" />
+                <Team.OtherTeamsImage src="/images/user.png" ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}/>
                 <Team.UserInfoContainer>
                   <Team.SubTitle
                     ref={ref}
@@ -478,7 +462,12 @@ const TeamPage = (props) => {
                 Ideation
               </Team.OtherTeamsTitle>
               <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage src="/images/user.png" />
+                <Team.OtherTeamsImage src="/images/user.png" ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}/>
                 <Team.UserInfoContainer>
                   <Team.SubTitle
                     ref={ref}
@@ -504,7 +493,12 @@ const TeamPage = (props) => {
               </Team.OtherTeamsSpecificInnerContainer>
               <Team.Line backgroundColor={props.isLight ? "#000" : "#fff"} />
               <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage src="/images/user.png" />
+                <Team.OtherTeamsImage src="/images/user.png" ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}/>
                 <Team.UserInfoContainer>
                   <Team.SubTitle
                     ref={ref}
@@ -530,7 +524,12 @@ const TeamPage = (props) => {
               </Team.OtherTeamsSpecificInnerContainer>
               <Team.Line backgroundColor={props.isLight ? "#000" : "#fff"} />
               <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage src="/images/user.png" />
+                <Team.OtherTeamsImage src="/images/user.png"ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}/>
                 <Team.UserInfoContainer>
                   <Team.SubTitle
                     ref={ref}
@@ -556,7 +555,12 @@ const TeamPage = (props) => {
               </Team.OtherTeamsSpecificInnerContainer>
               <Team.Line backgroundColor={props.isLight ? "#000" : "#fff"} />
               <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage src="/images/user.png" />
+                <Team.OtherTeamsImage src="/images/user.png" ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}/>
                 <Team.UserInfoContainer>
                   <Team.SubTitle
                     ref={ref}
@@ -595,7 +599,12 @@ const TeamPage = (props) => {
                 Curation
               </Team.OtherTeamsTitle>
               <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage src="/images/user.png" />
+                <Team.OtherTeamsImage src="/images/user.png"ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }} />
                 <Team.UserInfoContainer>
                   <Team.SubTitle
                     ref={ref}
@@ -621,7 +630,12 @@ const TeamPage = (props) => {
               </Team.OtherTeamsSpecificInnerContainer>
               <Team.Line backgroundColor={props.isLight ? "#000" : "#fff"} />
               <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage src="/images/user.png" />
+                <Team.OtherTeamsImage src="/images/user.png" ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }} />
                 <Team.UserInfoContainer>
                   <Team.SubTitle
                     ref={ref}
@@ -647,7 +661,12 @@ const TeamPage = (props) => {
               </Team.OtherTeamsSpecificInnerContainer>
               <Team.Line backgroundColor={props.isLight ? "#000" : "#fff"} />
               <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage src="/images/user.png" />
+                <Team.OtherTeamsImage src="/images/user.png"ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }} />
                 <Team.UserInfoContainer>
                   <Team.SubTitle
                     ref={ref}
@@ -673,7 +692,12 @@ const TeamPage = (props) => {
               </Team.OtherTeamsSpecificInnerContainer>
               <Team.Line backgroundColor={props.isLight ? "#000" : "#fff"} />
               <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage src="/images/user.png" />
+                <Team.OtherTeamsImage src="/images/user.png" ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}/>
                 <Team.UserInfoContainer>
                   <Team.SubTitle
                     ref={ref}
@@ -712,7 +736,12 @@ const TeamPage = (props) => {
                 Internal Dev
               </Team.OtherTeamsTitle>
               <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage src="/images/user.png" />
+                <Team.OtherTeamsImage src="/images/user.png" ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}/>
                 <Team.UserInfoContainer>
                   <Team.SubTitle
                     ref={ref}
@@ -738,7 +767,12 @@ const TeamPage = (props) => {
               </Team.OtherTeamsSpecificInnerContainer>
               <Team.Line backgroundColor={props.isLight ? "#000" : "#fff"} />
               <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage src="/images/user.png" />
+                <Team.OtherTeamsImage src="/images/user.png" ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}/>
                 <Team.UserInfoContainer>
                   <Team.SubTitle
                     ref={ref}
@@ -764,7 +798,12 @@ const TeamPage = (props) => {
               </Team.OtherTeamsSpecificInnerContainer>
               <Team.Line backgroundColor={props.isLight ? "#000" : "#fff"} />
               <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage src="/images/user.png" />
+                <Team.OtherTeamsImage src="/images/user.png" ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}/>
                 <Team.UserInfoContainer>
                   <Team.SubTitle
                     ref={ref}
@@ -790,7 +829,12 @@ const TeamPage = (props) => {
               </Team.OtherTeamsSpecificInnerContainer>
               <Team.Line backgroundColor={props.isLight ? "#000" : "#fff"} />
               <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage src="/images/user.png" />
+                <Team.OtherTeamsImage src="/images/user.png" ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}/>
                 <Team.UserInfoContainer>
                   <Team.SubTitle
                     ref={ref}
