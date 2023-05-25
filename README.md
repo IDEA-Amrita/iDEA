@@ -11,4 +11,10 @@ The IDEA community landing page!
 npm install && npm start
 ```
 
-**NOTE:** This is a work in progress. Please feel free to contribute!
+# Hooks
+- `pre-commit` hook to format with prettier.
+- `pre-push` hook to run tests (far future).
+-  setup by configuring with git
+   - ```git config core.hooksPath hooks/*```
+   - give the files execute perms -> ```chmod +x hooks/*```
+   - install prettier -> ```npm install --save-dev --save-exact prettier```
