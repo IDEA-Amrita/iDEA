@@ -14,7 +14,6 @@ npm install && npm start
 # Hooks
 - `pre-commit` hook to format with prettier.
 - `pre-push` hook to run tests (far future).
-- setup by configuring with git
    - 
    ```
    git config core.hooksPath hooks/*
