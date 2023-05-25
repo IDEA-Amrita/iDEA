@@ -28,6 +28,7 @@ export const AngledBoxContainer = styled.div`
   p {
     margin: 0;
   }
+
 `;
 
 export const MainContainer = styled.div`
@@ -53,6 +54,32 @@ export const TextDate = styled.p`
   font-size: 24px;
   font-family: "PP Neue Machina";
   font-style: normal;
+
+  @media (max-width: 1524px) {
+    font-size: 20px;
+  }
+  @media (max-width: 1134px) {
+    font-size: 18px;
+  }
+  @media (max-width: 1020px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 920px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 820px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 10px;
+  }
+
+  @media (max-width: 654px) {
+    font-size: 8px;
+  }
 `;
 
 export const TextTitle = styled.p`
@@ -60,6 +87,41 @@ export const TextTitle = styled.p`
   font-family: "PP Neue Machina";
   text-decoration: uppercase;
   font-weight: bold;
+  padding: 0 10%;
+
+  @media (max-width: 1524px) {
+    font-size: 26px;
+  }
+  @media (max-width: 1343px) {
+    font-size: 24px;
+  }
+  @media (max-width: 1244px) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 1134px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 1020px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 920px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 820px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 654px) {
+    font-size: 8px;
+  }
 `;
 
 export const OnHoverContainer = styled.div`

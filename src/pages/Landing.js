@@ -26,7 +26,7 @@ function Landing() {
       className={isLight ? "light" : "dark"}
       style={{ top: "0", left: "0" }}
     >
-      <ParallaxLayer offset={0} speed={0.2}>
+      <ParallaxLayer offset={0} speed={2.5}>
         <Home
           about={() => scroll(1)}
           roadmap={() => scroll(2)}
@@ -36,7 +36,7 @@ function Landing() {
           setIsLight={setIsLight}
         />
       </ParallaxLayer>
-      <ParallaxLayer offset={1} speed={0.6}>
+      <ParallaxLayer offset={1} speed={0.3}>
         <About
           up={() => scroll(0)}
           roadmap={() => scroll(2)}
@@ -46,7 +46,7 @@ function Landing() {
           setIsLight={setIsLight}
         />
       </ParallaxLayer>
-      <ParallaxLayer offset={2} speed={0.4}>
+      <ParallaxLayer offset={2} speed={0.3}>
         <Roadmap
           about={() => scroll(1)}
           team={() => scroll(3)}
@@ -55,7 +55,7 @@ function Landing() {
           setIsLight={setIsLight}
         />
       </ParallaxLayer>
-      <ParallaxLayer offset={3} speed={0.4}>
+      <ParallaxLayer offset={3} speed={0.3}>
         <Team
           about={() => scroll(1)}
           roadmap={() => scroll(2)}
@@ -64,7 +64,7 @@ function Landing() {
           setIsLight={setIsLight}
         />
       </ParallaxLayer>
-      <ParallaxLayer offset={4} speed={0.4}>
+      <ParallaxLayer offset={4} speed={0.3}>
         <Projects
           about={() => scroll(1)}
           roadmap={() => scroll(2)}

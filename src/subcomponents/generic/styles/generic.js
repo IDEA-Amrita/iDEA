@@ -17,23 +17,6 @@ export const InnerContainer = styled.div`
   align-items: center;
 `;
 
-export const Circle = styled.div`
-  height: 48px;
-  width: 48px;
-  margin: 0;
-  padding: 0;
-  border-radius: 50%;
-  background-color: ${(props) => props.color};
-`;
-
-export const Stick = styled.div`
-  height: 64px;
-  width: 12px;
-  margin: 0;
-  padding: 0;
-  background-color: ${(props) => props.color};
-`;
-
 export const Title = styled.h1`
   align-self: flex-start;
   padding: 0 10%;
@@ -45,15 +28,11 @@ export const Title = styled.h1`
   cursor: pointer;
 
   @media (max-width: 820px) {
-    font-size: 96px;
-  }
-
-  @media (max-width: 700px) {
-    font-size: 64px;
-  }
-
-  @media (max-width: 540px) {
     font-size: 48px;
+  }
+
+  @media (max-width: 654px) {
+    font-size: 36px;
   }
 `;
 
@@ -78,6 +57,14 @@ export const TopRightTitleContainer = styled.div`
   p {
     margin: 0;
   }
+
+  @media (max-width: 820px) {
+    top: 10%;
+  }
+
+  @media (max-width: 654px) {
+    top: 15%;
+  }
 `;
 
 export const TopRightTitle = styled.h1`
@@ -89,15 +76,15 @@ export const TopRightTitle = styled.h1`
   color: ${(props) => props.color};
   cursor: pointer;
 
+  @media (max-width: 940px) {
+    font-size: 80px;
+  }
+
   @media (max-width: 820px) {
-    font-size: 96px;
+    font-size: 72px;
   }
 
-  @media (max-width: 700px) {
-    font-size: 64px;
-  }
-
-  @media (max-width: 540px) {
+  @media (max-width: 654px) {
     font-size: 48px;
   }
 `;
@@ -108,16 +95,16 @@ export const TopRightMottoText = styled.p`
   font-size: 32px;
   color: ${(props) => props.color};
 
+  @media (max-width: 940px) {
+    font-size: 24px;
+  }
+
   @media (max-width: 820px) {
     font-size: 16px;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 654px) {
     font-size: 12px;
-  }
-
-  @media (max-width: 540px) {
-    font-size: 8px;
   }
 `;
 
@@ -136,15 +123,15 @@ export const Paragraph = styled.p`
   letter-spacing: 0.05em;
   color: ${(props) => props.color};
 
+  @media (max-width: 960px) {
+    font-size: 20px;
+  }
+
   @media (max-width: 820px) {
-    font-size: 32px;
-  }
-
-  @media (max-width: 700px) {
-    font-size: 24px;
-  }
-
-  @media (max-width: 540px) {
     font-size: 16px;
+  }
+
+  @media (max-width: 654px) {
+    font-size: 12px;
   }
 `;
