@@ -34,16 +34,22 @@ const TeamPage = (props) => {
       switch (id) {
         case "0":
           setIcon0(false);
+          break
         case "1":
           setIcon1(false);
+          break
         case "2":
           setIcon2(false);
+          break
         case "3":
           setIcon3(false);
+          break
         case "4":
           setIcon4(false);
+          break
         case "5":
           setIcon5(false);
+          break;
       }
       return;
     }
@@ -51,16 +57,22 @@ const TeamPage = (props) => {
     switch (id) {
       case "0":
         setIcon0(true);
+        break
       case "1":
         setIcon1(true);
+        break
       case "2":
         setIcon2(true);
+        break
       case "3":
         setIcon3(true);
+        break
       case "4":
         setIcon4(true);
+        break
       case "5":
         setIcon5(true);
+        break
     }
   };
 
