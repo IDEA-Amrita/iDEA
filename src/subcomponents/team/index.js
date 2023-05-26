@@ -26,6 +26,7 @@ import {
   ExpandableSectionContainer,
   ExpandableSection,
   ExpandableInnerContainer,
+  TeamDropDownContainer
 } from "./styles/team";
 
 export default function Team({ children, ...restProps }) {
@@ -53,6 +54,15 @@ Team.MentorSectionContainer = function TeamMentorSectionContainer({
 }) {
   return (
     <MentorSectionContainer {...restProps}>{children}</MentorSectionContainer>
+  );
+};
+
+Team.TeamDropDownContainer = function TeamTeamDropDownContainer({
+  children,
+  ...restProps
+}) {
+  return (
+    <TeamDropDownContainer {...restProps}>{children}</TeamDropDownContainer>
   );
 };
 

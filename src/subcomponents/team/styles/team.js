@@ -293,7 +293,7 @@ export const ExpandableSectionContainer = styled.div`
 `;
 
 export const ExpandableSection = styled.div`
-  height: 10%;
+  height: 12%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -309,6 +309,21 @@ export const ExpandableSection = styled.div`
   }
 `;
 
+export const TeamDropDownContainer = styled.div`
+  height: 24%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  padding-right: 0 !important;
+  box-shadow: 0px 4px 8px ${(props) => props.isLight ? ("rgba(0, 0, 0, 0.25)") : "rgba(255, 255, 255, 0.25)"};
+  border-radius: 4px;
+  * {
+    margin-left: 5%;
+  }
+  display: none;
+`;
+
 export const ExpandableInnerContainer = styled.div`
   height: 100%;
   width: 100%;
@@ -319,7 +334,7 @@ export const ExpandableInnerContainer = styled.div`
 `;
 
 export const OtherTeamsContainer = styled.div`
-  height: 100%;
+  height: 64%;
   width: 84%;
   display: flex;
   flex-direction: column;
