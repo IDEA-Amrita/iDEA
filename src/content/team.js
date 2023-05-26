@@ -167,7 +167,7 @@ const TeamPage = (props) => {
                         transition: "600ms ease-in-out",
                       }}
                     >
-                      Dhanya N D
+                       Dr. Dhanya N D
                     </Team.SubTitle>
                     <Team.Designation
                       ref={ref}
@@ -203,7 +203,7 @@ const TeamPage = (props) => {
                         transition: "600ms ease-in-out",
                       }}
                     >
-                      Guruprakash
+                      Dr. Guruprakash
                     </Team.SubTitle>
                     <Team.Designation
                       ref={ref}
@@ -224,37 +224,37 @@ const TeamPage = (props) => {
         </Team>
         <Team.OtherTeamsContainer>
           <Team.ExpandableSectionContainer>
-            <Team.ExpandableSection>
+            <Team.ExpandableSection isLight={props.isLight}>
               <Team.ExpandableInnerContainer>
                 ADVISORS
                 <BsArrowUpRight />
               </Team.ExpandableInnerContainer>
             </Team.ExpandableSection>
-            <Team.ExpandableSection>
+            <Team.ExpandableSection isLight={props.isLight}>
               <Team.ExpandableInnerContainer>
                 MANAGEMENT & OUTREACH
                 <BsArrowUpRight />
               </Team.ExpandableInnerContainer>
             </Team.ExpandableSection>
-            <Team.ExpandableSection>
+            <Team.ExpandableSection isLight={props.isLight}>
               <Team.ExpandableInnerContainer>
                 IDEATION
                 <BsArrowUpRight />
               </Team.ExpandableInnerContainer>
             </Team.ExpandableSection>
-            <Team.ExpandableSection>
+            <Team.ExpandableSection isLight={props.isLight}>
               <Team.ExpandableInnerContainer>
                 INTERNAL DEVELOPMENT
                 <BsArrowUpRight />
               </Team.ExpandableInnerContainer>
             </Team.ExpandableSection>
-            <Team.ExpandableSection>
+            <Team.ExpandableSection isLight={props.isLight}>
               <Team.ExpandableInnerContainer>
                 HUMAN RESOURCES
                 <BsArrowUpRight />
               </Team.ExpandableInnerContainer>
             </Team.ExpandableSection>
-            <Team.ExpandableSection>
+            <Team.ExpandableSection isLight={props.isLight}>
               <Team.ExpandableInnerContainer>
                 CURATION
                 <BsArrowUpRight />
