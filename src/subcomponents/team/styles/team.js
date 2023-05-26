@@ -4,10 +4,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   height: auto;
-  width: 100%;
+  width: 84%;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
   margin-left: 12%;
   margin-top: 8%;
 
@@ -25,7 +25,6 @@ export const Container = styled.div`
   @media (max-width: 654px) {
     margin-top: 24%;
   }
-
 `;
 
 export const Title = styled.h1`
@@ -45,6 +44,80 @@ export const Title = styled.h1`
 
   @media (max-width: 654px) {
     font-size: 24px;
+  }
+`;
+
+export const Paragraph = styled.p`
+  font-family: "PP Neue Machina";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.5em;
+  letter-spacing: 0.05em;
+  color: ${(props) => props.color};
+  cursor: pointer;
+
+  @media (max-width: 960px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 820px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 654px) {
+    font-size: 14px;
+  }
+`;
+
+export const MentorSectionContainer = styled.div`
+  height: auto;
+  width: 44%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const MentorTitle = styled.h1`
+  align-self: flex-start;
+  font-family: "PP Neue Machina";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: ${(props) => props.color};
+  cursor: pointer;
+
+  @media (max-width: 960px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 820px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 654px) {
+    font-size: 14px;
+  }
+`;
+
+export const MentorOuterContainer = styled.div`
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 2%;
+`;
+
+export const MentorInnerContainer = styled.div`
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2%;
+
+  &:nth-child(1) {
+    margin: 0 5% 0 0;
   }
 `;
 
@@ -166,6 +239,7 @@ export const SubTitle = styled.h2`
 export const Designation = styled.h2`
   position: relative;
   left: 4%;
+  margin-right: 0 !important;
   margin-bottom: 0 !important;
   font-family: "PP Neue Machina";
   font-style: normal;
@@ -210,13 +284,46 @@ export const About = styled.p`
 
 /* OTHER TEAMS */
 
-export const OtherTeamsContainer = styled.div`
+export const ExpandableSectionContainer = styled.div`
+  height: 100%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const ExpandableSection = styled.div`
+  height: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 2%;
+  box-shadow: 0px 4px 8px ${(props) => props.isLight ? "rgba(0, 0, 0, 0.25)" : "rgba(255, 255, 255, 0.25)"};
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 1500ms ease-in-out;
+  margin-bottom: 0.1%;
+  &:hover {
+    transform: scale(1.02);
+    transition: 1500ms ease-in-out;
+  }
+`;
+
+export const ExpandableInnerContainer = styled.div`
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
-  margin-top: 5%;
+  align-items: center;
+  justify-content: space-between;
+`;
 
+export const OtherTeamsContainer = styled.div`
+  height: 100%;
+  width: 84%;
+  display: flex;
+  flex-direction: column;
+  margin: 5% 0 0 12% !important;
   @media (max-width: 654px) {
     margin-top: 10%;
   }
