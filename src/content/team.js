@@ -30,9 +30,6 @@ const TeamPage = (props) => {
     const element = document.getElementById(id);
     if (element.style.display === "grid") {
       element.style.display = "none";
-      element.children.forEach((child) => {
-        child.style.visibility = "hidden";
-      });
       switch (id) {
         case "0":
           setIcon0(false);
@@ -56,7 +53,6 @@ const TeamPage = (props) => {
       return;
     }
     element.style.display = "grid";
-    element.style.visibility = "visible";
     switch (id) {
       case "0":
         setIcon0(true);

@@ -141,6 +141,18 @@ export const OnHoverContainer = styled.div`
   background-color: ${(props) => props.backgroundColor};
   color: ${(props) => props.color};
   border: 1px solid ${(props) => props.backgroundColor};
+
+  @media (max-width: 820px) {
+    height: 28%;
+  }
+
+  @media (max-width: 654px) {
+    height: 24%;
+  }
+
+  @media (max-width: 540px) {
+    height: 20%;
+  }
 `;
 
 export const OnHoverInnerContainer = styled.div`
@@ -169,6 +181,23 @@ export const OnHoverTitle = styled.h3`
   font-family: "PP Neue Machina";
   font-style: normal;
   font-weight: bold;
+
+
+  @media (max-width: 820px) {
+    font-size: 26px;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 654px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 540px) {
+    font-size: 14px;
+  }
 `;
 
 export const OnHoverImage = styled.img`
@@ -183,6 +212,22 @@ export const OnHoverSubTitle = styled.h4`
   font-family: "PP Neue Machina";
   font-style: normal;
   font-weight: bold;
+
+  @media (max-width: 820px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 654px) {
+    font-size: 10px;
+  }
+
+  @media (max-width: 540px) {
+    font-size: 8px;
+  }
 `;
 
 export const OnHoverParagraph = styled.p`
@@ -190,4 +235,19 @@ export const OnHoverParagraph = styled.p`
   font-family: "PP Neue Machina";
   font-style: normal;
   margin: 0;
+
+  @media (max-width: 820px) {
+    font-size: 14px;
+  }
+  @media (max-width: 750px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 654px) {
+    font-size: 10px;
+  }
+
+  @media (max-width: 540px) {
+    font-size: 8px;
+  }
 `;
