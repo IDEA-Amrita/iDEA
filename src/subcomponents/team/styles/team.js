@@ -58,15 +58,15 @@ export const Paragraph = styled.p`
   cursor: pointer;
 
   @media (max-width: 960px) {
-    font-size: 18px;
-  }
-
-  @media (max-width: 820px) {
     font-size: 16px;
   }
 
+  @media (max-width: 820px) {
+    font-size: 12px;
+  }
+
   @media (max-width: 654px) {
-    font-size: 14px;
+    font-size: 8px;
   }
 `;
 
@@ -118,6 +118,11 @@ export const MentorInnerContainer = styled.div`
 
   &:nth-child(1) {
     margin: 0 5% 0 0;
+  }
+
+  @media (max-width: 1364px) {
+    flex-direction: column;
+    margin: 0 0 2% 0; 
   }
 `;
 
@@ -220,20 +225,20 @@ export const SubTitle = styled.h2`
   font-family: "PP Neue Machina";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  color: ${(props) => props.color};
+  font-size: 20px;
+  color: ${(props) => props.color} !important;
 
 
   @media (max-width: 820px) {
-    font-size: 20px;
-  }
-
-  @media (max-width: 654px) {
     font-size: 16px;
   }
 
+  @media (max-width: 654px) {
+    font-size: 12px;
+  }
+
   @media (max-width: 540px) {
-    font-size: 14px;
+    font-size: 8px;
   }
 `;
 export const Designation = styled.h2`
@@ -245,7 +250,7 @@ export const Designation = styled.h2`
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  color: ${(props) => props.color};
+  color: ${(props) => props.color} !important;
 
   @media (max-width: 820px) {
     font-size: 14px;
@@ -301,11 +306,10 @@ export const ExpandableSection = styled.div`
   box-shadow: 0px 4px 8px ${(props) => props.isLight ? "rgba(0, 0, 0, 0.25)" : "rgba(255, 255, 255, 0.25)"};
   border-radius: 4px;
   cursor: pointer;
-  transition: 1500ms ease-in-out;
   margin-bottom: 0.1%;
   &:hover {
     transform: scale(1.02);
-    transition: 1500ms ease-in-out;
+    transition: 500ms ease-in-out;
   }
 `;
 
