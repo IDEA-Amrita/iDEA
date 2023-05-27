@@ -33,11 +33,12 @@ export const ProjectsContentContainer = styled.div`
 export const DescriptionContainer = styled.div`
   margin-right: 2%;
   height: 100%;
+  max-height: 100%;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 30px 10px;
+  padding: 38px 8px;
   position: relative;
   border-left: 1px solid #B5B5B5;
   border-right: 1px solid #B5B5B5;
@@ -63,12 +64,186 @@ export const DescriptionContainer = styled.div`
   }
 `;
 
+export const DescriptionHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 35%;
+`
+
+export const DescriptionHeaderImage = styled.img`
+  width: 45%;
+  height: 100%;
+  object-fit: cover;
+  margin-right: 10px;
+`
+
+export const DescriptionHeaderContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  height: 100%;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+`
+
+export const DescriptionContent = styled.div`
+  margin-top: 3%;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 75%;
+  overflow-y: scroll;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`
+
+export const BuiltUsing = styled.h2`
+  margin-top: 2%;
+  margin-bottom: 0;
+  font-family: "PP Neue Machina", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  color: ${(props) => props.color};
+  cursor: pointer;
+
+  @media (max-width: 820px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 654px) {
+    font-size: 16px;
+  }
+`;
+
+export const TagBubbleContainer = styled.div`
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+`
+
+export const TagBubble = styled.div`
+  display: flex;
+  padding: 4px 16px;
+  margin: 4px;
+  font-size: 16px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: ${(props) => props.color || "#FFD9E9"};
+  color: ${(props) => props.textColor || "#6C0832"};
+  border-radius: 16px;
+`
+
+export const DescriptionTitle = styled.h1`
+  font-family: "PP Neue Machina", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  color: ${(props) => props.color};
+  cursor: pointer;
+
+  @media (max-width: 820px) {
+    font-size: 44px;
+  }
+
+  @media (max-width: 654px) {
+    font-size: 32px;
+  }
+`;
+
+export const ProjectDescription = styled.p`
+  font-style: normal;
+  font-weight: 200;
+  font-size: 20px;
+  color: ${(props) => props.color};
+
+  @media (max-width: 820px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 654px) {
+    font-size: 16px;
+  }
+
+  text-align: justify;
+  text-justify: inter-word;
+`;
+
+export const ContributorName = styled.h3`
+  font-style: normal;
+  font-weight: 200;
+  font-size: 20px;
+  color: ${(props) => props.color};
+  cursor: pointer;
+
+  @media (max-width: 820px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 654px) {
+    font-size: 16px;
+  }
+`
+
+export const Date = styled.h4`
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 16px;
+  color: ${(props) => props.color};
+  cursor: pointer;
+
+  @media (max-width: 820px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 654px) {
+    font-size: 12px;
+  }
+`
+
 export const ProjectListContainer = styled.div`
   height: 100%;
   flex: 1;
+  max-width: 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+`;
+
+export const ProjectFrameworks = styled.p`
+  padding: 0;
+  margin: 0;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 20px;
+  color: ${(props) => props.color};
+
+  @media (max-width: 820px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 654px) {
+    font-size: 16px;
+  }
+
+  text-align: justify;
+  text-justify: inter-word;
 `;
 
 export const Title = styled.h1`
@@ -173,6 +348,7 @@ export const ListItemTitle = styled.h3`
 `
 
 export const ListItemArrowContainer = styled.div`
+  margin-right: 10px;
   width: 24px;
   height: 24px;
   padding: 3px;
@@ -182,6 +358,4 @@ export const ListItemArrowContainer = styled.div`
   color: white;
   background-color: ${(props) => props.color};
 `
-
-//Left Container Widgets:
 
