@@ -26,6 +26,7 @@ const Projects = (props) => {
         <Navbar.TopContainer>
           <Navbar.TimelineBarLeft>
             <Navbar.Circle
+              onClick={props.about}
               style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
             />
             <Navbar.Stick
@@ -59,6 +60,7 @@ const Projects = (props) => {
               }}
             />
             <Navbar.Circle
+              onClick={props.contribute}
               style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
             />
             <Navbar.Stick

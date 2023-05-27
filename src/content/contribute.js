@@ -12,7 +12,7 @@ import {
 import useElementOnScreen from "../animations";
 import { SocialsText } from "../subcomponents/navbar/styles/navbar";
 
-const AboutPage = (props) => {
+const Contribute = (props) => {
   // const onScroll = (event) => {
   //   event.preventDefault();
   //   console.log("something")
@@ -26,17 +26,11 @@ const AboutPage = (props) => {
         <Navbar.TopContainer>
           <Navbar.TimelineBarLeft>
             <Navbar.Circle
-              size={true}
+              onClick={props.about}
               style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
             />
             <Navbar.Stick
-              ref={ref}
-              style={{
-                width: onScreen ? "1%" : "0",
-                translate: onScreen ? "none" : "0 10rem",
-                transition: "1000ms ease-in-out",
-                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
-              }}
+              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
             />
             <Navbar.Circle
               style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
@@ -60,7 +54,7 @@ const AboutPage = (props) => {
               style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
             />
             <Navbar.Circle
-              onClick={props.contribute}
+              size={true}
               style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
             />
             <Navbar.Stick
@@ -107,48 +101,11 @@ const AboutPage = (props) => {
               />
             </Navbar.SocialsTopLeftInnerContainer>
           </Navbar.SocialsTopLeft>
-          <Navbar.TopTitle>
-            {/* <AiOutlineArrowDown onClick={props.down} /> */}
-            <AiOutlineArrowUp
-              onClick={props.up}
-              style={{ cursor: "pointer" }}
-            />
-          </Navbar.TopTitle>
         </Navbar.TopContainer>
-        <Generic.InnerContainer>
-          {/* <Generic.CircleStickLineMapContainer>
-            <Generic.Circle color={"#000"} />
-            <Generic.Stick color={"#000"} />
-          </Generic.CircleStickLineMapContainer> */}
-          <Generic.Title
-            ref={ref}
-            style={{
-              opacity: onScreen ? 1 : 0,
-              translate: onScreen ? "none" : "0 2rem",
-              transition: "1000ms ease-in-out",
-            }}
-          >
-            About
-          </Generic.Title>
-          <Generic.ParagraphContainer>
-            <Generic.Paragraph
-              ref={ref}
-              style={{
-                opacity: onScreen ? 1 : 0,
-                translate: onScreen ? "none" : "0 2rem",
-                transition: "1000ms ease-in-out",
-              }}
-            >
-              iDEA is a student driven community that aims to brings{" "}
-              <u>ideas</u> to life. It hopes to achieve this by helping students
-              develop and showcase their ideas through community support.
-            </Generic.Paragraph>
-          </Generic.ParagraphContainer>
-        </Generic.InnerContainer>
-        <Generic.Image src="/images/frame.png" />
+        <Generic.InnerContainer></Generic.InnerContainer>
       </Generic>
     </>
   );
 };
 
-export default AboutPage;
+export default Contribute;
