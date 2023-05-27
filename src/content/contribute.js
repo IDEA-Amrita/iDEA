@@ -26,6 +26,7 @@ const Contribute = (props) => {
         <Navbar.TopContainer>
           <Navbar.TimelineBarLeft>
             <Navbar.Circle
+              onClick={props.about}
               style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
             />
             <Navbar.Stick

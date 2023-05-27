@@ -32,23 +32,23 @@ const TeamPage = (props) => {
       element.style.display = "none";
       element.children.forEach((child) => {
         child.style.visibility = "hidden";
-      })
+      });
       switch (id) {
         case "0":
           setIcon0(false);
-          break
+          break;
         case "1":
           setIcon1(false);
-          break
+          break;
         case "2":
           setIcon2(false);
-          break
+          break;
         case "3":
           setIcon3(false);
-          break
+          break;
         case "4":
           setIcon4(false);
-          break
+          break;
         case "5":
           setIcon5(false);
           break;
@@ -60,22 +60,22 @@ const TeamPage = (props) => {
     switch (id) {
       case "0":
         setIcon0(true);
-        break
+        break;
       case "1":
         setIcon1(true);
-        break
+        break;
       case "2":
         setIcon2(true);
-        break
+        break;
       case "3":
         setIcon3(true);
-        break
+        break;
       case "4":
         setIcon4(true);
-        break
+        break;
       case "5":
         setIcon5(true);
-        break
+        break;
     }
   };
 
@@ -87,6 +87,7 @@ const TeamPage = (props) => {
         <Navbar.TopContainer>
           <Navbar.TimelineBarLeft>
             <Navbar.Circle
+              onClick={props.about}
               style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
             />
             <Navbar.Stick
@@ -120,6 +121,7 @@ const TeamPage = (props) => {
               style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
             />
             <Navbar.Circle
+              onClick={props.contribute}
               style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
             />
             <Navbar.Stick

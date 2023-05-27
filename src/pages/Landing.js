@@ -32,6 +32,7 @@ function Landing() {
           roadmap={() => scroll(2)}
           team={() => scroll(3)}
           projects={() => scroll(4)}
+          contribute={() => scroll(5)}
           isLight={isLight}
           setIsLight={setIsLight}
         />
@@ -42,6 +43,7 @@ function Landing() {
           roadmap={() => scroll(2)}
           team={() => scroll(3)}
           projects={() => scroll(4)}
+          contribute={() => scroll(5)}
           isLight={isLight}
           setIsLight={setIsLight}
         />
@@ -51,6 +53,7 @@ function Landing() {
           about={() => scroll(1)}
           team={() => scroll(3)}
           projects={() => scroll(4)}
+          contribute={() => scroll(5)}
           isLight={isLight}
           setIsLight={setIsLight}
         />
@@ -60,6 +63,7 @@ function Landing() {
           about={() => scroll(1)}
           roadmap={() => scroll(2)}
           projects={() => scroll(4)}
+          contribute = {() => scroll(5)}
           isLight={isLight}
           setIsLight={setIsLight}
         />
@@ -69,6 +73,7 @@ function Landing() {
           about={() => scroll(1)}
           roadmap={() => scroll(2)}
           team={() => scroll(3)}
+          contribute={() => scroll(5)}
           isLight={isLight}
           setIsLight={setIsLight}
         />
