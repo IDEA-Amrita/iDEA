@@ -77,28 +77,7 @@ export default function Nav(props) {
             Documentation
           </Navbar.Link>
           <Navbar.Link color={isLight ? "#000" : "#fff"}>
-            <CDropdown
-              dark
-              variant="nav-item"
-              style={{ listStyleType: "none" }}
-              direction="center"
-            >
-              <CDropdownToggle>Socials</CDropdownToggle>
-              <CDropdownMenu>
-                <CDropdownItem href="#">
-                  <AiOutlineInstagram /> Instagram
-                </CDropdownItem>
-                <CDropdownItem href="#">
-                  <AiOutlineTwitter /> Twitter
-                </CDropdownItem>
-                <CDropdownItem href="#">
-                  <FaFacebook /> Facebook
-                </CDropdownItem>
-                <CDropdownItem href="#">
-                  <AiOutlineMedium /> Medium
-                </CDropdownItem>
-              </CDropdownMenu>
-            </CDropdown>
+            Contribute
           </Navbar.Link>
         </Navbar.CenterContainer>
       </Navbar.Center>
