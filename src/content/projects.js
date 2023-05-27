@@ -83,7 +83,8 @@ const ProjectsPage = (props) => {
         <Navbar.TopContainer>
           <Navbar.TimelineBarLeft>
             <Navbar.Circle
-              style={{backgroundColor: props.isLight ? "#000" : "#fff"}}
+              onClick={props.about}
+              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
             />
             <Navbar.Stick
               style={{border: `1px solid ${props.isLight ? "#000" : "#fff"}`}}
@@ -116,7 +117,8 @@ const ProjectsPage = (props) => {
               }}
             />
             <Navbar.Circle
-              style={{backgroundColor: props.isLight ? "#000" : "#fff"}}
+              onClick={props.contribute}
+              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
             />
             <Navbar.Stick
               style={{border: `1px solid ${props.isLight ? "#000" : "#fff"}`}}
