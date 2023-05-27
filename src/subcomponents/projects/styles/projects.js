@@ -145,8 +145,8 @@ export const TagBubble = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: ${(props) => props.color || "#FFD9E9"};
-  color: ${(props) => props.textColor || "#6C0832"};
+  background-color: ${(props) => props.color};
+  color: ${(props) => props.textColor};
   border-radius: 16px;
 `
 
@@ -252,7 +252,7 @@ export const Title = styled.h1`
   font-weight: 400;
   font-size: 64px;
   width: min-content;
-  color: ${(props) => props.color || "#E0005E"};
+  color: ${(props) => props.color};
   cursor: pointer;
 
   @media (max-width: 820px) {
