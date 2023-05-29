@@ -13,16 +13,6 @@ import useElementOnScreen from "../animations";
 import { SocialsText } from "../subcomponents/navbar/styles/navbar";
 import styled from "styled-components";
 
-// Add the programming languages and tools list here
-const programmingLanguages = [
-  "JavaScript",
-  "Python",
-  "Java",
-  "C++",
-  "Ruby",
-  // Add more programming languages here
-];
-
 const Divider = styled.div`
   width: 1px;
   height: 100%;
@@ -117,381 +107,270 @@ const LabelNumber = styled.span`
   font-weight: bold;
 `;
 
-const SubmitButton = styled.button`
-  border: none;
-  outline: none;
-  padding: 1rem 2rem;
+const SkillPill = styled.div`
+  display: inline-block;
   background-color: ${(props) => (props.isLight ? "#000" : "#fff")};
   color: ${(props) => (props.isLight ? "#fff" : "#000")};
+  border-radius: 1rem;
+  padding: 0.3rem 0.7rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
   font-family: "Raleway";
-  font-weight: 400;
-  font-size: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-
-  &:hover {
-    background-color: ${(props) => (props.isLight ? "#333" : "#ddd")};
-  }
 `;
 
 const SkillPillsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  margin-top: 0.5rem;
 `;
 
-const SkillPill = styled.div`
-  background-color: ${(props) => (props.isLight ? "#000" : "#fff")};
-  color: ${(props) => (props.isLight ? "#fff" : "#000")};
-  border: 1px solid ${(props) => (props.isLight ? "#000" : "#fff")};
-  border-radius: 20px;
-  padding: 0.5rem 1rem;
-  font-size: 16px;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+const Contribute = (props) => {
+  const ref = useRef(null);
+  const onScreen = useElementOnScreen(ref);
+  const [skills, setSkills] = useState([]);
+  const [newSkill, setNewSkill] = useState("");
 
-  &:hover {
-    background-color: ${(props) => (props.isLight ? "#333" : "#ddd")};
+  const handleSkillChange = (event) => {
+    setNewSkill(event.target.value);
+  };
+
+const handleSkillAdd = (event) => {
+  event.preventDefault();
+  if (newSkill.trim() !== "") {
+    setSkills([...skills, newSkill.trim()]);
+    setNewSkill("");
   }
-`;
-
-const SkillsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const SkillsInputContainer = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-`;
-
-const SkillInput = styled.input`
-  border: none;
-  border-bottom: 1px solid ${(props) => (props.isLight ? "#000" : "#fff")};
-  outline: none;
-  padding: 0.5rem 0;
-  font-family: "Raleway";
-  width: 100%;
-  font-size: 20px;
-  line-height: 23px;
-  color: ${(props) => (props.isLight ? "#000" : "#fff")};
-  background-color: transparent;
-  font-style: normal;
-`;
-
-const SkillSuggestions = styled.div`
-  position: absolute;
-  background-color: ${(props) => (props.isLight ? "#f9f9f9" : "#222")};
-  border-radius: 4px;
-  border: 1px solid ${(props) => (props.isLight ? "#ddd" : "#444")};
-  margin-top: 4px;
-  width: 100%;
-  max-height: 120px;
-  overflow-y: auto;
-  z-index: 1000;
-`;
-
-const SkillSuggestion = styled.div`
-  padding: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: ${(props) => (props.isLight ? "#ddd" : "#444")};
-  }
-`;
-
-const ContributionSection = styled.section`
-  background-color: ${(props) => (props.isLight ? "#f9f9f9" : "#222")};
-  padding: 3rem 1rem;
-  color: ${(props) => (props.isLight ? "#000" : "#fff")};
-`;
-
-const FormSection = styled.section`
-  padding: 3rem 1rem;
-  color: ${(props) => (props.isLight ? "#000" : "#fff")};
-`;
-
-const ScrollToTopButton = styled.button`
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background-color: ${(props) => (props.isLight ? "#000" : "#fff")};
-  color: ${(props) => (props.isLight ? "#fff" : "#000")};
-  border: none;
-  outline: none;
-  padding: 0.5rem;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: ${(props) => (props.isLight ? "#333" : "#ddd")};
-  }
-`;
-
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
-const contribute = () => {
-  const [isLightTheme, setIsLightTheme] = useState(true);
-  const [skills, setSkills] = useState([]);
-  const [isSkillsSuggestionsVisible, setIsSkillsSuggestionsVisible] =
-    useState(false);
-  const [skillInputValue, setSkillInputValue] = useState("");
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
-  const skillsInputRef = useRef();
-  const skillsSuggestionsRef = useRef();
-
-  const handleSkillsInputChange = (e) => {
-    const value = e.target.value;
-    setSkillInputValue(value);
-    setIsSkillsSuggestionsVisible(value.trim().length > 0);
+  const handleSkillRemove = (skill) => {
+    setSkills(skills.filter((s) => s !== skill));
   };
-
-  const handleSkillInputKeyDown = (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      addSkill(skillInputValue);
-    } else if (e.key === "Backspace" && skillInputValue === "") {
-      removeSkill(skills.length - 1);
-    }
-  };
-
-  const handleSkillSuggestionClick = (suggestion) => {
-    addSkill(suggestion);
-    skillsInputRef.current.focus();
-  };
-
-  const addSkill = (skill) => {
-    if (skill.trim().length > 0 && !skills.includes(skill)) {
-      setSkills([...skills, skill]);
-      setSkillInputValue("");
-      setIsSkillsSuggestionsVisible(false);
-    }
-  };
-
-  const removeSkill = (index) => {
-    const updatedSkills = [...skills];
-    updatedSkills.splice(index, 1);
-    setSkills(updatedSkills);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsFormSubmitted(true);
-    // Perform form submission logic here
-  };
-
-  const handleToggleTheme = () => {
-    setIsLightTheme(!isLightTheme);
-  };
-
-  // Use the useElementOnScreen hook to trigger animations
-  const [elementRef, isElementOnScreen] = useElementOnScreen({
-    threshold: 0.1,
-  });
-
   return (
     <>
-      <Navbar>
-        <Generic>
-          <SocialsText>
-            <a href="#">
-              <AiOutlineTwitter />
-            </a>
-            <a href="#">
-              <AiOutlineInstagram />
-            </a>
-            <a href="#">
-              <AiOutlineMedium />
-            </a>
-            <a href="#">
-              <FaFacebook />
-            </a>
-            <a href="#">
-              <AiFillYoutube />
-            </a>
-            <a href="#">
-              <AiFillLinkedin />
-            </a>
-          </SocialsText>
-          <div ref={elementRef}>
-            <h1>
-              <img
-                src={isLightTheme ? "/logo_dark.png" : "/logo_light.png"}
-                alt="logo"
-              />
-            </h1>
-          </div>
-          <div>
-            <label htmlFor="themeSwitch">Toggle Theme:</label>
-            <input
-              type="checkbox"
-              id="themeSwitch"
-              checked={!isLightTheme}
-              onChange={handleToggleTheme}
+      <Generic>
+        <Navbar.TopContainer>
+          <Navbar.TimelineBarLeft>
+            <Navbar.Circle
+              onClick={props.about}
+              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
             />
-          </div>
-        </Generic>
-      </Navbar>
-      <Contribution>
-        <ContributionSection isLight={isLightTheme}>
-          <h2>Contribute to OpenAI</h2>
-          <p>
-            OpenAI is looking for talented individuals to contribute to our
-            projects. If you are passionate about AI and want to be part of our
-            team, fill out the form below and tell us about your skills and
-            experience. We will review your contributelication and get back to you as
-            soon as possible.
-          </p>
-        </ContributionSection>
-      </Contribution>
-      <FormsContainer>
-        <LeftColumn>
-          <FormSection isLight={isLightTheme}>
-            <h3>Personal Information</h3>
-            <form onSubmit={handleSubmit}>
-              <FormGroup>
-                <FormLabel htmlFor="fullName">Full Name</FormLabel>
-                <FormInput
-                  type="text"
-                  id="fullName"
-                  isLight={isLightTheme}
-                  required
-                />
-              </FormGroup>
-              <FormGroup>
-                <FormLabel htmlFor="email">Email</FormLabel>
-                <FormInput
-                  type="email"
-                  id="email"
-                  isLight={isLightTheme}
-                  required
-                />
-              </FormGroup>
-              <FormGroup>
-                <FormLabel htmlFor="phone">Phone Number</FormLabel>
-                <FormInput
-                  type="tel"
-                  id="phone"
-                  isLight={isLightTheme}
-                  required
-                />
-              </FormGroup>
-            </form>
-          </FormSection>
-        </LeftColumn>
-        <Divider isLight={isLightTheme} />
-        <RightColumn>
-          <FormSection isLight={isLightTheme}>
-            <h3>Skills and Experience</h3>
-            <form onSubmit={handleSubmit}>
-              <SkillsContainer>
-                <SkillsInputContainer>
-                  <FormLabel htmlFor="skills">Skills</FormLabel>
-                  <SkillInput
-                    type="text"
-                    id="skills"
-                    value={skillInputValue}
-                    onChange={handleSkillsInputChange}
-                    onKeyDown={handleSkillInputKeyDown}
-                    ref={skillsInputRef}
-                    isLight={isLightTheme}
-                  />
-                  {isSkillsSuggestionsVisible && (
-                    <SkillSuggestions
-                      ref={skillsSuggestionsRef}
-                      isLight={isLightTheme}
-                    >
-                      {programmingLanguages
-                        .filter((language) =>
-                          language
-                            .toLowerCase()
-                            .startsWith(skillInputValue.toLowerCase())
-                        )
-                        .map((language) => (
-                          <SkillSuggestion
-                            key={language}
-                            onClick={() => handleSkillSuggestionClick(language)}
+            <Navbar.Stick
+              style={{
+                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+              }}
+            />
+            <Navbar.Circle
+              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              onClick={props.roadmap}
+            />
+            <Navbar.Stick
+              style={{
+                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+              }}
+            />
+            <Navbar.Circle
+              onClick={props.team}
+              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+            />
+            <Navbar.Stick
+              style={{
+                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+              }}
+            />
+            <Navbar.Circle
+              onClick={props.projects}
+              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+            />
+            <Navbar.Stick
+              style={{
+                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+              }}
+            />
+            <Navbar.Circle
+              size={true}
+              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+            />
+            <Navbar.Stick
+              style={{
+                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+              }}
+            />
+          </Navbar.TimelineBarLeft>
+          <Navbar.SocialsTopLeft
+            style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+          >
+            <SocialsText
+              ref={ref}
+              style={{
+                opacity: onScreen ? 1 : 0,
+                transform: onScreen ? "none" : "0 2rem",
+                transition: "600ms ease-in-out",
+                color: props.isLight ? "#fff" : "#000",
+              }}
+            >
+              iDEA
+            </SocialsText>
+            <Navbar.SocialsTopLeftInnerContainer
+              ref={ref}
+              style={{
+                opacity: onScreen ? 1 : 0,
+                transform: onScreen ? "none" : "0 2rem",
+                transition: "600ms ease-in-out",
+              }}
+            >
+              <AiOutlineInstagram
+                style={{ color: props.isLight ? "#fff" : "#000" }}
+              />
+              <AiOutlineTwitter
+                style={{ color: props.isLight ? "#fff" : "#000" }}
+              />
+              <AiOutlineMedium
+                style={{ color: props.isLight ? "#fff" : "#000" }}
+              />
+              <FaFacebook style={{ color: props.isLight ? "#fff" : "#000" }} />
+              <AiFillYoutube
+                style={{ color: props.isLight ? "#fff" : "#000" }}
+              />
+              <AiFillLinkedin
+                style={{ color: props.isLight ? "#fff" : "#000" }}
+              />
+            </Navbar.SocialsTopLeftInnerContainer>
+          </Navbar.SocialsTopLeft>
+        </Navbar.TopContainer>
+        <Contribution>
+          <Contribution.TopRightTitleContainer>
+            <Contribution.TopRightTitle
+              ref={ref}
+              style={{
+                opacity: onScreen ? 1 : 0,
+                transform: onScreen ? "none" : "translateY(2rem)",
+                transition: "1000ms ease-in-out",
+              }}
+            >
+              Contribute
+            </Contribution.TopRightTitle>
+          </Contribution.TopRightTitleContainer>
+          <Contribution.BodyContainer>
+            <Contribution.TopMiddleText
+              color={props.isLight ? "#000" : "#fff"}
+              ref={ref}
+              style={{
+                opacity: onScreen ? 1 : 0,
+                transform: onScreen ? "none" : "translateY(2rem)",
+                transition: "1000ms ease-in-out",
+              }}
+            >
+              Contribute by being an ideator or join us and help us help
+              ideators
+            </Contribution.TopMiddleText>
+            <div>
+              <FormsContainer>
+                <LeftColumn>
+                  <form>
+                    <FormLabel htmlFor="left-input">
+                      <LabelNumber>1 &rarr;</LabelNumber>
+                      What is the main objective or goal of your project idea?
+                    </FormLabel>
+                    <AdditionalTextContainer>
+                      <AdditionalText>Make your answer brief</AdditionalText>
+                    </AdditionalTextContainer>
+                    <FormInput
+                      type="text"
+                      id="left-input"
+                      isLight={props.isLight}
+                      placeholder="Type your answer here..."
+                    />
+                    {/* Additional form fields and submit button */}
+                  </form>
+                </LeftColumn>
+                <Divider isLight={props.isLight} />
+                <RightColumn>
+                  <form>
+                    <FormGroup>
+                      <div style={{ display: "flex", alignItems: "center" }}>
+                        <FormLabel htmlFor="full-name">
+                          Your full legal name
+                        </FormLabel>
+                        <FormLabel
+                          htmlFor="roll-number"
+                          style={{ marginLeft: "1rem" }}
+                        >
+                          Amrita roll number
+                        </FormLabel>
+                        <FormLabel
+                          htmlFor="department"
+                          style={{ marginLeft: "1rem" }}
+                        >
+                          Department
+                        </FormLabel>
+                      </div>
+                      <div style={{ display: "flex", alignItems: "center" }}>
+                        <FormInput
+                          type="text"
+                          id="full-name"
+                          isLight={props.isLight}
+                          placeholder="Enter your full name"
+                        />
+                        <FormInput
+                          type="text"
+                          id="roll-number"
+                          isLight={props.isLight}
+                          placeholder="Enter your roll number"
+                          style={{ marginLeft: "1rem" }}
+                        />
+                        <FormInput
+                          type="text"
+                          id="department"
+                          isLight={props.isLight}
+                          placeholder="Enter your department"
+                          style={{ marginLeft: "1rem" }}
+                        />
+                      </div>
+                    </FormGroup>
+                    <FormGroup>
+                      <FormLabel htmlFor="skills">
+                        Skills that define you
+                      </FormLabel>
+                      <FormInput
+                        id="skills"
+                        isLight={props.isLight}
+                        placeholder="Describe your skills"
+                        value={newSkill}
+                        onChange={handleSkillChange}
+                      />
+                      <SkillPillsContainer>
+                        {skills.map((skill, index) => (
+                          <SkillPill
+                            key={index}
+                            isLight={props.isLight}
+                            onClick={() => handleSkillRemove(skill)}
                           >
-                            {language}
-                          </SkillSuggestion>
+                            {skill}
+                          </SkillPill>
                         ))}
-                    </SkillSuggestions>
-                  )}
-                </SkillsInputContainer>
-                <FormGroup>
-                  <FormLabel htmlFor="experience">Experience</FormLabel>
-                  <FormTextArea
-                    id="experience"
-                    rows="4"
-                    isLight={isLightTheme}
-                    required
-                  ></FormTextArea>
-                </FormGroup>
-                <FormGroup>
-                  <FormLabel htmlFor="projects">Projects</FormLabel>
-                  <FormTextArea
-                    id="projects"
-                    rows="4"
-                    isLight={isLightTheme}
-                    required
-                  ></FormTextArea>
-                </FormGroup>
-                <FormGroup>
-                  <FormLabel htmlFor="contribution">
-                    How would you like to contribute to OpenAI?
-                  </FormLabel>
-                  <FormTextArea
-                    id="contribution"
-                    rows="4"
-                    isLight={isLightTheme}
-                    required
-                  ></FormTextArea>
-                </FormGroup>
-              </SkillsContainer>
-              <SkillPillsContainer>
-                {skills.map((skill, index) => (
-                  <SkillPill
-                    key={index}
-                    isLight={isLightTheme}
-                    onClick={() => removeSkill(index)}
-                  >
-                    {skill}
-                  </SkillPill>
-                ))}
-              </SkillPillsContainer>
-              <SubmitButton isLight={isLightTheme} type="submit">
-                Submit
-              </SubmitButton>
-            </form>
-          </FormSection>
-        </RightColumn>
-      </FormsContainer>
-      <ScrollToTopButton
-        isLight={isLightTheme}
-        onClick={scrollToTop}
-        style={{ display: isElementOnScreen ? "flex" : "none" }}
-      >
-        <AiOutlineArrowUp />
-      </ScrollToTopButton>
-
+                      </SkillPillsContainer>
+                    </FormGroup>
+                    <FormGroup>
+                      <FormLabel htmlFor="contribution">
+                        How do you think you can contribute to the club?
+                      </FormLabel>
+                      <FormInput
+                        id="contribution"
+                        isLight={props.isLight}
+                        placeholder="Describe your contribution"
+                        rows="6"
+                      />
+                    </FormGroup>
+                    {/* Additional form fields and submit button */}
+                  </form>
+                </RightColumn>
+              </FormsContainer>
+            </div>
+          </Contribution.BodyContainer>
+        </Contribution>
+      </Generic>
     </>
   );
 };
 
-export default contribute;
+export default Contribute;
