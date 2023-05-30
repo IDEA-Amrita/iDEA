@@ -1,251 +1,376 @@
+import React, { useRef, useState } from "react";
+import { Generic, Navbar, Contribution } from "../subcomponents";
+import { FaFacebook } from "react-icons/fa";
+import {
+  AiOutlineArrowUp,
+  AiOutlineInstagram,
+  AiOutlineTwitter,
+  AiOutlineMedium,
+  AiFillYoutube,
+  AiFillLinkedin,
+} from "react-icons/ai";
+import useElementOnScreen from "../animations";
+import { SocialsText } from "../subcomponents/navbar/styles/navbar";
 import styled from "styled-components";
-import { AiOutlineClose } from "react-icons/ai";
 
-export const Container = styled.div`
+const Divider = styled.div`
+  width: 1px;
+  height: 100%;
+  background-color: ${(props) => (props.isLight ? "#000" : "#fff")};
+  z-index: 999;
+  position: relative;
+`;
+
+const FormsContainer = styled.div`
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
   width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
 `;
 
-export const AngledBoxContainer = styled.div`
-  width: 12%;
-  height: auto;
-  margin: 2% 0 0 0;
-  transform: rotate(-12deg);
-  -webkit-transform: rotate(-12deg);
-  -ms-transform: rotate(-12deg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
-  background-color: ${(props) => props.backgroundColor};
-  color: ${(props) => props.color};
-  cursor: pointer;
-
-  p {
-    margin: 0;
-  }
+const LeftColumn = styled.div`
+  flex: 1;
+  padding: 0 1rem;
 `;
 
-export const MainContainer = styled.div`
-  height: 80%;
+const RightColumn = styled.div`
+  flex: 1;
+  padding: 0 1rem;
+`;
+
+const FormLabel = styled.label`
+  font-family: Raleway;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 0.5rem 0;
+  font-style: normal;
+`;
+
+const FormGroup = styled.div`
+  margin-bottom: 1rem;
+`;
+
+const FormInput = styled.input`
+  border: none;
+  border-bottom: 1px solid ${(props) => (props.isLight ? "#000" : "#fff")};
+  outline: none;
+  padding: 0.5rem 0;
+  font-family: "Raleway";
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const InnerContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  height: 100%;
-  margin: 0;
-`;
-
-export const TextDate = styled.p`
-  font-size: 24px;
-  font-family: "PP Neue Machina";
+  font-size: 20px;
+  line-height: 23px;
+  color: ${(props) => (props.isLight ? "#000" : "#fff")};
+  background-color: transparent;
   font-style: normal;
-
-  @media (max-width: 1524px) {
-    font-size: 20px;
-  }
-  @media (max-width: 1134px) {
-    font-size: 18px;
-  }
-  @media (max-width: 1020px) {
-    font-size: 16px;
-  }
-
-  @media (max-width: 920px) {
-    font-size: 14px;
-  }
-
-  @media (max-width: 820px) {
-    font-size: 12px;
-  }
-
-  @media (max-width: 750px) {
-    font-size: 10px;
-  }
-
-  @media (max-width: 654px) {
-    font-size: 8px;
-  }
 `;
 
-export const TextTitle = styled.p`
-  font-size: 32px;
-  font-family: "PP Neue Machina";
-  text-decoration: uppercase;
-  font-weight: bold;
-  padding: 0 10%;
-
-  @media (max-width: 1524px) {
-    font-size: 26px;
-  }
-  @media (max-width: 1343px) {
-    font-size: 24px;
-  }
-  @media (max-width: 1244px) {
-    font-size: 22px;
-  }
-
-  @media (max-width: 1134px) {
-    font-size: 20px;
-  }
-
-  @media (max-width: 1020px) {
-    font-size: 18px;
-  }
-
-  @media (max-width: 920px) {
-    font-size: 16px;
-  }
-
-  @media (max-width: 820px) {
-    font-size: 14px;
-  }
-
-  @media (max-width: 750px) {
-    font-size: 12px;
-  }
-
-  @media (max-width: 654px) {
-    font-size: 8px;
-  }
+const FormTextArea = styled.textarea`
+  border: none;
+  border-bottom: 1px solid ${(props) => (props.isLight ? "#000" : "#fff")};
+  outline: none;
+  padding: 0.5rem 0;
+  font-family: "Raleway";
+  width: 100%;
+  font-size: 20px;
+  line-height: 23px;
+  color: ${(props) => (props.isLight ? "#000" : "#fff")};
+  background-color: transparent;
+  font-style: normal;
+  resize: vertical;
 `;
 
-export const OnHoverContainer = styled.div`
+const AdditionalTextContainer = styled.div`
+  display: block;
+  align-items: center;
+`;
+
+const AdditionalText = styled.span`
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 80%;
-  height: 30%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  -webkit-transition: opacity 0.5s ease-in-out;
-  -moz-transition: opacity 0.5s ease-in-out;
-  transition: opacity 0.5s ease-in-out;
-  background-color: ${(props) => props.backgroundColor};
-  color: ${(props) => props.color};
-  border: 1px solid ${(props) => props.backgroundColor};
-
-  @media (max-width: 820px) {
-    height: 28%;
-  }
-
-  @media (max-width: 654px) {
-    height: 24%;
-  }
-
-  @media (max-width: 540px) {
-    height: 20%;
-  }
+  width: 154px;
+  height: 14px;
+  font-family: "Raleway";
+  font-style: italic;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 14px;
+  height: 23px;
+  left: 222px;
+  top: 460px;
+  color: #000000;
 `;
 
-export const OnHoverInnerContainer = styled.div`
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-left: 5%;
-  padding: 3%;
-`;
-
-export const CrossIcon = styled(AiOutlineClose)`
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 2%;
-  height: auto;
-  cursor: pointer;
-  color: ${(props) => props.color};
-  margin: 0.5%;
-  display: none;
-`;
-
-export const OnHoverTitle = styled.h3`
-  font-size: 32px;
-  font-family: "PP Neue Machina";
-  font-style: normal;
+const LabelNumber = styled.span`
+  margin-right: 0.5rem;
   font-weight: bold;
-
-  @media (max-width: 820px) {
-    font-size: 26px;
-  }
-
-  @media (max-width: 750px) {
-    font-size: 22px;
-  }
-
-  @media (max-width: 654px) {
-    font-size: 18px;
-  }
-
-  @media (max-width: 540px) {
-    font-size: 14px;
-  }
 `;
 
-export const OnHoverImage = styled.img`
-  width: 50%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+const SkillPill = styled.div`
+  display: inline-block;
+  background-color: ${(props) => (props.isLight ? "#000" : "#fff")};
+  color: ${(props) => (props.isLight ? "#fff" : "#000")};
+  border-radius: 1rem;
+  padding: 0.3rem 0.7rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+  font-family: "Raleway";
 `;
 
-export const OnHoverSubTitle = styled.h4`
-  font-size: 16px;
-  font-family: "PP Neue Machina";
-  font-style: normal;
-  font-weight: bold;
-
-  @media (max-width: 820px) {
-    font-size: 14px;
-  }
-
-  @media (max-width: 750px) {
-    font-size: 12px;
-  }
-
-  @media (max-width: 654px) {
-    font-size: 10px;
-  }
-
-  @media (max-width: 540px) {
-    font-size: 8px;
-  }
+const SkillPillsContainer = styled.div`
+  margin-top: 0.5rem;
 `;
 
-export const OnHoverParagraph = styled.p`
-  font-size: 16px;
-  font-family: "PP Neue Machina";
-  font-style: normal;
-  margin: 0;
+const Contribute = (props) => {
+  const ref = useRef(null);
+  const onScreen = useElementOnScreen(ref);
+  const [skills, setSkills] = useState([]);
+  const [newSkill, setNewSkill] = useState("");
 
-  @media (max-width: 820px) {
-    font-size: 14px;
-  }
-  @media (max-width: 750px) {
-    font-size: 12px;
-  }
+  const handleSkillChange = (event) => {
+    setNewSkill(event.target.value);
+  };
 
-  @media (max-width: 654px) {
-    font-size: 10px;
+const handleSkillAdd = (event) => {
+  event.preventDefault();
+  if (newSkill.trim() !== "") {
+    setSkills([...skills, newSkill.trim()]);
+    setNewSkill("");
   }
+};
 
-  @media (max-width: 540px) {
-    font-size: 8px;
-  }
-`;
+
+  const handleSkillRemove = (skill) => {
+    setSkills(skills.filter((s) => s !== skill));
+  };
+  return (
+    <>
+      <Generic>
+        <Navbar.TopContainer>
+          <Navbar.TimelineBarLeft>
+            <Navbar.Circle
+              onClick={props.about}
+              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+            />
+            <Navbar.Stick
+              style={{
+                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+              }}
+            />
+            <Navbar.Circle
+              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              onClick={props.roadmap}
+            />
+            <Navbar.Stick
+              style={{
+                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+              }}
+            />
+            <Navbar.Circle
+              onClick={props.team}
+              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+            />
+            <Navbar.Stick
+              style={{
+                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+              }}
+            />
+            <Navbar.Circle
+              onClick={props.projects}
+              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+            />
+            <Navbar.Stick
+              style={{
+                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+              }}
+            />
+            <Navbar.Circle
+              size={true}
+              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+            />
+            <Navbar.Stick
+              style={{
+                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+              }}
+            />
+          </Navbar.TimelineBarLeft>
+          <Navbar.SocialsTopLeft
+            style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+          >
+            <SocialsText
+              ref={ref}
+              style={{
+                opacity: onScreen ? 1 : 0,
+                transform: onScreen ? "none" : "0 2rem",
+                transition: "600ms ease-in-out",
+                color: props.isLight ? "#fff" : "#000",
+              }}
+            >
+              iDEA
+            </SocialsText>
+            <Navbar.SocialsTopLeftInnerContainer
+              ref={ref}
+              style={{
+                opacity: onScreen ? 1 : 0,
+                transform: onScreen ? "none" : "0 2rem",
+                transition: "600ms ease-in-out",
+              }}
+            >
+              <AiOutlineInstagram
+                style={{ color: props.isLight ? "#fff" : "#000" }}
+              />
+              <AiOutlineTwitter
+                style={{ color: props.isLight ? "#fff" : "#000" }}
+              />
+              <AiOutlineMedium
+                style={{ color: props.isLight ? "#fff" : "#000" }}
+              />
+              <FaFacebook style={{ color: props.isLight ? "#fff" : "#000" }} />
+              <AiFillYoutube
+                style={{ color: props.isLight ? "#fff" : "#000" }}
+              />
+              <AiFillLinkedin
+                style={{ color: props.isLight ? "#fff" : "#000" }}
+              />
+            </Navbar.SocialsTopLeftInnerContainer>
+          </Navbar.SocialsTopLeft>
+        </Navbar.TopContainer>
+        <Contribution>
+          <Contribution.TopRightTitleContainer>
+            <Contribution.TopRightTitle
+              ref={ref}
+              style={{
+                opacity: onScreen ? 1 : 0,
+                transform: onScreen ? "none" : "translateY(2rem)",
+                transition: "1000ms ease-in-out",
+              }}
+            >
+              Contribute
+            </Contribution.TopRightTitle>
+          </Contribution.TopRightTitleContainer>
+          <Contribution.BodyContainer>
+            <Contribution.TopMiddleText
+              color={props.isLight ? "#000" : "#fff"}
+              ref={ref}
+              style={{
+                opacity: onScreen ? 1 : 0,
+                transform: onScreen ? "none" : "translateY(2rem)",
+                transition: "1000ms ease-in-out",
+              }}
+            >
+              Contribute by being an ideator or join us and help us help
+              ideators
+            </Contribution.TopMiddleText>
+            <div>
+              <FormsContainer>
+                <LeftColumn>
+                  <form>
+                    <FormLabel htmlFor="left-input">
+                      <LabelNumber>1 &rarr;</LabelNumber>
+                      What is the main objective or goal of your project idea?
+                    </FormLabel>
+                    <AdditionalTextContainer>
+                      <AdditionalText>Make your answer brief</AdditionalText>
+                    </AdditionalTextContainer>
+                    <FormInput
+                      type="text"
+                      id="left-input"
+                      isLight={props.isLight}
+                      placeholder="Type your answer here..."
+                    />
+                    {/* Additional form fields and submit button */}
+                  </form>
+                </LeftColumn>
+                <Divider isLight={props.isLight} />
+                <RightColumn>
+                  <form>
+                    <FormGroup>
+                      <div style={{ display: "flex", alignItems: "center" }}>
+                        <FormLabel htmlFor="full-name">
+                          Your full legal name
+                        </FormLabel>
+                        <FormLabel
+                          htmlFor="roll-number"
+                          style={{ marginLeft: "1rem" }}
+                        >
+                          Amrita roll number
+                        </FormLabel>
+                        <FormLabel
+                          htmlFor="department"
+                          style={{ marginLeft: "1rem" }}
+                        >
+                          Department
+                        </FormLabel>
+                      </div>
+                      <div style={{ display: "flex", alignItems: "center" }}>
+                        <FormInput
+                          type="text"
+                          id="full-name"
+                          isLight={props.isLight}
+                          placeholder="Enter your full name"
+                        />
+                        <FormInput
+                          type="text"
+                          id="roll-number"
+                          isLight={props.isLight}
+                          placeholder="Enter your roll number"
+                          style={{ marginLeft: "1rem" }}
+                        />
+                        <FormInput
+                          type="text"
+                          id="department"
+                          isLight={props.isLight}
+                          placeholder="Enter your department"
+                          style={{ marginLeft: "1rem" }}
+                        />
+                      </div>
+                    </FormGroup>
+                    <FormGroup>
+                      <FormLabel htmlFor="skills">
+                        Skills that define you
+                      </FormLabel>
+                      <FormInput
+                        id="skills"
+                        isLight={props.isLight}
+                        placeholder="Describe your skills"
+                        value={newSkill}
+                        onChange={handleSkillChange}
+                      />
+                      <SkillPillsContainer>
+                        {skills.map((skill, index) => (
+                          <SkillPill
+                            key={index}
+                            isLight={props.isLight}
+                            onClick={() => handleSkillRemove(skill)}
+                          >
+                            {skill}
+                          </SkillPill>
+                        ))}
+                      </SkillPillsContainer>
+                    </FormGroup>
+                    <FormGroup>
+                      <FormLabel htmlFor="contribution">
+                        How do you think you can contribute to the club?
+                      </FormLabel>
+                      <FormInput
+                        id="contribution"
+                        isLight={props.isLight}
+                        placeholder="Describe your contribution"
+                        rows="6"
+                      />
+                    </FormGroup>
+                    {/* Additional form fields and submit button */}
+                  </form>
+                </RightColumn>
+              </FormsContainer>
+            </div>
+          </Contribution.BodyContainer>
+        </Contribution>
+      </Generic>
+    </>
+  );
+};
+
+export default Contribute;
