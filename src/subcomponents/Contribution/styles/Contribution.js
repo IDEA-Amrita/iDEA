@@ -9,6 +9,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 999;
+  padding-bottom: 0px;
 `;
 
 export const BodyContainer = styled.div`
@@ -33,7 +34,7 @@ export const TopMiddleText = styled.p`
   cursor: pointer;
   position: relative; /* Added position relative */
   z-index: 999; /* Added z-index */
-  margin-top: -280px;
+  margin-top: 40px;
 
   @media (max-width: 820px) {
     font-size: 18px;
