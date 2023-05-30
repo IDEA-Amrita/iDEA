@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
-import { Generic, Navbar } from "../subcomponents";
+import React, { useRef, useState } from "react";
+import { Generic, Navbar, Projects } from "../subcomponents";
 import { FaFacebook } from "react-icons/fa";
+import { BsArrowUpRight } from "react-icons/bs";
 import {
-  AiOutlineArrowUp,
   AiOutlineInstagram,
   AiOutlineTwitter,
   AiOutlineMedium,
@@ -11,13 +11,15 @@ import {
 } from "react-icons/ai";
 import useElementOnScreen from "../animations";
 import { SocialsText } from "../subcomponents/navbar/styles/navbar";
+import projects from "../data/projects.json";
 
-const Contribute = (props) => {
+const ContributePage = (props) => {
   // const onScroll = (event) => {
   //   event.preventDefault();
   //   console.log("something")
   // }
 
+  const [activeProject, setActiveProject] = useState(0);
   const ref = useRef(null);
   const onScreen = useElementOnScreen(ref);
   return (
@@ -102,10 +104,56 @@ const Contribute = (props) => {
             </Navbar.SocialsTopLeftInnerContainer>
           </Navbar.SocialsTopLeft>
         </Navbar.TopContainer>
-        <Generic.InnerContainer></Generic.InnerContainer>
+        <Projects>
+          <Projects.BlockContainer>
+            <Projects.BlockInnerContainer>
+              <Projects.BlockTitle>
+                Submit an Exciting Project Idea
+              </Projects.BlockTitle>
+              <Projects.BlockButton
+                color={props.isLight ? "#fff" : "#000"}
+                backgroundColor={props.isLight ? "#000" : "#fff"}
+              >
+                lessgo <BsArrowUpRight style={{ marginLeft: "4%" }} />
+              </Projects.BlockButton>
+              <Generic.Paragraph style={{ textAlign: "center" }}>
+                Lorem ipsum Lorem ipsum Lorem ipsum
+                <br /> Lorem ipsum Lorem ipsum Lorem ipsum
+                <br /> Lorem ipsum Lorem ipsum
+              </Generic.Paragraph>
+              <Generic.Paragraph style={{ textAlign: "center" }}>
+                Lorem ipsum Lorem ipsum Lorem ipsum
+                <br /> Lorem ipsum Lorem ipsum Lorem ipsum
+                <br /> Lorem ipsum Lorem ipsum
+              </Generic.Paragraph>
+            </Projects.BlockInnerContainer>
+            <Projects.BlockInnerContainer>
+              <Projects.AngledLine backgroundColor={"#000"}/>
+            </Projects.BlockInnerContainer>
+            <Projects.BlockInnerContainer>
+              <Generic.Paragraph style={{ textAlign: "center" }}>
+                Lorem ipsum Lorem ipsum Lorem ipsum
+                <br /> Lorem ipsum Lorem ipsum Lorem ipsum
+                <br /> Lorem ipsum Lorem ipsum
+              </Generic.Paragraph>
+              <Generic.Paragraph style={{ textAlign: "center" }}>
+                Lorem ipsum Lorem ipsum Lorem ipsum
+                <br /> Lorem ipsum Lorem ipsum Lorem ipsum
+                <br /> Lorem ipsum Lorem ipsum
+              </Generic.Paragraph>
+              <Projects.BlockButton
+                color={props.isLight ? "#fff" : "#000"}
+                backgroundColor={props.isLight ? "#000" : "#fff"}
+              >
+                lessgo <BsArrowUpRight style={{ marginLeft: "4%" }} />
+              </Projects.BlockButton>
+              <Projects.BlockTitle>Become a Member</Projects.BlockTitle>
+            </Projects.BlockInnerContainer>
+          </Projects.BlockContainer>
+        </Projects>
       </Generic>
     </>
   );
 };
 
-export default Contribute;
+export default ContributePage;
