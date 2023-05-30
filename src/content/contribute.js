@@ -11,7 +11,6 @@ import {
 } from "react-icons/ai";
 import useElementOnScreen from "../animations";
 import { SocialsText } from "../subcomponents/navbar/styles/navbar";
-import projects from "../data/projects.json";
 import { PopupButton } from '@typeform/embed-react';
 
 const ContributePage = (props) => {
@@ -20,7 +19,6 @@ const ContributePage = (props) => {
   //   console.log("something")
   // }
 
-  const [activeProject, setActiveProject] = useState(0);
   const ref = useRef(null);
   const onScreen = useElementOnScreen(ref);
   return (
