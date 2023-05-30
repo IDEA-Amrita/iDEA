@@ -25,6 +25,143 @@ const TeamPage = (props) => {
   const [icon4, setIcon4] = useState(false);
   const [icon5, setIcon5] = useState(false);
 
+  const closeEveryOtherOpenedExpandableContainer = (id) => {
+    switch (id) {
+      case "0":
+        if (icon1) {
+          setIcon1(false);
+          document.getElementById("1").style.display = "none";
+        }
+        if (icon2) {
+          setIcon2(false);
+          document.getElementById("2").style.display = "none";
+        }
+        if (icon3) {
+          setIcon3(false);
+          document.getElementById("3").style.display = "none";
+        }
+        if (icon4) {
+          setIcon4(false);
+          document.getElementById("4").style.display = "none";
+        }
+        if (icon5) {
+          setIcon5(false);
+          document.getElementById("5").style.display = "none";
+        }
+        break;
+      case "1":
+        if (icon0) {
+          setIcon0(false);
+          document.getElementById("0").style.display = "none";
+        }
+        if (icon2) {
+          setIcon2(false);
+          document.getElementById("2").style.display = "none";
+        }
+        if (icon3) {
+          setIcon3(false);
+          document.getElementById("3").style.display = "none";
+        }
+        if (icon4) {
+          setIcon4(false);
+          document.getElementById("4").style.display = "none";
+        }
+        if (icon5) {
+          setIcon5(false);
+          document.getElementById("5").style.display = "none";
+        }
+        break;
+      case "2":
+        if (icon0) {
+          setIcon0(false);
+          document.getElementById("0").style.display = "none";
+        }
+        if (icon1) {
+          setIcon1(false);
+          document.getElementById("1").style.display = "none";
+        }
+        if (icon3) {
+          setIcon3(false);
+          document.getElementById("3").style.display = "none";
+        }
+        if (icon4) {
+          setIcon4(false);
+          document.getElementById("4").style.display = "none";
+        }
+        if (icon5) {
+          setIcon5(false);
+          document.getElementById("5").style.display = "none";
+        }
+        break;
+      case "3":
+        if (icon0) {
+          setIcon0(false);
+          document.getElementById("0").style.display = "none";
+        }
+        if (icon1) {
+          setIcon1(false);
+          document.getElementById("1").style.display = "none";
+        }
+        if (icon2) {
+          setIcon2(false);
+          document.getElementById("2").style.display = "none";
+        }
+        if (icon4) {
+          setIcon4(false);
+          document.getElementById("4").style.display = "none";
+        }
+        if (icon5) {
+          setIcon5(false);
+          document.getElementById("5").style.display = "none";
+        }
+        break;
+      case "4":
+        if (icon0) {
+          setIcon0(false);
+          document.getElementById("0").style.display = "none";
+        }
+        if (icon1) {
+          setIcon1(false);
+          document.getElementById("1").style.display = "none";
+        }
+        if (icon2) {
+          setIcon2(false);
+          document.getElementById("2").style.display = "none";
+        }
+        if (icon3) {
+          setIcon3(false);
+          document.getElementById("3").style.display = "none";
+        }
+        if (icon5) {
+          setIcon5(false);
+          document.getElementById("5").style.display = "none";
+        }
+        break;
+      case "5":
+        if (icon0) {
+          setIcon0(false);
+          document.getElementById("0").style.display = "none";
+        }
+        if (icon1) {
+          setIcon1(false);
+          document.getElementById("1").style.display = "none";
+        }
+        if (icon2) {
+          setIcon2(false);
+          document.getElementById("2").style.display = "none";
+        }
+        if (icon3) {
+          setIcon3(false);
+          document.getElementById("3").style.display = "none";
+        }
+        if (icon4) {
+          setIcon4(false);
+          document.getElementById("4").style.display = "none";
+        }
+        break;
+    }
+  }
+
   const handleClick = (id) => {
     console.log(id);
     const element = document.getElementById(id);
@@ -50,6 +187,7 @@ const TeamPage = (props) => {
           setIcon5(false);
           break;
       }
+      closeEveryOtherOpenedExpandableContainer(id);
       return;
     }
     element.style.display = "grid";
@@ -73,6 +211,7 @@ const TeamPage = (props) => {
         setIcon5(true);
         break;
     }
+    closeEveryOtherOpenedExpandableContainer(id);
   };
 
   const ref = useRef(null);
