@@ -12,6 +12,7 @@ import {
 import useElementOnScreen from "../animations";
 import { SocialsText } from "../subcomponents/navbar/styles/navbar";
 import projects from "../data/projects.json";
+import { PopupButton } from '@typeform/embed-react';
 
 const ContributePage = (props) => {
   // const onScroll = (event) => {
@@ -110,12 +111,23 @@ const ContributePage = (props) => {
               <Projects.BlockTitle>
                 Submit an Exciting Project Idea
               </Projects.BlockTitle>
-              <Projects.BlockButton
+              <PopupButton
                 color={props.isLight ? "#fff" : "#000"}
                 backgroundColor={props.isLight ? "#000" : "#fff"}
+                style={{
+                  width: "240px",
+                  height: "64px",
+                  color: props.isLight ? "#fff" : "#000",
+                  backgroundColor: props.isLight ? "#000" : "#fff",
+                  border: "none",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+                id="WTBw9bLa"
               >
                 lessgo <BsArrowUpRight style={{ marginLeft: "4%" }} />
-              </Projects.BlockButton>
+              </PopupButton>
               <Generic.Paragraph style={{ textAlign: "center" }}>
                 Lorem ipsum Lorem ipsum Lorem ipsum
                 <br /> Lorem ipsum Lorem ipsum Lorem ipsum
@@ -128,7 +140,7 @@ const ContributePage = (props) => {
               </Generic.Paragraph>
             </Projects.BlockInnerContainer>
             <Projects.BlockInnerContainer>
-              <Projects.AngledLine backgroundColor={"#000"}/>
+              <Projects.AngledLine backgroundColor={"#000"} />
             </Projects.BlockInnerContainer>
             <Projects.BlockInnerContainer>
               <Generic.Paragraph style={{ textAlign: "center" }}>
@@ -141,12 +153,23 @@ const ContributePage = (props) => {
                 <br /> Lorem ipsum Lorem ipsum Lorem ipsum
                 <br /> Lorem ipsum Lorem ipsum
               </Generic.Paragraph>
-              <Projects.BlockButton
+              <PopupButton
                 color={props.isLight ? "#fff" : "#000"}
                 backgroundColor={props.isLight ? "#000" : "#fff"}
+                style={{
+                  width: "240px",
+                  height: "64px",
+                  color: props.isLight ? "#fff" : "#000",
+                  backgroundColor: props.isLight ? "#000" : "#fff",
+                  border: "none",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+                id="swN0M1hE"
               >
                 lessgo <BsArrowUpRight style={{ marginLeft: "4%" }} />
-              </Projects.BlockButton>
+              </PopupButton>
               <Projects.BlockTitle>Become a Member</Projects.BlockTitle>
             </Projects.BlockInnerContainer>
           </Projects.BlockContainer>

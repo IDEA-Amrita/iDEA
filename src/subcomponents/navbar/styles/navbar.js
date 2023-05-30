@@ -52,7 +52,6 @@ export const SocialsTopLeft = styled.div`
     width: 60%;
     height: 10%;
   }
-
 `;
 
 export const SocialsText = styled.p`

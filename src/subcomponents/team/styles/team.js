@@ -122,7 +122,7 @@ export const MentorInnerContainer = styled.div`
 
   @media (max-width: 1364px) {
     flex-direction: column;
-    margin: 0 0 2% 0; 
+    margin: 0 0 2% 0;
   }
 `;
 
@@ -228,7 +228,6 @@ export const SubTitle = styled.h2`
   font-size: 20px;
   color: ${(props) => props.color} !important;
 
-
   @media (max-width: 820px) {
     font-size: 16px;
   }
@@ -303,7 +302,9 @@ export const ExpandableSection = styled.div`
   display: flex;
   align-items: center;
   padding: 0 2%;
-  box-shadow: 0px 4px 8px ${(props) => props.isLight ? "rgba(0, 0, 0, 0.25)" : "rgba(255, 255, 255, 0.25)"};
+  box-shadow: 0px 4px 8px
+    ${(props) =>
+      props.isLight ? "rgba(0, 0, 0, 0.25)" : "rgba(255, 255, 255, 0.25)"};
   border-radius: 4px;
   cursor: pointer;
   margin-bottom: 0.1%;
@@ -320,7 +321,9 @@ export const TeamDropDownContainer = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
   padding-right: 0 !important;
-  box-shadow: 0px 4px 8px ${(props) => props.isLight ? ("rgba(0, 0, 0, 0.25)") : "rgba(255, 255, 255, 0.25)"};
+  box-shadow: 0px 4px 8px
+    ${(props) =>
+      props.isLight ? "rgba(0, 0, 0, 0.25)" : "rgba(255, 255, 255, 0.25)"};
   border-radius: 4px;
   * {
     margin-left: 5%;

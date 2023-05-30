@@ -26,7 +26,7 @@ import {
   ExpandableSectionContainer,
   ExpandableSection,
   ExpandableInnerContainer,
-  TeamDropDownContainer
+  TeamDropDownContainer,
 } from "./styles/team";
 
 export default function Team({ children, ...restProps }) {

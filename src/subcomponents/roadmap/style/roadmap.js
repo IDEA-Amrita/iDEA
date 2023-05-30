@@ -28,7 +28,6 @@ export const AngledBoxContainer = styled.div`
   p {
     margin: 0;
   }
-
 `;
 
 export const MainContainer = styled.div`
@@ -181,7 +180,6 @@ export const OnHoverTitle = styled.h3`
   font-family: "PP Neue Machina";
   font-style: normal;
   font-weight: bold;
-
 
   @media (max-width: 820px) {
     font-size: 26px;

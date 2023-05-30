@@ -28,7 +28,7 @@ import {
   BlockInnerContainer,
   BlockTitle,
   BlockButton,
-  AngledLine
+  AngledLine,
 } from "./styles/projects";
 
 export default function Projects({ children, ...restProps }) {
