@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
-import { Generic, Navbar, Contribution } from "../subcomponents";
+import { Generic, Navbar, Projects } from "../subcomponents";
 import { FaFacebook } from "react-icons/fa";
+import { BsArrowUpRight } from "react-icons/bs";
 import {
-  AiOutlineArrowUp,
   AiOutlineInstagram,
   AiOutlineTwitter,
   AiOutlineMedium,
@@ -11,15 +11,18 @@ import {
 } from "react-icons/ai";
 import useElementOnScreen from "../animations";
 import { SocialsText } from "../subcomponents/navbar/styles/navbar";
-import styled from "styled-components";
-import { Widget } from "@typeform/embed-react";
+import projects from "../data/projects.json";
+import { PopupButton } from '@typeform/embed-react';
 
+const ContributePage = (props) => {
+  // const onScroll = (event) => {
+  //   event.preventDefault();
+  //   console.log("something")
+  // }
 
-
-const Contribute = (props) => {
+  const [activeProject, setActiveProject] = useState(0);
   const ref = useRef(null);
   const onScreen = useElementOnScreen(ref);
-
   return (
     <>
       <Generic>
@@ -30,45 +33,35 @@ const Contribute = (props) => {
               style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
             />
             <Navbar.Stick
-              style={{
-                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
-              }}
+              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
             />
             <Navbar.Circle
               style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
               onClick={props.roadmap}
             />
             <Navbar.Stick
-              style={{
-                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
-              }}
+              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
             />
             <Navbar.Circle
               onClick={props.team}
               style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
             />
             <Navbar.Stick
-              style={{
-                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
-              }}
+              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
             />
             <Navbar.Circle
               onClick={props.projects}
               style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
             />
             <Navbar.Stick
-              style={{
-                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
-              }}
+              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
             />
             <Navbar.Circle
               size={true}
               style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
             />
             <Navbar.Stick
-              style={{
-                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
-              }}
+              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
             />
           </Navbar.TimelineBarLeft>
           <Navbar.SocialsTopLeft
@@ -78,7 +71,7 @@ const Contribute = (props) => {
               ref={ref}
               style={{
                 opacity: onScreen ? 1 : 0,
-                transform: onScreen ? "none" : "0 2rem",
+                translate: onScreen ? "none" : "0 2rem",
                 transition: "600ms ease-in-out",
                 color: props.isLight ? "#fff" : "#000",
               }}
@@ -89,7 +82,7 @@ const Contribute = (props) => {
               ref={ref}
               style={{
                 opacity: onScreen ? 1 : 0,
-                transform: onScreen ? "none" : "0 2rem",
+                translate: onScreen ? "none" : "0 2rem",
                 transition: "600ms ease-in-out",
               }}
             >
@@ -112,57 +105,78 @@ const Contribute = (props) => {
             </Navbar.SocialsTopLeftInnerContainer>
           </Navbar.SocialsTopLeft>
         </Navbar.TopContainer>
-        <Contribution>
-          <Contribution.TopRightTitleContainer>
-            <Contribution.TopRightTitle
-              ref={ref}
-              style={{
-                opacity: onScreen ? 1 : 0,
-                transform: onScreen ? "none" : "translateY(2rem)",
-                transition: "1000ms ease-in-out",
-              }}
-            >
-              Contribute
-            </Contribution.TopRightTitle>
-          </Contribution.TopRightTitleContainer>
-          <Contribution.BodyContainer>
-            <Contribution.TopMiddleText
-              color={props.isLight ? "#000" : "#fff"}
-              ref={ref}
-              style={{
-                opacity: onScreen ? 1 : 0,
-                transform: onScreen ? "none" : "translateY(2rem)",
-                transition: "1000ms ease-in-out",
-              }}
-            >
-              Contribute by being an ideator or join us and help us help
-              ideators
-            </Contribution.TopMiddleText>
-          </Contribution.BodyContainer>
-
-          <Widget
-            id="WTBw9bLa"
-            style={{
-              width: "100%",
-              overflow: "hidden",
-              border: "none",
-            }}
-            opacity={80}
-            height={800}
-            hidden={{
-              userId: "hidden-user-id",
-            }}
-            onSubmit={() => {
-              console.log("Form submitted!");
-            }}
-            hideHeaders
-            disableAutoFocus
-            enableSandbox
-          />
-        </Contribution>
+        <Projects>
+          <Projects.BlockContainer>
+            <Projects.BlockInnerContainer>
+              <Projects.BlockTitle>
+                Submit an Exciting Project Idea
+              </Projects.BlockTitle>
+              <PopupButton
+                color={props.isLight ? "#fff" : "#000"}
+                backgroundColor={props.isLight ? "#000" : "#fff"}
+                style={{
+                  width: "240px",
+                  height: "64px",
+                  color: props.isLight ? "#fff" : "#000",
+                  backgroundColor: props.isLight ? "#000" : "#fff",
+                  border: "none",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+                id="WTBw9bLa"
+              >
+                lessgo <BsArrowUpRight style={{ marginLeft: "4%" }} />
+              </PopupButton>
+              <Generic.Paragraph style={{ textAlign: "center" }}>
+                Lorem ipsum Lorem ipsum Lorem ipsum
+                <br /> Lorem ipsum Lorem ipsum Lorem ipsum
+                <br /> Lorem ipsum Lorem ipsum
+              </Generic.Paragraph>
+              <Generic.Paragraph style={{ textAlign: "center" }}>
+                Lorem ipsum Lorem ipsum Lorem ipsum
+                <br /> Lorem ipsum Lorem ipsum Lorem ipsum
+                <br /> Lorem ipsum Lorem ipsum
+              </Generic.Paragraph>
+            </Projects.BlockInnerContainer>
+            <Projects.BlockInnerContainer>
+              <Projects.AngledLine backgroundColor={"#000"} />
+            </Projects.BlockInnerContainer>
+            <Projects.BlockInnerContainer>
+              <Generic.Paragraph style={{ textAlign: "center" }}>
+                Lorem ipsum Lorem ipsum Lorem ipsum
+                <br /> Lorem ipsum Lorem ipsum Lorem ipsum
+                <br /> Lorem ipsum Lorem ipsum
+              </Generic.Paragraph>
+              <Generic.Paragraph style={{ textAlign: "center" }}>
+                Lorem ipsum Lorem ipsum Lorem ipsum
+                <br /> Lorem ipsum Lorem ipsum Lorem ipsum
+                <br /> Lorem ipsum Lorem ipsum
+              </Generic.Paragraph>
+              <PopupButton
+                color={props.isLight ? "#fff" : "#000"}
+                backgroundColor={props.isLight ? "#000" : "#fff"}
+                style={{
+                  width: "240px",
+                  height: "64px",
+                  color: props.isLight ? "#fff" : "#000",
+                  backgroundColor: props.isLight ? "#000" : "#fff",
+                  border: "none",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+                id="swN0M1hE"
+              >
+                lessgo <BsArrowUpRight style={{ marginLeft: "4%" }} />
+              </PopupButton>
+              <Projects.BlockTitle>Become a Member</Projects.BlockTitle>
+            </Projects.BlockInnerContainer>
+          </Projects.BlockContainer>
+        </Projects>
       </Generic>
     </>
   );
 };
 
-export default Contribute;
+export default ContributePage;
