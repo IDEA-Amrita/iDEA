@@ -255,3 +255,11 @@ export const EmptyDivRight = styled.div`
     width: 0;
   }
 `;
+
+export const CircleText = styled.p`
+  width: 100%;
+  position: relative;
+  bottom: 100%;
+  font-family: "PP Neue Machina";
+  font-size: 6px;
+`;

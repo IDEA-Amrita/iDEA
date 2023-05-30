@@ -209,6 +209,9 @@ Projects.BlockButton = function ProjectsBlockButton({
   return <BlockButton {...restProps}>{children}</BlockButton>;
 };
 
-Projects.AngledLine = function ProjectsAngledLine({ children, ...restProps }) {
-  return <AngledLine {...restProps}>{children}</AngledLine>;
-};
+Projects.AngledLine = function ProjectsAngledLine({
+  children,
+  ...restProps
+}) {
+  return <AngledLine {...restProps}>{children}</AngledLine>
+}
