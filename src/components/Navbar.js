@@ -1,17 +1,5 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { Navbar } from "../subcomponents";
-import {
-  AiOutlineInstagram,
-  AiOutlineTwitter,
-  AiOutlineMedium,
-} from "react-icons/ai";
-import { FaFacebook } from "react-icons/fa";
-import {
-  CDropdown,
-  CDropdownItem,
-  CDropdownMenu,
-  CDropdownToggle,
-} from "@coreui/react";
 import useElementOnScreen from "../animations";
 
 export default function Nav(props) {
@@ -71,12 +59,15 @@ export default function Nav(props) {
           </Navbar.Link>
           <Navbar.Link
             color={isLight ? "#000" : "#fff"}
-            href="https://github.com/IDEA-Amrita"
+            href="https://github.com/IDEA-Amrita/official-documentation"
             target="_blank"
           >
             Documentation
           </Navbar.Link>
-          <Navbar.Link color={isLight ? "#000" : "#fff"}>
+          <Navbar.Link
+            onClick={props.contribute}
+            color={isLight ? "#000" : "#fff"}
+          >
             Contribute
           </Navbar.Link>
         </Navbar.CenterContainer>

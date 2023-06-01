@@ -29,6 +29,7 @@ import {
   BlockTitle,
   BlockButton,
   AngledLine,
+  Paragraph
 } from "./styles/projects";
 
 export default function Projects({ children, ...restProps }) {
@@ -177,6 +178,10 @@ Projects.TagBubbleContainer = function ProjectsTagBubbleContainer({
   ...restProps
 }) {
   return <TagBubbleContainer {...restProps}>{children}</TagBubbleContainer>;
+};
+
+Projects.Paragraph = function ProjectsParagraph({ children, ...restProps }) {
+  return <Paragraph {...restProps}>{children}</Paragraph>;
 };
 
 //TagBubble

@@ -119,7 +119,7 @@ export const Paragraph = styled.p`
   font-family: "PP Neue Machina";
   font-weight: 400;
   font-size: 24px;
-  line-height: 1.5em;
+  line-height: 2em;
   letter-spacing: 0.05em;
   color: ${(props) => props.color};
 
