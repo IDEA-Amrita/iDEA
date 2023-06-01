@@ -1,21 +1,15 @@
 import React, { useRef, useState } from "react";
 import { Generic, Navbar, Team } from "../subcomponents";
-import { FaFacebook } from "react-icons/fa";
 import { BsArrowUpRight } from "react-icons/bs";
-
 import {
-  AiOutlineInstagram,
-  AiOutlineTwitter,
-  AiOutlineMedium,
-  AiFillYoutube,
-  AiFillLinkedin,
   AiOutlineArrowUp,
 } from "react-icons/ai";
 import useElementOnScreen from "../animations";
-import { SocialsText } from "../subcomponents/navbar/styles/navbar";
 import Projects from "../subcomponents/projects";
 import projects from "../data/projects.json";
 import { PopupButton } from "@typeform/embed-react";
+import { Socials } from "../components";
+
 
 const ProjectsPage = (props) => {
   const [activeProject, setActiveProject] = useState(0);
@@ -69,46 +63,7 @@ const ProjectsPage = (props) => {
               style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
             />
           </Navbar.TimelineBarLeft>
-          <Navbar.SocialsTopLeft
-            style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
-          >
-            <SocialsText
-              ref={ref}
-              style={{
-                opacity: onScreen ? 1 : 0,
-                translate: onScreen ? "none" : "0 2rem",
-                transition: "600ms ease-in-out",
-                color: props.isLight ? "#fff" : "#000",
-              }}
-            >
-              iDEA
-            </SocialsText>
-            <Navbar.SocialsTopLeftInnerContainer
-              ref={ref}
-              style={{
-                opacity: onScreen ? 1 : 0,
-                translate: onScreen ? "none" : "0 2rem",
-                transition: "600ms ease-in-out",
-              }}
-            >
-              <AiOutlineInstagram
-                style={{ color: props.isLight ? "#fff" : "#000" }}
-              />
-              <AiOutlineTwitter
-                style={{ color: props.isLight ? "#fff" : "#000" }}
-              />
-              <AiOutlineMedium
-                style={{ color: props.isLight ? "#fff" : "#000" }}
-              />
-              <FaFacebook style={{ color: props.isLight ? "#fff" : "#000" }} />
-              <AiFillYoutube
-                style={{ color: props.isLight ? "#fff" : "#000" }}
-              />
-              <AiFillLinkedin
-                style={{ color: props.isLight ? "#fff" : "#000" }}
-              />
-            </Navbar.SocialsTopLeftInnerContainer>
-          </Navbar.SocialsTopLeft>
+          <Socials isLight={props.isLight}/>
         </Navbar.TopContainer>
         <Projects
           style={{
@@ -174,6 +129,9 @@ const ProjectsPage = (props) => {
                   color={props.isLight ? "#fff" : "#000"}
                   backgroundColor={props.isLight ? "#000" : "#fff"}
                   style={{
+                    position: "absolute",
+                    bottom: "5%",
+                    left: "2%",
                     width: "160px",
                     height: "auto",
                     marginTop: "5%",
@@ -182,9 +140,6 @@ const ProjectsPage = (props) => {
                     color: props.isLight ? "#fff" : "#000",
                     backgroundColor: props.isLight ? "#000" : "#fff",
                     border: "none",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
                   }}
                   id="swN0M1hE"
                 >

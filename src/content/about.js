@@ -11,7 +11,8 @@ import {
 } from "react-icons/ai";
 import useElementOnScreen from "../animations";
 import { SocialsText } from "../subcomponents/navbar/styles/navbar";
-import about from '../data/about.json'
+import about from "../data/about.json";
+import { Socials } from "../components";
 
 const AboutPage = (props) => {
   // const onScroll = (event) => {
@@ -68,46 +69,7 @@ const AboutPage = (props) => {
               style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
             />
           </Navbar.TimelineBarLeft>
-          <Navbar.SocialsTopLeft
-            style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
-          >
-            <SocialsText
-              ref={ref}
-              style={{
-                opacity: onScreen ? 1 : 0,
-                translate: onScreen ? "none" : "0 2rem",
-                transition: "600ms ease-in-out",
-                color: props.isLight ? "#fff" : "#000",
-              }}
-            >
-              iDEA
-            </SocialsText>
-            <Navbar.SocialsTopLeftInnerContainer
-              ref={ref}
-              style={{
-                opacity: onScreen ? 1 : 0,
-                translate: onScreen ? "none" : "0 2rem",
-                transition: "600ms ease-in-out",
-              }}
-            >
-              <AiOutlineInstagram
-                style={{ color: props.isLight ? "#fff" : "#000" }}
-              />
-              <AiOutlineTwitter
-                style={{ color: props.isLight ? "#fff" : "#000" }}
-              />
-              <AiOutlineMedium
-                style={{ color: props.isLight ? "#fff" : "#000" }}
-              />
-              <FaFacebook style={{ color: props.isLight ? "#fff" : "#000" }} />
-              <AiFillYoutube
-                style={{ color: props.isLight ? "#fff" : "#000" }}
-              />
-              <AiFillLinkedin
-                style={{ color: props.isLight ? "#fff" : "#000" }}
-              />
-            </Navbar.SocialsTopLeftInnerContainer>
-          </Navbar.SocialsTopLeft>
+          <Socials isLight = {props.isLight}/>
           <Navbar.TopTitle>
             {/* <AiOutlineArrowDown onClick={props.down} /> */}
             <AiOutlineArrowUp
