@@ -59,7 +59,7 @@ export default function Nav(props) {
           </Navbar.Link>
           <Navbar.Link
             color={isLight ? "#000" : "#fff"}
-            href="https://github.com/IDEA-Amrita"
+            href="https://github.com/IDEA-Amrita/official-documentation"
             target="_blank"
           >
             Documentation
