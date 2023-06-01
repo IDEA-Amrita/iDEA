@@ -3,6 +3,10 @@ import { Generic, Navbar, Team } from "../subcomponents";
 import { BsArrowUpRight } from "react-icons/bs";
 import {
   AiOutlineArrowUp,
+  AiOutlineDoubleLeft,
+  AiFillInstagram,
+  AiOutlineMail,
+  AiOutlineDoubleRight,
 } from "react-icons/ai";
 import useElementOnScreen from "../animations";
 import Projects from "../subcomponents/projects";
@@ -10,9 +14,13 @@ import projects from "../data/projects.json";
 import { PopupButton } from "@typeform/embed-react";
 import { Socials } from "../components";
 
-
 const ProjectsPage = (props) => {
   const [activeProject, setActiveProject] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const clickHandler = (event) => {
+    setIsOpen((prev) => !prev);
+  };
 
   const ref = useRef(null);
   const onScreen = useElementOnScreen(ref);
@@ -63,7 +71,7 @@ const ProjectsPage = (props) => {
               style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
             />
           </Navbar.TimelineBarLeft>
-          <Socials isLight={props.isLight}/>
+          <Socials isLight={props.isLight} />
         </Navbar.TopContainer>
         <Projects
           style={{
@@ -145,6 +153,24 @@ const ProjectsPage = (props) => {
                 >
                   Join <BsArrowUpRight style={{ marginLeft: "4%" }} />
                 </PopupButton>
+                <Projects.BlockButton
+                  onClick={clickHandler}
+                  color={props.isLight ? "#fff" : "#000"}
+                  backgroundColor={props.isLight ? "#000" : "#fff"}
+                >
+                  <AiOutlineDoubleLeft
+                    style={{
+                      transition: "300ms ease-in-out",
+                      transform: isOpen ? "rotate(-180deg)" : "rotate(0)",
+                    }}
+                  />
+                  {isOpen && (
+                    <>
+                      <AiOutlineMail />
+                      <AiFillInstagram />
+                    </>
+                  )}
+                </Projects.BlockButton>
               </Projects.DescriptionContent>
             </Projects.DescriptionContainer>
             <Projects.ProjectListContainer>

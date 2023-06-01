@@ -447,18 +447,23 @@ export const BlockTitle = styled.h1`
 `;
 
 export const BlockButton = styled.button`
-  width: 240px;
-  height: 64px;
   color: ${(props) => props.color};
   background-color: ${(props) => props.backgroundColor};
   border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  position: absolute;
+  width: auto;
+  height: auto;
+  bottom: 5%;
+  padding: 10px 10px;
+  right: 2%;
   &:hover {
     transform: scale(1.02);
     transition: 500ms ease-in-out;
+  }
+
+  * {
+    cursor: pointer;
+    margin: 0 10px;
   }
 `;
 

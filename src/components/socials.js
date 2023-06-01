@@ -3,14 +3,15 @@ import { Navbar } from "../subcomponents";
 import {
   AiOutlineInstagram,
   AiOutlineTwitter,
-  AiFillYoutube,
+  AiOutlineMedium,
   AiFillLinkedin,
-  AiFillGithub
+  AiFillGithub,
+  AiOutlineMail,
 } from "react-icons/ai";
 import { SocialsText } from "../subcomponents/navbar/styles/navbar";
 import useElementOnScreen from "../animations";
 
-const Socials = ({isLight}) => {
+const Socials = ({ isLight }) => {
   const ref = useRef(null);
   const onScreen = useElementOnScreen(ref);
   return (
@@ -37,15 +38,23 @@ const Socials = ({isLight}) => {
             transition: "600ms ease-in-out",
           }}
         >
+          <AiOutlineMail
+            onClick={() => window.open("mailto:ideatech@cb.amrita.edu")}
+            style={{ color: isLight ? "#fff" : "#000" }}
+          />
           <AiOutlineInstagram
+            onClick={() =>
+              window.open("https://www.instagram.com/idea_amrita/")
+            }
             style={{ color: isLight ? "#fff" : "#000" }}
           />
-          <AiOutlineTwitter
-            style={{ color: isLight ? "#fff" : "#000" }}
-          />
-          <AiFillYoutube style={{ color: isLight ? "#fff" : "#000" }} />
+          <AiOutlineTwitter style={{ color: isLight ? "#fff" : "#000" }} />
           <AiFillLinkedin style={{ color: isLight ? "#fff" : "#000" }} />
-          <AiFillGithub style={{ color: isLight ? "#fff" : "#000" }} />
+          <AiOutlineMedium style={{ color: isLight ? "#fff" : "#000" }} />
+          <AiFillGithub
+            onClick={() => window.open("https://github.com/IDEA-Amrita")}
+            style={{ color: isLight ? "#fff" : "#000" }}
+          />
         </Navbar.SocialsTopLeftInnerContainer>
       </Navbar.SocialsTopLeft>
     </>
