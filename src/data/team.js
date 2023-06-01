@@ -25,7 +25,7 @@ export const ideation = [
   {
     name: "Dilip Parasu",
     designation: "2nd year B.Tech AIE",
-    image: "/images/team/ideation/varun.jpeg",
+    image: "/images/team/ideation/dilip.jpeg",
   },
   {
     name: "Varun Sankara Narayanan",
@@ -37,7 +37,7 @@ export const internal_dev = [
   {
     name: "Aditya Krishna Mohan",
     designation: "2nd year B.Tech CSE",
-    image: "/images/team/internal_dev/aditya.jpeg",
+    image: "/images/team/internal_dev/aditya.jpg",
   },
   {
     name: "Nithin Ravi",
