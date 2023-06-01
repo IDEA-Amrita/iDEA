@@ -1,0 +1,12 @@
+[
+    {
+        "name" : "Dr. Dhanya M D",
+        "designation": "Assistant Professor, CSE",
+        "photo": "/images/faculty/dhanya.jpg"
+    },
+    {
+        "name" : "Dr. Guruprakash",
+        "designation": "Assistant Professor, CSE",
+        "photo": "/images/faculty/guruprakash.jpg"
+    }
+]

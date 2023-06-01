@@ -11,6 +11,7 @@ import {
 } from "react-icons/ai";
 import useElementOnScreen from "../animations";
 import { SocialsText } from "../subcomponents/navbar/styles/navbar";
+import about from '../data/about.json'
 
 const AboutPage = (props) => {
   // const onScroll = (event) => {
@@ -139,9 +140,7 @@ const AboutPage = (props) => {
                 transition: "1000ms ease-in-out",
               }}
             >
-              iDEA is a student driven community that aims to brings{" "}
-              <u>ideas</u> to life. It hopes to achieve this by helping students
-              develop and showcase their ideas through community support.
+              {about.content}
             </Generic.Paragraph>
           </Generic.ParagraphContainer>
         </Generic.InnerContainer>

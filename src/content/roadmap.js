@@ -41,7 +41,7 @@ const AboutPage = (props) => {
     OnHoverSubTitle.innerHTML =
       roadmapData[val].location + " " + roadmapData[val].date;
     OnHoverDescription.innerHTML = roadmapData[val].content;
-    OnHoverImage.src = roadmapData[val].image;
+    OnHoverImage.src = props.isLight ? roadmapData[val].image : roadmapData[val].image_alt;
     //give a transition animation to the opacity
     console.log(val);
   };
@@ -74,7 +74,7 @@ const AboutPage = (props) => {
     OnHoverSubTitle.innerHTML =
       roadmapData[val].location + " " + roadmapData[val].date;
     OnHoverDescription.innerHTML = roadmapData[val].content;
-    OnHoverImage.src = roadmapData[val].image;
+    OnHoverImage.src = props.isLight ? roadmapData[val].image : roadmapData[val].image_alt;
     //give a transition animation to the opacity
     console.log(val);
   };
@@ -271,7 +271,16 @@ const AboutPage = (props) => {
               }}
             >
               {/* <Navbar.CircleText>02, June, 2022</Navbar.CircleText> */}
-              <p style={{position: "relative", bottom: "100%", display: "inline", fontFamily: "PP Neue Machina"}}>Now</p>
+              <p
+                style={{
+                  position: "relative",
+                  bottom: "100%",
+                  display: "inline",
+                  fontFamily: "PP Neue Machina",
+                }}
+              >
+                Now!
+              </p>
             </Navbar.Circle>
 
             <Navbar.LengthStick
@@ -298,6 +307,25 @@ const AboutPage = (props) => {
                 backgroundColor: props.isLight ? "#000" : "#fff",
                 opacity: 1,
               }}
+            >
+              {/* <Navbar.CircleText>02, June, 2022</Navbar.CircleText> */}
+              <p
+                style={{
+                  position: "relative",
+                  bottom: "100%",
+                  display: "inline",
+                  fontFamily: "PP Neue Machina",
+                }}
+              >
+                Soon...
+              </p>
+            </Navbar.Circle>
+            <Navbar.LengthStick
+              style={{
+                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+                backgroundColor: props.isLight ? "#000" : "#fff",
+                opacity: 0.5,
+              }}
             />
             <Navbar.LengthStick
               style={{
@@ -322,6 +350,25 @@ const AboutPage = (props) => {
               style={{
                 backgroundColor: props.isLight ? "#000" : "#fff",
                 opacity: 1,
+              }}
+            >
+              {/* <Navbar.CircleText>02, June, 2022</Navbar.CircleText> */}
+              <p
+                style={{
+                  position: "relative",
+                  bottom: "100%",
+                  display: "inline",
+                  fontFamily: "PP Neue Machina",
+                }}
+              >
+                Later?
+              </p>
+            </Navbar.Circle>
+            <Navbar.LengthStick
+              style={{
+                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+                backgroundColor: props.isLight ? "#000" : "#fff",
+                opacity: 0.5,
               }}
             />
             <Navbar.LengthStick
@@ -348,57 +395,19 @@ const AboutPage = (props) => {
                 backgroundColor: props.isLight ? "#000" : "#fff",
                 opacity: 1,
               }}
-            />
-            <Navbar.LengthStick
-              style={{
-                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
-                backgroundColor: props.isLight ? "#000" : "#fff",
-                opacity: 0.5,
-              }}
-            />
-            <Navbar.Circle
-              onClick={(e) => {
-                e.preventDefault();
-                handleClick("4");
-              }}
-              onMouseEnter={(e) => {
-                e.preventDefault();
-                handleHover("4");
-              }}
-              onMouseLeave={(e) => {
-                e.preventDefault();
-                handleLeave();
-              }}
-              style={{
-                backgroundColor: props.isLight ? "#000" : "#fff",
-                opacity: 1,
-              }}
-            />
-            <Navbar.LengthStick
-              style={{
-                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
-                backgroundColor: props.isLight ? "#000" : "#fff",
-                opacity: 0.5,
-              }}
-            />
-            <Navbar.Circle
-              onClick={(e) => {
-                e.preventDefault();
-                handleClick("5");
-              }}
-              onMouseEnter={(e) => {
-                e.preventDefault();
-                handleHover("5");
-              }}
-              onMouseLeave={(e) => {
-                e.preventDefault();
-                handleLeave();
-              }}
-              style={{
-                backgroundColor: props.isLight ? "#000" : "#fff",
-                opacity: 1,
-              }}
-            />
+            >
+              {/* <Navbar.CircleText>02, June, 2022</Navbar.CircleText> */}
+              <p
+                style={{
+                  position: "relative",
+                  bottom: "100%",
+                  display: "inline",
+                  fontFamily: "PP Neue Machina",
+                }}
+              >
+                Futuristic!
+              </p>
+            </Navbar.Circle>
           </Roadmap>
         </Roadmap.MainContainer>
       </Generic>

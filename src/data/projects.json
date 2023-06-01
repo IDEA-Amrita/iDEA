@@ -1,57 +1,35 @@
 [
   {
-    "title": "Project One",
-    "name": "Soorya S Rajan",
+    "title": "Scheduler",
+    "name": "Nirmal K",
     "yearAndDepartment": "4th Year CSE",
-    "startDate": "Jan 2022",
+    "startDate": "June 2023",
     "endDate": "Present",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "frameworksUsed": ["Python", "React", "Node.js", "Django", "MongoDB"],
-    "tags": ["Web Development", "Machine Learning", "Artificial Intelligence", "Web Development", "Machine Learning", "Artificial Intelligence"],
-    "imageUrl": "/images/frame.png"
+    "description": "The meeting scheduler application for the university aims to streamline the process of scheduling meetings between faculty members and students. The application will have two interfaces: one for the faculty to import their timetable and view their free slots, and another for students to request meetings with faculty members based on their availability. The faculty members will have the option to accept or reject the meeting requests, and the application will provide a method of communication between the faculty and students for further coordination.",
+    "frameworksUsed": ["Flutter", "Node.js", "ExpressJS", "MongoDB"],
+    "tags": ["App Development", "MicrosoftGraphAPI", "WebAPI", "BackendDevelopment"],
+    "imageUrl": "https://images.pexels.com/photos/273153/pexels-photo-273153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
-    "title": "Project Two",
-    "name": "XYZ",
-    "yearAndDepartment": "1th Year CSE",
-    "startDate": "May 2023",
-    "endDate": "July 2024",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "frameworksUsed": ["Python", "React", "Node.js", "Python", "React", "Node.js", "Python", "React", "Node.js", "Python", "React", "Node.js"],
-    "tags": ["Web Development", "Machine Learning", "Artificial Intelligence"],
-    "imageUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
+    "title": "Project Allocation System",
+    "name": "iDEA",
+    "yearAndDepartment": "CSE",
+    "startDate": "June 2024",
+    "endDate": "present",
+    "description": "Assigning student members to work on projects or research papers, for iDEA with efficient mapping based on skillset, experience level, and peer group in an impartial way. There is a need for an algorithmic solution to automate the assignment process and ensure fair and effective project allocations.",
+    "frameworksUsed": ["Python", "Java"],
+    "tags": ["AlgorithmDesign", "ObjectOrientedProgramming", "DataStructures", "DBMS"],
+    "imageUrl": "https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1600"
   },
   {
-    "title": "Project Three",
-    "name": "ABC",
-    "yearAndDepartment": "3th Year ECE",
-    "startDate": "May 2023",
-    "endDate": "Dec 2024",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "frameworksUsed": ["Python"],
-    "tags": ["Web Development", "Machine Learning", "Artificial Intelligence", "Web Development", "Machine Learning", "Artificial Intelligence", "Web Development", "Machine Learning", "Artificial Intelligence", "Web Development", "Machine Learning", "Artificial Intelligence"],
-    "imageUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
-  },
-  {
-    "title": "Project Four",
-    "name": "Some random name",
-    "yearAndDepartment": "2th Year CSE",
-    "startDate": "May 2023",
-    "endDate": "Aug 2024",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elitconsectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elitconsectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elitconsectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "frameworksUsed": [],
-    "tags": ["Web Development", "Machine Learning", "Artificial Intelligence", "Web Development", "Machine Learning", "Artificial Intelligence"],
-    "imageUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
-  },
-  {
-    "title": "Project Five",
-    "name": "More random names",
-    "yearAndDepartment": "3th Year CSE",
-    "startDate": "Feb 2021",
-    "endDate": "Dec 2024",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-    "frameworksUsed": ["Python", "React", "Node.js", "Django", "MongoDB"],
-    "tags": ["Web Development", "Machine Learning", "Artificial Intelligence", "Web Development", "Machine Learning", "Artificial Intelligence", "Machine Learning", "Artificial Intelligence", "Web Development", "Machine Learning", "Artificial Intelligence"],
-    "imageUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
+    "title": "SupplyBlocks",
+    "name": "Arjhun S",
+    "yearAndDepartment": "3rd Year CSE",
+    "startDate": "June 2023",
+    "endDate": "Present",
+    "description": "The SupplyBlocks project aims to develop a Blockchain based solution where small / irregular producers of goods can list their products to buyers in their vicinity / buyers in places they travel to, and sell their produce without having to employ a middleman. The project aims to streamline resource management and improve accessibility within the community.",
+    "frameworksUsed": ["Flutter", "Node.js", "Solidity"],
+    "tags": ["BlockchainDevelopment", "AppDevelopment", "SmartContracts"],
+    "imageUrl": "https://media.istockphoto.com/id/1344021555/photo/blocks-with-locks-on-dark-blue-background-future-innovation-blockchain-technology-token-money.jpg?s=1024x1024&w=is&k=20&c=mEErCYioNjEA7G7GgKHhH5hGDp7NwwBE79PtUV-lpTw="
   }
 ]

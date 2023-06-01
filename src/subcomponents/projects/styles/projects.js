@@ -98,7 +98,7 @@ export const DescriptionContent = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 75%;
+  height: 100%;
   overflow-y: scroll;
 
   -ms-overflow-style: none;
@@ -354,6 +354,35 @@ export const ListItemArrowContainer = styled.div`
   align-items: center;
   color: white;
   background-color: ${(props) => props.color};
+`;
+
+export const Paragraph = styled.p`
+  font-family: "PP Neue Machina";
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 2em;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  opacity: 0.6;
+  color: ${(props) => props.color};
+
+  @media (max-width: 960px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 820px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 654px) {
+    font-size: 10px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
 `;
 
 export const BlockContainer = styled.div`

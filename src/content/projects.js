@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import { Generic, Navbar, Team } from "../subcomponents";
 import { FaFacebook } from "react-icons/fa";
+import { BsArrowUpRight } from "react-icons/bs";
+
 import {
   AiOutlineInstagram,
   AiOutlineTwitter,
@@ -8,12 +10,12 @@ import {
   AiFillYoutube,
   AiFillLinkedin,
   AiOutlineArrowUp,
-  
 } from "react-icons/ai";
 import useElementOnScreen from "../animations";
 import { SocialsText } from "../subcomponents/navbar/styles/navbar";
 import Projects from "../subcomponents/projects";
 import projects from "../data/projects.json";
+import { PopupButton } from "@typeform/embed-react";
 
 const ProjectsPage = (props) => {
   const [activeProject, setActiveProject] = useState(0);
@@ -168,6 +170,26 @@ const ProjectsPage = (props) => {
                     );
                   })}
                 </Projects.TagBubbleContainer>
+                <PopupButton
+                  color={props.isLight ? "#fff" : "#000"}
+                  backgroundColor={props.isLight ? "#000" : "#fff"}
+                  style={{
+                    width: "160px",
+                    height: "auto",
+                    marginTop: "5%",
+                    marginLeft: "4px",
+                    padding: "10px 5px",
+                    color: props.isLight ? "#fff" : "#000",
+                    backgroundColor: props.isLight ? "#000" : "#fff",
+                    border: "none",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                  id="swN0M1hE"
+                >
+                  Join <BsArrowUpRight style={{ marginLeft: "4%" }} />
+                </PopupButton>
               </Projects.DescriptionContent>
             </Projects.DescriptionContainer>
             <Projects.ProjectListContainer>

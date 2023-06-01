@@ -1,44 +1,34 @@
 [
   {
-    "title": "Some Random Title",
-    "location": "Location",
-    "date": "31/12/1999",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "/images/logo.jpeg"
+    "title": "What's now???",
+    "location": "",
+    "date": "June 2022",
+    "content": "We will start working on the projects listed in the project section. Our socials will be updated with our progress. We will roll out the product iteratively soon. You can join in on any of the projects, visit the project section for more info!",
+    "image": "/images/now.png",
+    "image_alt": "/images/now_light.png"
   },
   {
-    "title": "Some Random Title",
-    "location": "Location",
-    "date": "31/12/1999",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "/images/logo.jpeg"
+    "title": "SOOOON...",
+    "location": "Monthly",
+    "date": "",
+    "content": "We plan to get our internal ratings management and project allocation system up and ready as soon as possible. We have decided to outsource this project to fellow amritians. Check the projects section to join the development team ;)",
+    "image": "/images/soon.png",
+    "image_alt": "/images/soon_light.png"
   },
   {
-    "title": "Some Random Title",
-    "location": "Location",
-    "date": "31/12/1999",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "/images/logo.jpeg"
+    "title": "LATERRRR~",
+    "location": "Monthly",
+    "date": "",
+    "content": "We have montly developer meetings where we discuss the progress of the projects. These meetings will help the developers restrospect on their work and get valuable feedback.",
+    "image": "/images/later.png",
+    "image_alt": "/images/later_light.png"
   },
   {
-    "title": "Some Random Title",
-    "location": "Location",
-    "date": "31/12/1999",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "/images/logo.jpeg"
-  },
-  {
-    "title": "Some Random Title",
-    "location": "Location",
-    "date": "31/12/1999",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "/images/logo.jpeg"
-  },
-  {
-    "title": "Some Random Title",
-    "location": "Location",
-    "date": "31/12/1999",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "/images/logo.jpeg"
+    "title": "/FARRR FUTURE/",
+    "location": "Amrita CBE",
+    "date": "",
+    "content": "We have a Bi-annual event which happens twice in a year, once during Amrita CBE's annual tech fest Anokha. It is to showcase the development of the ideas put forth by ideators.",
+    "image": "/images/future.png",
+    "image_alt": "/images/future_light.png"
   }
-]
+] 

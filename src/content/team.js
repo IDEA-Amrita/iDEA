@@ -11,6 +11,15 @@ import {
 import { BsArrowDownRight, BsArrowUpRight } from "react-icons/bs";
 import useElementOnScreen from "../animations";
 import { SocialsText } from "../subcomponents/navbar/styles/navbar";
+import faculty from "../data/faculty.json";
+import {
+  HR,
+  ideation,
+  internal_dev,
+  curation,
+  management,
+  advisors,
+} from "../data/team.js";
 
 const TeamPage = (props) => {
   // const onScroll = (event) => {
@@ -160,7 +169,7 @@ const TeamPage = (props) => {
         }
         break;
     }
-  }
+  };
 
   const handleClick = (id) => {
     console.log(id);
@@ -345,78 +354,48 @@ const TeamPage = (props) => {
           <Team.MentorSectionContainer>
             <Team.MentorTitle>Faculty Mentors</Team.MentorTitle>
             <Team.MentorInnerContainer>
-              <Team.MentorOuterContainer>
-                <Team.OtherTeamsSpecificInnerContainer>
-                  <Team.OtherTeamsImage
-                    src="/images/user.png"
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  />
-                  <Team.UserInfoContainer>
-                    <Team.SubTitle
-                      ref={ref}
-                      style={{
-                        opacity: onScreen ? 1 : 0,
-                        translate: onScreen ? "none" : "0 2rem",
-                        transition: "600ms ease-in-out",
-                      }}
-                    >
-                      Dr. Dhanya N D
-                    </Team.SubTitle>
-                    <Team.Designation
-                      ref={ref}
-                      style={{
-                        opacity: onScreen ? 1 : 0,
-                        translate: onScreen ? "none" : "0 2rem",
-                        transition: "600ms ease-in-out",
-                      }}
-                    >
-                      4th year, B. Tech CSE
-                    </Team.Designation>
-                  </Team.UserInfoContainer>
-                </Team.OtherTeamsSpecificInnerContainer>
-                <Team.Line backgroundColor={props.isLight ? "#000" : "#fff"} />
-              </Team.MentorOuterContainer>
-              <Team.MentorOuterContainer>
-                <Team.OtherTeamsSpecificInnerContainer>
-                  <Team.OtherTeamsImage
-                    src="/images/user.png"
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  />
-                  <Team.UserInfoContainer>
-                    <Team.SubTitle
-                      ref={ref}
-                      style={{
-                        opacity: onScreen ? 1 : 0,
-                        translate: onScreen ? "none" : "0 2rem",
-                        transition: "600ms ease-in-out",
-                      }}
-                    >
-                      Dr. Guruprakash
-                    </Team.SubTitle>
-                    <Team.Designation
-                      ref={ref}
-                      style={{
-                        opacity: onScreen ? 1 : 0,
-                        translate: onScreen ? "none" : "0 2rem",
-                        transition: "600ms ease-in-out",
-                      }}
-                    >
-                      4th year, B. Tech CSE
-                    </Team.Designation>
-                  </Team.UserInfoContainer>
-                </Team.OtherTeamsSpecificInnerContainer>
-                <Team.Line backgroundColor={props.isLight ? "#000" : "#fff"} />
-              </Team.MentorOuterContainer>
+              {faculty.map((item, index) => {
+                return (
+                  <Team.MentorOuterContainer>
+                    <Team.OtherTeamsSpecificInnerContainer>
+                      <Team.OtherTeamsImage
+                        src={item.photo}
+                        ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}
+                      />
+                      <Team.UserInfoContainer>
+                        <Team.SubTitle
+                          ref={ref}
+                          style={{
+                            opacity: onScreen ? 1 : 0,
+                            translate: onScreen ? "none" : "0 2rem",
+                            transition: "600ms ease-in-out",
+                          }}
+                        >
+                          {item.name}
+                        </Team.SubTitle>
+                        <Team.Designation
+                          ref={ref}
+                          style={{
+                            opacity: onScreen ? 1 : 0,
+                            translate: onScreen ? "none" : "0 2rem",
+                            transition: "600ms ease-in-out",
+                          }}
+                        >
+                          {item.designation}
+                        </Team.Designation>
+                      </Team.UserInfoContainer>
+                    </Team.OtherTeamsSpecificInnerContainer>
+                    <Team.Line
+                      backgroundColor={props.isLight ? "#000" : "#fff"}
+                    />
+                  </Team.MentorOuterContainer>
+                );
+              })}
             </Team.MentorInnerContainer>
           </Team.MentorSectionContainer>
         </Team>
@@ -435,72 +414,43 @@ const TeamPage = (props) => {
               </Team.ExpandableInnerContainer>
             </Team.ExpandableSection>
             <Team.TeamDropDownContainer isLight={props.isLight} id="0">
-              <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage
-                  src="/images/user.png"
-                  ref={ref}
-                  style={{
-                    opacity: onScreen ? 1 : 0,
-                    translate: onScreen ? "none" : "0 2rem",
-                    transition: "600ms ease-in-out",
-                  }}
-                />
-                <Team.UserInfoContainer>
-                  <Team.SubTitle
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    John Doe
-                  </Team.SubTitle>
-                  <Team.Designation
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    4th year, B. Tech CSE
-                  </Team.Designation>
-                </Team.UserInfoContainer>
-              </Team.OtherTeamsSpecificInnerContainer>
-              <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage
-                  src="/images/user.png"
-                  ref={ref}
-                  style={{
-                    opacity: onScreen ? 1 : 0,
-                    translate: onScreen ? "none" : "0 2rem",
-                    transition: "600ms ease-in-out",
-                  }}
-                />
-                <Team.UserInfoContainer>
-                  <Team.SubTitle
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    John Doe
-                  </Team.SubTitle>
-                  <Team.Designation
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    4th year, B. Tech CSE
-                  </Team.Designation>
-                </Team.UserInfoContainer>
-              </Team.OtherTeamsSpecificInnerContainer>
+              {advisors.map((item, index) => {
+                return (
+                  <Team.OtherTeamsSpecificInnerContainer>
+                    <Team.OtherTeamsImage
+                      src={item.image}
+                      ref={ref}
+                      style={{
+                        opacity: onScreen ? 1 : 0,
+                        translate: onScreen ? "none" : "0 2rem",
+                        transition: "600ms ease-in-out",
+                      }}
+                    />
+                    <Team.UserInfoContainer>
+                      <Team.SubTitle
+                        ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}
+                      >
+                        {item.name}
+                      </Team.SubTitle>
+                      <Team.Designation
+                        ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}
+                      >
+                        {item.designation}
+                      </Team.Designation>
+                    </Team.UserInfoContainer>
+                  </Team.OtherTeamsSpecificInnerContainer>
+                );
+              })}
             </Team.TeamDropDownContainer>
             <Team.ExpandableSection
               isLight={props.isLight}
@@ -515,72 +465,43 @@ const TeamPage = (props) => {
               </Team.ExpandableInnerContainer>
             </Team.ExpandableSection>
             <Team.TeamDropDownContainer isLight={props.isLight} id="1">
-              <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage
-                  src="/images/user.png"
-                  ref={ref}
-                  style={{
-                    opacity: onScreen ? 1 : 0,
-                    translate: onScreen ? "none" : "0 2rem",
-                    transition: "600ms ease-in-out",
-                  }}
-                />
-                <Team.UserInfoContainer>
-                  <Team.SubTitle
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    John Doe
-                  </Team.SubTitle>
-                  <Team.Designation
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    4th year, B. Tech CSE
-                  </Team.Designation>
-                </Team.UserInfoContainer>
-              </Team.OtherTeamsSpecificInnerContainer>
-              <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage
-                  src="/images/user.png"
-                  ref={ref}
-                  style={{
-                    opacity: onScreen ? 1 : 0,
-                    translate: onScreen ? "none" : "0 2rem",
-                    transition: "600ms ease-in-out",
-                  }}
-                />
-                <Team.UserInfoContainer>
-                  <Team.SubTitle
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    John Doe
-                  </Team.SubTitle>
-                  <Team.Designation
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    4th year, B. Tech CSE
-                  </Team.Designation>
-                </Team.UserInfoContainer>
-              </Team.OtherTeamsSpecificInnerContainer>
+              {management.map((item, index) => {
+                return (
+                  <Team.OtherTeamsSpecificInnerContainer>
+                    <Team.OtherTeamsImage
+                      src={item.image}
+                      ref={ref}
+                      style={{
+                        opacity: onScreen ? 1 : 0,
+                        translate: onScreen ? "none" : "0 2rem",
+                        transition: "600ms ease-in-out",
+                      }}
+                    />
+                    <Team.UserInfoContainer>
+                      <Team.SubTitle
+                        ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}
+                      >
+                        {item.name}
+                      </Team.SubTitle>
+                      <Team.Designation
+                        ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}
+                      >
+                        {item.designation}
+                      </Team.Designation>
+                    </Team.UserInfoContainer>
+                  </Team.OtherTeamsSpecificInnerContainer>
+                );
+              })}
             </Team.TeamDropDownContainer>
             <Team.ExpandableSection
               isLight={props.isLight}
@@ -595,72 +516,43 @@ const TeamPage = (props) => {
               </Team.ExpandableInnerContainer>
             </Team.ExpandableSection>
             <Team.TeamDropDownContainer isLight={props.isLight} id="2">
-              <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage
-                  src="/images/user.png"
-                  ref={ref}
-                  style={{
-                    opacity: onScreen ? 1 : 0,
-                    translate: onScreen ? "none" : "0 2rem",
-                    transition: "600ms ease-in-out",
-                  }}
-                />
-                <Team.UserInfoContainer>
-                  <Team.SubTitle
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    John Doe
-                  </Team.SubTitle>
-                  <Team.Designation
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    4th year, B. Tech CSE
-                  </Team.Designation>
-                </Team.UserInfoContainer>
-              </Team.OtherTeamsSpecificInnerContainer>
-              <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage
-                  src="/images/user.png"
-                  ref={ref}
-                  style={{
-                    opacity: onScreen ? 1 : 0,
-                    translate: onScreen ? "none" : "0 2rem",
-                    transition: "600ms ease-in-out",
-                  }}
-                />
-                <Team.UserInfoContainer>
-                  <Team.SubTitle
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    John Doe
-                  </Team.SubTitle>
-                  <Team.Designation
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    4th year, B. Tech CSE
-                  </Team.Designation>
-                </Team.UserInfoContainer>
-              </Team.OtherTeamsSpecificInnerContainer>
+              {ideation.map((item, index) => {
+                return (
+                  <Team.OtherTeamsSpecificInnerContainer>
+                    <Team.OtherTeamsImage
+                      src={item.image}
+                      ref={ref}
+                      style={{
+                        opacity: onScreen ? 1 : 0,
+                        translate: onScreen ? "none" : "0 2rem",
+                        transition: "600ms ease-in-out",
+                      }}
+                    />
+                    <Team.UserInfoContainer>
+                      <Team.SubTitle
+                        ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}
+                      >
+                        {item.name}
+                      </Team.SubTitle>
+                      <Team.Designation
+                        ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}
+                      >
+                        {item.designation}
+                      </Team.Designation>
+                    </Team.UserInfoContainer>
+                  </Team.OtherTeamsSpecificInnerContainer>
+                );
+              })}
             </Team.TeamDropDownContainer>
             <Team.ExpandableSection
               isLight={props.isLight}
@@ -675,72 +567,43 @@ const TeamPage = (props) => {
               </Team.ExpandableInnerContainer>
             </Team.ExpandableSection>
             <Team.TeamDropDownContainer isLight={props.isLight} id="3">
-              <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage
-                  src="/images/user.png"
-                  ref={ref}
-                  style={{
-                    opacity: onScreen ? 1 : 0,
-                    translate: onScreen ? "none" : "0 2rem",
-                    transition: "600ms ease-in-out",
-                  }}
-                />
-                <Team.UserInfoContainer>
-                  <Team.SubTitle
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    John Doe
-                  </Team.SubTitle>
-                  <Team.Designation
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    4th year, B. Tech CSE
-                  </Team.Designation>
-                </Team.UserInfoContainer>
-              </Team.OtherTeamsSpecificInnerContainer>
-              <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage
-                  src="/images/user.png"
-                  ref={ref}
-                  style={{
-                    opacity: onScreen ? 1 : 0,
-                    translate: onScreen ? "none" : "0 2rem",
-                    transition: "600ms ease-in-out",
-                  }}
-                />
-                <Team.UserInfoContainer>
-                  <Team.SubTitle
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    John Doe
-                  </Team.SubTitle>
-                  <Team.Designation
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    4th year, B. Tech CSE
-                  </Team.Designation>
-                </Team.UserInfoContainer>
-              </Team.OtherTeamsSpecificInnerContainer>
+              {internal_dev.map((item, index) => {
+                return (
+                  <Team.OtherTeamsSpecificInnerContainer>
+                    <Team.OtherTeamsImage
+                      src={item.image}
+                      ref={ref}
+                      style={{
+                        opacity: onScreen ? 1 : 0,
+                        translate: onScreen ? "none" : "0 2rem",
+                        transition: "600ms ease-in-out",
+                      }}
+                    />
+                    <Team.UserInfoContainer>
+                      <Team.SubTitle
+                        ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}
+                      >
+                        {item.name}
+                      </Team.SubTitle>
+                      <Team.Designation
+                        ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}
+                      >
+                        {item.designation}
+                      </Team.Designation>
+                    </Team.UserInfoContainer>
+                  </Team.OtherTeamsSpecificInnerContainer>
+                );
+              })}
             </Team.TeamDropDownContainer>
             <Team.ExpandableSection
               isLight={props.isLight}
@@ -755,72 +618,43 @@ const TeamPage = (props) => {
               </Team.ExpandableInnerContainer>
             </Team.ExpandableSection>
             <Team.TeamDropDownContainer isLight={props.isLight} id="4">
-              <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage
-                  src="/images/user.png"
-                  ref={ref}
-                  style={{
-                    opacity: onScreen ? 1 : 0,
-                    translate: onScreen ? "none" : "0 2rem",
-                    transition: "600ms ease-in-out",
-                  }}
-                />
-                <Team.UserInfoContainer>
-                  <Team.SubTitle
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    John Doe
-                  </Team.SubTitle>
-                  <Team.Designation
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    4th year, B. Tech CSE
-                  </Team.Designation>
-                </Team.UserInfoContainer>
-              </Team.OtherTeamsSpecificInnerContainer>
-              <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage
-                  src="/images/user.png"
-                  ref={ref}
-                  style={{
-                    opacity: onScreen ? 1 : 0,
-                    translate: onScreen ? "none" : "0 2rem",
-                    transition: "600ms ease-in-out",
-                  }}
-                />
-                <Team.UserInfoContainer>
-                  <Team.SubTitle
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    John Doe
-                  </Team.SubTitle>
-                  <Team.Designation
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    4th year, B. Tech CSE
-                  </Team.Designation>
-                </Team.UserInfoContainer>
-              </Team.OtherTeamsSpecificInnerContainer>
+              {HR.map((item, index) => {
+                return (
+                  <Team.OtherTeamsSpecificInnerContainer>
+                    <Team.OtherTeamsImage
+                      src={item.image}
+                      ref={ref}
+                      style={{
+                        opacity: onScreen ? 1 : 0,
+                        translate: onScreen ? "none" : "0 2rem",
+                        transition: "600ms ease-in-out",
+                      }}
+                    />
+                    <Team.UserInfoContainer>
+                      <Team.SubTitle
+                        ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}
+                      >
+                        {item.name}
+                      </Team.SubTitle>
+                      <Team.Designation
+                        ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}
+                      >
+                        {item.designation}
+                      </Team.Designation>
+                    </Team.UserInfoContainer>
+                  </Team.OtherTeamsSpecificInnerContainer>
+                );
+              })}
             </Team.TeamDropDownContainer>
             <Team.ExpandableSection
               isLight={props.isLight}
@@ -835,72 +669,43 @@ const TeamPage = (props) => {
               </Team.ExpandableInnerContainer>
             </Team.ExpandableSection>
             <Team.TeamDropDownContainer isLight={props.isLight} id="5">
-              <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage
-                  src="/images/user.png"
-                  ref={ref}
-                  style={{
-                    opacity: onScreen ? 1 : 0,
-                    translate: onScreen ? "none" : "0 2rem",
-                    transition: "600ms ease-in-out",
-                  }}
-                />
-                <Team.UserInfoContainer>
-                  <Team.SubTitle
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    John Doe
-                  </Team.SubTitle>
-                  <Team.Designation
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    4th year, B. Tech CSE
-                  </Team.Designation>
-                </Team.UserInfoContainer>
-              </Team.OtherTeamsSpecificInnerContainer>
-              <Team.OtherTeamsSpecificInnerContainer>
-                <Team.OtherTeamsImage
-                  src="/images/user.png"
-                  ref={ref}
-                  style={{
-                    opacity: onScreen ? 1 : 0,
-                    translate: onScreen ? "none" : "0 2rem",
-                    transition: "600ms ease-in-out",
-                  }}
-                />
-                <Team.UserInfoContainer>
-                  <Team.SubTitle
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    John Doe
-                  </Team.SubTitle>
-                  <Team.Designation
-                    ref={ref}
-                    style={{
-                      opacity: onScreen ? 1 : 0,
-                      translate: onScreen ? "none" : "0 2rem",
-                      transition: "600ms ease-in-out",
-                    }}
-                  >
-                    4th year, B. Tech CSE
-                  </Team.Designation>
-                </Team.UserInfoContainer>
-              </Team.OtherTeamsSpecificInnerContainer>
+              {curation.map((item, index) => {
+                return (
+                  <Team.OtherTeamsSpecificInnerContainer>
+                    <Team.OtherTeamsImage
+                      src={item.image}
+                      ref={ref}
+                      style={{
+                        opacity: onScreen ? 1 : 0,
+                        translate: onScreen ? "none" : "0 2rem",
+                        transition: "600ms ease-in-out",
+                      }}
+                    />
+                    <Team.UserInfoContainer>
+                      <Team.SubTitle
+                        ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}
+                      >
+                        {item.name}
+                      </Team.SubTitle>
+                      <Team.Designation
+                        ref={ref}
+                        style={{
+                          opacity: onScreen ? 1 : 0,
+                          translate: onScreen ? "none" : "0 2rem",
+                          transition: "600ms ease-in-out",
+                        }}
+                      >
+                        {item.designation}
+                      </Team.Designation>
+                    </Team.UserInfoContainer>
+                  </Team.OtherTeamsSpecificInnerContainer>
+                );
+              })}
             </Team.TeamDropDownContainer>
           </Team.ExpandableSectionContainer>
         </Team.OtherTeamsContainer>
