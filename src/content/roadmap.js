@@ -13,7 +13,6 @@ import { SocialsText } from "../subcomponents/navbar/styles/navbar";
 import data from "../data/roadmap.json";
 
 const AboutPage = (props) => {
-  const [containable, setContainable] = useState("");
   const [roadmapData, setRoadmapData] = useState(data);
   const [clicked, setClicked] = useState(false);
   // const onScroll = (event) => {
@@ -270,8 +269,11 @@ const AboutPage = (props) => {
                 backgroundColor: props.isLight ? "#000" : "#fff",
                 opacity: 1,
               }}
-            />
-            {containable}
+            >
+              {/* <Navbar.CircleText>02, June, 2022</Navbar.CircleText> */}
+              <p style={{position: "relative", bottom: "100%", display: "inline", fontFamily: "PP Neue Machina"}}>Now</p>
+            </Navbar.Circle>
+
             <Navbar.LengthStick
               style={{
                 border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
