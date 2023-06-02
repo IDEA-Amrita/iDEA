@@ -178,7 +178,7 @@ const AboutPage = (props) => {
             backgroundColor={props.isLight ? "#000" : "#fff"}
             color={props.isLight ? "#fff" : "#000"}
           >
-            <Roadmap.OnHoverImage className="roadmap-on-hover-img" />
+            <Roadmap.OnHoverImage className="roadmap-on-hover-img" style={{objectFit: "cover"}}/>
             <Roadmap.OnHoverInnerContainer>
               <Roadmap.OnHoverTitle className="roadmap-on-hover-title"></Roadmap.OnHoverTitle>
               <Roadmap.OnHoverSubTitle className="roadmap-on-hover-subtitle"></Roadmap.OnHoverSubTitle>
@@ -191,6 +191,18 @@ const AboutPage = (props) => {
           </Roadmap.OnHoverContainer>
           <Roadmap>
             <Roadmap.AngledBoxContainer
+              onClick={(e) => {
+                e.preventDefault();
+                handleClick("4");
+              }}
+              onMouseEnter={(e) => {
+                e.preventDefault();
+                handleHover("4");
+              }}
+              onMouseLeave={(e) => {
+                e.preventDefault();
+                handleLeave();
+              }}
               className="roadmap-angled-box-container"
               backgroundColor={props.isLight ? "#000" : "#fff"}
               color={props.isLight ? "#fff" : "#000"}

@@ -1,9 +1,9 @@
 [
   {
-    "title": "What's now???",
+    "title": "What now?",
     "location": "",
     "date": "June 2022",
-    "content": "We will start working on the projects listed in the project section. Our socials will be updated with our progress. We will roll out the product iteratively soon. You can join in on any of the projects, visit the project section for more info!",
+    "content": "It's time to start development! We're open for new ideas. Development for the initial three projects is on the way. Keep an eye on our socials cos we're constantly updating. Join in as a developer to work with us!",
     "image": "/images/now.png",
     "image_alt": "/images/now_light.png"
   },
@@ -11,7 +11,7 @@
     "title": "SOOOON...",
     "location": "Monthly",
     "date": "",
-    "content": "We plan to get our internal ratings management and project allocation system up and ready as soon as possible. We have decided to outsource this project to fellow amritians. Check the projects section to join the development team ;)",
+    "content": "We're setting up a lot of internal software tools. Automating management of projects and people. We'll have a ratings system, a profile page, the whole works. Need lots of developers. We're looking to you to contribute!",
     "image": "/images/soon.png",
     "image_alt": "/images/soon_light.png"
   },
@@ -19,7 +19,7 @@
     "title": "LATERRRR~",
     "location": "Monthly",
     "date": "",
-    "content": "We have montly developer meetings where we discuss the progress of the projects. These meetings will help the developers restrospect on their work and get valuable feedback.",
+    "content": "It's monthly developer meeting time! Project progression checks, meeetups with alumni and professionals, it’s networking hour at iDEA. Retrospect on your projects and get valuable feedback.",
     "image": "/images/later.png",
     "image_alt": "/images/later_light.png"
   },
@@ -27,8 +27,16 @@
     "title": "/FARRR FUTURE/",
     "location": "Amrita CBE",
     "date": "",
-    "content": "We have a Bi-annual event which happens twice in a year, once during Amrita CBE's annual tech fest Anokha. It is to showcase the development of the ideas put forth by ideators.",
+    "content": "We’re planning to have bi annual events to showcase our development projects every year, one of which will be part of the annual tech feast, Ankoha.",
     "image": "/images/future.png",
     "image_alt": "/images/future_light.png"
+  },
+  {
+    "title": "INCEPTION",
+    "location": "iDEA",
+    "date": "",
+    "content": "We have a dream. A world where cool ideas come to fruition in real time, with support and mentorship on offer at every step. A world where students and the community in general benefit from innovative ideas.",
+    "image": "/images/inception.png",
+    "image_alt": "/images/inception_light.png"
   }
 ] 
