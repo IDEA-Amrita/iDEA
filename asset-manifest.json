@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/iDEA/static/css/main.3852e901.css",
-    "main.js": "/iDEA/static/js/main.471f0a5a.js",
-    "static/media/FiraCode-VariableFont_wght.ttf": "/iDEA/static/media/FiraCode-VariableFont_wght.4938e54ab2f06530a084.ttf",
-    "static/media/Neue_Machina.otf": "/iDEA/static/media/Neue_Machina.6c408aeebce449ab7d74.otf",
-    "static/media/Archer_Gage.ttf": "/iDEA/static/media/Archer_Gage.72aaa9892de7cad0e39a.ttf",
-    "static/media/Elianto-Regular.otf": "/iDEA/static/media/Elianto-Regular.b2a163b884fad7a9731b.otf",
-    "index.html": "/iDEA/index.html",
-    "main.3852e901.css.map": "/iDEA/static/css/main.3852e901.css.map",
-    "main.471f0a5a.js.map": "/iDEA/static/js/main.471f0a5a.js.map"
+    "main.css": "/static/css/main.1ad070a8.css",
+    "main.js": "/static/js/main.cfbf23cd.js",
+    "static/media/FiraCode-VariableFont_wght.ttf": "/static/media/FiraCode-VariableFont_wght.4938e54ab2f06530a084.ttf",
+    "static/media/Neue_Machina.otf": "/static/media/Neue_Machina.6c408aeebce449ab7d74.otf",
+    "static/media/Archer_Gage.ttf": "/static/media/Archer_Gage.72aaa9892de7cad0e39a.ttf",
+    "static/media/Elianto-Regular.otf": "/static/media/Elianto-Regular.b2a163b884fad7a9731b.otf",
+    "index.html": "/index.html",
+    "main.1ad070a8.css.map": "/static/css/main.1ad070a8.css.map",
+    "main.cfbf23cd.js.map": "/static/js/main.cfbf23cd.js.map"
   },
   "entrypoints": [
-    "static/css/main.3852e901.css",
-    "static/js/main.471f0a5a.js"
+    "static/css/main.1ad070a8.css",
+    "static/js/main.cfbf23cd.js"
   ]
 }
