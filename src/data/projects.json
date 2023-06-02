@@ -8,7 +8,9 @@
     "description": "The meeting scheduler application for the university aims to streamline the process of scheduling meetings between faculty members and students. The application will have two interfaces: one for the faculty to import their timetable and view their free slots, and another for students to request meetings with faculty members based on their availability. The faculty members will have the option to accept or reject the meeting requests, and the application will provide a method of communication between the faculty and students for further coordination.",
     "frameworksUsed": ["Flutter", "Node.js", "ExpressJS", "MongoDB"],
     "tags": ["App Development", "MicrosoftGraphAPI", "WebAPI", "BackendDevelopment"],
-    "imageUrl": "https://images.pexels.com/photos/273153/pexels-photo-273153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    "imageUrl": "https://images.pexels.com/photos/273153/pexels-photo-273153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "email": "mailto:nirmalkarthikeyan1503@gmail.com",
+    "instagram": "https://www.instagram.com/homenum_.revelio/"
   },
   {
     "title": "Project Allocation System",
@@ -19,7 +21,9 @@
     "description": "Assigning student members to work on projects or research papers, for iDEA with efficient mapping based on skillset, experience level, and peer group in an impartial way. There is a need for an algorithmic solution to automate the assignment process and ensure fair and effective project allocations.",
     "frameworksUsed": ["Python", "Java"],
     "tags": ["AlgorithmDesign", "ObjectOrientedProgramming", "DataStructures", "DBMS"],
-    "imageUrl": "https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    "imageUrl": "https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "email": "mailto:ideatech@cb.amrita.edu",
+    "instagram": "https://www.instagram.com/idea_amrita/"
   },
   {
     "title": "SupplyBlocks",
@@ -30,6 +34,8 @@
     "description": "The SupplyBlocks project aims to develop a Blockchain based solution where small / irregular producers of goods can list their products to buyers in their vicinity / buyers in places they travel to, and sell their produce without having to employ a middleman. The project aims to streamline resource management and improve accessibility within the community.",
     "frameworksUsed": ["Flutter", "Node.js", "Solidity"],
     "tags": ["BlockchainDevelopment", "AppDevelopment", "SmartContracts"],
-    "imageUrl": "https://img.freepik.com/free-photo/ai-cloud-concept-with-cube_23-2149739756.jpg?t=st=1685635346~exp=1685635946~hmac=03cde4e07e535cf4a6f55bb3f837b9ba51b5b59ea0ba27db848261daf8c8038f"
+    "imageUrl": "https://img.freepik.com/free-photo/ai-cloud-concept-with-cube_23-2149739756.jpg?t=st=1685635346~exp=1685635946~hmac=03cde4e07e535cf4a6f55bb3f837b9ba51b5b59ea0ba27db848261daf8c8038f",
+    "email": "mailto:arjunsreedar26@gmail.com",
+    "instagram": "https://www.instagram.com/arjjuuun/"
   }
 ]

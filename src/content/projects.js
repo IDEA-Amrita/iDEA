@@ -166,8 +166,8 @@ const ProjectsPage = (props) => {
                   />
                   {isOpen && (
                     <>
-                      <AiOutlineMail />
-                      <AiFillInstagram />
+                      <AiOutlineMail onClick={() => window.open(projects[activeProject].email)}/>
+                      <AiFillInstagram onClick={() => window.open(projects[activeProject].instagram)}/>
                     </>
                   )}
                 </Projects.BlockButton>
