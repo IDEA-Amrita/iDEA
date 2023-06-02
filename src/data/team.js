@@ -20,7 +20,7 @@ export const ideation = [
   {
     name: "Arjhun S",
     designation: "3rd year B.Tech CSE",
-    image: "/images/team/ideation/arjun.jpeg",
+    image: "/images/team/ideation/arjun.png",
   },
   {
     name: "Dilip Parasu",
@@ -42,7 +42,7 @@ export const internal_dev = [
   {
     name: "Nithin Ravi",
     designation: "2nd year B.Tech CSE",
-    image: "/images/team/internal_dev/nithin.jpeg",
+    image: "/images/user.png",
   },
 ];
 export const curation = [
@@ -78,7 +78,7 @@ export const advisors = [
   {
     name: "Soorya S",
     designation: "4th year B.Tech CSE",
-    image: "/images/team/advisors/soorya.jpeg",
+    image: "/images/user.png",
   },
   {
     name: "Ayush Barik",
@@ -88,7 +88,7 @@ export const advisors = [
   {
     name: "Arun Joshua Thomas",
     designation: "4th year B.Tech CCE",
-    image: "/images/team/advisors/arun.jpeg",
+    image: "/images/user.png",
   },
 ];
 
