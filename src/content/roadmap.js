@@ -1,16 +1,8 @@
 import React, { useRef, useState } from "react";
 import { Generic, Navbar, Roadmap } from "../subcomponents";
-import { FaFacebook } from "react-icons/fa";
-import {
-  AiOutlineInstagram,
-  AiOutlineTwitter,
-  AiOutlineMedium,
-  AiFillYoutube,
-  AiFillLinkedin,
-} from "react-icons/ai";
 import useElementOnScreen from "../animations";
-import { SocialsText } from "../subcomponents/navbar/styles/navbar";
 import data from "../data/roadmap.json";
+import { Socials } from "../components";
 
 const AboutPage = (props) => {
   const [roadmapData, setRoadmapData] = useState(data);
@@ -137,46 +129,7 @@ const AboutPage = (props) => {
               style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
             />
           </Navbar.TimelineBarLeft>
-          <Navbar.SocialsTopLeft
-            style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
-          >
-            <SocialsText
-              ref={ref}
-              style={{
-                opacity: onScreen ? 1 : 0,
-                translate: onScreen ? "none" : "0 2rem",
-                transition: "600ms ease-in-out",
-                color: props.isLight ? "#fff" : "#000",
-              }}
-            >
-              iDEA
-            </SocialsText>
-            <Navbar.SocialsTopLeftInnerContainer
-              ref={ref}
-              style={{
-                opacity: onScreen ? 1 : 0,
-                translate: onScreen ? "none" : "0 2rem",
-                transition: "600ms ease-in-out",
-              }}
-            >
-              <AiOutlineInstagram
-                style={{ color: props.isLight ? "#fff" : "#000" }}
-              />
-              <AiOutlineTwitter
-                style={{ color: props.isLight ? "#fff" : "#000" }}
-              />
-              <AiOutlineMedium
-                style={{ color: props.isLight ? "#fff" : "#000" }}
-              />
-              <FaFacebook style={{ color: props.isLight ? "#fff" : "#000" }} />
-              <AiFillYoutube
-                style={{ color: props.isLight ? "#fff" : "#000" }}
-              />
-              <AiFillLinkedin
-                style={{ color: props.isLight ? "#fff" : "#000" }}
-              />
-            </Navbar.SocialsTopLeftInnerContainer>
-          </Navbar.SocialsTopLeft>
+          <Socials isLight={props.isLight} />
           {/* <Navbar.TopTitle>
             <AiOutlineArrowDown onClick={props.down} />
             <AiOutlineArrowUp onClick={props.up} />
@@ -225,7 +178,7 @@ const AboutPage = (props) => {
             backgroundColor={props.isLight ? "#000" : "#fff"}
             color={props.isLight ? "#fff" : "#000"}
           >
-            <Roadmap.OnHoverImage className="roadmap-on-hover-img" />
+            <Roadmap.OnHoverImage className="roadmap-on-hover-img" style={{objectFit: "cover"}}/>
             <Roadmap.OnHoverInnerContainer>
               <Roadmap.OnHoverTitle className="roadmap-on-hover-title"></Roadmap.OnHoverTitle>
               <Roadmap.OnHoverSubTitle className="roadmap-on-hover-subtitle"></Roadmap.OnHoverSubTitle>
@@ -238,6 +191,18 @@ const AboutPage = (props) => {
           </Roadmap.OnHoverContainer>
           <Roadmap>
             <Roadmap.AngledBoxContainer
+              onClick={(e) => {
+                e.preventDefault();
+                handleClick("4");
+              }}
+              onMouseEnter={(e) => {
+                e.preventDefault();
+                handleHover("4");
+              }}
+              onMouseLeave={(e) => {
+                e.preventDefault();
+                handleLeave();
+              }}
               className="roadmap-angled-box-container"
               backgroundColor={props.isLight ? "#000" : "#fff"}
               color={props.isLight ? "#fff" : "#000"}

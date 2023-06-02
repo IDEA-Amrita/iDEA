@@ -39,3 +39,31 @@ body {
   background-color: #000;
   color: #fff;
 }
+
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.loading {
+  display: flex;
+  font-family: "FiraCode", monospace;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  transition: --num 5s;
+  counter-set: num var(--num);
+  font-weight: 400;
+  font-size: 48px;
+}
+
+.loading::after {
+  --num: 0;
+  content: counter(num);
+}
+
+.counting {
+  --num: 100 !important;
+}

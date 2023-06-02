@@ -367,16 +367,16 @@ export const Paragraph = styled.p`
   opacity: 0.6;
   color: ${(props) => props.color};
 
-  @media (max-width: 960px) {
-    font-size: 14px;
-  }
-
-  @media (max-width: 820px) {
+  @media (max-width: 1340px) {
     font-size: 12px;
   }
 
+  @media (max-width: 1076px) {
+    font-size: 8px;
+  }
+
   @media (max-width: 654px) {
-    font-size: 10px;
+    font-size: 6px;
   }
 
   &:hover {
@@ -391,7 +391,7 @@ export const BlockContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
 `;
 
 export const BlockInnerContainer = styled.div`
@@ -403,6 +403,22 @@ export const BlockInnerContainer = styled.div`
   justify-content: space-evenly;
 `;
 
+export const ButtonContainer = styled.div`
+  width: "240px";
+  height: "64px";
+
+  @media (max-width: 820px) {
+    width: "200px";
+    height: "48px";
+  }
+
+  @media (max-width: 654px) {
+    width: "160px";
+    height: "32px";
+  }
+
+`;
+
 export const BlockTitle = styled.h1`
   font-family: "PP Neue Machina";
   font-style: normal;
@@ -411,8 +427,14 @@ export const BlockTitle = styled.h1`
   color: ${(props) => props.color};
   cursor: pointer;
 
-  @media (max-width: 940px) {
+  @media (max-width: 1340px) {
     font-size: 28px;
+  }
+  @media (max-width: 1028px) {
+    font-size: 26px;
+  }
+  @media (max-width: 900px) {
+    font-size: 22px;
   }
 
   @media (max-width: 820px) {
@@ -425,18 +447,23 @@ export const BlockTitle = styled.h1`
 `;
 
 export const BlockButton = styled.button`
-  width: 240px;
-  height: 64px;
   color: ${(props) => props.color};
   background-color: ${(props) => props.backgroundColor};
   border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  position: absolute;
+  width: auto;
+  height: auto;
+  bottom: 5%;
+  padding: 10px 10px;
+  right: 2%;
   &:hover {
     transform: scale(1.02);
     transition: 500ms ease-in-out;
+  }
+
+  * {
+    cursor: pointer;
+    margin: 0 10px;
   }
 `;
 
