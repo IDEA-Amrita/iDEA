@@ -149,7 +149,7 @@ const ProjectsPage = (props) => {
                     backgroundColor: props.isLight ? "#000" : "#fff",
                     border: "none",
                   }}
-                  id="swN0M1hE"
+                  id="BEDaiz9s"
                 >
                   Join <BsArrowUpRight style={{ marginLeft: "4%" }} />
                 </PopupButton>
