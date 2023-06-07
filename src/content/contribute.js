@@ -82,7 +82,7 @@ const ContributePage = (props) => {
                   alignItems: "center",
                   justifyContent: "center",
                 }}
-                id="WTBw9bLa"
+                id="Csq4ijcx"
               >
                 lessgo <BsArrowUpRight style={{ marginLeft: "4%" }} />
               </PopupButton>
@@ -133,7 +133,7 @@ const ContributePage = (props) => {
                   alignItems: "center",
                   justifyContent: "center",
                 }}
-                id="swN0M1hE"
+                id="KS9VXRHf"
               >
                 lessgo <BsArrowUpRight style={{ marginLeft: "4%" }} />
               </PopupButton>
