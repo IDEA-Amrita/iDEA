@@ -40,9 +40,9 @@ export const internal_dev = [
     image: "/images/team/internal_dev/aditya.jpg",
   },
   {
-    name: "Nithin Ravi",
+    name: "Nitin Ravi",
     designation: "2nd year B.Tech CSE",
-    image: "/images/user.png",
+    image: "/images/team/internal_dev/nitin.jpg",
   },
 ];
 export const curation = [
