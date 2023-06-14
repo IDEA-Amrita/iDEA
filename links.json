@@ -1,0 +1,36 @@
+{
+  "links": [
+    {
+      "title": "Website",
+      "url": "http://www.ideacommunity.in/"
+    },
+    {
+      "title": "Instagram",
+      "url": "https://www.instagram.com/idea_amrita/"
+    },
+    {
+      "title": "Email",
+      "url": "mailto:ideatech@cb.amrita.edu"
+    },
+    {
+      "title": "Twitter",
+      "url": "https://twitter.com/iDEA_Amrita"
+    },
+    {
+      "title": "Github",
+      "url": "https://github.com/IDEA-Amrita"
+    },
+    {
+      "title": "Submit an idea",
+      "url": "https://jst1kgmoaqg.typeform.com/to/Csq4ijcx"
+    },
+    {
+      "title": "Join as a member",
+      "url": "https://jst1kgmoaqg.typeform.com/to/KS9VXRHf"
+    },
+    {
+      "title": "Join as a developer",
+      "url": "https://jst1kgmoaqg.typeform.com/to/BEDaiz9s"
+    }
+  ]
+}
