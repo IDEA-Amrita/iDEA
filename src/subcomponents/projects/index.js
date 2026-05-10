@@ -29,7 +29,7 @@ import {
   BlockTitle,
   BlockButton,
   AngledLine,
-  Paragraph
+  Paragraph,
 } from "./styles/projects";
 
 export default function Projects({ children, ...restProps }) {
@@ -214,9 +214,6 @@ Projects.BlockButton = function ProjectsBlockButton({
   return <BlockButton {...restProps}>{children}</BlockButton>;
 };
 
-Projects.AngledLine = function ProjectsAngledLine({
-  children,
-  ...restProps
-}) {
-  return <AngledLine {...restProps}>{children}</AngledLine>
-}
+Projects.AngledLine = function ProjectsAngledLine({ children, ...restProps }) {
+  return <AngledLine {...restProps}>{children}</AngledLine>;
+};

@@ -29,7 +29,11 @@ const AboutPage = (props) => {
           <Navbar.TimelineBarLeft>
             <Navbar.Circle
               size={true}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
               ref={ref}
@@ -37,39 +41,73 @@ const AboutPage = (props) => {
                 width: onScreen ? "1%" : "0",
                 translate: onScreen ? "none" : "0 10rem",
                 transition: "1000ms ease-in-out",
-                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
               }}
             />
             <Navbar.Circle
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
               onClick={props.roadmap}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
             <Navbar.Circle
               onClick={props.team}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
             <Navbar.Circle
               onClick={props.projects}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
             <Navbar.Circle
               onClick={props.contribute}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
           </Navbar.TimelineBarLeft>
-          <Socials isLight = {props.isLight}/>
+          <Socials isLight={props.isLight} />
           <Navbar.TopTitle>
             {/* <AiOutlineArrowDown onClick={props.down} /> */}
             <AiOutlineArrowUp

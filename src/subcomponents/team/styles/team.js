@@ -14,11 +14,9 @@ export const Container = styled.div`
   @media (max-width: 1288px) {
     margin-top: 10%;
   }
-
   @media (max-width: 1000px) {
     margin-top: 12%;
   }
-
   @media (max-width: 820px) {
     margin-top: 16%;
   }
@@ -30,9 +28,11 @@ export const Container = styled.div`
 export const Title = styled.h1`
   font-family: "PP Neue Machina";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 48px;
-  color: ${(props) => props.color};
+  color: var(--accent-violet);
+  text-transform: lowercase;
+  letter-spacing: -0.015em;
   cursor: pointer;
 
   @media (max-width: 960px) {
@@ -41,7 +41,6 @@ export const Title = styled.h1`
   @media (max-width: 820px) {
     font-size: 32px;
   }
-
   @media (max-width: 654px) {
     font-size: 24px;
   }
@@ -51,22 +50,20 @@ export const Paragraph = styled.p`
   font-family: "PP Neue Machina";
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 1.5em;
-  letter-spacing: 0.05em;
-  color: ${(props) => props.color};
+  font-size: 17px;
+  line-height: 1.55em;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
   cursor: pointer;
 
   @media (max-width: 960px) {
-    font-size: 16px;
+    font-size: 15px;
   }
-
   @media (max-width: 820px) {
-    font-size: 12px;
+    font-size: 13px;
   }
-
   @media (max-width: 654px) {
-    font-size: 8px;
+    font-size: 11px;
   }
 `;
 
@@ -82,21 +79,21 @@ export const MentorTitle = styled.h1`
   align-self: flex-start;
   font-family: "PP Neue Machina";
   font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  color: ${(props) => props.color};
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
   cursor: pointer;
 
   @media (max-width: 960px) {
-    font-size: 18px;
+    font-size: 12px;
   }
-
   @media (max-width: 820px) {
-    font-size: 16px;
+    font-size: 11px;
   }
-
   @media (max-width: 654px) {
-    font-size: 14px;
+    font-size: 10px;
   }
 `;
 
@@ -159,7 +156,7 @@ export const CrossedBorders = styled.div`
   &:after {
     content: "";
     position: absolute;
-    border: solid ${(props) => props.color};
+    border: solid var(--accent-violet);
   }
 
   &:before {
@@ -197,12 +194,12 @@ export const CrossedBordersImage = styled.img`
   width: 96px;
   border-radius: 50%;
   margin: 0 2%;
+  border: 1.5px solid var(--ink);
 
   @media (max-width: 820px) {
     height: 64px;
     width: 64px;
   }
-
   @media (max-width: 654px) {
     height: 48px;
     width: 48px;
@@ -224,22 +221,21 @@ export const SubTitle = styled.h2`
   margin-bottom: 0 !important;
   font-family: "PP Neue Machina";
   font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  color: ${(props) => props.color} !important;
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--ink) !important;
 
   @media (max-width: 820px) {
-    font-size: 16px;
+    font-size: 15px;
   }
-
   @media (max-width: 654px) {
     font-size: 12px;
   }
-
   @media (max-width: 540px) {
-    font-size: 8px;
+    font-size: 10px;
   }
 `;
+
 export const Designation = styled.h2`
   position: relative;
   left: 4%;
@@ -248,17 +244,15 @@ export const Designation = styled.h2`
   font-family: "PP Neue Machina";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  color: ${(props) => props.color} !important;
+  font-size: 13px;
+  color: var(--muted) !important;
 
   @media (max-width: 820px) {
-    font-size: 14px;
-  }
-
-  @media (max-width: 654px) {
     font-size: 12px;
   }
-
+  @media (max-width: 654px) {
+    font-size: 11px;
+  }
   @media (max-width: 540px) {
     font-size: 10px;
   }
@@ -269,20 +263,18 @@ export const About = styled.p`
   margin: 0;
   left: 4%;
   font-family: "PP Neue Machina";
-  font-size: 16px;
-  opacity: 0.7 !important;
-  color: ${(props) => props.color};
+  font-size: 14px;
+  color: var(--ink-soft);
+  opacity: 0.75;
 
   @media (max-width: 820px) {
-    font-size: 14px;
+    font-size: 13px;
   }
-
   @media (max-width: 654px) {
     font-size: 12px;
   }
-
   @media (max-width: 540px) {
-    font-size: 10px;
+    font-size: 11px;
   }
 `;
 
@@ -302,15 +294,23 @@ export const ExpandableSection = styled.div`
   display: flex;
   align-items: center;
   padding: 0 2%;
-  box-shadow: 0px 4px 8px
-    ${(props) =>
-      props.isLight ? "rgba(0, 0, 0, 0.25)" : "rgba(255, 255, 255, 0.25)"};
-  border-radius: 4px;
+  background-color: var(--card-cream);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-nb-sm);
   cursor: pointer;
   margin-bottom: 0.1%;
+  transition: transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+
   &:hover {
-    transform: scale(1.02);
-    transition: 500ms ease-in-out;
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-nb-md);
+  }
+
+  &:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
   }
 `;
 
@@ -321,10 +321,9 @@ export const TeamDropDownContainer = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
   padding-right: 0 !important;
-  box-shadow: 0px 4px 8px
-    ${(props) =>
-      props.isLight ? "rgba(0, 0, 0, 0.25)" : "rgba(255, 255, 255, 0.25)"};
-  border-radius: 4px;
+  background-color: var(--card-lavender);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
   * {
     margin-left: 5%;
   }
@@ -338,6 +337,12 @@ export const ExpandableInnerContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  font-family: "PP Neue Machina";
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink);
 `;
 
 export const OtherTeamsContainer = styled.div`
@@ -346,6 +351,7 @@ export const OtherTeamsContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 5% 0 0 12% !important;
+
   @media (max-width: 654px) {
     margin-top: 10%;
   }
@@ -374,7 +380,7 @@ export const OtherTeamsSpecificInnerContainer = styled.div`
 export const Line = styled.div`
   height: 1px;
   width: 100%;
-  background-color: ${(props) => props.backgroundColor};
+  background-color: var(--line);
   margin: 3% 0;
 `;
 
@@ -382,40 +388,39 @@ export const OtherTeamsTitle = styled.h1`
   font-family: "PP Neue Machina";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   margin: 1% 0;
-  opacity: 0.5;
-  color: ${(props) => props.color};
+  color: var(--muted);
 
   @media (max-width: 820px) {
-    font-size: 16px;
-  }
-
-  @media (max-width: 654px) {
     font-size: 12px;
   }
-
+  @media (max-width: 654px) {
+    font-size: 11px;
+  }
   @media (max-width: 540px) {
     font-size: 10px;
   }
 `;
 
 export const OtherTeamsImage = styled.img`
-  height: 64px;
-  width: 64px;
+  height: 56px;
+  width: 56px;
   border-radius: 50%;
   margin: 0 2% 0 0;
+  border: 1px solid var(--line);
+  object-fit: cover;
 
   @media (max-width: 820px) {
-    height: 48px;
-    width: 48px;
+    height: 44px;
+    width: 44px;
   }
-
   @media (max-width: 654px) {
     height: 32px;
     width: 32px;
   }
-
   @media (max-width: 540px) {
     height: 24px;
     width: 24px;
@@ -427,12 +432,15 @@ export const TeamYears = styled.h2`
   right: 5%;
   top: 5%;
   font-family: "PP Neue Machina";
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
-  font-size: 24px;
-  color: ${(props) => props.color};
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
   cursor: pointer;
+
   &:hover {
-    opacity: 0.5 !important;
+    color: var(--accent-violet);
   }
 `;

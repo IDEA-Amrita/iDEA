@@ -20,41 +20,81 @@ const ContributePage = (props) => {
           <Navbar.TimelineBarLeft>
             <Navbar.Circle
               onClick={props.about}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
             <Navbar.Circle
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
               onClick={props.roadmap}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
             <Navbar.Circle
               onClick={props.team}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
             <Navbar.Circle
               onClick={props.projects}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
             <Navbar.Circle
               size={true}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
           </Navbar.TimelineBarLeft>
-          <Socials isLight={props.isLight}/>
+          <Socials isLight={props.isLight} />
         </Navbar.TopContainer>
         <Projects>
           <Projects.BlockContainer>
@@ -70,17 +110,21 @@ const ContributePage = (props) => {
                 Submit an Exciting Project Idea
               </Projects.BlockTitle>
               <PopupButton
-                color={props.isLight ? "#fff" : "#000"}
-                backgroundColor={props.isLight ? "#000" : "#fff"}
+                color={"var(--ink)"}
+                backgroundColor={"var(--accent-lime)"}
                 style={{
                   width: "240px",
                   height: "64px",
-                  color: props.isLight ? "#fff" : "#000",
-                  backgroundColor: props.isLight ? "#000" : "#fff",
-                  border: "none",
+                  color: "var(--ink)",
+                  backgroundColor: "var(--accent-lime)",
+                  border: "1.5px solid var(--ink)",
+                  borderRadius: "999px",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  boxShadow: "2px 2px 0 var(--ink)",
+                  fontFamily: "'PP Neue Machina'",
+                  fontWeight: 500,
                 }}
                 id="Csq4ijcx"
               >
@@ -102,7 +146,11 @@ const ContributePage = (props) => {
               </Projects.Paragraph>
             </Projects.BlockInnerContainer>
             <Projects.BlockInnerContainer>
-              <Projects.AngledLine backgroundColor={props.isLight ? "#000" : "#fff"} />
+              <Projects.AngledLine
+                backgroundColor={
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }
+              />
             </Projects.BlockInnerContainer>
             <Projects.BlockInnerContainer>
               <Projects.Paragraph
@@ -121,17 +169,21 @@ const ContributePage = (props) => {
                 <br /> Become a part of iDEA today!
               </Projects.Paragraph>
               <PopupButton
-                color={props.isLight ? "#fff" : "#000"}
-                backgroundColor={props.isLight ? "#000" : "#fff"}
+                color={"var(--ink)"}
+                backgroundColor={"var(--accent-lime)"}
                 style={{
                   width: "240px",
                   height: "64px",
-                  color: props.isLight ? "#fff" : "#000",
-                  backgroundColor: props.isLight ? "#000" : "#fff",
-                  border: "none",
+                  color: "var(--ink)",
+                  backgroundColor: "var(--accent-lime)",
+                  border: "1.5px solid var(--ink)",
+                  borderRadius: "999px",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  boxShadow: "2px 2px 0 var(--ink)",
+                  fontFamily: "'PP Neue Machina'",
+                  fontWeight: 500,
                 }}
                 id="KS9VXRHf"
               >
