@@ -2,7 +2,15 @@ import { useState, useRef, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import { Home, About, Roadmap, Team, Alumni, Blogs, Contribute } from "../content";
+import {
+  Home,
+  About,
+  Roadmap,
+  Team,
+  Alumni,
+  Blogs,
+  Contribute,
+} from "../content";
 import Projects from "../content/projects";
 
 const bounce = keyframes`
@@ -26,10 +34,12 @@ const ScrollCornerBtn = styled.button`
   justify-content: center;
   cursor: pointer;
   box-shadow: 3px 3px 0 var(--ink);
-  transition: background 150ms ease, color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+  transition: background 150ms ease, color 150ms ease, transform 150ms ease,
+    box-shadow 150ms ease;
   opacity: ${(p) => (p.visible ? 1 : 0)};
-  pointer-events: ${(p) => (p.visible ? 'auto' : 'none')};
-  transition: opacity 300ms ease, background 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+  pointer-events: ${(p) => (p.visible ? "auto" : "none")};
+  transition: opacity 300ms ease, background 150ms ease, transform 150ms ease,
+    box-shadow 150ms ease;
 
   svg {
     animation: ${bounce} 1.6s ease-in-out infinite;
@@ -188,7 +198,16 @@ function Landing() {
         onClick={scrollNext}
         title="Scroll to next section"
       >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <polyline points="6 9 12 15 18 9" />
         </svg>
       </ScrollCornerBtn>

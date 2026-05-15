@@ -49,18 +49,14 @@ Alumni.AlumniListContainer = function AlumniListContainerComponent({
   children,
   ...restProps
 }) {
-  return (
-    <AlumniListContainer {...restProps}>{children}</AlumniListContainer>
-  );
+  return <AlumniListContainer {...restProps}>{children}</AlumniListContainer>;
 };
 
 Alumni.DescriptionContainer = function DescriptionContainerComponent({
   children,
   ...restProps
 }) {
-  return (
-    <DescriptionContainer {...restProps}>{children}</DescriptionContainer>
-  );
+  return <DescriptionContainer {...restProps}>{children}</DescriptionContainer>;
 };
 
 Alumni.DescriptionHeader = function DescriptionHeaderComponent({
@@ -74,27 +70,27 @@ Alumni.DescriptionHeaderImage = function DescriptionHeaderImageComponent({
   children,
   ...restProps
 }) {
-  return <DescriptionHeaderImage {...restProps}>{children}</DescriptionHeaderImage>;
+  return (
+    <DescriptionHeaderImage {...restProps}>{children}</DescriptionHeaderImage>
+  );
 };
 
 Alumni.DescriptionHeaderContent = function DescriptionHeaderContentComponent({
   children,
   ...restProps
 }) {
-  return <DescriptionHeaderContent {...restProps}>{children}</DescriptionHeaderContent>;
+  return (
+    <DescriptionHeaderContent {...restProps}>
+      {children}
+    </DescriptionHeaderContent>
+  );
 };
 
-Alumni.AlumniTitle = function AlumniTitleComponent({
-  children,
-  ...restProps
-}) {
+Alumni.AlumniTitle = function AlumniTitleComponent({ children, ...restProps }) {
   return <AlumniTitle {...restProps}>{children}</AlumniTitle>;
 };
 
-Alumni.AlumniRole = function AlumniRoleComponent({
-  children,
-  ...restProps
-}) {
+Alumni.AlumniRole = function AlumniRoleComponent({ children, ...restProps }) {
   return <AlumniRole {...restProps}>{children}</AlumniRole>;
 };
 
@@ -102,9 +98,7 @@ Alumni.DescriptionContent = function DescriptionContentComponent({
   children,
   ...restProps
 }) {
-  return (
-    <DescriptionContent {...restProps}>{children}</DescriptionContent>
-  );
+  return <DescriptionContent {...restProps}>{children}</DescriptionContent>;
 };
 
 Alumni.AlumniDescription = function AlumniDescriptionComponent({
@@ -118,17 +112,11 @@ Alumni.Field = function FieldComponent({ children, ...restProps }) {
   return <Field {...restProps}>{children}</Field>;
 };
 
-Alumni.FieldLabel = function FieldLabelComponent({
-  children,
-  ...restProps
-}) {
+Alumni.FieldLabel = function FieldLabelComponent({ children, ...restProps }) {
   return <FieldLabel {...restProps}>{children}</FieldLabel>;
 };
 
-Alumni.FieldValue = function FieldValueComponent({
-  children,
-  ...restProps
-}) {
+Alumni.FieldValue = function FieldValueComponent({ children, ...restProps }) {
   return <FieldValue {...restProps}>{children}</FieldValue>;
 };
 
@@ -172,5 +160,7 @@ Alumni.ListItemArrowContainer = function ListItemArrowContainerComponent({
   children,
   ...restProps
 }) {
-  return <ListItemArrowContainer {...restProps}>{children}</ListItemArrowContainer>;
+  return (
+    <ListItemArrowContainer {...restProps}>{children}</ListItemArrowContainer>
+  );
 };

@@ -23,9 +23,15 @@ const BlogEndpoint = () => {
 
   const categoryCollections = {
     latest: sortedBlogs.slice(0, 4),
-    product: sortedBlogs.filter((blog) => blog.category === "Product").slice(0, 4),
-    security: sortedBlogs.filter((blog) => blog.category === "Security").slice(0, 4),
-    mobile: sortedBlogs.filter((blog) => blog.category === "Mobile").slice(0, 4),
+    product: sortedBlogs
+      .filter((blog) => blog.category === "Product")
+      .slice(0, 4),
+    security: sortedBlogs
+      .filter((blog) => blog.category === "Security")
+      .slice(0, 4),
+    mobile: sortedBlogs
+      .filter((blog) => blog.category === "Mobile")
+      .slice(0, 4),
   };
 
   const authorProfiles = Array.from(
@@ -128,7 +134,9 @@ const BlogEndpoint = () => {
     <Blogs.AuthorsPage id="authors">
       <Blogs.SectionHeader>
         <Blogs.SectionTitle>Authors</Blogs.SectionTitle>
-        <Blogs.SectionSubtitle>Meet the voices behind our content.</Blogs.SectionSubtitle>
+        <Blogs.SectionSubtitle>
+          Meet the voices behind our content.
+        </Blogs.SectionSubtitle>
       </Blogs.SectionHeader>
       <Blogs.AuthorsGrid>
         {authorProfiles.map((author) => (
@@ -140,10 +148,16 @@ const BlogEndpoint = () => {
                 <Blogs.AuthorLabel>{author.title}</Blogs.AuthorLabel>
               </div>
             </Blogs.AuthorProfileTop>
-            <Blogs.AuthorDescription>{author.description}</Blogs.AuthorDescription>
+            <Blogs.AuthorDescription>
+              {author.description}
+            </Blogs.AuthorDescription>
             <Blogs.AuthorProfileActions>
-              <Blogs.AuthorViewButton type="button">View articles</Blogs.AuthorViewButton>
-              <Blogs.AuthorLinkButton type="button">Visit profile</Blogs.AuthorLinkButton>
+              <Blogs.AuthorViewButton type="button">
+                View articles
+              </Blogs.AuthorViewButton>
+              <Blogs.AuthorLinkButton type="button">
+                Visit profile
+              </Blogs.AuthorLinkButton>
             </Blogs.AuthorProfileActions>
           </Blogs.AuthorProfileCard>
         ))}
@@ -180,26 +194,41 @@ const BlogEndpoint = () => {
             {selectedTab !== "authors" && (
               <Blogs.FeaturedSection>
                 <Blogs.FeaturedLabel>Featured story</Blogs.FeaturedLabel>
-              <Blogs.FeaturedCard>
-                <Blogs.FeaturedImage src={featuredBlog.imageUrl} alt={featuredBlog.title} />
-                <Blogs.FeaturedContent>
-                  <Blogs.FeaturedCategory>{featuredBlog.category}</Blogs.FeaturedCategory>
-                  <Blogs.FeaturedTitle>{featuredBlog.title}</Blogs.FeaturedTitle>
-                  <Blogs.FeaturedSubtitle>{featuredBlog.subtitle}</Blogs.FeaturedSubtitle>
-                  <Blogs.FeaturedMeta>
-                    {featuredBlog.author} / {featuredBlog.date}
-                  </Blogs.FeaturedMeta>
-                  <Blogs.FeaturedDescription>{featuredBlog.content}</Blogs.FeaturedDescription>
-                  <Blogs.FeaturedAction onClick={() => (window.location.hash = "#/")}>
-                    Back to home
-                  </Blogs.FeaturedAction>
-                </Blogs.FeaturedContent>
-              </Blogs.FeaturedCard>
-            </Blogs.FeaturedSection>
+                <Blogs.FeaturedCard>
+                  <Blogs.FeaturedImage
+                    src={featuredBlog.imageUrl}
+                    alt={featuredBlog.title}
+                  />
+                  <Blogs.FeaturedContent>
+                    <Blogs.FeaturedCategory>
+                      {featuredBlog.category}
+                    </Blogs.FeaturedCategory>
+                    <Blogs.FeaturedTitle>
+                      {featuredBlog.title}
+                    </Blogs.FeaturedTitle>
+                    <Blogs.FeaturedSubtitle>
+                      {featuredBlog.subtitle}
+                    </Blogs.FeaturedSubtitle>
+                    <Blogs.FeaturedMeta>
+                      {featuredBlog.author} / {featuredBlog.date}
+                    </Blogs.FeaturedMeta>
+                    <Blogs.FeaturedDescription>
+                      {featuredBlog.content}
+                    </Blogs.FeaturedDescription>
+                    <Blogs.FeaturedAction
+                      onClick={() => (window.location.hash = "#/")}
+                    >
+                      Back to home
+                    </Blogs.FeaturedAction>
+                  </Blogs.FeaturedContent>
+                </Blogs.FeaturedCard>
+              </Blogs.FeaturedSection>
             )}
 
             <Blogs.TabContent key={selectedTab}>
-              {selectedTab === "authors" ? renderAuthorsPage() : renderCategorySections()}
+              {selectedTab === "authors"
+                ? renderAuthorsPage()
+                : renderCategorySections()}
             </Blogs.TabContent>
           </Blogs.BlogsContentContainer>
         </Blogs.Container>

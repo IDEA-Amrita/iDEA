@@ -197,4 +197,3 @@ const AlumniPage = (props) => {
 };
 
 export default AlumniPage;
-

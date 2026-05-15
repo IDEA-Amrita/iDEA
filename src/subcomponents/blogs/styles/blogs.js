@@ -136,7 +136,8 @@ export const CategoryPill = styled.button`
   border: 1px solid var(--ink-soft);
   border-radius: 999px;
   color: ${(props) => (props.active ? "white" : "var(--ink)")};
-  background: ${(props) => (props.active ? "var(--accent-violet)" : "transparent")};
+  background: ${(props) =>
+    props.active ? "var(--accent-violet)" : "transparent"};
   font-family: "PP Neue Machina";
   font-size: 13px;
   text-transform: uppercase;
