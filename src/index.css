@@ -122,3 +122,14 @@ body {
 .counting {
   --num: 100 !important;
 }
+
+/* Hide the native @react-spring/parallax scrollbar */
+[class^="light"] > div,
+[class^="dark"] > div {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+[class^="light"] > div::-webkit-scrollbar,
+[class^="dark"] > div::-webkit-scrollbar {
+  display: none;
+}

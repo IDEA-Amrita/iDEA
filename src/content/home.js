@@ -12,6 +12,8 @@ const Home = ({
   team,
   projects,
   contribute,
+  alumni,
+  blogs,
 }) => {
   const handleClick = (event) => {
     event.preventDefault();
@@ -35,6 +37,8 @@ const Home = ({
           roadmap={roadmap}
           team={team}
           projects={projects}
+          alumni={alumni}
+          blogs={blogs}
           contribute={contribute}
         />
         <Nav.IconContainer

@@ -113,6 +113,8 @@ export default function Nav(props) {
         <NavPill onClick={props.roadmap}>Roadmap</NavPill>
         <NavPill onClick={props.team}>Team</NavPill>
         <NavPill onClick={props.projects}>Projects</NavPill>
+        <NavPill onClick={props.alumni}>Alumini</NavPill>
+        <NavPill onClick={props.blogs}>Blogs</NavPill>
         <NavPill
           href="https://github.com/IDEA-Amrita"
           target="_blank"
