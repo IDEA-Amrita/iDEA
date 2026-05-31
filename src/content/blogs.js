@@ -1,34 +1,16 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Generic, Navbar } from "../subcomponents";
-import { FaFacebook } from "react-icons/fa";
-import {
-  AiOutlineArrowUp,
-  AiOutlineInstagram,
-  AiOutlineTwitter,
-  AiOutlineMedium,
-  AiFillYoutube,
-  AiFillLinkedin,
-} from "react-icons/ai";
-import useElementOnScreen from "../animations";
-import { SocialsText } from "../subcomponents/navbar/styles/navbar";
-import about from "../data/about.json";
+import Blogs from "../subcomponents/blogs";
 import { Socials } from "../components";
 
-const AboutPage = (props) => {
-  // const onScroll = (event) => {
-  //   event.preventDefault();
-  //   console.log("something")
-  // }
-
-  const ref = useRef(null);
-  const onScreen = useElementOnScreen(ref);
+const BlogsPage = (props) => {
   return (
     <>
       <Generic>
         <Navbar.TopContainer>
           <Navbar.TimelineBarLeft>
             <Navbar.Circle
-              size={true}
+              onClick={props.about}
               style={{
                 backgroundColor: props.isLight
                   ? "var(--accent-violet)"
@@ -36,11 +18,7 @@ const AboutPage = (props) => {
               }}
             />
             <Navbar.Stick
-              ref={ref}
               style={{
-                width: onScreen ? "1%" : "0",
-                translate: onScreen ? "none" : "0 10rem",
-                transition: "1000ms ease-in-out",
                 border: `1px solid ${
                   props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
                 }`,
@@ -92,21 +70,6 @@ const AboutPage = (props) => {
               }}
             />
             <Navbar.Circle
-              onClick={props.contribute}
-              style={{
-                backgroundColor: props.isLight
-                  ? "var(--accent-violet)"
-                  : "var(--accent-lime)",
-              }}
-            />
-            <Navbar.Stick
-              style={{
-                border: `1px solid ${
-                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
-                }`,
-              }}
-            />
-            <Navbar.Circle
               onClick={props.alumni}
               style={{
                 backgroundColor: props.isLight
@@ -121,48 +84,56 @@ const AboutPage = (props) => {
                 }`,
               }}
             />
+            <Navbar.Circle
+              size={true}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
+            />
+            <Navbar.Stick
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
+            />
+            <Navbar.Circle
+              onClick={props.contribute}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
+            />
           </Navbar.TimelineBarLeft>
           <Socials isLight={props.isLight} />
-          <Navbar.TopTitle>
-            {/* <AiOutlineArrowDown onClick={props.down} /> */}
-            <AiOutlineArrowUp
-              onClick={props.up}
-              style={{ cursor: "pointer" }}
-            />
-          </Navbar.TopTitle>
         </Navbar.TopContainer>
-        <Generic.InnerContainer>
-          {/* <Generic.CircleStickLineMapContainer>
-            <Generic.Circle color={"#000"} />
-            <Generic.Stick color={"#000"} />
-          </Generic.CircleStickLineMapContainer> */}
-          <Generic.Title
-            ref={ref}
-            style={{
-              opacity: onScreen ? 1 : 0,
-              translate: onScreen ? "none" : "0 2rem",
-              transition: "1000ms ease-in-out",
-            }}
-          >
-            About
-          </Generic.Title>
-          <Generic.ParagraphContainer>
-            <Generic.Paragraph
-              ref={ref}
-              style={{
-                opacity: onScreen ? 1 : 0,
-                translate: onScreen ? "none" : "0 2rem",
-                transition: "1000ms ease-in-out",
-              }}
-            >
-              {about.content}
-            </Generic.Paragraph>
-          </Generic.ParagraphContainer>
-        </Generic.InnerContainer>
-        <Generic.Image src="/images/frame.png" />
+        <Blogs.Container>
+          <Blogs.TimeLineContainer>
+            {/* Add timeline indicator here if needed */}
+          </Blogs.TimeLineContainer>
+          <Blogs.BlogsContentContainer>
+            <Blogs.BlogHeader>
+              <Blogs.BlogTitle>blogs</Blogs.BlogTitle>
+              <Blogs.BlogSubtitle>
+                Insights, ideas, and stories from the iDEA community
+              </Blogs.BlogSubtitle>
+            </Blogs.BlogHeader>
+            <Blogs.BlogSummary>
+              Discover our latest articles in a dedicated blog space. Click the
+              button below to open the full blog endpoint and browse all
+              published posts.
+            </Blogs.BlogSummary>
+            <Blogs.BrowseButton onClick={props.browseBlogs}>
+              Browse blogs
+            </Blogs.BrowseButton>
+          </Blogs.BlogsContentContainer>
+        </Blogs.Container>
       </Generic>
     </>
   );
 };
 
-export default AboutPage;
+export default BlogsPage;

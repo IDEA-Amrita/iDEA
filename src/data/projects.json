@@ -7,7 +7,12 @@
     "endDate": "Present",
     "description": "The meeting scheduler application for the university aims to streamline the process of scheduling meetings between faculty members and students. The application will have two interfaces: one for the faculty to import their timetable and view their free slots, and another for students to request meetings with faculty members based on their availability. The faculty members will have the option to accept or reject the meeting requests, and the application will provide a method of communication between the faculty and students for further coordination.",
     "frameworksUsed": ["Flutter", "Node.js", "ExpressJS", "MongoDB"],
-    "tags": ["App Development", "MicrosoftGraphAPI", "WebAPI", "BackendDevelopment"],
+    "tags": [
+      "App Development",
+      "MicrosoftGraphAPI",
+      "WebAPI",
+      "BackendDevelopment"
+    ],
     "imageUrl": "https://images.pexels.com/photos/273153/pexels-photo-273153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     "email": "mailto:nirmalkarthikeyan1503@gmail.com",
     "instagram": "https://www.instagram.com/homenum_.revelio/"
@@ -20,7 +25,12 @@
     "endDate": "present",
     "description": "Assigning student members to work on projects or research papers, for iDEA with efficient mapping based on skillset, experience level, and peer group in an impartial way. There is a need for an algorithmic solution to automate the assignment process and ensure fair and effective project allocations.",
     "frameworksUsed": ["Python", "Java"],
-    "tags": ["AlgorithmDesign", "ObjectOrientedProgramming", "DataStructures", "DBMS"],
+    "tags": [
+      "AlgorithmDesign",
+      "ObjectOrientedProgramming",
+      "DataStructures",
+      "DBMS"
+    ],
     "imageUrl": "https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "email": "mailto:ideatech@cb.amrita.edu",
     "instagram": "https://www.instagram.com/idea_amrita/"

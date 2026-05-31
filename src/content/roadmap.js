@@ -33,7 +33,9 @@ const AboutPage = (props) => {
     OnHoverSubTitle.innerHTML =
       roadmapData[val].location + " " + roadmapData[val].date;
     OnHoverDescription.innerHTML = roadmapData[val].content;
-    OnHoverImage.src = props.isLight ? roadmapData[val].image : roadmapData[val].image_alt;
+    OnHoverImage.src = props.isLight
+      ? roadmapData[val].image
+      : roadmapData[val].image_alt;
     //give a transition animation to the opacity
     console.log(val);
   };
@@ -66,7 +68,9 @@ const AboutPage = (props) => {
     OnHoverSubTitle.innerHTML =
       roadmapData[val].location + " " + roadmapData[val].date;
     OnHoverDescription.innerHTML = roadmapData[val].content;
-    OnHoverImage.src = props.isLight ? roadmapData[val].image : roadmapData[val].image_alt;
+    OnHoverImage.src = props.isLight
+      ? roadmapData[val].image
+      : roadmapData[val].image_alt;
     //give a transition animation to the opacity
     console.log(val);
   };
@@ -88,15 +92,27 @@ const AboutPage = (props) => {
         <Navbar.TopContainer>
           <Navbar.TimelineBarLeft>
             <Navbar.Circle
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
               onClick={props.about}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
             <Navbar.Circle
               size={true}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
               ref={ref}
@@ -104,29 +120,70 @@ const AboutPage = (props) => {
                 width: onScreen ? "1%" : "0",
                 translate: onScreen ? "none" : "0 10rem",
                 transition: "2000ms ease-in-out",
-                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
               }}
             />
             <Navbar.Circle
               onClick={props.team}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
             <Navbar.Circle
               onClick={props.projects}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
             <Navbar.Circle
               onClick={props.contribute}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
+            />
+            <Navbar.Circle
+              onClick={props.alumni}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
+            />
+            <Navbar.Stick
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
           </Navbar.TimelineBarLeft>
           <Socials isLight={props.isLight} />
@@ -175,10 +232,15 @@ const AboutPage = (props) => {
           </Generic.TopRightTitleContainer>
           <Roadmap.OnHoverContainer
             className="roadmap-on-hover-container"
-            backgroundColor={props.isLight ? "#000" : "#fff"}
+            backgroundColor={
+              props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+            }
             color={props.isLight ? "#fff" : "#000"}
           >
-            <Roadmap.OnHoverImage className="roadmap-on-hover-img" style={{objectFit: "cover"}}/>
+            <Roadmap.OnHoverImage
+              className="roadmap-on-hover-img"
+              style={{ objectFit: "cover" }}
+            />
             <Roadmap.OnHoverInnerContainer>
               <Roadmap.OnHoverTitle className="roadmap-on-hover-title"></Roadmap.OnHoverTitle>
               <Roadmap.OnHoverSubTitle className="roadmap-on-hover-subtitle"></Roadmap.OnHoverSubTitle>
@@ -204,7 +266,9 @@ const AboutPage = (props) => {
                 handleLeave();
               }}
               className="roadmap-angled-box-container"
-              backgroundColor={props.isLight ? "#000" : "#fff"}
+              backgroundColor={
+                props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+              }
               color={props.isLight ? "#fff" : "#000"}
             >
               <Roadmap.TextDate>02-06-2023</Roadmap.TextDate>
@@ -212,8 +276,12 @@ const AboutPage = (props) => {
             </Roadmap.AngledBoxContainer>
             <Navbar.LengthStick
               style={{
-                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
-                backgroundColor: props.isLight ? "#000" : "#fff",
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
                 opacity: 0.5,
               }}
             />
@@ -231,7 +299,9 @@ const AboutPage = (props) => {
                 handleLeave();
               }}
               style={{
-                backgroundColor: props.isLight ? "#000" : "#fff",
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
                 opacity: 1,
               }}
             >
@@ -250,8 +320,12 @@ const AboutPage = (props) => {
 
             <Navbar.LengthStick
               style={{
-                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
-                backgroundColor: props.isLight ? "#000" : "#fff",
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
                 opacity: 0.5,
               }}
             />
@@ -269,7 +343,9 @@ const AboutPage = (props) => {
                 handleLeave();
               }}
               style={{
-                backgroundColor: props.isLight ? "#000" : "#fff",
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
                 opacity: 1,
               }}
             >
@@ -287,15 +363,23 @@ const AboutPage = (props) => {
             </Navbar.Circle>
             <Navbar.LengthStick
               style={{
-                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
-                backgroundColor: props.isLight ? "#000" : "#fff",
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
                 opacity: 0.5,
               }}
             />
             <Navbar.LengthStick
               style={{
-                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
-                backgroundColor: props.isLight ? "#000" : "#fff",
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
                 opacity: 0.5,
               }}
             />
@@ -313,7 +397,9 @@ const AboutPage = (props) => {
                 handleLeave();
               }}
               style={{
-                backgroundColor: props.isLight ? "#000" : "#fff",
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
                 opacity: 1,
               }}
             >
@@ -331,15 +417,23 @@ const AboutPage = (props) => {
             </Navbar.Circle>
             <Navbar.LengthStick
               style={{
-                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
-                backgroundColor: props.isLight ? "#000" : "#fff",
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
                 opacity: 0.5,
               }}
             />
             <Navbar.LengthStick
               style={{
-                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
-                backgroundColor: props.isLight ? "#000" : "#fff",
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
                 opacity: 0.5,
               }}
             />
@@ -357,7 +451,9 @@ const AboutPage = (props) => {
                 handleLeave();
               }}
               style={{
-                backgroundColor: props.isLight ? "#000" : "#fff",
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
                 opacity: 1,
               }}
             >

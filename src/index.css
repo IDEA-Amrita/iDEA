@@ -17,27 +17,82 @@
   src: local("Archer Gage"), url(./fonts/Archer_Gage.ttf) format("truetype");
 }
 
+:root {
+  /* Colors */
+  --bg: #ffffff;
+  --bg-soft: #f5f4f0;
+  --ink: #0e0e0e;
+  --ink-soft: #3a3a3a;
+  --muted: #8a8a8a;
+  --line: #e6e6e6;
+
+  --accent-lime: #c6ff3d;
+  --accent-lime-deep: #a8e62e;
+  --accent-violet: #5a4dff;
+  --accent-violet-soft: #7c72ff;
+
+  --card-mint: #d8f3a8;
+  --card-lavender: #e6ddf7;
+  --card-lilac: #d8ccf0;
+  --card-cream: #f1efe8;
+  --card-sage: #cfe9b8;
+  --card-grey: #ececec;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-soft-sm: 0 2px 8px rgba(14, 14, 14, 0.04);
+  --shadow-soft-md: 0 8px 24px rgba(14, 14, 14, 0.06);
+  --shadow-soft-lg: 0 20px 48px rgba(14, 14, 14, 0.08);
+  --shadow-nb-sm: 2px 2px 0 var(--ink);
+  --shadow-nb-md: 4px 4px 0 var(--ink);
+  --shadow-nb-lg: 6px 6px 0 var(--ink);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 120ms;
+  --dur-base: 240ms;
+  --dur-slow: 400ms;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "PP Neue Machina", "Inter", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-soft);
 }
 
 .light {
-  background-color: radial-gradient(
-    ellipse at center,
-    #ffffff 0%,
-    #f1f1f1 100%
-  );
-  color: #000;
+  background-color: var(--bg-soft);
+  color: var(--ink);
 }
 
 .dark {
-  background-color: #000;
-  color: #fff;
+  --bg: #1a1a1a;
+  --bg-soft: #0e0e0e;
+  --ink: #f0eeea;
+  --ink-soft: #b8b5ae;
+  --muted: #6a6a6a;
+  --line: #2c2c2c;
+  --accent-violet: #8b80ff;
+  --accent-violet-soft: #a89fff;
+  --accent-lime: #c6ff3d;
+  --accent-lime-deep: #a8e62e;
+  --card-cream: #1c1c1c;
+  --card-lavender: #1a1528;
+  --card-lilac: #201830;
+  --card-mint: #162010;
+  --card-sage: #162010;
+  --card-grey: #222222;
+
+  background-color: #0e0e0e;
+  color: #f0eeea;
 }
 
 @property --num {
@@ -66,4 +121,15 @@ body {
 
 .counting {
   --num: 100 !important;
+}
+
+/* Hide the native @react-spring/parallax scrollbar */
+[class^="light"] > div,
+[class^="dark"] > div {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+[class^="light"] > div::-webkit-scrollbar,
+[class^="dark"] > div::-webkit-scrollbar {
+  display: none;
 }

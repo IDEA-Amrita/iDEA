@@ -40,12 +40,14 @@ export const DescriptionContainer = styled.div`
   align-items: flex-start;
   padding: 38px 8px;
   position: relative;
-  border-left: 1px solid #b5b5b5;
-  border-right: 1px solid #b5b5b5;
+  background-color: var(--card-cream);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-nb-md);
 
   &:after {
     position: absolute;
-    background: #b5b5b5;
+    background: var(--line);
     width: 110%;
     height: 1px;
     content: "";
@@ -55,7 +57,7 @@ export const DescriptionContainer = styled.div`
 
   &:before {
     position: absolute;
-    background: #b5b5b5;
+    background: var(--line);
     width: 110%;
     height: 1px;
     content: "";
@@ -76,6 +78,8 @@ export const DescriptionHeaderImage = styled.img`
   height: 100%;
   object-fit: cover;
   margin-right: 10px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
 `;
 
 export const DescriptionHeaderContent = styled.div`
@@ -100,7 +104,6 @@ export const DescriptionContent = styled.div`
   width: 100%;
   height: 100%;
   overflow-y: scroll;
-
   -ms-overflow-style: none;
   scrollbar-width: none;
 
@@ -112,19 +115,19 @@ export const DescriptionContent = styled.div`
 export const BuiltUsing = styled.h2`
   margin-top: 2%;
   margin-bottom: 0;
-  font-family: "PP Neue Machina", serif;
+  font-family: "PP Neue Machina";
   font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  color: ${(props) => props.color};
-  cursor: pointer;
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
 
   @media (max-width: 820px) {
-    font-size: 18px;
+    font-size: 12px;
   }
-
   @media (max-width: 654px) {
-    font-size: 16px;
+    font-size: 11px;
   }
 `;
 
@@ -138,81 +141,82 @@ export const TagBubbleContainer = styled.div`
 
 export const TagBubble = styled.div`
   display: flex;
-  padding: 4px 16px;
+  padding: 5px 14px;
   margin: 4px;
-  font-size: 16px;
+  font-size: 13px;
+  font-family: "PP Neue Machina";
+  font-weight: 500;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: ${(props) => props.color};
-  color: ${(props) => props.textColor};
-  border-radius: 16px;
+  background-color: var(--card-lavender);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
 `;
 
 export const DescriptionTitle = styled.h1`
-  font-family: "PP Neue Machina", serif;
+  font-family: "PP Neue Machina";
   font-style: normal;
-  font-weight: 400;
-  font-size: 50px;
-  color: ${(props) => props.color};
+  font-weight: 600;
+  font-size: 40px;
+  color: var(--accent-violet);
+  text-transform: lowercase;
+  letter-spacing: -0.015em;
   cursor: pointer;
 
   @media (max-width: 820px) {
-    font-size: 44px;
-  }
-
-  @media (max-width: 654px) {
     font-size: 32px;
+  }
+  @media (max-width: 654px) {
+    font-size: 24px;
   }
 `;
 
 export const ProjectDescription = styled.p`
   font-style: normal;
-  font-weight: 200;
-  font-size: 20px;
-  color: ${(props) => props.color};
-
-  @media (max-width: 820px) {
-    font-size: 18px;
-  }
-
-  @media (max-width: 654px) {
-    font-size: 16px;
-  }
-
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.55em;
+  color: var(--ink-soft);
   text-align: justify;
   text-justify: inter-word;
+
+  @media (max-width: 820px) {
+    font-size: 15px;
+  }
+  @media (max-width: 654px) {
+    font-size: 14px;
+  }
 `;
 
 export const ContributorName = styled.h3`
   font-style: normal;
-  font-weight: 200;
-  font-size: 20px;
-  color: ${(props) => props.color};
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--ink-soft);
   cursor: pointer;
 
   @media (max-width: 820px) {
-    font-size: 18px;
+    font-size: 15px;
   }
-
   @media (max-width: 654px) {
-    font-size: 16px;
+    font-size: 13px;
   }
 `;
 
 export const Date = styled.h4`
   font-style: normal;
-  font-weight: lighter;
-  font-size: 16px;
-  color: ${(props) => props.color};
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--muted);
   cursor: pointer;
 
   @media (max-width: 820px) {
-    font-size: 14px;
-  }
-
-  @media (max-width: 654px) {
     font-size: 12px;
+  }
+  @media (max-width: 654px) {
+    font-size: 11px;
   }
 `;
 
@@ -229,59 +233,58 @@ export const ProjectFrameworks = styled.p`
   padding: 0;
   margin: 0;
   font-style: normal;
-  font-weight: 200;
-  font-size: 20px;
-  color: ${(props) => props.color};
-
-  @media (max-width: 820px) {
-    font-size: 18px;
-  }
-
-  @media (max-width: 654px) {
-    font-size: 16px;
-  }
-
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--ink-soft);
   text-align: justify;
   text-justify: inter-word;
+
+  @media (max-width: 820px) {
+    font-size: 15px;
+  }
+  @media (max-width: 654px) {
+    font-size: 13px;
+  }
 `;
 
 export const Title = styled.h1`
-  font-family: "PP Neue Machina", serif;
+  font-family: "PP Neue Machina";
   font-style: normal;
-  font-weight: 400;
-  font-size: 64px;
+  font-weight: 600;
+  font-size: 56px;
   width: min-content;
-  color: ${(props) => props.color};
+  color: var(--accent-violet);
+  text-transform: lowercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
   cursor: pointer;
 
   @media (max-width: 820px) {
-    font-size: 48px;
+    font-size: 44px;
   }
-
   @media (max-width: 654px) {
-    font-size: 36px;
+    font-size: 32px;
   }
 `;
 
 export const SubTitle = styled.h2`
   margin-bottom: 0 !important;
   text-align: right;
-  font-family: "PP Neue Machina", serif;
+  font-family: "PP Neue Machina";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  color: ${(props) => props.color};
+  font-size: 17px;
+  color: var(--ink-soft);
+  line-height: 1.5;
 
   @media (max-width: 820px) {
-    font-size: 20px;
+    font-size: 15px;
   }
-
   @media (max-width: 654px) {
-    font-size: 16px;
+    font-size: 13px;
   }
-
   @media (max-width: 540px) {
-    font-size: 14px;
+    font-size: 12px;
   }
 `;
 
@@ -307,41 +310,37 @@ export const ListItem = styled.div`
   width: 80%;
   padding: 10px 0 10px 5px;
   margin-top: 5px;
-  border-bottom: 1px solid #b5b5b5;
+  border-bottom: 1px solid var(--line);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-  transition: all 0.3s ease-in-out;
+  transition: all var(--dur-base) var(--ease-out);
 
   &:hover {
     cursor: pointer;
-    transform: scale(1.05);
+    border-bottom-color: var(--accent-violet);
     padding-right: 10px;
   }
 `;
 
 export const ListItemTitle = styled.h3`
-  font-family: "PP Neue Machina", serif;
+  font-family: "PP Neue Machina";
   font-style: normal;
-  font-size: 22px;
+  font-size: 20px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: ${(props) => props.color || "var(--ink)"};
 
   @media (max-width: 820px) {
-    font-size: 20px;
+    font-size: 18px;
   }
-
   @media (max-width: 654px) {
-    font-size: 16px;
+    font-size: 15px;
   }
-
   @media (max-width: 540px) {
-    font-size: 14px;
+    font-size: 13px;
   }
-
-  color: ${(props) => (props.isActive ? "#E0005E" : props.color)};
 `;
 
 export const ListItemArrowContainer = styled.div`
@@ -352,36 +351,33 @@ export const ListItemArrowContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  background-color: ${(props) => props.color};
+  border-radius: var(--radius-sm);
+  background-color: ${(props) => props.color || "transparent"};
+  border: 1.5px solid ${(props) => (props.color ? "var(--ink)" : "transparent")};
 `;
 
 export const Paragraph = styled.p`
   font-family: "PP Neue Machina";
-  font-weight: bold;
+  font-weight: 400;
   font-size: 16px;
-  line-height: 2em;
+  line-height: 1.7em;
   text-align: center;
-  letter-spacing: 0.05em;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  opacity: 0.6;
-  color: ${(props) => props.color};
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
 
   @media (max-width: 1340px) {
-    font-size: 12px;
+    font-size: 14px;
   }
-
   @media (max-width: 1076px) {
-    font-size: 8px;
+    font-size: 13px;
   }
-
   @media (max-width: 654px) {
-    font-size: 6px;
+    font-size: 12px;
   }
 
   &:hover {
     cursor: pointer;
-    opacity: 1;
+    opacity: 0.8;
   }
 `;
 
@@ -411,69 +407,83 @@ export const ButtonContainer = styled.div`
     width: "200px";
     height: "48px";
   }
-
   @media (max-width: 654px) {
     width: "160px";
     height: "32px";
   }
-
 `;
 
 export const BlockTitle = styled.h1`
   font-family: "PP Neue Machina";
   font-style: normal;
-  font-weight: 400;
-  font-size: 36px;
-  color: ${(props) => props.color};
+  font-weight: 600;
+  font-size: 32px;
+  color: var(--accent-violet);
+  text-transform: lowercase;
+  letter-spacing: -0.01em;
   cursor: pointer;
 
   @media (max-width: 1340px) {
-    font-size: 28px;
-  }
-  @media (max-width: 1028px) {
     font-size: 26px;
   }
-  @media (max-width: 900px) {
-    font-size: 22px;
+  @media (max-width: 1028px) {
+    font-size: 24px;
   }
-
-  @media (max-width: 820px) {
+  @media (max-width: 900px) {
     font-size: 20px;
   }
-
+  @media (max-width: 820px) {
+    font-size: 18px;
+  }
   @media (max-width: 654px) {
-    font-size: 12px;
+    font-size: 14px;
   }
 `;
 
 export const BlockButton = styled.button`
-  color: ${(props) => props.color};
-  background-color: ${(props) => props.backgroundColor};
-  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  background-color: var(--accent-lime);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-pill);
+  padding: 10px 18px;
+  font-family: "PP Neue Machina";
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
   position: absolute;
   width: auto;
   height: auto;
   bottom: 5%;
-  padding: 10px 10px;
   right: 2%;
+  box-shadow: var(--shadow-nb-sm);
+  transition: transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+
   &:hover {
-    transform: scale(1.02);
-    transition: 500ms ease-in-out;
+    transform: translate(-1px, -1px);
+    box-shadow: var(--shadow-nb-md);
+  }
+
+  &:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
   }
 
   * {
     cursor: pointer;
-    margin: 0 10px;
   }
 `;
 
 export const AngledLine = styled.div`
   height: 80%;
-  width: 1px;
-  background-color: ${(props) => props.backgroundColor};
+  width: 1.5px;
+  background-color: var(--accent-violet);
+  opacity: 0.25;
   margin: 3% 0;
   transform: rotate(12deg);
   -webkit-transform: rotate(12deg);
   -ms-transform: rotate(12deg);
-  opacity: 0.5;
 `;

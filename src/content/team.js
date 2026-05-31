@@ -224,21 +224,41 @@ const TeamPage = (props) => {
           <Navbar.TimelineBarLeft>
             <Navbar.Circle
               onClick={props.about}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
             <Navbar.Circle
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
               onClick={props.roadmap}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
             <Navbar.Circle
               size={true}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
               ref={ref}
@@ -246,25 +266,58 @@ const TeamPage = (props) => {
                 width: onScreen ? "1%" : "0",
                 translate: onScreen ? "none" : "0 10rem",
                 transition: "1000ms ease-in-out",
-                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
               }}
             />
             <Navbar.Circle
               onClick={props.projects}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
             <Navbar.Circle
               onClick={props.contribute}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
+            />
+            <Navbar.Circle
+              onClick={props.alumni}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
+            />
+            <Navbar.Stick
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
           </Navbar.TimelineBarLeft>
-          <Socials isLight = {props.isLight} />
+          <Socials isLight={props.isLight} />
           {/* <Navbar.TopTitle>
             <AiOutlineArrowDown onClick={props.down} />
             <AiOutlineArrowUp onClick={props.up} style={{cursor: "pointer"}}/>
@@ -318,7 +371,7 @@ const TeamPage = (props) => {
                           opacity: onScreen ? 1 : 0,
                           translate: onScreen ? "none" : "0 2rem",
                           transition: "600ms ease-in-out",
-                          objectFit: "cover"
+                          objectFit: "cover",
                         }}
                       />
                       <Team.UserInfoContainer>
@@ -345,7 +398,11 @@ const TeamPage = (props) => {
                       </Team.UserInfoContainer>
                     </Team.OtherTeamsSpecificInnerContainer>
                     <Team.Line
-                      backgroundColor={props.isLight ? "#000" : "#fff"}
+                      backgroundColor={
+                        props.isLight
+                          ? "var(--accent-violet)"
+                          : "var(--accent-lime)"
+                      }
                     />
                   </Team.MentorOuterContainer>
                 );
@@ -378,7 +435,7 @@ const TeamPage = (props) => {
                         opacity: onScreen ? 1 : 0,
                         translate: onScreen ? "none" : "0 2rem",
                         transition: "600ms ease-in-out",
-                        objectFit: "cover"
+                        objectFit: "cover",
                       }}
                     />
                     <Team.UserInfoContainer>
@@ -430,7 +487,7 @@ const TeamPage = (props) => {
                         opacity: onScreen ? 1 : 0,
                         translate: onScreen ? "none" : "0 2rem",
                         transition: "600ms ease-in-out",
-                        objectFit: "cover"
+                        objectFit: "cover",
                       }}
                     />
                     <Team.UserInfoContainer>
@@ -482,7 +539,7 @@ const TeamPage = (props) => {
                         opacity: onScreen ? 1 : 0,
                         translate: onScreen ? "none" : "0 2rem",
                         transition: "600ms ease-in-out",
-                        objectFit: "cover"
+                        objectFit: "cover",
                       }}
                     />
                     <Team.UserInfoContainer>
@@ -534,7 +591,7 @@ const TeamPage = (props) => {
                         opacity: onScreen ? 1 : 0,
                         translate: onScreen ? "none" : "0 2rem",
                         transition: "600ms ease-in-out",
-                        objectFit: "cover"
+                        objectFit: "cover",
                       }}
                     />
                     <Team.UserInfoContainer>
@@ -586,7 +643,7 @@ const TeamPage = (props) => {
                         opacity: onScreen ? 1 : 0,
                         translate: onScreen ? "none" : "0 2rem",
                         transition: "600ms ease-in-out",
-                        objectFit: "cover"
+                        objectFit: "cover",
                       }}
                     />
                     <Team.UserInfoContainer>
@@ -638,7 +695,7 @@ const TeamPage = (props) => {
                         opacity: onScreen ? 1 : 0,
                         translate: onScreen ? "none" : "0 2rem",
                         transition: "600ms ease-in-out",
-                        objectFit: "cover"
+                        objectFit: "cover",
                       }}
                     />
                     <Team.UserInfoContainer>

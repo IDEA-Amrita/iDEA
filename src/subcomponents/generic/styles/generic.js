@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   height: 100vh;
   width: auto;
-  background-color: ${(props) => props.color};
-  color: ${(props) => props.color};
 `;
 
 export const InnerContainer = styled.div`
@@ -22,9 +20,12 @@ export const Title = styled.h1`
   padding: 0 10%;
   font-family: "PP Neue Machina";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 64px;
-  color: ${(props) => props.color};
+  color: var(--accent-violet);
+  text-transform: lowercase;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
   cursor: pointer;
 
   @media (max-width: 820px) {
@@ -45,6 +46,7 @@ export const Image = styled.img`
   width: 40%;
   object-fit: cover;
   object-position: center;
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
 `;
 
 export const TopRightTitleContainer = styled.div`
@@ -71,9 +73,12 @@ export const TopRightTitle = styled.h1`
   align-self: flex-end;
   font-family: "PP Neue Machina";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 100px;
-  color: ${(props) => props.color};
+  color: var(--accent-violet);
+  text-transform: lowercase;
+  letter-spacing: -0.03em;
+  line-height: 1;
   cursor: pointer;
 
   @media (max-width: 940px) {
@@ -92,15 +97,16 @@ export const TopRightTitle = styled.h1`
 export const TopRightMottoText = styled.p`
   font-family: "PP Neue Machina";
   font-weight: 400;
-  font-size: 32px;
-  color: ${(props) => props.color};
+  font-size: 20px;
+  color: var(--ink-soft);
+  letter-spacing: 0.01em;
 
   @media (max-width: 940px) {
-    font-size: 24px;
+    font-size: 17px;
   }
 
   @media (max-width: 820px) {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   @media (max-width: 654px) {
@@ -111,27 +117,26 @@ export const TopRightMottoText = styled.p`
 export const ParagraphContainer = styled.div`
   width: 80%;
   text-align: justify;
-  height: 100px;
-  // padding: 0 10%;
+  height: auto;
 `;
 
 export const Paragraph = styled.p`
   font-family: "PP Neue Machina";
   font-weight: 400;
-  font-size: 24px;
-  line-height: 2em;
-  letter-spacing: 0.05em;
-  color: ${(props) => props.color};
+  font-size: 18px;
+  line-height: 1.6em;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
 
   @media (max-width: 960px) {
-    font-size: 20px;
-  }
-
-  @media (max-width: 820px) {
     font-size: 16px;
   }
 
+  @media (max-width: 820px) {
+    font-size: 15px;
+  }
+
   @media (max-width: 654px) {
-    font-size: 12px;
+    font-size: 13px;
   }
 `;

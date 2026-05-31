@@ -21,7 +21,7 @@ import {
   Stick,
   SocialsText,
   LengthStick,
-  CircleText
+  CircleText,
 } from "./styles/navbar";
 
 export default function Navbar({ children, ...restProps }) {
@@ -128,4 +128,4 @@ Navbar.EmptyDivR = function NavbarEmptyDiv({ children, ...restProps }) {
 
 Navbar.CircleText = function NavbarCircleText({ children, ...restProps }) {
   return <CircleText {...restProps}>{children}</CircleText>;
-}
+};

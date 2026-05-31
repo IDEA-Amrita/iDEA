@@ -31,28 +31,56 @@ const ProjectsPage = (props) => {
           <Navbar.TimelineBarLeft>
             <Navbar.Circle
               onClick={props.about}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
             <Navbar.Circle
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
               onClick={props.roadmap}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
             <Navbar.Circle
               onClick={props.team}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
             <Navbar.Circle
               size={true}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
               ref={ref}
@@ -60,15 +88,40 @@ const ProjectsPage = (props) => {
                 width: onScreen ? "1%" : "0",
                 translate: onScreen ? "none" : "0 10rem",
                 transition: "1000ms ease-in-out",
-                border: `1px solid ${props.isLight ? "#000" : "#fff"}`,
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
               }}
             />
             <Navbar.Circle
               onClick={props.contribute}
-              style={{ backgroundColor: props.isLight ? "#000" : "#fff" }}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
             />
             <Navbar.Stick
-              style={{ border: `1px solid ${props.isLight ? "#000" : "#fff"}` }}
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
+            />
+            <Navbar.Circle
+              onClick={props.alumni}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
+            />
+            <Navbar.Stick
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
             />
           </Navbar.TimelineBarLeft>
           <Socials isLight={props.isLight} />
@@ -123,40 +176,43 @@ const ProjectsPage = (props) => {
                 <Projects.TagBubbleContainer>
                   {projects[activeProject].tags.map((item, index) => {
                     return (
-                      <Projects.TagBubble
-                        key={index}
-                        color={props.isLight ? "#000" : "#fff"}
-                        textColor={props.isLight ? "#fff" : "#000"}
-                      >
+                      <Projects.TagBubble key={index}>
                         #{item}
                       </Projects.TagBubble>
                     );
                   })}
                 </Projects.TagBubbleContainer>
                 <PopupButton
-                  color={props.isLight ? "#fff" : "#000"}
-                  backgroundColor={props.isLight ? "#000" : "#fff"}
+                  color={"var(--ink)"}
+                  backgroundColor={"var(--accent-lime)"}
                   style={{
                     position: "absolute",
                     bottom: "5%",
                     left: "2%",
-                    width: "160px",
+                    width: "auto",
                     height: "auto",
                     marginTop: "5%",
                     marginLeft: "4px",
-                    padding: "10px 5px",
-                    color: props.isLight ? "#fff" : "#000",
-                    backgroundColor: props.isLight ? "#000" : "#fff",
-                    border: "none",
+                    padding: "10px 20px",
+                    color: "var(--ink)",
+                    backgroundColor: "var(--accent-lime)",
+                    border: "1.5px solid var(--ink)",
+                    borderRadius: "999px",
+                    boxShadow: "2px 2px 0 var(--ink)",
+                    fontFamily: "'PP Neue Machina'",
+                    fontWeight: 500,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
                   }}
                   id="BEDaiz9s"
                 >
-                  Join <BsArrowUpRight style={{ marginLeft: "4%" }} />
+                  ✱ Join <BsArrowUpRight />
                 </PopupButton>
                 <Projects.BlockButton
                   onClick={clickHandler}
-                  color={props.isLight ? "#fff" : "#000"}
-                  backgroundColor={props.isLight ? "#000" : "#fff"}
+                  color={"var(--ink)"}
+                  backgroundColor={"var(--accent-lime)"}
                 >
                   <AiOutlineDoubleLeft
                     style={{
@@ -166,8 +222,16 @@ const ProjectsPage = (props) => {
                   />
                   {isOpen && (
                     <>
-                      <AiOutlineMail onClick={() => window.open(projects[activeProject].email)}/>
-                      <AiFillInstagram onClick={() => window.open(projects[activeProject].instagram)}/>
+                      <AiOutlineMail
+                        onClick={() =>
+                          window.open(projects[activeProject].email)
+                        }
+                      />
+                      <AiFillInstagram
+                        onClick={() =>
+                          window.open(projects[activeProject].instagram)
+                        }
+                      />
                     </>
                   )}
                 </Projects.BlockButton>
@@ -188,11 +252,7 @@ const ProjectsPage = (props) => {
                     >
                       <Projects.ListItemArrowContainer
                         color={
-                          index === activeProject
-                            ? props.isLight
-                              ? "#424242"
-                              : "#fff"
-                            : ""
+                          index === activeProject ? "var(--accent-violet)" : ""
                         }
                       >
                         <AiOutlineArrowUp
@@ -202,20 +262,21 @@ const ProjectsPage = (props) => {
                               index === activeProject
                                 ? "rotate(135deg)"
                                 : "rotate(-45deg)",
-                            color: props.isLight
-                              ? index === activeProject
+                            color:
+                              index === activeProject
                                 ? "#fff"
-                                : "#000"
-                              : index === activeProject
-                              ? "#000"
-                              : "#fff",
+                                : "var(--ink-soft)",
                           }}
                         />
                       </Projects.ListItemArrowContainer>
                       <Projects.ListItemTitle
-                        color={props.isLight ? "#424242" : "#fff"}
+                        color={
+                          index === activeProject
+                            ? "var(--accent-violet)"
+                            : "var(--ink-soft)"
+                        }
                         style={{
-                          opacity: index === activeProject ? "1" : "0.5",
+                          opacity: index === activeProject ? "1" : "0.55",
                           transition: "opacity 300ms ease-in-out",
                         }}
                       >
