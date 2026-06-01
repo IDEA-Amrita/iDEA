@@ -1,0 +1,122 @@
+[
+  {
+    "id": 12,
+    "title": "Nexus Design Systems",
+    "subtitle": "Creating product experiences that scale",
+    "author": "Daniel Marin",
+    "category": "Product",
+    "date": "May 2026",
+    "imageUrl": "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "content": "A strong design system helps teams ship faster and keep experiences consistent. We explore the principles behind scalable product UI and the patterns that make modern interfaces feel polished."
+  },
+  {
+    "id": 11,
+    "title": "The Nexus Traffic Story",
+    "subtitle": "How data informs product direction",
+    "author": "Sam Kamani",
+    "category": "Product",
+    "date": "April 2026",
+    "imageUrl": "https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "content": "Product teams rely on traffic data to prioritize features, optimize journeys, and refine onboarding. Learn what metrics matter most and how to make them actionable across design and engineering."
+  },
+  {
+    "id": 10,
+    "title": "Designing for Trust",
+    "subtitle": "Building interfaces users can rely on",
+    "author": "Maggie Love",
+    "category": "Product",
+    "date": "March 2026",
+    "imageUrl": "https://images.pexels.com/photos/1181715/pexels-photo-1181715.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "content": "Trust is a product feature. This post explores interface mechanics, onboarding language, and micro-copy patterns that help users feel safe when they interact with digital systems."
+  },
+  {
+    "id": 9,
+    "title": "Roadmap to Product-Market Fit",
+    "subtitle": "The principles of building products people need",
+    "author": "Daniel Mcglynn",
+    "category": "Product",
+    "date": "February 2026",
+    "imageUrl": "https://images.pexels.com/photos/225775/pexels-photo-225775.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "content": "Getting to product-market fit requires customer insight, rapid experimentation, and disciplined prioritization. We share the framework teams use to stay aligned on what matters most."
+  },
+  {
+    "id": 8,
+    "title": "Cybersecurity in Modern Architecture",
+    "subtitle": "Protecting apps with layered defense",
+    "author": "Ramzi Jahshan",
+    "category": "Security",
+    "date": "January 2026",
+    "imageUrl": "https://images.pexels.com/photos/3853750/pexels-photo-3853750.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "content": "Security is no longer optional. This article dives into layered defense, authentication flows, and infrastructure best practices for resilient modern applications."
+  },
+  {
+    "id": 7,
+    "title": "Zero Trust for Product Teams",
+    "subtitle": "Applying security principles without slowing delivery",
+    "author": "Sam Welch",
+    "category": "Security",
+    "date": "December 2025",
+    "imageUrl": "https://images.pexels.com/photos/60504/pexels-photo-60504.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "content": "Zero trust is a mindset as much as a tech stack. Learn how product and engineering teams can adopt safer controls while preserving velocity and user experience."
+  },
+  {
+    "id": 6,
+    "title": "Secure Workflows for Remote Teams",
+    "subtitle": "Keeping collaboration and security aligned",
+    "author": "Maggie Love",
+    "category": "Security",
+    "date": "November 2025",
+    "imageUrl": "https://images.pexels.com/photos/1181227/pexels-photo-1181227.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "content": "Distributed teams need both speed and safety. This piece covers secure collaboration patterns, device management, and access policies for remote-first organizations."
+  },
+  {
+    "id": 5,
+    "title": "Security Reviews that Scale",
+    "subtitle": "Making risk assessment part of the product lifecycle",
+    "author": "Daniel Marin",
+    "category": "Security",
+    "date": "October 2025",
+    "imageUrl": "https://images.pexels.com/photos/4386439/pexels-photo-4386439.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "content": "Security reviews shouldn’t be a bottleneck. Learn how to embed risk evaluation into discovery, design, and release cycles so teams move faster with confidence."
+  },
+  {
+    "id": 4,
+    "title": "Mobile-First Product Strategy",
+    "subtitle": "Designing experiences for phones first",
+    "author": "Ramzi Jahshan",
+    "category": "Mobile",
+    "date": "September 2025",
+    "imageUrl": "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "content": "Mobile-first isn’t just responsive layout. Discover how to structure product experiences, notifications, and workflows specifically for mobile users."
+  },
+  {
+    "id": 3,
+    "title": "The Future of Mobile Collaboration",
+    "subtitle": "How teams stay connected on the go",
+    "author": "Daniel Mcglynn",
+    "category": "Mobile",
+    "date": "August 2025",
+    "imageUrl": "https://images.pexels.com/photos/817562/pexels-photo-817562.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "content": "Remote collaboration increasingly happens on mobile devices. We explore the tools and design patterns that keep teams productive whenever they’re away from the desk."
+  },
+  {
+    "id": 2,
+    "title": "Performance for Mobile Users",
+    "subtitle": "Optimizing apps for low bandwidth and fast interactions",
+    "author": "Sam Kamani",
+    "category": "Mobile",
+    "date": "July 2025",
+    "imageUrl": "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "content": "Mobile users expect speed. This article covers techniques for prioritizing performance, reducing payloads, and designing interfaces that feel instant on small screens."
+  },
+  {
+    "id": 1,
+    "title": "Why AI Should Be Human-Centered",
+    "subtitle": "Designing intelligent experiences with empathy",
+    "author": "Maggie Love",
+    "category": "Mobile",
+    "date": "June 2025",
+    "imageUrl": "https://images.pexels.com/photos/572056/pexels-photo-572056.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "content": "AI can make mobile experiences smarter, but only when it respects human context. We review examples of thoughtful AI interactions and the guardrails that keep them useful."
+  }
+]

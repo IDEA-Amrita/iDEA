@@ -9,7 +9,7 @@ Welcome to iDEA, join us as we bridge the gap between vision and execution.
 
 ## Find out what we do?
 
-Find out more about us by going through the [documentation](https://github.com/IDEA-Amrita/official-documentation) <br/> 
+Find out more about us by going through the [documentation](https://github.com/IDEA-Amrita/official-documentation) <br/>
 Click [here](https://www.instagram.com/idea_amrita/) to contact us directly!
 
 ## Developer Jargon
@@ -22,17 +22,23 @@ npm install && npm start
 ```
 
 ### Hooks
+
 - `pre-commit` hook to format with prettier.
 - `pre-push` hook to run tests (far future).
 - configure with git
+
 ```
 git config core.hooksPath hooks/*
 ```
+
 - give the files execute perms
+
 ```
 chmod +x hooks/*
 ```
+
 - install prettier
+
 ```
 npm install --save-dev --save-exact prettier
 ```

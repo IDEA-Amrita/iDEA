@@ -170,6 +170,21 @@ const AboutPage = (props) => {
                 }`,
               }}
             />
+            <Navbar.Circle
+              onClick={props.alumni}
+              style={{
+                backgroundColor: props.isLight
+                  ? "var(--accent-violet)"
+                  : "var(--accent-lime)",
+              }}
+            />
+            <Navbar.Stick
+              style={{
+                border: `1px solid ${
+                  props.isLight ? "var(--accent-violet)" : "var(--accent-lime)"
+                }`,
+              }}
+            />
           </Navbar.TimelineBarLeft>
           <Socials isLight={props.isLight} />
           {/* <Navbar.TopTitle>
