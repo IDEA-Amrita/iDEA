@@ -11,6 +11,8 @@
   .content {
     display: flex;
     max-width: var(--content-reading);
+    min-width: 0;
+    width: 100%;
     padding: 0;
     flex-direction: column;
     justify-content: center;
@@ -19,14 +21,18 @@
 
   .copy {
     max-width: 36rem;
+    min-width: 0;
+    width: 100%;
     color: var(--color-text-secondary);
     font-size: var(--text-body);
     line-height: var(--leading-body);
     text-align: start;
+    overflow-wrap: break-word;
   }
 
   .image {
     min-height: min(36rem, 62vh);
+    max-width: 100%;
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-lifted);
   }
@@ -37,6 +43,8 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     border-top: var(--border-thin) solid var(--color-border);
     border-bottom: var(--border-thin) solid var(--color-border);
+    width: 100%;
+    min-width: 0;
   }
   .highlights li {
     display: flex;
@@ -59,7 +67,7 @@
 
   @media (max-width: 56rem) {
     .section {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
     }
 
     .content {
@@ -67,14 +75,16 @@
     }
 
     .image {
-      min-height: 18rem;
-      aspect-ratio: 16 / 8;
+      min-height: 0;
+      width: 100%;
+      aspect-ratio: 16 / 9;
     }
   }
 
   @media (max-width: 40rem) {
     .section {
       padding-inline: var(--space-4);
+      grid-template-columns: minmax(0, 1fr);
     }
     .highlights {
       grid-template-columns: 1fr;
@@ -87,7 +97,9 @@
       border-left: 0;
     }
     .image {
-      min-height: 14rem;
+      min-height: 0;
+      width: 100%;
+      aspect-ratio: 16 / 9;
     }
   }
 }

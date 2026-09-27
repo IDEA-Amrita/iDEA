@@ -34,12 +34,22 @@ export default function Sidebar({
       | undefined;
     if (!list || !dot) return;
     const update = () => {
-      const lr = list.getBoundingClientRect();
-      const dr = dot.getBoundingClientRect();
+      let x = dot.offsetWidth / 2;
+      let y = dot.offsetHeight / 2;
+      let el: HTMLElement | null = dot;
+      while (el && el !== list) {
+        x += el.offsetLeft;
+        y += el.offsetTop;
+        el = el.offsetParent as HTMLElement | null;
+      }
       const s = list.style;
-      s.setProperty("--orb-x", String(dr.left - lr.left + dr.width / 2) + "px");
-      s.setProperty("--orb-y", String(dr.top - lr.top + dr.height / 2) + "px");
-      if (!list.dataset.ready) requestAnimationFrame(() => { list.dataset.ready = "1"; });
+      s.setProperty("--orb-x", String(x) + "px");
+      s.setProperty("--orb-y", String(y) + "px");
+      if (!list.dataset.ready) {
+        requestAnimationFrame(() => {
+          list.dataset.ready = "1";
+        });
+      }
     };
     update();
     window.addEventListener("resize", update);

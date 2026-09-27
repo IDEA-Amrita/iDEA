@@ -15,6 +15,8 @@ interface Props {
 
 const TITLE_LETTERS = texts.home.title.split("");
 
+const [kickerLead, kickerLocation] = texts.home.kicker.split(" · ");
+
 export default function HeroNavigation({
   onNavigate,
   stage = "all",
@@ -26,7 +28,18 @@ export default function HeroNavigation({
     <div
       className={classNames(styles.heroContent, isBlank && styles.heroBlank)}
     >
-      <p className={styles.kicker}>{texts.home.kicker}</p>
+      <p className={styles.kicker}>
+        <span>{kickerLead}</span>
+        {kickerLocation && (
+          <>
+            <span className={styles.kickerDivider} aria-hidden="true">
+              {" "}
+              ·{" "}
+            </span>
+            <span className={styles.kickerLocation}>{kickerLocation}</span>
+          </>
+        )}
+      </p>
       <h1
         className={styles.wordmark}
         id="hero-title"

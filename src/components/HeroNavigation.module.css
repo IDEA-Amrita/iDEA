@@ -108,9 +108,15 @@
       padding-top: 5.5rem;
     }
     .kicker {
-      max-width: 18rem;
       margin-bottom: var(--space-4);
       line-height: 1.5;
+    }
+    .kickerDivider {
+      display: none;
+    }
+    .kickerLocation {
+      display: block;
+      white-space: nowrap;
     }
     .wordmark {
       font-size: clamp(4rem, 25vw, 6.5rem);

@@ -49,7 +49,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <AppErrorBoundary>
-        <ReactLenis root>
+        <ReactLenis root options={{ smoothWheel: true, syncTouch: false }}>
           <LazyMotion features={loadMotionFeatures} strict>
             {route === "alumni" ? (
               <Suspense fallback={null}>

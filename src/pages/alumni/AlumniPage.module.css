@@ -288,6 +288,10 @@
       padding: var(--space-4) var(--space-4) var(--section-padding-y);
     }
 
+    .brandLink {
+      display: none;
+    }
+
     .grid {
       grid-template-columns: 1fr;
       gap: var(--space-3);

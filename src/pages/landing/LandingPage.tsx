@@ -49,7 +49,7 @@ export default function LandingPage({ onNavigateAlumni }: LandingPageProps = {})
         Skip to content
       </a>
       <Navbar visible={isNavbarVisible} />
-      <ThemeToggle />
+      <ThemeToggle visible={isNavbarVisible} isHero={!isPastHero} />
       <main id="main-content" tabIndex={-1}>
         <HomeSection {...sharedProps} />
         <div className={styles.indexedLayout}>

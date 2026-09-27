@@ -2,7 +2,6 @@
   .section {
     min-height: 100dvh;
     padding: var(--section-padding-y) var(--page-gutter);
-    container-type: inline-size;
   }
 
   .overview {
@@ -47,14 +46,6 @@
     margin-top: var(--space-3);
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
     gap: var(--space-4);
-  }
-
-  .facultyMember {
-    min-width: 0;
-  }
-
-  .divider {
-    display: none;
   }
 
   .directory {
@@ -253,7 +244,7 @@
     transform: translateX(3px);
   }
 
-  @container (max-width: 56rem) {
+  @media (max-width: 56rem) {
     .facultyGrid,
     .overview {
       grid-template-columns: 1fr;
@@ -263,28 +254,33 @@
   @media (max-width: 40rem) {
     .section {
       padding: var(--section-padding-y) var(--space-4);
-    }
-
-    .facultyGrid {
-      grid-template-columns: 1fr;
-    }
-
-    .members {
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding: var(--space-4);
-      gap: var(--space-3);
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .memberItem {
-      flex: 0 0 clamp(12rem, 60vw, 15rem);
-      max-width: none;
-      scroll-snap-align: start;
+      overflow-x: clip;
     }
 
     .directory {
-      margin-top: var(--space-6);
+      margin-top: var(--space-5);
+      padding-top: var(--space-4);
+    }
+
+    .members {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+      justify-content: center;
+      justify-items: center;
+      padding: var(--space-4) var(--space-3);
+      gap: var(--space-4);
+    }
+
+    .memberItem {
+      width: 100%;
+      max-width: 16rem;
+      justify-content: center;
+      flex: none;
+    }
+
+    .alumniRow {
+      justify-content: center;
+      margin-top: var(--space-5);
     }
   }
 }

@@ -67,7 +67,7 @@ export default function AlumniPage({ onBack }: AlumniPageProps = {}) {
             iDEA
           </a>
 
-          <ThemeToggle />
+          <ThemeToggle standalone />
         </header>
 
         <div className={styles.content}>

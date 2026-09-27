@@ -84,8 +84,8 @@
 
   @media (max-width: 40rem) {
     :root {
-      --navbar-height: 4.25rem;
-      --mobile-rail-height: 6rem;
+      --navbar-height: 3rem;
+      --mobile-rail-height: 3rem;
       --section-chrome-height: calc(
         var(--navbar-height) + var(--mobile-rail-height)
       );

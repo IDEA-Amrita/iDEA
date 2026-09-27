@@ -48,10 +48,8 @@ export default function useSectionNavigation() {
       const rail = document.querySelector<HTMLElement>(
         'nav[aria-label="Section navigation"]',
       );
-      const mobileRailHeight =
-        rail && getComputedStyle(rail).position === "static"
-          ? rail.offsetHeight
-          : 0;
+      const isMobile = window.innerWidth <= 640;
+      const mobileRailHeight = isMobile && rail ? rail.offsetHeight : 0;
       return (navbar?.offsetHeight ?? 0) + mobileRailHeight;
     };
     const readingLine = () =>
