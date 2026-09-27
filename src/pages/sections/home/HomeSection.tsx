@@ -11,7 +11,10 @@ const INTRO_STORAGE_KEY = "idea-intro-seen";
 
 function shouldPlayIntro(): boolean {
   try {
-    return import.meta.env.MODE !== "test" && !sessionStorage.getItem(INTRO_STORAGE_KEY);
+    return (
+      import.meta.env.MODE !== "test" &&
+      !sessionStorage.getItem(INTRO_STORAGE_KEY)
+    );
   } catch {
     return false;
   }
@@ -43,14 +46,21 @@ export default function HomeSection({ onNavigate }: SectionNavigationProps) {
   return (
     <PageShell id="home" aria-labelledby="hero-title" className={styles.page}>
       <SectionShell aria-labelledby="hero-title">
-        <BrainHeroBackground isIntro={firstVisit} onSync={done} onComplete={done} />
+        <BrainHeroBackground
+          isIntro={firstVisit}
+          onSync={done}
+          onComplete={done}
+        />
         <HeroNavigation
           onNavigate={onNavigate}
           stage={stage}
           skipIntro={!firstVisit}
         />
         <a
-          className={classNames(styles.scrollCue, stage !== "all" && styles.scrollCueHidden)}
+          className={classNames(
+            styles.scrollCue,
+            stage !== "all" && styles.scrollCueHidden,
+          )}
           href="#about"
           aria-label="Scroll to About"
           onClick={(event) => {

@@ -29,9 +29,9 @@ export default function Sidebar({
 
   useEffect(() => {
     const list = listRef.current;
-    const dot = list?.getElementsByClassName(styles.dot ?? "dot")[currentIndex] as
-      | HTMLElement
-      | undefined;
+    const dot = list?.getElementsByClassName(styles.dot ?? "dot")[
+      currentIndex
+    ] as HTMLElement | undefined;
     if (!list || !dot) return;
     const update = () => {
       let x = dot.offsetWidth / 2;

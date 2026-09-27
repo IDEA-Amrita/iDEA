@@ -8,7 +8,9 @@ import styles from "./TeamSection.module.css";
 import TeamAccordion from "./TeamAccordion";
 import type { SectionNavigationProps } from "../../../types/navigation";
 
-export default function TeamSection({ onNavigateAlumni }: Partial<SectionNavigationProps> = {}) {
+export default function TeamSection({
+  onNavigateAlumni,
+}: Partial<SectionNavigationProps> = {}) {
   const reduceMotion = useReducedMotion();
 
   return (

@@ -22,7 +22,9 @@ export const alumniData: Record<AlumniBatch, readonly AlumniMember[]> = {
       role: "Vice President - Dev Relations",
       batch: "2025-26",
       status: "filled",
-      photo: encodeURI("/team/2025-26/Barinidharan Selvaraj Vice President Dev Relations.jpeg"),
+      photo: encodeURI(
+        "/team/2025-26/Barinidharan Selvaraj Vice President Dev Relations.jpeg",
+      ),
       linkedin: "https://linkedin.com",
       github: "https://github.com",
     },
@@ -32,7 +34,9 @@ export const alumniData: Record<AlumniBatch, readonly AlumniMember[]> = {
       role: "Vice President - Corporate Relations",
       batch: "2025-26",
       status: "filled",
-      photo: encodeURI("/team/2025-26/Pon Gopika Vice President Corporate Relations.jpeg"),
+      photo: encodeURI(
+        "/team/2025-26/Pon Gopika Vice President Corporate Relations.jpeg",
+      ),
       linkedin: "https://linkedin.com",
       github: "https://github.com",
     },

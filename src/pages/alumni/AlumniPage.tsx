@@ -55,15 +55,19 @@ export default function AlumniPage({ onBack }: AlumniPageProps = {}) {
             <span>Back to Core Team</span>
           </button>
 
-          <a href="/#home" className={styles.brandLink} onClick={(e) => {
-            e.preventDefault();
-            if (onBack) {
-              window.history.pushState({}, "", "/#home");
-              window.dispatchEvent(new PopStateEvent("popstate"));
-            } else {
-              window.location.href = "/#home";
-            }
-          }}>
+          <a
+            href="/#home"
+            className={styles.brandLink}
+            onClick={(e) => {
+              e.preventDefault();
+              if (onBack) {
+                window.history.pushState({}, "", "/#home");
+                window.dispatchEvent(new PopStateEvent("popstate"));
+              } else {
+                window.location.href = "/#home";
+              }
+            }}
+          >
             iDEA
           </a>
 
@@ -81,9 +85,16 @@ export default function AlumniPage({ onBack }: AlumniPageProps = {}) {
             </p>
           </section>
 
-          <section className={styles.pillsSection} aria-label="Filter by batch year">
+          <section
+            className={styles.pillsSection}
+            aria-label="Filter by batch year"
+          >
             <p className={styles.pillsLabel}>Select Batch</p>
-            <div className={styles.pillsList} role="tablist" aria-label="Alumni batches">
+            <div
+              className={styles.pillsList}
+              role="tablist"
+              aria-label="Alumni batches"
+            >
               {alumniBatches.map((batch) => {
                 const isSelected = selectedBatch === batch;
                 return (
@@ -107,7 +118,10 @@ export default function AlumniPage({ onBack }: AlumniPageProps = {}) {
             </div>
           </section>
 
-          <section className={styles.gridSection} aria-label={`Alumni for ${selectedBatch}`}>
+          <section
+            className={styles.gridSection}
+            aria-label={`Alumni for ${selectedBatch}`}
+          >
             <div className={styles.gridMeta}>
               <span>{selectedBatch} BATCH</span>
               <span>{members.length} MEMBERS</span>
@@ -124,7 +138,10 @@ export default function AlumniPage({ onBack }: AlumniPageProps = {}) {
                   >
                     <div className={styles.imageWrapper}>
                       {pending ? (
-                        <span className={styles.avatarPlaceholder} aria-hidden="true">
+                        <span
+                          className={styles.avatarPlaceholder}
+                          aria-hidden="true"
+                        >
                           <BsPerson />
                         </span>
                       ) : (
@@ -140,7 +157,9 @@ export default function AlumniPage({ onBack }: AlumniPageProps = {}) {
                       <p className={styles.memberName}>{member.name}</p>
                       <p className={styles.memberRole}>{member.role}</p>
                       <div className={styles.cardFooter}>
-                        <span className={styles.memberBatch}>{member.batch}</span>
+                        <span className={styles.memberBatch}>
+                          {member.batch}
+                        </span>
                         {(member.linkedin || member.github) && (
                           <div className={styles.socialLinks}>
                             {member.linkedin && (

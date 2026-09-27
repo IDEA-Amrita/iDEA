@@ -329,7 +329,9 @@
       text-transform: none;
     }
     .themeToggle {
-      top: calc(var(--mobile-rail-height) + (var(--navbar-height) - 2.25rem) / 2);
+      top: calc(
+        var(--mobile-rail-height) + (var(--navbar-height) - 2.25rem) / 2
+      );
       right: var(--space-4);
       width: 2.25rem;
       height: 2.25rem;

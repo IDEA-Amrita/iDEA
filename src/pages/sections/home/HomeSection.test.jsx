@@ -28,8 +28,8 @@ describe("HomeSection", () => {
     renderWithProviders(<HomeSection onNavigate={vi.fn()} />);
 
     expect(screen.getByRole("heading", { name: "iDEA" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Scroll to About" })).not.toHaveClass(
-      /scrollCueHidden/,
-    );
+    expect(
+      screen.getByRole("link", { name: "Scroll to About" }),
+    ).not.toHaveClass(/scrollCueHidden/);
   });
 });

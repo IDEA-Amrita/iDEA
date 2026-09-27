@@ -8,7 +8,9 @@ interface TeamAccordionProps {
   onNavigateAlumni?: (() => void) | undefined;
 }
 
-export default function TeamAccordion({ onNavigateAlumni }: TeamAccordionProps = {}) {
+export default function TeamAccordion({
+  onNavigateAlumni,
+}: TeamAccordionProps = {}) {
   const [activeGroupId, setActiveGroupId] = useState<TeamGroupId | null>(null);
   return (
     <div className={styles.directory}>

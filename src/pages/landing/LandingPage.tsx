@@ -30,7 +30,9 @@ interface LandingPageProps {
   onNavigateAlumni?: (() => void) | undefined;
 }
 
-export default function LandingPage({ onNavigateAlumni }: LandingPageProps = {}) {
+export default function LandingPage({
+  onNavigateAlumni,
+}: LandingPageProps = {}) {
   const {
     activeSection,
     navigateTo,
