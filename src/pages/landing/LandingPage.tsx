@@ -1,5 +1,6 @@
 import { type ComponentType } from "react";
 import useSectionNavigation from "../../hooks/useSectionNavigation";
+import { useGsapAnimations } from "../../animations/useGsapAnimations";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import Sidebar from "../../components/Sidebar";
@@ -33,6 +34,7 @@ interface LandingPageProps {
 export default function LandingPage({
   onNavigateAlumni,
 }: LandingPageProps = {}) {
+  useGsapAnimations();
   const {
     activeSection,
     navigateTo,
