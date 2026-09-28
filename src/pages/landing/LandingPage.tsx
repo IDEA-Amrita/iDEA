@@ -42,10 +42,8 @@ export default function LandingPage({
     isAtPageBottom,
     isNavbarVisible,
   } = useSectionNavigation();
-  const currentPage = sections.findIndex(({ id }) => id === activeSection);
   const sharedProps = { onNavigate: navigateTo, onNavigateAlumni };
-  const hasNextSection = isPastHero && currentPage < sections.length - 1;
-  const showFloatingButton = hasNextSection || isAtPageBottom;
+  const showFloatingButton = isAtPageBottom;
 
   return (
     <>
@@ -82,16 +80,11 @@ export default function LandingPage({
           !showFloatingButton && styles.nextSectionHidden,
         )}
         type="button"
-        aria-label={isAtPageBottom ? "Back to top" : "Scroll to next section"}
+        aria-label="Back to top"
         aria-hidden={!showFloatingButton}
         tabIndex={showFloatingButton ? 0 : -1}
         onClick={() => {
-          if (isAtPageBottom) {
-            navigateTo("home");
-            return;
-          }
-          const nextSection = sections[currentPage + 1];
-          if (nextSection) navigateTo(nextSection.id);
+          navigateTo("home");
         }}
       >
         <svg
@@ -105,9 +98,7 @@ export default function LandingPage({
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <polyline
-            points={isAtPageBottom ? "6 15 12 9 18 15" : "6 9 12 15 18 9"}
-          />
+          <polyline points="6 15 12 9 18 15" />
         </svg>
       </IconButton>
     </>

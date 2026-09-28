@@ -20,10 +20,45 @@ export default function TeamSection({
             <p className={styles.description} data-animate="team-desc">
               {texts.team.description}
             </p>
+            <div className={styles.alumniCallout} data-animate="team-alumni">
+              <p className={styles.alumniText}>
+                Explore the past leadership and builders from previous batches.
+              </p>
+              <a
+                href="/alumni"
+                className={styles.alumniButton}
+                aria-label="View Alumni"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onNavigateAlumni) {
+                    onNavigateAlumni();
+                  } else {
+                    window.location.href = "/alumni";
+                  }
+                }}
+              >
+                <span>Alumni</span>
+                <svg
+                  aria-hidden="true"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className={styles.alumniArrow}
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+            </div>
           </div>
           <FacultyGrid />
         </div>
-        <TeamAccordion onNavigateAlumni={onNavigateAlumni} />
+        <TeamAccordion />
       </SectionShell>
     </PageShell>
   );

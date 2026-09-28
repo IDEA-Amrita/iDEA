@@ -174,12 +174,17 @@ export function useGsapAnimations() {
         if (teamSection) {
           const title = teamSection.querySelector('[data-animate="title"]');
           const desc = teamSection.querySelector('[data-animate="team-desc"]');
+          const alumni = teamSection.querySelector(
+            '[data-animate="team-alumni"]',
+          );
           const faculty = teamSection.querySelector("article");
           const accordion =
             teamSection.querySelector('[role="region"]') ||
             teamSection.querySelector("div:last-child");
 
-          const elements = [title, desc, faculty, accordion].filter(Boolean);
+          const elements = [title, desc, alumni, faculty, accordion].filter(
+            Boolean,
+          );
 
           gsap.set(elements, { opacity: 0, y: 30 });
 
