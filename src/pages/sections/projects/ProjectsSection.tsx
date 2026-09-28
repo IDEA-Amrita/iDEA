@@ -1,13 +1,10 @@
 import { useState } from "react";
-import { useReducedMotion } from "motion/react";
-import * as m from "motion/react-m";
 import { PageShell, SectionShell } from "../../../components/Layout";
 import projects, { type ProjectId } from "../../../data/projects";
 import ProjectSelector from "./ProjectSelector";
 import styles from "./ProjectsSection.module.css";
 
 export default function ProjectsSection() {
-  const reduceMotion = useReducedMotion();
   const [activeProjectId, setActiveProjectId] = useState<ProjectId | null>(
     projects[0].id,
   );
@@ -19,13 +16,7 @@ export default function ProjectsSection() {
   return (
     <PageShell id="projects" aria-labelledby="projects-title">
       <SectionShell className={styles.section} aria-labelledby="projects-title">
-        <m.div
-          className={styles.layout}
-          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: reduceMotion ? 0 : 0.35, ease: "easeOut" }}
-        >
+        <div className={styles.layout} data-animate="projects-layout">
           <div className={styles.period}>
             <p className={styles.year}>Latest project intake · {latestYear}</p>
           </div>
@@ -41,7 +32,7 @@ export default function ProjectsSection() {
               projects={projects}
             />
           </div>
-        </m.div>
+        </div>
       </SectionShell>
     </PageShell>
   );

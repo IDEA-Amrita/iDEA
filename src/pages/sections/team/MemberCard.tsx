@@ -2,8 +2,6 @@ import texts from "../../../data/texts";
 import { BsPerson } from "react-icons/bs";
 import { AiFillGithub, AiOutlineLinkedin } from "react-icons/ai";
 import type { CommunityMember } from "../../../types/content";
-import { useReducedMotion } from "motion/react";
-import * as m from "motion/react-m";
 import styles from "./TeamSection.module.css";
 
 interface MemberCardProps {
@@ -12,20 +10,16 @@ interface MemberCardProps {
 }
 
 export default function MemberCard({ member }: MemberCardProps) {
-  const reduceMotion = useReducedMotion();
   const pending = member.status === "pending";
   const photo = "photo" in member ? member.photo : undefined;
   const linkedin = "linkedin" in member ? member.linkedin : undefined;
   const github = "github" in member ? member.github : undefined;
 
   return (
-    <m.article
+    <article
       className={styles.memberCard}
       data-state={member.status}
-      initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.4 }}
-      transition={{ duration: reduceMotion ? 0 : 0.25, ease: "easeOut" }}
+      data-animate="member-card"
     >
       <div className={styles.imageWrapper}>
         {pending || !photo ? (
@@ -73,6 +67,6 @@ export default function MemberCard({ member }: MemberCardProps) {
           </div>
         )}
       </div>
-    </m.article>
+    </article>
   );
 }
