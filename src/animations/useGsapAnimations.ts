@@ -336,9 +336,9 @@ export function useGsapAnimations() {
         ).matches;
 
         if (isPointerFine) {
-          // 1. Tactile Button Depress
+          // 1. Tactile Button Depress (exclude full-width accordion triggers)
           const buttons = document.querySelectorAll<HTMLElement>(
-            "button, .button, a[role='button']",
+            "button:not([aria-expanded]):not([aria-controls]), .button, a[role='button']",
           );
           buttons.forEach((btn) => {
             const onPointerDown = () => {

@@ -16,7 +16,7 @@ export default function Accordion({
   children,
 }: AccordionProps) {
   return (
-    <div className={styles.accordion}>
+    <div className={styles.accordion} data-open={open}>
       <h3 className={styles.heading}>
         <button
           className={styles.trigger}

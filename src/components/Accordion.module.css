@@ -5,9 +5,14 @@
     border: var(--border-thin) solid var(--color-border);
     border-radius: var(--radius-lg);
     overflow: clip;
+    transition: border-color var(--duration-fast) var(--ease-out);
+  }
+  .accordion[data-open="true"] {
+    border-color: var(--color-action);
   }
   .heading {
     font-size: inherit;
+    margin: 0;
   }
   .trigger {
     display: flex;
@@ -25,6 +30,7 @@
     font-weight: 600;
     text-align: left;
     cursor: pointer;
+    transform: none !important;
     transition:
       background-color var(--duration-fast) var(--ease-out),
       color var(--duration-fast) var(--ease-out);
@@ -34,12 +40,10 @@
     overflow-wrap: anywhere;
   }
   .trigger:hover,
-  .trigger[aria-expanded="true"] {
+  .trigger[aria-expanded="true"],
+  .trigger:active {
     color: var(--color-action-hover);
     background: var(--color-surface-accent);
-  }
-  .trigger:active {
-    background: var(--color-surface-subtle);
   }
   .trigger:focus-visible {
     outline-offset: -0.25rem;
