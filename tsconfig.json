@@ -18,8 +18,7 @@
     "noEmit": true,
     "allowImportingTsExtensions": true,
     "jsx": "react-jsx",
-    "types": ["vite/client"]
+    "types": ["vite/client", "@testing-library/jest-dom/vitest"]
   },
-  "include": ["src", "vite.config.ts"],
-  "exclude": ["src/**/*.test.js", "src/**/*.test.jsx"]
+  "include": ["src", "vite.config.ts"]
 }
