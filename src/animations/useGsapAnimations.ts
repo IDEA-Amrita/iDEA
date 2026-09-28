@@ -15,7 +15,13 @@ export function useGsapAnimations() {
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
-    if (reduceMotion || typeof window === "undefined") return;
+    if (
+      reduceMotion ||
+      typeof window === "undefined" ||
+      import.meta.env.MODE === "test"
+    ) {
+      return;
+    }
 
     let isDisposed = false;
     let ctx: { revert: () => void } | null = null;

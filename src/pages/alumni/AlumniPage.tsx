@@ -70,7 +70,12 @@ export default function AlumniPage({
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
-    if (reduceMotion || typeof window === "undefined" || !pageRef.current) {
+    if (
+      reduceMotion ||
+      typeof window === "undefined" ||
+      !pageRef.current ||
+      import.meta.env.MODE === "test"
+    ) {
       return;
     }
 
