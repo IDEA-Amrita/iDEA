@@ -1,12 +1,12 @@
-import texts from "./texts";
 import type { FacultyMember } from "../types/content";
 
 const faculty = [
   {
     id: "faculty-mentor",
-    status: "pending",
-    name: texts.team.pendingName,
+    status: "filled",
+    name: "Vedaj J. Padman",
     designation: "Faculty Mentor",
+    photo: "/faculty/vedaj_sir.jpg",
   },
 ] as const satisfies readonly FacultyMember[];
 

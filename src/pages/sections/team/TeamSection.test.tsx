@@ -18,7 +18,10 @@ describe("Team", () => {
       ["TECH LEAD, R&D HEAD & WEBMASTERS", 4],
       ["SECRETARY, JOINT SECRETARY & TREASURER", 3],
     ]);
-    expect(container.querySelector("img")).toBeNull();
+    expect(container.querySelector("img")).toHaveAttribute(
+      "src",
+      "/faculty/vedaj_sir.jpg",
+    );
     const vicePresidents = screen.getByRole("button", {
       name: "VICE PRESIDENTS",
     });
