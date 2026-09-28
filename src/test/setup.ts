@@ -10,12 +10,18 @@ afterEach(() => {
 });
 
 class IntersectionObserverMock {
-  constructor(callback) {
+  callback: IntersectionObserverCallback;
+  constructor(callback: IntersectionObserverCallback) {
     this.callback = callback;
   }
 
-  observe(element) {
-    this.callback([{ isIntersecting: true, target: element }]);
+  observe(element: Element) {
+    this.callback(
+      [
+        { isIntersecting: true, target: element },
+      ] as IntersectionObserverEntry[],
+      this as unknown as IntersectionObserver,
+    );
   }
 
   unobserve() {}
@@ -44,7 +50,7 @@ HTMLDialogElement.prototype.close = function () {
 
 Object.defineProperty(window, "matchMedia", {
   configurable: true,
-  value: vi.fn().mockImplementation((query) => ({
+  value: vi.fn().mockImplementation((query: string) => ({
     matches: false,
     media: query,
     onchange: null,

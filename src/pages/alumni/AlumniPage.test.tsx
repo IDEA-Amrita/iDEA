@@ -9,7 +9,7 @@ describe("AlumniPage", () => {
     expect(screen.getByRole("heading", { name: "Alumni" })).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: "2025-26" })).toBeInTheDocument();
 
-    const batch25 = alumniData["2025-26"];
+    const batch25 = alumniData["2025-26"]!;
     expect(batch25).toHaveLength(9);
 
     for (const member of batch25) {

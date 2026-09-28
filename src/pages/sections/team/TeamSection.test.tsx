@@ -24,9 +24,8 @@ describe("Team", () => {
     });
     expect(vicePresidents).toHaveAttribute("aria-expanded", "false");
     await user.click(vicePresidents);
-    const panel = document.getElementById(
-      vicePresidents.getAttribute("aria-controls"),
-    );
+    const controlsId = vicePresidents.getAttribute("aria-controls")!;
+    const panel = document.getElementById(controlsId)!;
     expect(vicePresidents).toHaveAttribute("aria-expanded", "true");
     expect(panel.firstElementChild).not.toHaveAttribute("inert");
     expect(within(panel).getAllByText("To be announced")).toHaveLength(2);

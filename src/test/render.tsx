@@ -1,12 +1,16 @@
+import type { ReactElement, ReactNode } from "react";
 import ThemeProvider from "../providers/ThemeProvider";
-import { render } from "@testing-library/react";
+import { render, type RenderOptions } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-function TestProviders({ children }) {
+function TestProviders({ children }: { children: ReactNode }) {
   return <ThemeProvider>{children}</ThemeProvider>;
 }
 
-function renderWithProviders(ui, options) {
+function renderWithProviders(
+  ui: ReactElement,
+  options?: Omit<RenderOptions, "wrapper">,
+) {
   return {
     user: userEvent.setup(),
     ...render(ui, { wrapper: TestProviders, ...options }),

@@ -9,7 +9,7 @@ const { createWidget, unmountWidget } = vi.hoisted(() => ({
 }));
 vi.mock("../utils/loadTypeform", () => ({ createWidget }));
 vi.mock("../config/forms", async (importOriginal) => {
-  const actual = await importOriginal();
+  const actual = await importOriginal<typeof import("../config/forms")>();
   return {
     ...actual,
     USE_DUMMY_FORMS: false,
@@ -82,7 +82,12 @@ describe("form resilience", () => {
     );
   });
   it("handles form submission lifecycle and duplicate detection", async () => {
-    let capturedOptions;
+    let capturedOptions:
+      | {
+          onSubmit: (_data: { formId: string; responseId: string }) => void;
+          onDuplicateDetected: (_data: { formId: string }) => void;
+        }
+      | undefined;
     createWidget.mockImplementation((id, options) => {
       capturedOptions = options;
       return { unmount: unmountWidget };
@@ -100,7 +105,7 @@ describe("form resilience", () => {
     await user.click(screen.getByRole("button", { name: "Propose a project" }));
     await waitFor(() => expect(createWidget).toHaveBeenCalledOnce());
 
-    capturedOptions.onSubmit({ formId: "Csq4ijcx", responseId: "resp_123" });
+    capturedOptions?.onSubmit({ formId: "Csq4ijcx", responseId: "resp_123" });
     await waitFor(() =>
       expect(screen.getByRole("status")).toHaveTextContent(
         "Thank you! Your response has been submitted.",
@@ -111,7 +116,7 @@ describe("form resilience", () => {
       responseId: "resp_123",
     });
 
-    capturedOptions.onDuplicateDetected({ formId: "Csq4ijcx" });
+    capturedOptions?.onDuplicateDetected({ formId: "Csq4ijcx" });
     await waitFor(() =>
       expect(screen.getByRole("status")).toHaveTextContent(
         "You have already submitted this form.",
