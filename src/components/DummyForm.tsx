@@ -1,4 +1,5 @@
-import { useState, type SyntheticEvent } from "react";
+import { useEffect, useRef, useState, type SyntheticEvent } from "react";
+import { formIds } from "../config/forms";
 import classNames from "../utils/classNames";
 import buttonStyles from "./Button.module.css";
 import styles from "./DummyForm.module.css";
@@ -33,12 +34,12 @@ export default function DummyForm({
 
   const isPropose =
     formId.includes("propose") ||
-    formId === "Csq4ijcx" ||
+    formId === formIds.proposeProject ||
     label.toLowerCase().includes("propose");
 
   const isJoinProject =
     formId.includes("project") ||
-    formId === "BEDaiz9s" ||
+    formId === formIds.joinProject ||
     (label.toLowerCase().includes("join") &&
       !label.toLowerCase().includes("community") &&
       !label.toLowerCase().includes("idea"));
@@ -187,10 +188,20 @@ export default function DummyForm({
           },
         ];
 
+  const submitTimerRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (submitTimerRef.current !== null) {
+        window.clearTimeout(submitTimerRef.current);
+      }
+    };
+  }, []);
+
   const handleSubmit = (event: SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
-    window.setTimeout(() => {
+    submitTimerRef.current = window.setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
       onSubmitSuccess?.({

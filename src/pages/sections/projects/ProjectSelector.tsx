@@ -37,8 +37,9 @@ export default function ProjectSelector({
                 }}
               >
                 <ProjectDetails
-                  key={`${project.id}-${selected ? "open" : "closed"}`}
+                  key={project.id}
                   project={project}
+                  isOpen={selected}
                 />
               </Accordion>
             </li>

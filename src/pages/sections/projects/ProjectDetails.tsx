@@ -12,11 +12,25 @@ import TechnologyList from "./TechnologyList";
 
 interface ProjectDetailsProps {
   project: Project;
+  isOpen?: boolean;
 }
 
-export default function ProjectDetails({ project }: ProjectDetailsProps) {
+export default function ProjectDetails({
+  project,
+  isOpen = true,
+}: ProjectDetailsProps) {
   const reduceMotion = useReducedMotion();
   const [contactsOpen, setContactsOpen] = useState(false);
+  const [prevIsOpen, setPrevIsOpen] = useState(isOpen);
+
+  if (prevIsOpen !== isOpen) {
+    setPrevIsOpen(isOpen);
+    if (!isOpen) {
+      setContactsOpen(false);
+    }
+  }
+
+  const showContacts = isOpen && contactsOpen;
 
   return (
     <m.article
@@ -39,10 +53,10 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
             Join this project <BsArrowUpRight aria-hidden="true" />
           </TypeformButton>
           <ProjectContactActions
-            isOpen={contactsOpen}
+            isOpen={showContacts}
             project={project}
             onToggle={() => {
-              setContactsOpen((current) => !current);
+              setContactsOpen((current) => (isOpen ? !current : true));
             }}
           />
         </div>

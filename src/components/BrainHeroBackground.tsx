@@ -1,6 +1,6 @@
-import { memo, useEffect, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 
-const P = ["#5a4dff", "#059669", "#0284c7", "#e11d48"];
+const CIRCUIT_PALETTE = ["#5a4dff", "#059669", "#0284c7", "#e11d48"] as const;
 
 interface Props {
   isIntro?: boolean;
@@ -13,47 +13,71 @@ function BrainHeroBackgroundComponent({
   onSync,
   onComplete,
 }: Props) {
-  const [svg, setSvg] = useState("");
-  const [col, setCol] = useState<string | null>(null);
+  const [svgContent, setSvgContent] = useState("");
+  const [circuitColor, setCircuitColor] = useState<string | null>(null);
+  const onSyncRef = useRef(onSync);
+  const onCompleteRef = useRef(onComplete);
 
   useEffect(() => {
-    let ok = true;
+    onSyncRef.current = onSync;
+    onCompleteRef.current = onComplete;
+  }, [onSync, onComplete]);
+
+  useEffect(() => {
+    let isMounted = true;
     fetch("/brain.svg")
-      .then((r) => r.text())
-      .then((t) => {
-        if (ok) setSvg(isIntro ? t.replace("<svg ", '<svg class="intro" ') : t);
+      .then((res) => res.text())
+      .then((text) => {
+        if (isMounted) {
+          setSvgContent(
+            isIntro ? text.replace("<svg ", '<svg class="intro" ') : text,
+          );
+        }
       })
       .catch(() => {});
     return () => {
-      ok = false;
+      isMounted = false;
     };
   }, [isIntro]);
 
   useEffect(() => {
-    const done = () => {
-      onSync?.();
-      onComplete?.();
+    const notifyCompletion = () => {
+      onSyncRef.current?.();
+      onCompleteRef.current?.();
     };
     if (!isIntro) {
-      done();
+      notifyCompletion();
       return;
     }
-    const t = setTimeout(done, 1850);
+    const timer = setTimeout(notifyCompletion, 1850);
     return () => {
-      clearTimeout(t);
+      clearTimeout(timer);
     };
-  }, [isIntro, onSync, onComplete]);
+  }, [isIntro]);
+
+  const cycleCircuitColor = () => {
+    setCircuitColor((current) => {
+      const currentIndex = CIRCUIT_PALETTE.indexOf(
+        current as (typeof CIRCUIT_PALETTE)[number],
+      );
+      const nextIndex = (currentIndex + 1) % CIRCUIT_PALETTE.length;
+      return CIRCUIT_PALETTE[nextIndex] ?? CIRCUIT_PALETTE[0];
+    });
+  };
 
   return (
     <div
       aria-hidden="true"
-      onClick={() => {
-        setCol((p) => P[(P.indexOf(p ?? "") + 1) % P.length] ?? P[0] ?? null);
-      }}
+      onClick={cycleCircuitColor}
       style={
-        col ? ({ "--bc": col, "--bn": col } as React.CSSProperties) : undefined
+        circuitColor
+          ? ({
+              "--bc": circuitColor,
+              "--bn": circuitColor,
+            } as React.CSSProperties)
+          : undefined
       }
-      dangerouslySetInnerHTML={{ __html: svg }}
+      dangerouslySetInnerHTML={{ __html: svgContent }}
     />
   );
 }

@@ -43,35 +43,49 @@ export default function useSectionNavigation() {
   useEffect(() => {
     let restoringHash = false;
     let restoreFrame = 0;
-    const chromeHeight = () => {
+    let cachedReadingLine = Math.max(window.innerHeight / 3, 50);
+    let lastActiveSection: SectionId = "home";
+    let sectionElements = sections.map(({ id }) => ({
+      id,
+      el: document.getElementById(id),
+    }));
+
+    const updateChromeMetrics = () => {
       const navbar = document.querySelector<HTMLElement>("[data-navbar]");
       const rail = document.querySelector<HTMLElement>(
         'nav[aria-label="Section navigation"]',
       );
       const isMobile = window.innerWidth <= 640;
       const mobileRailHeight = isMobile && rail ? rail.offsetHeight : 0;
-      return (navbar?.offsetHeight ?? 0) + mobileRailHeight;
+      const chromeHeight = (navbar?.offsetHeight ?? 0) + mobileRailHeight;
+      cachedReadingLine = Math.max(window.innerHeight / 3, chromeHeight + 1);
+      sectionElements = sections.map(({ id }) => ({
+        id,
+        el: document.getElementById(id),
+      }));
     };
-    const readingLine = () =>
-      Math.max(window.innerHeight / 3, chromeHeight() + 1);
+
     const update = () => {
       if (restoringHash) return;
-      // The section crossing the upper third owns navigation even when expanded.
       let current: SectionId = "home";
-      for (const { id } of sections) {
-        const element = document.getElementById(id);
-        if (element && element.getBoundingClientRect().top <= readingLine())
+      for (const { id, el } of sectionElements) {
+        if (el && el.getBoundingClientRect().top <= cachedReadingLine) {
           current = id;
+        }
       }
-      setActiveSection(current);
-      if (window.location.hash !== `#${current}`) {
-        window.history.replaceState(window.history.state, "", `#${current}`);
+      if (current !== lastActiveSection) {
+        lastActiveSection = current;
+        setActiveSection(current);
+        if (window.location.hash !== `#${current}`) {
+          window.history.replaceState(window.history.state, "", `#${current}`);
+        }
       }
     };
     const restoreHash = () => {
       const id = hashSection();
       if (!id) return false;
       restoringHash = true;
+      lastActiveSection = id;
       setActiveSection(id);
       navigateTo(id, true);
       window.cancelAnimationFrame(restoreFrame);
@@ -81,24 +95,27 @@ export default function useSectionNavigation() {
       });
       return true;
     };
+    updateChromeMetrics();
     if (!restoreHash()) update();
     let observer: IntersectionObserver | undefined;
     const observeSections = () => {
       observer?.disconnect();
       if (typeof IntersectionObserver === "undefined") return;
-      const topInset = chromeHeight();
+      updateChromeMetrics();
+      const topInset = Math.max(
+        0,
+        Math.floor(cachedReadingLine - window.innerHeight / 3),
+      );
       const bottomInset = Math.max(
         0,
-        Math.floor(window.innerHeight - readingLine()),
+        Math.floor(window.innerHeight - cachedReadingLine),
       );
-      // Observe the reading band below the navbar and compact mobile rail.
       observer = new IntersectionObserver(update, {
         rootMargin: `-${String(topInset)}px 0px -${String(bottomInset)}px 0px`,
         threshold: 0,
       });
-      for (const { id } of sections) {
-        const element = document.getElementById(id);
-        if (element) observer.observe(element);
+      for (const { el } of sectionElements) {
+        if (el) observer.observe(el);
       }
     };
     const hero = document.getElementById("home");
@@ -121,6 +138,7 @@ export default function useSectionNavigation() {
     updatePageBottom();
     observeSections();
     const onResize = () => {
+      updateChromeMetrics();
       observeSections();
       update();
       updateHeroVisibility();
