@@ -2,8 +2,6 @@ import { useEffect, useRef } from "react";
 import isModifiedClick from "../utils/isModifiedClick";
 import { sections, type SectionId } from "../config/sections";
 import classNames from "../utils/classNames";
-import { useReducedMotion } from "motion/react";
-import * as m from "motion/react-m";
 import styles from "./Navigation.module.css";
 
 interface SidebarProps {
@@ -20,12 +18,7 @@ export default function Sidebar({
   onNavigate,
 }: SidebarProps) {
   const listRef = useRef<HTMLUListElement>(null);
-  const reduceMotion = useReducedMotion();
   const currentIndex = sections.findIndex(({ id }) => id === activeSection);
-  const itemVariants = {
-    hidden: { opacity: 0, x: reduceMotion ? 0 : -8 },
-    visible: { opacity: 1, x: 0 },
-  };
 
   useEffect(() => {
     const list = listRef.current;
@@ -59,26 +52,12 @@ export default function Sidebar({
   }, [currentIndex, visible]);
 
   return (
-    <m.nav
+    <nav
       className={classNames(styles.rail, styles.chrome)}
       aria-label={label}
       data-visible={visible}
       aria-hidden={!visible}
       inert={!visible}
-      initial="hidden"
-      animate={visible ? "visible" : "hidden"}
-      variants={{
-        hidden: { opacity: 0, y: reduceMotion ? 0 : -8 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: reduceMotion ? 0 : 0.2,
-            ease: "easeOut",
-            staggerChildren: 0.035,
-          },
-        },
-      }}
     >
       <p className={styles.progress}>
         {currentIndex + 1} of {sections.length}
@@ -89,16 +68,15 @@ export default function Sidebar({
           const active = index === currentIndex;
           const completed = index < currentIndex;
           return (
-            <m.li
+            <li
               className={classNames(
                 styles.railItem,
                 completed && styles.completedItem,
                 active && styles.currentItem,
               )}
               key={section.id}
-              variants={itemVariants}
             >
-              <m.a
+              <a
                 className={styles.railLink}
                 href={`#${section.id}`}
                 aria-current={active ? "location" : undefined}
@@ -110,14 +88,14 @@ export default function Sidebar({
               >
                 <span className={styles.dot} aria-hidden="true" />
                 <span className={styles.railLabel}>{section.label}</span>
-              </m.a>
+              </a>
               {index < sections.length - 1 && (
                 <span className={styles.connector} aria-hidden="true" />
               )}
-            </m.li>
+            </li>
           );
         })}
       </ul>
-    </m.nav>
+    </nav>
   );
 }
