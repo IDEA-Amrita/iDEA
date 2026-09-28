@@ -9,9 +9,13 @@ import styles from "./AlumniPage.module.css";
 
 interface AlumniPageProps {
   onBack?: (() => void) | undefined;
+  onNavigateHome?: (() => void) | undefined;
 }
 
-export default function AlumniPage({ onBack }: AlumniPageProps = {}) {
+export default function AlumniPage({
+  onBack,
+  onNavigateHome,
+}: AlumniPageProps = {}) {
   const [selectedBatch, setSelectedBatch] = useState<AlumniBatch>("2025-26");
   const members = alumniData[selectedBatch] ?? [];
 
@@ -19,12 +23,18 @@ export default function AlumniPage({ onBack }: AlumniPageProps = {}) {
     if (onBack) {
       onBack();
     } else {
-      window.history.pushState({}, "", "/#team");
-      window.dispatchEvent(new PopStateEvent("popstate"));
-      const teamSection = document.getElementById("team");
-      if (teamSection) {
-        teamSection.scrollIntoView({ behavior: "smooth" });
-      }
+      window.location.href = "/#team";
+    }
+  };
+
+  const handleHome = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (onNavigateHome) {
+      onNavigateHome();
+    } else if (onBack) {
+      onBack();
+    } else {
+      window.location.href = "/#home";
     }
   };
 
@@ -55,19 +65,7 @@ export default function AlumniPage({ onBack }: AlumniPageProps = {}) {
             <span>Back to Core Team</span>
           </button>
 
-          <a
-            href="/#home"
-            className={styles.brandLink}
-            onClick={(e) => {
-              e.preventDefault();
-              if (onBack) {
-                window.history.pushState({}, "", "/#home");
-                window.dispatchEvent(new PopStateEvent("popstate"));
-              } else {
-                window.location.href = "/#home";
-              }
-            }}
-          >
+          <a href="/#home" className={styles.brandLink} onClick={handleHome}>
             iDEA
           </a>
 

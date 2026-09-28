@@ -57,6 +57,9 @@ export default function App() {
                   onBack={() => {
                     navigateToLanding("team");
                   }}
+                  onNavigateHome={() => {
+                    navigateToLanding("home");
+                  }}
                 />
               </Suspense>
             ) : (

@@ -11,10 +11,7 @@ export default function FacultyGrid() {
       </h3>
       <div className={styles.facultyGrid}>
         {faculty.map((member) => (
-          <article className={styles.facultyMember} key={member.id}>
-            <MemberCard member={member} />
-            <div className={styles.divider} />
-          </article>
+          <MemberCard key={member.id} member={member} />
         ))}
       </div>
     </section>

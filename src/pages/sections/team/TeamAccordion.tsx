@@ -42,9 +42,7 @@ export default function TeamAccordion({
             if (onNavigateAlumni) {
               onNavigateAlumni();
             } else {
-              window.history.pushState({}, "", "/alumni");
-              window.dispatchEvent(new PopStateEvent("popstate"));
-              window.scrollTo(0, 0);
+              window.location.href = "/alumni";
             }
           }}
         >
