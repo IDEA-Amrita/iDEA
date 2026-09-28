@@ -28,7 +28,7 @@
   .facultySection {
     min-width: 0;
     width: 100%;
-    max-width: 12rem;
+    max-width: 19rem;
     padding: var(--space-3);
     background: var(--color-surface-card);
     border: var(--border-thin) solid var(--color-border);
@@ -252,7 +252,7 @@
     }
 
     .facultySection {
-      max-width: 11rem;
+      max-width: 16.5rem;
     }
   }
 
