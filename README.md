@@ -65,23 +65,10 @@ npm install && npm start
 
 ### Git hooks
 
-The project can use local Git hooks to automate development checks:
-
-- `pre-commit` — format staged work with Prettier.
-- `pre-push` — run tests before changes are pushed.
-
-If a `hooks/` directory is present, configure Git to use it and make its hook files executable:
-
-```sh
-git config core.hooksPath hooks
-chmod +x hooks/*
-```
-
-Prettier is already included in the development dependencies. If you need to add it to a fresh setup, run:
-
-```sh
-npm install --save-dev --save-exact prettier
-```
+`npm ci` installs the tracked `hooks/pre-commit` hook for this clone. Every local
+commit runs `npm run check`, including formatting, linting, typechecking, tests,
+and a production build. A failing check stops the commit. Git hooks are local to
+each clone, so run `npm ci` after cloning to enable the hook.
 
 ## Architecture and structure
 
