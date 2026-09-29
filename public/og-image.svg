@@ -1,53 +1,42 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
     <!-- Background grid pattern -->
-    <pattern id="gridPattern" width="48" height="48" patternUnits="userSpaceOnUse">
-      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(255, 255, 255, 0.035)" stroke-width="1" />
+    <pattern id="siteGrid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(244, 242, 237, 0.03)" stroke-width="1" />
     </pattern>
 
-    <!-- Radial glow behind neural constellation -->
-    <radialGradient id="neuralGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.18" />
-      <stop offset="45%" stop-color="#6366f1" stop-opacity="0.09" />
-      <stop offset="100%" stop-color="#121211" stop-opacity="0" />
-    </radialGradient>
-
-    <!-- Wordmark accent gradient -->
-    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="100%" stop-color="#818cf8" />
-    </linearGradient>
-
-    <!-- Brain styles -->
+    <!-- Brain styles matching the site's dark mode palette -->
     <style>
-      .brainPath { fill: none; stroke: #38bdf8; stroke-width: 1.1; opacity: 0.55; }
-      .brainPath:nth-of-type(3n+1) { stroke: #818cf8; opacity: 0.65; }
-      .brainPath:nth-of-type(4n+2) { stroke: #60a5fa; opacity: 0.5; }
-      .brainRect { fill: #38bdf8; stroke: #38bdf8; opacity: 0.8; }
-      .brainRect:nth-of-type(3n) { fill: #a78bfa; stroke: #a78bfa; }
-      .brainCircle { fill: #38bdf8; stroke: #38bdf8; opacity: 0.85; }
-      .brainCircle:nth-of-type(3n) { fill: #818cf8; stroke: #818cf8; }
-      .brainEllipse { fill: #818cf8; stroke: #818cf8; opacity: 0.8; }
-      .centerMicro { fill: none; stroke: #38bdf8; stroke-width: 2; opacity: 0.5; }
+      .brainPath { fill: none; stroke: #8b80ff; stroke-width: 1.1; opacity: 0.55; }
+      .brainPath:nth-of-type(3n+1) { stroke: #c6ff3d; opacity: 0.6; stroke-width: 1.1; }
+      .brainPath:nth-of-type(4n+2) { stroke: #8b80ff; opacity: 0.35; stroke-width: 0.9; }
+      .brainRect { fill: #8b80ff; stroke: #8b80ff; opacity: 0.85; }
+      .brainRect:nth-of-type(3n) { fill: #c6ff3d; stroke: #c6ff3d; opacity: 0.9; }
+      .brainCircle { fill: #8b80ff; stroke: #8b80ff; opacity: 0.9; }
+      .brainCircle:nth-of-type(3n) { fill: #c6ff3d; stroke: #c6ff3d; opacity: 0.95; }
+      .brainEllipse { fill: #c6ff3d; stroke: #c6ff3d; opacity: 0.9; }
+      .centerMicro { fill: none; stroke: #8b80ff; stroke-width: 2; opacity: 0.6; }
     </style>
+
+    <!-- Wordmark accent gradient matching favicon -->
+    <linearGradient id="favDot" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b80ff" />
+      <stop offset="100%" stop-color="#a89fff" />
+    </linearGradient>
   </defs>
 
-  <!-- Background Base -->
-  <rect width="1200" height="630" fill="#121211" />
+  <!-- Background Base: #181816 -->
+  <rect width="1200" height="630" fill="#181816" />
 
   <!-- Grid Pattern Overlay -->
-  <rect width="1200" height="630" fill="url(#gridPattern)" />
+  <rect width="1200" height="630" fill="url(#siteGrid)" />
 
   <!-- Subtle Outer Border Frame -->
-  <rect x="24" y="24" width="1152" height="582" rx="16" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" />
+  <rect x="28" y="28" width="1144" height="574" rx="12" fill="none" stroke="#3d3b36" stroke-width="1" />
 
-  <!-- Radial Glow on Right -->
-  <circle cx="890" cy="315" r="380" fill="url(#neuralGlow)" />
-
-  <!-- Neural Brain Vector Group (Right Half) -->
-  <g transform="translate(620, 68) scale(0.94)">
-    
-<circle cx="292.1" cy="254.3" class="centerMicro" fill="none" stroke="var(--bn)" stroke-width="2.5"/>
+  <!-- Neural Brain Vector Group (Right Half, scaled and centered) -->
+  <g transform="translate(610, 56) scale(0.98)">
+    <circle cx="292.1" cy="254.3" class="centerMicro" fill="none" stroke="var(--bn)" stroke-width="2.5"/>
 <rect x="5.1" y="210.1" width="1.6" height="26.7" class="brainRect" style="--del:0.91s;--rand:1.73s"/>
 <path d="M5.9 211.2C2.6 211.2 0 208.5 0 205.3 0 202 2.7 199.4 5.9 199.4 9.2 199.4 11.8 202.1 11.8 205.3 11.9 208.6 9.2 211.2 5.9 211.2ZM5.9 200.9C3.5 200.9 1.6 202.9 1.6 205.2 1.6 207.6 3.6 209.5 5.9 209.5 8.3 209.5 10.2 207.5 10.2 205.2 10.3 202.9 8.3 200.9 5.9 200.9Z" class="brainPath" style="--del:0.91s;--len:65px;--rand:1.59s"/>
 <path d="M141.6 113C138.3 113 135.7 110.3 135.7 107.1 135.7 103.8 138.4 101.2 141.6 101.2 144.9 101.2 147.5 103.9 147.5 107.1 147.5 110.3 144.8 113 141.6 113ZM141.6 102.7C139.2 102.7 137.3 104.7 137.3 107 137.3 109.3 139.3 111.3 141.6 111.3 144 111.3 145.9 109.3 145.9 107 145.9 104.7 144 102.7 141.6 102.7Z" class="brainPath" style="--del:0.69s;--len:64px;--rand:1.47s"/>
@@ -488,33 +477,31 @@
 <circle cx="149.2" cy="120.1" r="3.1" class="brainCircle" style="--del:0.67s;--rand:1.65s"/>
 <circle cx="123.5" cy="156.8" r="3.1" class="brainCircle" style="--del:0.66s;--rand:1.79s"/>
 <circle cx="214" cy="129" r="3.1" class="brainCircle" style="--del:0.54s;--rand:0.57s"/>
-</g>
-
-  <!-- Left Content Column -->
-  <!-- Eyebrow Badge -->
-  <g transform="translate(80, 85)">
-    <rect width="320" height="34" rx="17" fill="rgba(56, 189, 248, 0.08)" stroke="rgba(56, 189, 248, 0.28)" stroke-width="1" />
-    <circle cx="20" cy="17" r="4.5" fill="#38bdf8" />
-    <circle cx="20" cy="17" r="8" fill="#38bdf8" opacity="0.25" />
-    <text x="36" y="22" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="12.5" font-weight="600" letter-spacing="1.5px" fill="#38bdf8">AMRITA VISHWA VIDYAPEETHAM</text>
   </g>
 
-  <!-- Wordmark 'iDEA' -->
-  <text x="80" y="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="108" font-weight="800" letter-spacing="-4px">
-    <tspan fill="url(#brandGrad)">i</tspan><tspan fill="#ffffff">DEA</tspan>
-  </text>
+  <!-- Amrita Vishwa Vidyapeetham (matching sans-serif font, positioned directly above iDEA) -->
+  <text x="88" y="140" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" letter-spacing="0.2px" fill="#aaa69d">Amrita Vishwa Vidyapeetham</text>
+
+  <!-- Wordmark 'iDEA': pure vector 'i' with favDot purple circle dot, off-white stem, and 'DEA' -->
+  <g id="wordmark">
+    <!-- Dot of 'i' -->
+    <circle cx="99.5" cy="176" r="11.5" fill="url(#favDot)" />
+    <!-- Stem of 'i' -->
+    <rect x="88" y="192" width="23" height="57" rx="2" fill="#f4f2ed" />
+    <!-- 'DEA' -->
+    <text x="116" y="250" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="116" font-weight="800" letter-spacing="-4px" fill="#f4f2ed">DEA</text>
+  </g>
 
   <!-- Tagline -->
-  <text x="82" y="315" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="34" font-weight="500" letter-spacing="-0.5px" fill="#f4f4f5">Ideas brought to life.</text>
+  <text x="88" y="325" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="36" font-weight="500" letter-spacing="-0.5px" fill="#d0cdc6">
+    Ideas brought to life.
+  </text>
 
-  <!-- Description -->
-  <text x="82" y="375" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="400" fill="#a1a1aa">A space for curious builders to shape ideas into</text>
-  <text x="82" y="405" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="400" fill="#a1a1aa">collaborative technology projects.</text>
-
-  <!-- Bottom Divider Line -->
-  <line x1="80" y1="510" x2="1120" y2="510" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" />
-
-  <!-- Bottom Meta Bar -->
-  <text x="82" y="550" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="13" font-weight="600" letter-spacing="1.5px" fill="#71717a">01 // STUDENT DEVELOPER COMMUNITY</text>
-  <text x="1118" y="550" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="13" font-weight="500" letter-spacing="1.5px" fill="#71717a">GITHUB.COM/IDEA-AMRITA</text>
+  <!-- Description Paragraph -->
+  <text x="88" y="395" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="400" fill="#aaa69d">
+    A space for curious builders to shape ideas into
+  </text>
+  <text x="88" y="428" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="400" fill="#aaa69d">
+    collaborative technology projects.
+  </text>
 </svg>

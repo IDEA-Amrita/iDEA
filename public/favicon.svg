@@ -1,18 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="faviconDot" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="100%" stop-color="#6366f1" />
+    <linearGradient id="favDot" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b80ff" />
+      <stop offset="100%" stop-color="#a89fff" />
     </linearGradient>
   </defs>
-  <!-- Background Tile -->
-  <rect width="64" height="64" rx="16" fill="#141413" />
-  <rect x="0.5" y="0.5" width="63" height="63" rx="15.5" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
-  
-  <!-- Lowercase 'i' -->
-  <!-- Cyan / Blue Accent Dot (Tittle) -->
-  <circle cx="32" cy="18.5" r="5.5" fill="url(#faviconDot)" />
-  
-  <!-- Crisp White Stem -->
-  <rect x="26.5" y="28" width="11" height="23" rx="5.5" fill="#f4f4f5" />
+
+  <!-- Background Tile: Site's #181816 surface with #3d3b36 border -->
+  <rect width="64" height="64" rx="10" fill="#181816" />
+  <rect x="0.5" y="0.5" width="63" height="63" rx="9.5" fill="none" stroke="#3d3b36" stroke-width="1" />
+
+  <!-- Lowercase 'i' Monogram -->
+  <!-- Brand Accent Dot: #8b80ff -->
+  <circle cx="32" cy="18" r="5.5" fill="url(#favDot)" />
+
+  <!-- Crisp Off-White Stem: #f4f2ed -->
+  <rect x="27" y="27" width="10" height="23" rx="2" fill="#f4f2ed" />
 </svg>
