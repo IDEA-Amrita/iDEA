@@ -1,1 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#5a4dff"/><text x="32" y="45" text-anchor="middle" fill="#f5f4f0" font-family="Georgia,serif" font-size="40">i</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="faviconDot" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+  </defs>
+  <!-- Background Tile -->
+  <rect width="64" height="64" rx="16" fill="#141413" />
+  <rect x="0.5" y="0.5" width="63" height="63" rx="15.5" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+  
+  <!-- Lowercase 'i' -->
+  <!-- Cyan / Blue Accent Dot (Tittle) -->
+  <circle cx="32" cy="18.5" r="5.5" fill="url(#faviconDot)" />
+  
+  <!-- Crisp White Stem -->
+  <rect x="26.5" y="28" width="11" height="23" rx="5.5" fill="#f4f4f5" />
+</svg>
