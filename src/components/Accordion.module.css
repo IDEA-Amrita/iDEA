@@ -1,8 +1,8 @@
 @layer components {
   .accordion {
     min-width: 0;
-    background: #20201e;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: var(--color-surface-card);
+    border: var(--border-thin) solid var(--color-border);
     border-radius: 20px;
     overflow: clip;
     transition:
@@ -10,7 +10,7 @@
       background-color var(--duration-fast) var(--ease-out);
   }
   .accordion[data-open="true"] {
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: var(--color-border-strong);
   }
   .heading {
     font-size: inherit;
@@ -47,7 +47,7 @@
   .trigger[aria-expanded="true"],
   .trigger:active {
     color: var(--color-action-hover);
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--color-surface-subtle);
   }
   .trigger:focus-visible {
     outline-offset: -0.25rem;
@@ -82,7 +82,7 @@
   }
   .panel[data-open="true"] {
     grid-template-rows: 1fr;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: var(--border-thin) solid var(--color-border);
   }
   .inner {
     min-height: 0;
