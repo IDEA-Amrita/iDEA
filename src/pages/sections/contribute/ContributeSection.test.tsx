@@ -6,9 +6,7 @@ import Contribute from "./ContributeSection";
 
 describe("Contribute", () => {
   it("gives both contribution actions accessible names", async () => {
-    const { container } = renderWithProviders(
-      <Contribute onNavigate={() => {}} />,
-    );
+    const { container } = renderWithProviders(<Contribute />);
     const actions = screen.getAllByRole("button", {
       name: /Propose a project|Become an iDEA member/i,
     });
@@ -18,8 +16,8 @@ describe("Contribute", () => {
     expect(actions[1]).toHaveAttribute("aria-haspopup", "dialog");
 
     const results = await axe.run(container);
-    const highImpactViolations = results.violations.filter(({ impact }) =>
-      ["serious", "critical"].includes(impact),
+    const highImpactViolations = results.violations.filter(
+      ({ impact }) => impact && ["serious", "critical"].includes(impact),
     );
 
     expect(highImpactViolations).toEqual([]);

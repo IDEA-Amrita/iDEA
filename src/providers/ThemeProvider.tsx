@@ -1,6 +1,8 @@
 import {
+  useCallback,
   useEffect,
   useLayoutEffect,
+  useMemo,
   useState,
   type PropsWithChildren,
 } from "react";
@@ -45,18 +47,21 @@ export default function ThemeProvider({ children }: PropsWithChildren) {
       ?.setAttribute("content", theme === "dark" ? "#181816" : "#f5f4f0");
   }, [theme]);
 
-  const setPreference = (next: ThemePreference) => {
+  const setPreference = useCallback((next: ThemePreference) => {
     setPreferenceState(next);
     try {
       window.localStorage.setItem("idea-theme", next);
     } catch {
       /* Keep the in-memory selection. */
     }
-  };
+  }, []);
+
+  const value = useMemo(
+    () => ({ preference, theme, setPreference }),
+    [preference, theme, setPreference],
+  );
 
   return (
-    <ThemeContext.Provider value={{ preference, theme, setPreference }}>
-      {children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 }

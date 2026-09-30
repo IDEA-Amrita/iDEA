@@ -18,15 +18,17 @@ describe("Team", () => {
       ["TECH LEAD, R&D HEAD & WEBMASTERS", 4],
       ["SECRETARY, JOINT SECRETARY & TREASURER", 3],
     ]);
-    expect(container.querySelector("img")).toBeNull();
+    expect(container.querySelector("img")).toHaveAttribute(
+      "src",
+      "/faculty/vedaj_sir.jpg",
+    );
     const vicePresidents = screen.getByRole("button", {
       name: "VICE PRESIDENTS",
     });
     expect(vicePresidents).toHaveAttribute("aria-expanded", "false");
     await user.click(vicePresidents);
-    const panel = document.getElementById(
-      vicePresidents.getAttribute("aria-controls"),
-    );
+    const controlsId = vicePresidents.getAttribute("aria-controls")!;
+    const panel = document.getElementById(controlsId)!;
     expect(vicePresidents).toHaveAttribute("aria-expanded", "true");
     expect(panel.firstElementChild).not.toHaveAttribute("inert");
     expect(within(panel).getAllByText("To be announced")).toHaveLength(2);

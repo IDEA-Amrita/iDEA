@@ -7,17 +7,9 @@ interface MemberGridProps {
   columns?: number;
 }
 
-export default function MemberGrid({ members, columns }: MemberGridProps) {
+export default function MemberGrid({ members }: MemberGridProps) {
   return (
-    <ul
-      className={styles.members}
-      data-columns={columns}
-      style={
-        columns
-          ? ({ "--grid-cols": columns } as React.CSSProperties)
-          : undefined
-      }
-    >
+    <ul className={styles.members}>
       {members.map((member) => (
         <li key={member.id} className={styles.memberItem}>
           <MemberCard member={member} />

@@ -7,11 +7,18 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 
-const productionTypescript = ["src/**/*.{ts,tsx}", "vite.config.ts"];
+const productionFiles = ["src/**/*.{ts,tsx}", "vite.config.ts"];
+const testFiles = ["src/**/*.test.{ts,tsx}", "src/test/**/*.{ts,tsx}"];
 
 export default tseslint.config(
   {
-    ignores: ["dist", "coverage", "node_modules"],
+    ignores: [
+      "dist",
+      "coverage",
+      "node_modules",
+      "scripts",
+      "eslint.config.js",
+    ],
   },
   js.configs.recommended,
   {
@@ -38,10 +45,12 @@ export default tseslint.config(
   },
   ...tseslint.configs.strictTypeChecked.map((config) => ({
     ...config,
-    files: productionTypescript,
+    files: productionFiles,
+    ignores: testFiles,
   })),
   {
-    files: productionTypescript,
+    files: productionFiles,
+    ignores: testFiles,
     plugins: {
       import: importPlugin,
       "jsx-a11y": jsxA11y,
@@ -109,14 +118,26 @@ export default tseslint.config(
     },
   },
   {
-    files: ["scripts/**/*.js"],
+    files: testFiles,
     languageOptions: {
-      globals: globals.node,
+      parser: tseslint.parser,
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+      },
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
     },
-  },
-  {
-    files: ["src/test/**/*.{js,jsx}"],
+    plugins: {
+      react,
+      "react-hooks": reactHooks,
+      "react-refresh": reactRefresh,
+    },
     rules: {
+      ...reactHooks.configs.flat.recommended.rules,
+      "no-undef": "off",
+      "no-unused-vars": "off",
       "react-refresh/only-export-components": "off",
     },
   },

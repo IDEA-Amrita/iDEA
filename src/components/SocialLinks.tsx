@@ -7,6 +7,13 @@ import {
 import { socialLinks } from "../config/socialLinks";
 import styles from "./Navigation.module.css";
 
+const SOCIAL_ICONS = {
+  email: AiOutlineMail,
+  linkedin: AiOutlineLinkedin,
+  instagram: AiOutlineInstagram,
+  github: AiFillGithub,
+} as const;
+
 export default function SocialLinks() {
   return (
     <nav className={styles.socialPanel} aria-label="Club links">
@@ -15,12 +22,7 @@ export default function SocialLinks() {
       </a>
       <div className={styles.socialLinks}>
         {socialLinks.map(({ id, label, href, external }) => {
-          const Icon = {
-            email: AiOutlineMail,
-            linkedin: AiOutlineLinkedin,
-            instagram: AiOutlineInstagram,
-            github: AiFillGithub,
-          }[id];
+          const Icon = SOCIAL_ICONS[id];
           return (
             <a
               key={id}

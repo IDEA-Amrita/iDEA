@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
-import { useReducedMotion } from "motion/react";
-import * as m from "motion/react-m";
 import TypeformButton from "../../../components/TypeformButton";
 import { formIds } from "../../../config/forms";
 import type { Project } from "../../../types/content";
@@ -12,19 +10,27 @@ import TechnologyList from "./TechnologyList";
 
 interface ProjectDetailsProps {
   project: Project;
+  isOpen?: boolean;
 }
 
-export default function ProjectDetails({ project }: ProjectDetailsProps) {
-  const reduceMotion = useReducedMotion();
+export default function ProjectDetails({
+  project,
+  isOpen = true,
+}: ProjectDetailsProps) {
   const [contactsOpen, setContactsOpen] = useState(false);
+  const [prevIsOpen, setPrevIsOpen] = useState(isOpen);
+
+  if (prevIsOpen !== isOpen) {
+    setPrevIsOpen(isOpen);
+    if (!isOpen) {
+      setContactsOpen(false);
+    }
+  }
+
+  const showContacts = isOpen && contactsOpen;
 
   return (
-    <m.article
-      className={styles.detailsCard}
-      initial={reduceMotion ? false : { opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: reduceMotion ? 0 : 0.22, ease: "easeOut" }}
-    >
+    <article className={styles.detailsCard}>
       <ProjectMetadata project={project} />
       <div className={styles.detailsBody}>
         <p className={styles.summary}>{project.description}</p>
@@ -39,14 +45,14 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
             Join this project <BsArrowUpRight aria-hidden="true" />
           </TypeformButton>
           <ProjectContactActions
-            isOpen={contactsOpen}
+            isOpen={showContacts}
             project={project}
             onToggle={() => {
-              setContactsOpen((current) => !current);
+              setContactsOpen((current) => (isOpen ? !current : true));
             }}
           />
         </div>
       </div>
-    </m.article>
+    </article>
   );
 }

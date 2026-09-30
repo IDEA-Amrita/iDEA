@@ -5,7 +5,7 @@ import Projects from "./ProjectsSection";
 
 describe("Projects", () => {
   it("updates details and contact actions for the selected project", async () => {
-    const { user } = renderWithProviders(<Projects onNavigate={() => {}} />);
+    const { user } = renderWithProviders(<Projects />);
 
     expect(screen.getByText(/Nirmal K, 4th Year CSE/)).toBeInTheDocument();
     const scheduler = screen.getByRole("button", { name: "Scheduler" });
@@ -34,9 +34,10 @@ describe("Projects", () => {
       screen.getByRole("button", { name: "Show project contact options" }),
     );
 
-    const contactActions = within(
-      screen.queryByRole("group", { name: "Project contact options" }),
-    );
+    const contactGroup = screen.getByRole("group", {
+      name: "Project contact options",
+    });
+    const contactActions = within(contactGroup);
 
     expect(
       contactActions.getByRole("link", { name: "Email iDEA" }),
@@ -46,9 +47,8 @@ describe("Projects", () => {
     ).toHaveAttribute("href", "https://www.instagram.com/idea_amrita/");
     await user.click(allocation);
     expect(allocation).toHaveAttribute("aria-expanded", "false");
-    const panel = document.getElementById(
-      allocation.getAttribute("aria-controls"),
-    );
+    const controlsId = allocation.getAttribute("aria-controls")!;
+    const panel = document.getElementById(controlsId)!;
     expect(panel).toHaveAttribute("aria-hidden", "true");
     expect(panel.firstElementChild).toHaveAttribute("inert");
     expect(

@@ -35,10 +35,10 @@ describe("theme preferences", () => {
   });
 
   it("follows live system changes only when Auto is selected", async () => {
-    let change;
+    let change: (() => void) | undefined;
     const media = {
       matches: false,
-      addEventListener: (_event, callback) => {
+      addEventListener: (_event: string, callback: () => void) => {
         change = callback;
       },
       removeEventListener: vi.fn(),
@@ -49,13 +49,19 @@ describe("theme preferences", () => {
     );
     const { user } = renderWithProviders(<ThemeToggle />);
     media.matches = true;
-    act(() => change());
+    act(() => {
+      change?.();
+    });
     expect(document.documentElement.dataset.theme).toBe("dark");
     await user.click(screen.getByRole("button", { name: "Use light theme" }));
     media.matches = false;
-    act(() => change());
+    act(() => {
+      change?.();
+    });
     media.matches = true;
-    act(() => change());
+    act(() => {
+      change?.();
+    });
     expect(document.documentElement.dataset.theme).toBe("light");
   });
   it("can restore system behavior after an explicit preference", async () => {

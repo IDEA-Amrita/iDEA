@@ -1,6 +1,4 @@
 import texts from "../../../data/texts";
-import { useReducedMotion } from "motion/react";
-import * as m from "motion/react-m";
 import { PageShell, SectionShell } from "../../../components/Layout";
 import SectionTitle from "../../../components/SectionTitle";
 import FacultyGrid from "./FacultyGrid";
@@ -11,8 +9,6 @@ import type { SectionNavigationProps } from "../../../types/navigation";
 export default function TeamSection({
   onNavigateAlumni,
 }: Partial<SectionNavigationProps> = {}) {
-  const reduceMotion = useReducedMotion();
-
   return (
     <PageShell id="team" aria-labelledby="team-title">
       <SectionShell className={styles.section} aria-labelledby="team-title">
@@ -21,22 +17,48 @@ export default function TeamSection({
             <SectionTitle sectionId="team" id="team-title">
               {texts.team.title}
             </SectionTitle>
-            <m.p
-              className={styles.description}
-              initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{
-                duration: reduceMotion ? 0 : 0.28,
-                ease: "easeOut",
-              }}
-            >
+            <p className={styles.description} data-animate="team-desc">
               {texts.team.description}
-            </m.p>
+            </p>
+            <div className={styles.alumniCallout} data-animate="team-alumni">
+              <p className={styles.alumniText}>
+                Explore the past leadership and builders from previous batches.
+              </p>
+              <a
+                href="/alumni"
+                className={styles.alumniButton}
+                aria-label="View Alumni"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onNavigateAlumni) {
+                    onNavigateAlumni();
+                  } else {
+                    window.location.href = "/alumni";
+                  }
+                }}
+              >
+                <span>Alumni</span>
+                <svg
+                  aria-hidden="true"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className={styles.alumniArrow}
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+            </div>
           </div>
           <FacultyGrid />
         </div>
-        <TeamAccordion onNavigateAlumni={onNavigateAlumni} />
+        <TeamAccordion />
       </SectionShell>
     </PageShell>
   );
