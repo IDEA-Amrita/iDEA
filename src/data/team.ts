@@ -1,4 +1,3 @@
-import texts from "./texts";
 import type { TeamGroup } from "../types/content";
 
 export const teamGroups = [
@@ -45,29 +44,30 @@ export const teamGroups = [
       {
         id: "tech-lead-1",
         status: "filled",
-        name: "Aniruth",
+        name: "Aniruth Karthik",
         designation: "Tech Lead",
         photo: "/team/2026-27/Aniruth-TechLead.jpeg",
       },
       {
         id: "research-development-1",
         status: "filled",
-        name: "Ketaki Damodar Athalekar",
+        name: "Ketaki Athalekar",
         designation: "R&D Head",
         photo: "/team/2026-27/Ketaki-ResearchLead.jpeg",
       },
       {
         id: "web-master-1",
         status: "filled",
-        name: "H Dharshan",
+        name: "Dharshan",
         designation: "Web Master",
         photo: "/team/2026-27/Dharshan-Webmaster.png",
       },
       {
         id: "web-master-2",
-        status: "pending",
-        name: texts.team.pendingName,
+        status: "filled",
+        name: "Shruhath Reddy",
         designation: "Web Master",
+        photo: "/team/2026-27/Shruhath-Webmaster.jpeg",
       },
     ],
   },
@@ -78,9 +78,10 @@ export const teamGroups = [
     members: [
       {
         id: "secretary-1",
-        status: "pending",
-        name: texts.team.pendingName,
+        status: "filled",
+        name: "Kamalini Vaithyanathan",
         designation: "Secretary",
+        photo: "/team/2026-27/Kamalini-Secretary.jpeg",
       },
       {
         id: "joint-secretary-1",
@@ -91,9 +92,10 @@ export const teamGroups = [
       },
       {
         id: "treasurer-1",
-        status: "pending",
-        name: texts.team.pendingName,
+        status: "filled",
+        name: "A R Nirmal",
         designation: "Treasurer",
+        photo: "/team/2026-27/Nirmal-Treasurer.jpeg",
       },
       {
         id: "multimedia-1",
