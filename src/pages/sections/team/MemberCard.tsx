@@ -39,33 +39,35 @@ export default function MemberCard({ member }: MemberCardProps) {
         <p className={styles.memberName}>
           {pending ? texts.team.pendingName : member.name}
         </p>
-        <p className={styles.memberRole}>{member.designation}</p>
-        {(linkedin || github) && (
-          <div className={styles.socialLinks}>
-            {linkedin && (
-              <a
-                href={linkedin}
-                className={styles.socialLink}
-                aria-label={`${member.name}'s LinkedIn`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <AiOutlineLinkedin aria-hidden="true" />
-              </a>
-            )}
-            {github && (
-              <a
-                href={github}
-                className={styles.socialLink}
-                aria-label={`${member.name}'s GitHub`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <AiFillGithub aria-hidden="true" />
-              </a>
-            )}
-          </div>
-        )}
+        <div className={styles.cardFooter}>
+          <p className={styles.memberRole}>{member.designation}</p>
+          {(linkedin || github) && (
+            <div className={styles.socialLinks}>
+              {linkedin && (
+                <a
+                  href={linkedin}
+                  className={styles.socialLink}
+                  aria-label={`${member.name}'s LinkedIn`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <AiOutlineLinkedin aria-hidden="true" />
+                </a>
+              )}
+              {github && (
+                <a
+                  href={github}
+                  className={styles.socialLink}
+                  aria-label={`${member.name}'s GitHub`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <AiFillGithub aria-hidden="true" />
+                </a>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </article>
   );
