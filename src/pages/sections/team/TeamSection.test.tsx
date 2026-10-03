@@ -5,7 +5,7 @@ import faculty from "../../../data/faculty";
 import { teamGroups } from "../../../data/team";
 
 describe("Team", () => {
-  it("renders the placeholder roster and opens and closes role panels", async () => {
+  it("renders the roster and opens and closes role panels", async () => {
     const { user, container } = renderWithProviders(
       <Team onNavigate={() => {}} />,
     );
@@ -16,7 +16,7 @@ describe("Team", () => {
       ["PRESIDENT", 1],
       ["VICE PRESIDENTS", 2],
       ["TECH LEAD, R&D HEAD & WEBMASTERS", 4],
-      ["SECRETARY, JOINT SECRETARY & TREASURER", 3],
+      ["SECRETARY, JOINT SECRETARY, TREASURER & MULTIMEDIA HEAD", 4],
     ]);
     expect(container.querySelector("img")).toHaveAttribute(
       "src",
@@ -31,7 +31,9 @@ describe("Team", () => {
     const panel = document.getElementById(controlsId)!;
     expect(vicePresidents).toHaveAttribute("aria-expanded", "true");
     expect(panel.firstElementChild).not.toHaveAttribute("inert");
-    expect(within(panel).getAllByText("To be announced")).toHaveLength(2);
+    expect(within(panel).queryByText("To be announced")).toBeNull();
+    expect(within(panel).getByText("Mahakishore M")).toBeInTheDocument();
+    expect(within(panel).getByText("Minoti K")).toBeInTheDocument();
     await user.click(vicePresidents);
     expect(vicePresidents).toHaveAttribute("aria-expanded", "false");
     expect(panel).toHaveAttribute("aria-hidden", "true");
