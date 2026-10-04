@@ -1,4 +1,4 @@
-import { BsArrowUpRight, BsCodeSlash, BsLinkedin, BsMegaphoneFill, BsSendFill } from "react-icons/bs";
+import { BsArrowUpRight, BsCodeSlash, BsInstagram, BsLinkedin, BsMegaphoneFill, BsSendFill } from "react-icons/bs";
 import { ButtonLink } from "../../../components/Button";
 import BrandStar from "../../../components/BrandStar";
 import { PageShell, SectionShell } from "../../../components/Layout";
@@ -59,7 +59,7 @@ export default function ContributeSection() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <BrandStar /> Instagram <BsArrowUpRight aria-hidden="true" />
+                  <BsInstagram aria-hidden="true" /> Instagram <BsArrowUpRight aria-hidden="true" />
                 </ButtonLink>
                 <ButtonLink
                   className={styles.rowButton}
