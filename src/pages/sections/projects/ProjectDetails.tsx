@@ -1,7 +1,4 @@
 import { useState } from "react";
-import { BsArrowUpRight } from "react-icons/bs";
-import TypeformButton from "../../../components/TypeformButton";
-import { formIds } from "../../../config/forms";
 import type { Project } from "../../../types/content";
 import ProjectContactActions from "./ProjectContactActions";
 import ProjectMetadata from "./ProjectMetadata";
@@ -36,14 +33,14 @@ export default function ProjectDetails({
         <p className={styles.summary}>{project.description}</p>
         <TechnologyList frameworks={project.frameworks} tags={project.tags} />
         <div className={styles.projectActions}>
-          <TypeformButton
+          {/* <TypeformButton
             formId={formIds.joinProject}
             label={`Join ${project.title}`}
             variant="compact"
             hidden={{ project: project.title, project_id: project.id }}
           >
             Join this project <BsArrowUpRight aria-hidden="true" />
-          </TypeformButton>
+          </TypeformButton> */}
           <ProjectContactActions
             isOpen={showContacts}
             project={project}

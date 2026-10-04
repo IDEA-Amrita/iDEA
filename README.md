@@ -91,16 +91,6 @@ iDEA/
 └── vite.config.ts                   # Vite configuration
 ```
 
-## Form integration and testing
-
-The site supports hosted Typeforms and lightweight built-in forms for local testing. Copy `.env.example` to `.env.local` and configure these variables as needed:
-
-- `VITE_USE_DUMMY_FORMS` — use built-in forms when `true`; set it to `false` to embed live Typeforms.
-- `VITE_TYPEFORM_PROPOSE_PROJECT` — Typeform ID for project proposals.
-- `VITE_TYPEFORM_JOIN_COMMUNITY` — Typeform ID for community membership.
-- `VITE_TYPEFORM_JOIN_PROJECT` — Typeform ID for project applications.
-
-Typeform resources are loaded only when a form modal is opened, keeping them out of the initial bundle.
 
 ## Deployment
 
