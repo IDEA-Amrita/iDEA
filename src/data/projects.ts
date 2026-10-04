@@ -7,7 +7,7 @@ const projects = [
     lead: { name: "iDEA", yearAndDepartment: "CSE" },
     timeline: { started: "2026-06", status: "ongoing" },
     description:
-      "Constraint-based plate optimizer + fitness companion for Indian hostel students. Pick what to eat from what your mess actually serves — given your calorie / macro targets, allergens, conditions, and today's menu — then log it, track progress, train, and ask a grounded AI coach. Built for Amrita Coimbatore hostelers, where you can't choose your ingredients — so generic fitness apps don't fit. Features a Mifflin-St Jeor goal engine, MILP plate optimizer (PuLP/CBC), per-hostel mess menus with photo OCR, hostel-friendly workouts, logging with adherence and streaks, and a RAG AI coach (Gemini + pgvector) with citations to /learn.",
+      "A constraint-based nutrition optimizer and fitness companion designed for university hostel residents. MessFit calculates optimal meal selections based on daily mess menus, individual caloric and macronutrient targets, dietary restrictions, and health goals. Built specifically for students who cannot customize raw ingredients, the platform features a Mifflin-St Jeor target engine, mixed-integer linear programming meal optimizer, automated mess menu OCR, tailored hostel workouts, habit tracking, and a retrieval-augmented AI fitness advisor.",
     frameworks: ["Python", "PuLP", "PostgreSQL", "Gemini"],
     tags: ["Optimization", "RAG", "FitnessTech", "pgvector", "OpenTelemetry"],
     contacts: {
@@ -24,7 +24,7 @@ const projects = [
     lead: { name: "iDEA", yearAndDepartment: "CSE" },
     timeline: { started: "2026-06", status: "ongoing" },
     description:
-      "NodeShare lets two computers — anywhere in the world — connect directly and securely, so one machine can run a piece of work (a task) on the other. Start NodeShare on a machine with spare power (the Provider), share a single command with a friend, and they connect as the Requester for an interactive terminal to ping, inspect hardware with sysinfo, send code with create-task, and run it remotely inside Docker with live output via run-task. No port forwarding, no accounts, no cloud — works across home networks out of the box.",
+      "A lightweight peer-to-peer compute sharing system that enables secure, direct machine-to-machine task execution. NodeShare allows a provider machine with available computational capacity to execute tasks requested by a client through an interactive terminal interface. It supports remote hardware telemetry, task dispatching, and containerized Docker execution with real-time stream output, requiring zero port forwarding, accounts, or cloud intermediaries.",
     frameworks: ["Node.js", "Docker", "TypeScript"],
     tags: ["P2PNetworking", "RemoteExecution", "Docker", "CLI"],
     contacts: {
@@ -41,7 +41,7 @@ const projects = [
     lead: { name: "iDEA", yearAndDepartment: "CSE" },
     timeline: { started: "2026-06", status: "ongoing" },
     description:
-      "A payment state stabilizer for teams that cannot afford to trust one webhook too early. Paystable is a small open-source Go service that sits after checkout and before fulfillment. It does not replace your gateway, route payments, vault cards, or compete with orchestrators — you keep using PayU today. It gives your app a safer state machine around webhooks, gateway lag, conflicting signals, retries, and audit trails, with one core rule: never take an irreversible action on one unverified payment signal.",
+      "A resilient payment state machine and verification service designed to ensure reliable transaction fulfillment. Written in Go, Paystable operates between payment checkout and order fulfillment to reconcile asynchronous gateway webhooks, handle network latency, resolve conflicting status signals, and maintain immutable audit trails. It prevents premature or duplicate order fulfillment by enforcing verified state transitions across payment lifecycles.",
     frameworks: ["Go", "PostgreSQL", "Docker"],
     tags: ["Payments", "Webhooks", "StateMachine", "BackendDevelopment"],
     contacts: {
