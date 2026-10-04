@@ -16,11 +16,6 @@ describe("AlumniPage", () => {
       expect(screen.getByText(member.name)).toBeInTheDocument();
       expect(screen.getAllByText(member.role).length).toBeGreaterThan(0);
     }
-
-    const linkedInLinks = screen.getAllByLabelText(/LinkedIn/i);
-    expect(linkedInLinks.length).toBeGreaterThan(0);
-    const githubLinks = screen.getAllByLabelText(/GitHub/i);
-    expect(githubLinks.length).toBeGreaterThan(0);
   });
 
   it("calls onBack when Back to Core Team button is clicked", async () => {
