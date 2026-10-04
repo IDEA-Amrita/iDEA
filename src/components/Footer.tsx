@@ -7,9 +7,10 @@ import {
   AiOutlineMail,
 } from "react-icons/ai";
 import { clubContact, type ClubContact } from "../config/clubContact";
-import { sections } from "../config/sections";
+import { sections, type SectionId } from "../config/sections";
 import { socialLinks } from "../config/socialLinks";
 import { ButtonLink } from "./Button";
+import isModifiedClick from "../utils/isModifiedClick";
 import styles from "./Footer.module.css";
 
 const socialIcons = {
@@ -19,11 +20,15 @@ const socialIcons = {
   github: AiFillGithub,
 };
 
+export interface FooterProps {
+  contact?: ClubContact;
+  onNavigate?: (section: SectionId) => void;
+}
+
 export default function Footer({
   contact = clubContact,
-}: {
-  contact?: ClubContact;
-}) {
+  onNavigate,
+}: FooterProps) {
   return (
     <footer className={styles.footer}>
       <section className={styles.callout} aria-labelledby="footer-callout">
@@ -33,7 +38,17 @@ export default function Footer({
             {texts.footer.callout}
           </h2>
         </div>
-        <ButtonLink href="#contribute" variant="primary">
+        <ButtonLink
+          href="#contribute"
+          variant="primary"
+          onClick={(event) => {
+            if (isModifiedClick(event)) return;
+            if (onNavigate) {
+              event.preventDefault();
+              onNavigate("contribute");
+            }
+          }}
+        >
           <BrandStar /> {texts.footer.join}
         </ButtonLink>
       </section>
@@ -50,7 +65,17 @@ export default function Footer({
           <ul className={styles.footerList}>
             {sections.map((section) => (
               <li key={section.id}>
-                <a className={styles.footerLink} href={`#${section.id}`}>
+                <a
+                  className={styles.footerLink}
+                  href={`#${section.id}`}
+                  onClick={(event) => {
+                    if (isModifiedClick(event)) return;
+                    if (onNavigate) {
+                      event.preventDefault();
+                      onNavigate(section.id);
+                    }
+                  }}
+                >
                   {section.label}
                 </a>
               </li>

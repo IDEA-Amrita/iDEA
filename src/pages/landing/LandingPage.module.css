@@ -2,7 +2,7 @@
   .indexedLayout {
     display: grid;
     grid-template-columns: var(--sidebar-offset) minmax(0, 1fr);
-    padding-top: var(--navbar-height);
+    padding-top: 0;
   }
   .railScope {
     grid-column: 1;
@@ -61,10 +61,6 @@
       min-width: 0;
       width: 100%;
       overflow-x: clip;
-    }
-    .indexedSections > section:first-child {
-      scroll-margin-top: 0;
-      padding-top: var(--section-chrome-height);
     }
     .nextSection {
       display: none;
