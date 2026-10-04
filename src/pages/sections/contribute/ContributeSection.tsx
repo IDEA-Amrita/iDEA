@@ -51,7 +51,58 @@ export default function ContributeSection() {
           </div>
 
           <div className={styles.actions}>
-            {/* Card 1: Check Out Our Socials */}
+            {/* Card 1: Propose via Email Template */}
+            <article className={styles.action} data-animate="contribute-card">
+              <div className={styles.content}>
+                <div className={styles.iconBadge} aria-hidden="true">
+                  <BsSendFill />
+                </div>
+                <h3 className={styles.cardTitle}>Propose a Project</h3>
+                <p className={styles.copy}>
+                  Have an innovative product concept or research problem? Send a
+                  structured proposal directly to the core team to kick off
+                  review.
+                </p>
+              </div>
+              <div className={styles.buttonGroup}>
+                <ButtonLink
+                  className={styles.cardButton}
+                  variant="primary"
+                  href={proposalMailto}
+                >
+                  <BrandStar /> Draft Proposal{" "}
+                  <BsArrowUpRight aria-hidden="true" />
+                </ButtonLink>
+              </div>
+            </article>
+
+            {/* Card 2: GitHub Open Source */}
+            <article className={styles.action} data-animate="contribute-card">
+              <div className={styles.content}>
+                <div className={styles.iconBadge} aria-hidden="true">
+                  <BsCodeSlash />
+                </div>
+                <h3 className={styles.cardTitle}>Build on GitHub</h3>
+                <p className={styles.copy}>
+                  Explore our open-source repositories, pick up
+                  beginner-friendly issues, or collaborate on live campus
+                  software alongside fellow iDEators.
+                </p>
+              </div>
+              <div className={styles.buttonGroup}>
+                <ButtonLink
+                  className={styles.cardButton}
+                  variant="primary"
+                  href="https://github.com/IDEA-Amrita"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <BrandStar /> GitHub Org <BsArrowUpRight aria-hidden="true" />
+                </ButtonLink>
+              </div>
+            </article>
+
+            {/* Card 3: Check Out Our Socials */}
             <article className={styles.action} data-animate="contribute-card">
               <div className={styles.content}>
                 <div className={styles.iconBadge} aria-hidden="true">
@@ -85,57 +136,6 @@ export default function ContributeSection() {
                 >
                   <BrandStar />
                   <BsLinkedin aria-hidden="true" />
-                </ButtonLink>
-              </div>
-            </article>
-
-            {/* Card 2: Propose via Email Template */}
-            <article className={styles.action} data-animate="contribute-card">
-              <div className={styles.content}>
-                <div className={styles.iconBadge} aria-hidden="true">
-                  <BsSendFill />
-                </div>
-                <h3 className={styles.cardTitle}>Propose a Project</h3>
-                <p className={styles.copy}>
-                  Have an innovative product concept or research problem? Send a
-                  structured proposal directly to the core team to kick off
-                  review.
-                </p>
-              </div>
-              <div className={styles.buttonGroup}>
-                <ButtonLink
-                  className={styles.cardButton}
-                  variant="primary"
-                  href={proposalMailto}
-                >
-                  <BrandStar /> Draft Proposal{" "}
-                  <BsArrowUpRight aria-hidden="true" />
-                </ButtonLink>
-              </div>
-            </article>
-
-            {/* Card 3: GitHub Open Source */}
-            <article className={styles.action} data-animate="contribute-card">
-              <div className={styles.content}>
-                <div className={styles.iconBadge} aria-hidden="true">
-                  <BsCodeSlash />
-                </div>
-                <h3 className={styles.cardTitle}>Build on GitHub</h3>
-                <p className={styles.copy}>
-                  Explore our open-source repositories, pick up
-                  beginner-friendly issues, or collaborate on live campus
-                  software alongside fellow iDEators.
-                </p>
-              </div>
-              <div className={styles.buttonGroup}>
-                <ButtonLink
-                  className={styles.cardButton}
-                  variant="primary"
-                  href="https://github.com/IDEA-Amrita"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <BrandStar /> GitHub Org <BsArrowUpRight aria-hidden="true" />
                 </ButtonLink>
               </div>
             </article>

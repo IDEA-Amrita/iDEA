@@ -204,21 +204,26 @@
       text-align: center;
     }
     .footerList {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      justify-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 100%;
-      max-width: 18rem;
       margin-inline: auto;
     }
     .explore .footerList {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      justify-items: center;
-      width: 100%;
-      max-width: 18rem;
+      grid-template-columns: repeat(2, 5.5rem);
+      justify-content: center;
+      justify-items: start;
+      text-align: left;
+      width: fit-content;
       margin-inline: auto;
-      column-gap: var(--space-4);
+      column-gap: var(--space-6);
+      padding-left: var(--space-4);
+    }
+    .explore .footerLink {
+      text-align: left;
+      justify-content: flex-start;
     }
     .connect .footerList {
       grid-template-columns: 1fr;
