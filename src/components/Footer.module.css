@@ -10,6 +10,7 @@
     background-size: var(--grid-size) var(--grid-size);
     border-top: var(--border-thin) solid var(--color-border);
   }
+
   .callout {
     display: flex;
     max-width: var(--content-wide);
@@ -20,6 +21,7 @@
     gap: var(--space-6);
     border-bottom: var(--border-thin) solid var(--color-border);
   }
+
   .calloutKicker {
     margin-bottom: var(--space-3);
     color: var(--color-action-hover);
@@ -29,6 +31,7 @@
     letter-spacing: var(--tracking-label);
     text-transform: uppercase;
   }
+
   .calloutTitle {
     max-width: 40rem;
     font-size: clamp(2.25rem, 4vw, 4.25rem);
@@ -36,12 +39,15 @@
     letter-spacing: -0.05em;
     line-height: 1.05;
   }
+
   .calloutLine {
     display: block;
   }
+
   .callout > a {
     flex-shrink: 0;
   }
+
   .content {
     display: grid;
     max-width: var(--content-wide);
@@ -52,11 +58,13 @@
     justify-content: space-between;
     gap: clamp(var(--space-5), 5vw, var(--space-8));
   }
+
   .brand,
   .explore,
   .connect {
     min-width: 0;
   }
+
   .wordmark {
     display: flex;
     align-items: center;
@@ -67,6 +75,7 @@
     letter-spacing: -0.04em;
     line-height: 1;
   }
+
   .description {
     color: var(--color-text-secondary);
     font-size: var(--text-xs);
@@ -74,6 +83,7 @@
     max-width: 17rem;
     margin-top: var(--space-3);
   }
+
   .heading {
     margin-bottom: var(--space-2);
     font-size: var(--text-xs);
@@ -81,20 +91,24 @@
     letter-spacing: var(--tracking-label);
     text-transform: uppercase;
   }
+
   .address {
     font-style: normal;
     margin-bottom: var(--space-2);
   }
+
   .footerList {
     display: flex;
     flex-direction: column;
     gap: var(--space-1);
   }
+
   .explore .footerList {
     display: grid;
     grid-template-columns: repeat(2, max-content);
     column-gap: var(--space-5);
   }
+
   .footerLink,
   .contactText {
     display: inline-flex;
@@ -106,19 +120,23 @@
     line-height: 1.5;
     overflow-wrap: anywhere;
   }
+
   .footerLink {
     text-decoration: none;
   }
+
   .footerLink:hover {
     color: var(--color-action-hover);
     text-decoration: underline;
     text-underline-offset: 0.2em;
   }
+
   .socialIcons {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2);
   }
+
   .socialIconLink {
     display: grid;
     width: 2.75rem;
@@ -128,14 +146,17 @@
     border-radius: 50%;
     transition: all var(--duration-fast) var(--ease-out);
   }
+
   .socialIconLink:hover {
     color: var(--color-action-hover);
     transform: translateY(-0.125rem);
   }
+
   .socialIconLink svg {
     width: 1.25rem;
     height: 1.25rem;
   }
+
   .bottom {
     display: flex;
     max-width: var(--content-wide);
@@ -147,26 +168,31 @@
     text-align: center;
     border-top: var(--border-thin) solid var(--color-border);
   }
+
   .copyright {
     color: var(--color-text-muted);
     font-size: var(--text-xs);
     line-height: 1.5;
   }
+
   @media (max-width: 64rem) {
     .content {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
+
   @media (max-width: 40rem) {
     .footer {
       padding-inline: var(--space-4);
     }
+
     .content {
       grid-template-columns: 1fr;
       gap: var(--space-6);
       text-align: center;
       justify-items: center;
     }
+
     .brand,
     .explore,
     .connect {
@@ -176,33 +202,41 @@
       text-align: center;
       width: 100%;
     }
+
     .wordmark {
       justify-content: center;
     }
+
     .description {
       text-align: center;
       margin-inline: auto;
     }
+
     .heading {
       text-align: center;
     }
+
     .address {
       text-align: center;
     }
+
     .callout {
       padding-block: var(--space-8);
       align-items: center;
       text-align: center;
       flex-direction: column;
     }
+
     .calloutTitle {
       max-width: 24rem;
       text-align: center;
       margin-inline: auto;
     }
+
     .calloutKicker {
       text-align: center;
     }
+
     .footerList {
       display: flex;
       flex-direction: column;
@@ -210,6 +244,7 @@
       width: 100%;
       margin-inline: auto;
     }
+
     .explore .footerList {
       display: grid;
       grid-template-columns: repeat(2, 5.5rem);
@@ -219,16 +254,19 @@
       width: fit-content;
       margin-inline: auto;
       column-gap: var(--space-6);
-      padding-left: var(--space-4);
+      padding-left: var(--space-7);
     }
+
     .explore .footerLink {
       text-align: left;
       justify-content: flex-start;
     }
+
     .connect .footerList {
       grid-template-columns: 1fr;
       width: 100%;
     }
+
     .socialIcons {
       justify-content: center;
     }
