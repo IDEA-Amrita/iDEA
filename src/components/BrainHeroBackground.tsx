@@ -88,16 +88,14 @@ function BrainHeroBackgroundComponent({
     <div
       aria-hidden="true"
       onClick={cycleCircuitColor}
-      style={{
-        transform: "translateZ(0)",
-        contain: "paint layout",
-        ...(circuitColor
+      style={
+        circuitColor
           ? ({
               "--bc": circuitColor,
               "--bn": circuitColor,
             } as React.CSSProperties)
-          : {}),
-      }}
+          : undefined
+      }
       dangerouslySetInnerHTML={{ __html: svgContent }}
     />
   );
