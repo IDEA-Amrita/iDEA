@@ -1,4 +1,3 @@
-import ImagePlaceholder from "../../../components/ImagePlaceholder";
 import { PageShell, SectionShell } from "../../../components/Layout";
 import SectionTitle from "../../../components/SectionTitle";
 import texts from "../../../data/texts";
@@ -28,10 +27,13 @@ export default function AboutSection() {
             ))}
           </ul>
         </div>
-        <div data-animate="about-image">
-          <ImagePlaceholder
+        <div className={styles.imageWrapper} data-animate="about-image">
+          <img
+            src="/logo_clear.webp"
+            alt="iDEA - Integrated Development Environment of Amrita"
             className={styles.image}
-            label={texts.about.placeholder}
+            loading="eager"
+            decoding="async"
           />
         </div>
       </SectionShell>
