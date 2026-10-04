@@ -61,12 +61,43 @@
     align-items: center;
     gap: var(--space-5);
   }
-  .preview {
+  .techBadge {
     grid-column: 2;
     grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
     width: 100%;
     min-height: 7.5rem;
+    padding: var(--space-3);
+    background: var(--color-surface-subtle);
+    border: var(--border-thin) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    color: var(--color-action);
+    transition:
+      border-color var(--duration-fast) var(--ease-out),
+      background-color var(--duration-fast) var(--ease-out);
+  }
+  .techBadgeIcon {
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+  .techBadgeIcon svg {
+    width: 100%;
+    height: 100%;
+  }
+  .techBadgeLabel {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
     font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
   }
   .metadataCopy {
     grid-column: 1;
@@ -162,13 +193,22 @@
       padding: var(--section-padding-y) var(--space-4);
     }
     .metadata {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr) auto;
       gap: var(--space-3);
     }
-    .preview {
-      grid-column: 1;
-      grid-row: 2;
-      min-height: 5rem;
+    .techBadge {
+      grid-column: 2;
+      grid-row: 1;
+      width: 4rem;
+      min-height: 4rem;
+      padding: var(--space-2);
+    }
+    .techBadgeIcon {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+    .techBadgeLabel {
+      display: none;
     }
   }
 }
