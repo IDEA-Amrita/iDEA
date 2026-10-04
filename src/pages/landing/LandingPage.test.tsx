@@ -57,7 +57,7 @@ describe("landing page", () => {
     expect(scope.parentElement.parentElement).toBe(main);
     expect(
       scope.nextElementSibling.querySelectorAll("section[id]"),
-    ).toHaveLength(4);
+    ).toHaveLength(5);
     expect(main).not.toContainElement(screen.getByRole("contentinfo"));
     for (const id of destinations) {
       expect(document.getElementById(id)).not.toContainElement(sidebar);
@@ -90,7 +90,7 @@ describe("landing page", () => {
       const sidebar = container.querySelector(
         'nav[aria-label="Section navigation"]',
       );
-      expect(within(sidebar).getByText("1 of 5")).toBeInTheDocument();
+      expect(within(sidebar).getByText("1 of 6")).toBeInTheDocument();
       const observer = observers.find(
         ({ elements }) => elements.length === destinations.length,
       );
@@ -100,7 +100,7 @@ describe("landing page", () => {
           { target: document.getElementById("projects"), isIntersecting: true },
         ]),
       );
-      expect(within(sidebar).getByText("4 of 5")).toBeInTheDocument();
+      expect(within(sidebar).getByText("4 of 6")).toBeInTheDocument();
       expect(sidebar.querySelector('a[href="#projects"]')).toHaveAttribute(
         "aria-current",
         "location",

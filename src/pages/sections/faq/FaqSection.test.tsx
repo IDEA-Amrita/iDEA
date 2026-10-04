@@ -12,12 +12,12 @@ describe("FaqSection", () => {
     ).toBeInTheDocument();
 
     const whatIsIdeaButton = screen.getByRole("button", {
-      name: /01 What is iDEA Club\?/i,
+      name: /What is iDEA Club\?/i,
     });
     expect(whatIsIdeaButton).toHaveAttribute("aria-expanded", "true");
 
     const whatWeDoButton = screen.getByRole("button", {
-      name: /02 What does iDEA Club actually do\?/i,
+      name: /What does iDEA Club actually do\?/i,
     });
     expect(whatWeDoButton).toHaveAttribute("aria-expanded", "false");
 
