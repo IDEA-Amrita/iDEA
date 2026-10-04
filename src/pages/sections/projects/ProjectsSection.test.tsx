@@ -7,9 +7,12 @@ describe("Projects", () => {
   it("updates details and contact actions for the selected project", async () => {
     const { user } = renderWithProviders(<Projects />);
 
-    expect(screen.getByText(/Nirmal K, 4th Year CSE/)).toBeInTheDocument();
-    const scheduler = screen.getByRole("button", { name: "Scheduler" });
-    expect(scheduler).toHaveAttribute("aria-expanded", "true");
+    expect(
+      screen.getByText(/Latest project intake · 2026-27/),
+    ).toBeInTheDocument();
+    expect(screen.getAllByText(/iDEA, CSE/).length).toBeGreaterThan(0);
+    const messfit = screen.getByRole("button", { name: "MessFit" });
+    expect(messfit).toHaveAttribute("aria-expanded", "true");
 
     await user.click(
       screen.getByRole("button", { name: "Show project contact options" }),
@@ -18,14 +21,14 @@ describe("Projects", () => {
       screen.queryByRole("group", { name: "Project contact options" }),
     ).toBeInTheDocument();
 
-    const allocation = screen.getByRole("button", {
-      name: "Project Allocation System",
+    const nodeshare = screen.getByRole("button", {
+      name: "NodeShare",
     });
-    await user.click(allocation);
+    await user.click(nodeshare);
 
-    expect(screen.getByText("iDEA, CSE")).toBeInTheDocument();
-    expect(allocation).toHaveAttribute("aria-expanded", "true");
-    expect(scheduler).toHaveAttribute("aria-expanded", "false");
+    expect(screen.getAllByText("iDEA, CSE").length).toBeGreaterThan(0);
+    expect(nodeshare).toHaveAttribute("aria-expanded", "true");
+    expect(messfit).toHaveAttribute("aria-expanded", "false");
     expect(
       screen.queryByRole("group", { name: "Project contact options" }),
     ).toBeNull();
@@ -45,17 +48,17 @@ describe("Projects", () => {
     expect(
       contactActions.getByRole("link", { name: "iDEA on Instagram" }),
     ).toHaveAttribute("href", "https://www.instagram.com/idea_amrita/");
-    await user.click(allocation);
-    expect(allocation).toHaveAttribute("aria-expanded", "false");
-    const controlsId = allocation.getAttribute("aria-controls")!;
+    await user.click(nodeshare);
+    expect(nodeshare).toHaveAttribute("aria-expanded", "false");
+    const controlsId = nodeshare.getAttribute("aria-controls")!;
     const panel = document.getElementById(controlsId)!;
     expect(panel).toHaveAttribute("aria-hidden", "true");
     expect(panel.firstElementChild).toHaveAttribute("inert");
     expect(
       screen.queryByRole("group", { name: "Project contact options" }),
     ).toBeNull();
-    await user.click(allocation);
-    expect(allocation).toHaveAttribute("aria-expanded", "true");
+    await user.click(nodeshare);
+    expect(nodeshare).toHaveAttribute("aria-expanded", "true");
     expect(
       screen.queryByRole("group", { name: "Project contact options" }),
     ).toBeNull();

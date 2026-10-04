@@ -11,6 +11,7 @@ export default function ProjectsSection() {
   const latestYear = Math.max(
     ...projects.map(({ timeline }) => Number(timeline.started.slice(0, 4))),
   );
+  const academicYear = `${String(latestYear)}-${String(latestYear + 1).slice(2)}`;
   const activeProject = projects.find(({ id }) => id === activeProjectId);
 
   return (
@@ -18,7 +19,9 @@ export default function ProjectsSection() {
       <SectionShell className={styles.section} aria-labelledby="projects-title">
         <div className={styles.layout} data-animate="projects-layout">
           <div className={styles.period}>
-            <p className={styles.year}>Latest project intake · {latestYear}</p>
+            <p className={styles.year}>
+              Latest project intake · {academicYear}
+            </p>
           </div>
           <div className={styles.workspace}>
             <p role="status" className={styles.announcement}>
