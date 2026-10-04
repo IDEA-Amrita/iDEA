@@ -4,6 +4,7 @@ interface Props {
   isIntro?: boolean | undefined;
   circuitColor: string | null;
   svgText: string;
+  onClick?: (() => void) | undefined;
   onSync?: (() => void) | undefined;
   onComplete?: (() => void) | undefined;
 }
@@ -210,8 +211,6 @@ function buildGeometry(svgText: string): BrainGeometry {
         dists.push(totalLen);
       }
 
-      const pathTotalLen = style.len || totalLen || 600;
-
       for (let j = 0; j < sp.length - 1; j++) {
         const p1 = sp[j];
         const p2 = sp[j + 1];
@@ -232,7 +231,7 @@ function buildGeometry(svgText: string): BrainGeometry {
           nx,
           ny,
           d1,
-          pathTotalLen,
+          totalLen,
           style.del,
           style.rand,
           colorType,
@@ -241,7 +240,7 @@ function buildGeometry(svgText: string): BrainGeometry {
           -nx,
           -ny,
           d1,
-          pathTotalLen,
+          totalLen,
           style.del,
           style.rand,
           colorType,
@@ -250,7 +249,7 @@ function buildGeometry(svgText: string): BrainGeometry {
           nx,
           ny,
           d2,
-          pathTotalLen,
+          totalLen,
           style.del,
           style.rand,
           colorType,
@@ -260,7 +259,7 @@ function buildGeometry(svgText: string): BrainGeometry {
           nx,
           ny,
           d2,
-          pathTotalLen,
+          totalLen,
           style.del,
           style.rand,
           colorType,
@@ -269,7 +268,7 @@ function buildGeometry(svgText: string): BrainGeometry {
           -nx,
           -ny,
           d1,
-          pathTotalLen,
+          totalLen,
           style.del,
           style.rand,
           colorType,
@@ -278,7 +277,7 @@ function buildGeometry(svgText: string): BrainGeometry {
           -nx,
           -ny,
           d2,
-          pathTotalLen,
+          totalLen,
           style.del,
           style.rand,
           colorType,
@@ -306,7 +305,6 @@ function buildGeometry(svgText: string): BrainGeometry {
       style.del,
       style.rand,
       colorType,
-      0,
       x + w,
       y,
       1,
@@ -315,7 +313,6 @@ function buildGeometry(svgText: string): BrainGeometry {
       style.del,
       style.rand,
       colorType,
-      0,
       x,
       y + h,
       0,
@@ -324,7 +321,6 @@ function buildGeometry(svgText: string): BrainGeometry {
       style.del,
       style.rand,
       colorType,
-      0,
 
       x + w,
       y,
@@ -334,7 +330,6 @@ function buildGeometry(svgText: string): BrainGeometry {
       style.del,
       style.rand,
       colorType,
-      0,
       x + w,
       y + h,
       1,
@@ -343,7 +338,6 @@ function buildGeometry(svgText: string): BrainGeometry {
       style.del,
       style.rand,
       colorType,
-      0,
       x,
       y + h,
       0,
@@ -352,7 +346,6 @@ function buildGeometry(svgText: string): BrainGeometry {
       style.del,
       style.rand,
       colorType,
-      0,
     );
   });
 
@@ -373,7 +366,6 @@ function buildGeometry(svgText: string): BrainGeometry {
         0.15,
         0,
         2,
-        2.5,
         cx + 60,
         cy - 60,
         1,
@@ -382,7 +374,6 @@ function buildGeometry(svgText: string): BrainGeometry {
         0.15,
         0,
         2,
-        2.5,
         cx - 60,
         cy + 60,
         -1,
@@ -391,7 +382,6 @@ function buildGeometry(svgText: string): BrainGeometry {
         0.15,
         0,
         2,
-        2.5,
 
         cx + 60,
         cy - 60,
@@ -401,7 +391,6 @@ function buildGeometry(svgText: string): BrainGeometry {
         0.15,
         0,
         2,
-        2.5,
         cx + 60,
         cy + 60,
         1,
@@ -410,7 +399,6 @@ function buildGeometry(svgText: string): BrainGeometry {
         0.15,
         0,
         2,
-        2.5,
         cx - 60,
         cy + 60,
         -1,
@@ -419,7 +407,6 @@ function buildGeometry(svgText: string): BrainGeometry {
         0.15,
         0,
         2,
-        2.5,
       );
     } else {
       const style = parseStyle(circleEl.getAttribute("style") ?? "");
@@ -435,7 +422,6 @@ function buildGeometry(svgText: string): BrainGeometry {
         style.del,
         style.rand,
         colorType,
-        r,
         cx + r,
         cy - r,
         1,
@@ -444,7 +430,6 @@ function buildGeometry(svgText: string): BrainGeometry {
         style.del,
         style.rand,
         colorType,
-        r,
         cx - r,
         cy + r,
         -1,
@@ -453,7 +438,6 @@ function buildGeometry(svgText: string): BrainGeometry {
         style.del,
         style.rand,
         colorType,
-        r,
 
         cx + r,
         cy - r,
@@ -463,7 +447,6 @@ function buildGeometry(svgText: string): BrainGeometry {
         style.del,
         style.rand,
         colorType,
-        r,
         cx + r,
         cy + r,
         1,
@@ -472,7 +455,6 @@ function buildGeometry(svgText: string): BrainGeometry {
         style.del,
         style.rand,
         colorType,
-        r,
         cx - r,
         cy + r,
         -1,
@@ -481,7 +463,6 @@ function buildGeometry(svgText: string): BrainGeometry {
         style.del,
         style.rand,
         colorType,
-        r,
       );
       circleIdx++;
     }
@@ -505,7 +486,6 @@ function buildGeometry(svgText: string): BrainGeometry {
       style.del,
       style.rand,
       3,
-      r,
       cx + r,
       cy - r,
       1,
@@ -514,7 +494,6 @@ function buildGeometry(svgText: string): BrainGeometry {
       style.del,
       style.rand,
       3,
-      r,
       cx - r,
       cy + r,
       -1,
@@ -523,7 +502,6 @@ function buildGeometry(svgText: string): BrainGeometry {
       style.del,
       style.rand,
       3,
-      r,
 
       cx + r,
       cy - r,
@@ -533,7 +511,6 @@ function buildGeometry(svgText: string): BrainGeometry {
       style.del,
       style.rand,
       3,
-      r,
       cx + r,
       cy + r,
       1,
@@ -542,7 +519,6 @@ function buildGeometry(svgText: string): BrainGeometry {
       style.del,
       style.rand,
       3,
-      r,
       cx - r,
       cy + r,
       -1,
@@ -551,7 +527,6 @@ function buildGeometry(svgText: string): BrainGeometry {
       style.del,
       style.rand,
       3,
-      r,
     );
   });
 
@@ -559,7 +534,7 @@ function buildGeometry(svgText: string): BrainGeometry {
     lineData: new Float32Array(lineVertices),
     lineCount: lineVertices.length / 9,
     nodeData: new Float32Array(nodeVertices),
-    nodeCount: nodeVertices.length / 9,
+    nodeCount: nodeVertices.length / 8,
   };
 
   return cachedGeometry;
@@ -581,55 +556,47 @@ uniform float u_reducedMotion;
 
 varying float v_colorType;
 varying float v_alpha;
-varying float v_arcLength;
-varying float v_totalLength;
-varying float v_dashOffset;
 
 void main() {
   v_colorType = a_colorType;
-  v_arcLength = a_arcLength;
-  v_totalLength = a_totalLength;
 
   float opacity = 1.0;
-  float dashOffset = 0.0;
 
   if (u_reducedMotion > 0.5) {
     opacity = 1.0;
-    dashOffset = 0.0;
   } else if (u_isIntro > 0.5) {
     float tIntro = u_time - a_delay;
     if (tIntro < 0.0) {
       opacity = 0.0;
-      dashOffset = a_totalLength;
     } else if (tIntro < 1.1) {
       float p = clamp(tIntro / 1.1, 0.0, 1.0);
       float ease = 1.0 - pow(1.0 - p, 3.0);
-      opacity = min(1.0, (tIntro / 0.22));
-      dashOffset = a_totalLength * (1.0 - ease);
+      float visibleLen = a_totalLength * ease;
+      if (a_arcLength > visibleLen) {
+        opacity = 0.0;
+      } else {
+        opacity = min(1.0, tIntro / 0.22);
+      }
     } else {
       float tCycle = u_time - (a_delay + 1.25 + a_rand);
-      if (tCycle < 0.0) {
-        opacity = 1.0;
-        dashOffset = 0.0;
-      } else {
+      if (tCycle > 0.0) {
         float osc = 0.5 - 0.5 * cos(tCycle * 6.28318 / 3.2);
-        dashOffset = a_totalLength * osc;
         opacity = 1.0 - 0.25 * osc;
       }
     }
   } else {
     float tCycle = u_time + a_rand;
     float osc = 0.5 - 0.5 * cos(tCycle * 6.28318 / 3.2);
-    dashOffset = a_totalLength * osc;
     opacity = 1.0 - 0.25 * osc;
   }
 
   v_alpha = opacity;
-  v_dashOffset = dashOffset;
 
   vec2 pos = a_position + a_normal * 0.55;
-  vec2 normPos = vec2((pos.x + 2.0) / 584.2, (pos.y + 2.0) / 508.7);
-  vec2 ndc = vec2(normPos.x * 2.0 - 1.0, 1.0 - normPos.y * 2.0);
+  // SVG viewBox="-2 -2 584.2 508.7" centered in square canvas
+  float xNorm = (pos.x + 2.0) / 584.2;
+  float yNorm = ((pos.y + 2.0) / 584.2) + ((1.0 - (508.7 / 584.2)) * 0.5);
+  vec2 ndc = vec2(xNorm * 2.0 - 1.0, 1.0 - yNorm * 2.0);
 
   gl_Position = vec4(ndc, 0.0, 1.0);
 }
@@ -645,16 +612,9 @@ uniform float u_hasCircuit;
 
 varying float v_colorType;
 varying float v_alpha;
-varying float v_arcLength;
-varying float v_totalLength;
-varying float v_dashOffset;
 
 void main() {
   if (v_alpha <= 0.001) {
-    discard;
-  }
-
-  if (v_arcLength > (v_totalLength - v_dashOffset)) {
     discard;
   }
 
@@ -676,7 +636,6 @@ attribute float a_elemType;
 attribute float a_delay;
 attribute float a_rand;
 attribute float a_colorType;
-attribute float a_extra;
 
 uniform float u_time;
 uniform float u_isIntro;
@@ -737,8 +696,9 @@ void main() {
   v_alpha = opacity;
 
   vec2 pos = a_position;
-  vec2 normPos = vec2((pos.x + 2.0) / 584.2, (pos.y + 2.0) / 508.7);
-  vec2 ndc = vec2(normPos.x * 2.0 - 1.0, 1.0 - normPos.y * 2.0);
+  float xNorm = (pos.x + 2.0) / 584.2;
+  float yNorm = ((pos.y + 2.0) / 584.2) + ((1.0 - (508.7 / 584.2)) * 0.5);
+  vec2 ndc = vec2(xNorm * 2.0 - 1.0, 1.0 - yNorm * 2.0);
 
   gl_Position = vec4(ndc, 0.0, 1.0);
 }
@@ -845,6 +805,7 @@ function BrainWebGLCanvasComponent({
   isIntro = false,
   circuitColor,
   svgText,
+  onClick,
   onSync,
   onComplete,
 }: Props) {
@@ -908,7 +869,6 @@ function BrainWebGLCanvasComponent({
       del: gl.getAttribLocation(nodeProg, "a_delay"),
       rand: gl.getAttribLocation(nodeProg, "a_rand"),
       colorType: gl.getAttribLocation(nodeProg, "a_colorType"),
-      extra: gl.getAttribLocation(nodeProg, "a_extra"),
     };
 
     const nodeUniforms = {
@@ -952,6 +912,18 @@ function BrainWebGLCanvasComponent({
       "(prefers-reduced-motion: reduce)",
     );
 
+    function bindAttrib(
+      loc: number,
+      size: number,
+      stride: number,
+      offset: number,
+    ) {
+      if (loc >= 0) {
+        gl.enableVertexAttribArray(loc);
+        gl.vertexAttribPointer(loc, size, gl.FLOAT, false, stride, offset);
+      }
+    }
+
     function render(now: number) {
       if (!isVisible) return;
 
@@ -987,62 +959,13 @@ function BrainWebGLCanvasComponent({
 
       gl.bindBuffer(gl.ARRAY_BUFFER, lineVBO);
       const strideL = 9 * 4;
-      gl.enableVertexAttribArray(lineAttribs.pos);
-      gl.vertexAttribPointer(lineAttribs.pos, 2, gl.FLOAT, false, strideL, 0);
-      gl.enableVertexAttribArray(lineAttribs.normal);
-      gl.vertexAttribPointer(
-        lineAttribs.normal,
-        2,
-        gl.FLOAT,
-        false,
-        strideL,
-        2 * 4,
-      );
-      gl.enableVertexAttribArray(lineAttribs.arcLen);
-      gl.vertexAttribPointer(
-        lineAttribs.arcLen,
-        1,
-        gl.FLOAT,
-        false,
-        strideL,
-        4 * 4,
-      );
-      gl.enableVertexAttribArray(lineAttribs.totalLen);
-      gl.vertexAttribPointer(
-        lineAttribs.totalLen,
-        1,
-        gl.FLOAT,
-        false,
-        strideL,
-        5 * 4,
-      );
-      gl.enableVertexAttribArray(lineAttribs.del);
-      gl.vertexAttribPointer(
-        lineAttribs.del,
-        1,
-        gl.FLOAT,
-        false,
-        strideL,
-        6 * 4,
-      );
-      gl.enableVertexAttribArray(lineAttribs.rand);
-      gl.vertexAttribPointer(
-        lineAttribs.rand,
-        1,
-        gl.FLOAT,
-        false,
-        strideL,
-        7 * 4,
-      );
-      gl.enableVertexAttribArray(lineAttribs.colorType);
-      gl.vertexAttribPointer(
-        lineAttribs.colorType,
-        1,
-        gl.FLOAT,
-        false,
-        strideL,
-        8 * 4,
-      );
+      bindAttrib(lineAttribs.pos, 2, strideL, 0);
+      bindAttrib(lineAttribs.normal, 2, strideL, 2 * 4);
+      bindAttrib(lineAttribs.arcLen, 1, strideL, 4 * 4);
+      bindAttrib(lineAttribs.totalLen, 1, strideL, 5 * 4);
+      bindAttrib(lineAttribs.del, 1, strideL, 6 * 4);
+      bindAttrib(lineAttribs.rand, 1, strideL, 7 * 4);
+      bindAttrib(lineAttribs.colorType, 1, strideL, 8 * 4);
 
       gl.drawArrays(gl.TRIANGLES, 0, geometry.lineCount);
 
@@ -1057,63 +980,13 @@ function BrainWebGLCanvasComponent({
       gl.uniform1f(nodeUniforms.hasCircuit, hasCircuit);
 
       gl.bindBuffer(gl.ARRAY_BUFFER, nodeVBO);
-      const strideN = 9 * 4;
-      gl.enableVertexAttribArray(nodeAttribs.pos);
-      gl.vertexAttribPointer(nodeAttribs.pos, 2, gl.FLOAT, false, strideN, 0);
-      gl.enableVertexAttribArray(nodeAttribs.uv);
-      gl.vertexAttribPointer(
-        nodeAttribs.uv,
-        2,
-        gl.FLOAT,
-        false,
-        strideN,
-        2 * 4,
-      );
-      gl.enableVertexAttribArray(nodeAttribs.elemType);
-      gl.vertexAttribPointer(
-        nodeAttribs.elemType,
-        1,
-        gl.FLOAT,
-        false,
-        strideN,
-        4 * 4,
-      );
-      gl.enableVertexAttribArray(nodeAttribs.del);
-      gl.vertexAttribPointer(
-        nodeAttribs.del,
-        1,
-        gl.FLOAT,
-        false,
-        strideN,
-        5 * 4,
-      );
-      gl.enableVertexAttribArray(nodeAttribs.rand);
-      gl.vertexAttribPointer(
-        nodeAttribs.rand,
-        1,
-        gl.FLOAT,
-        false,
-        strideN,
-        6 * 4,
-      );
-      gl.enableVertexAttribArray(nodeAttribs.colorType);
-      gl.vertexAttribPointer(
-        nodeAttribs.colorType,
-        1,
-        gl.FLOAT,
-        false,
-        strideN,
-        7 * 4,
-      );
-      gl.enableVertexAttribArray(nodeAttribs.extra);
-      gl.vertexAttribPointer(
-        nodeAttribs.extra,
-        1,
-        gl.FLOAT,
-        false,
-        strideN,
-        8 * 4,
-      );
+      const strideN = 8 * 4;
+      bindAttrib(nodeAttribs.pos, 2, strideN, 0);
+      bindAttrib(nodeAttribs.uv, 2, strideN, 2 * 4);
+      bindAttrib(nodeAttribs.elemType, 1, strideN, 4 * 4);
+      bindAttrib(nodeAttribs.del, 1, strideN, 5 * 4);
+      bindAttrib(nodeAttribs.rand, 1, strideN, 6 * 4);
+      bindAttrib(nodeAttribs.colorType, 1, strideN, 7 * 4);
 
       gl.drawArrays(gl.TRIANGLES, 0, geometry.nodeCount);
 
@@ -1168,6 +1041,7 @@ function BrainWebGLCanvasComponent({
     <canvas
       ref={canvasRef}
       id="brain-webgl"
+      onClick={onClick}
       style={{
         position: "absolute",
         top: "50%",
