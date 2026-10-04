@@ -5,7 +5,7 @@ import texts from "../../../data/texts";
 import styles from "./AboutSection.module.css";
 
 export default function AboutSection() {
-  const sectionRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const highlightsRef = useRef<HTMLUListElement>(null);
   const lineRef = useRef<HTMLSpanElement>(null);
   const [connector, setConnector] = useState<{

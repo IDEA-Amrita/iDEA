@@ -76,7 +76,7 @@ export default function HeroNavigation({
                 >
                   <ButtonLink
                     href={`#${section.id}`}
-                    variant={isContribute ? "primary" : undefined}
+                    variant={isContribute ? "primary" : "default"}
                     onClick={(event) => {
                       if (isModifiedClick(event)) return;
                       event.preventDefault();

@@ -17,10 +17,13 @@ export function PageShell({
 export function SectionShell({
   children,
   className,
+  ref,
   ...props
-}: PropsWithChildren<HTMLAttributes<HTMLElement>>) {
+}: PropsWithChildren<
+  HTMLAttributes<HTMLDivElement> & { ref?: React.Ref<HTMLDivElement> }
+>) {
   return (
-    <div className={classNames(styles.section, className)} {...props}>
+    <div ref={ref} className={classNames(styles.section, className)} {...props}>
       {children}
     </div>
   );
