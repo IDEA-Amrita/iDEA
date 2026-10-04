@@ -180,40 +180,25 @@ export function useGsapAnimations() {
           const cards = contributeSection.querySelectorAll(
             '[data-animate="contribute-card"]',
           );
-          const cardLeft = cards[0];
-          const cardRight = cards[1];
-
-          if (cardLeft) gsap.set(cardLeft, { opacity: 0, x: -28, y: 16 });
-          if (cardRight) gsap.set(cardRight, { opacity: 0, x: 28, y: 16 });
+          gsap.set(cards, { opacity: 0, y: 24 });
 
           ScrollTrigger.create({
             trigger: contributeSection,
             start: "top 80%",
             once: true,
             onEnter: () => {
-              if (cardLeft) {
-                gsap.to(cardLeft, {
-                  opacity: 1,
-                  x: 0,
-                  y: 0,
-                  duration: 0.75,
-                  ease: "expo.out",
-                  overwrite: "auto",
-                });
-              }
-              if (cardRight) {
-                gsap.to(cardRight, {
-                  opacity: 1,
-                  x: 0,
-                  y: 0,
-                  duration: 0.75,
-                  ease: "expo.out",
-                  delay: 0.08,
-                  overwrite: "auto",
-                });
-              }
+              gsap.to(cards, {
+                opacity: 1,
+                y: 0,
+                duration: 0.75,
+                stagger: 0.08,
+                ease: "expo.out",
+                overwrite: "auto",
+              });
             },
           });
+        }
+
         // -------------------------------------------------------------
         // Section: FAQ
         // -------------------------------------------------------------
@@ -326,10 +311,11 @@ export function useGsapAnimations() {
 
           // 3. Diagonal Arrow Micro-Glide
           const ctaButtons = document.querySelectorAll<HTMLElement>(
-            '[data-animate="contribute-card"] button, #projects button',
+            '[data-animate="contribute-card"] a, [data-animate="contribute-card"] button, #projects a, #projects button',
           );
           ctaButtons.forEach((btn) => {
-            const arrow = btn.querySelector("svg");
+            const svgs = btn.querySelectorAll("svg");
+            const arrow = svgs.length > 1 ? svgs[svgs.length - 1] : svgs[0];
             if (!arrow) return;
             const onEnter = () => {
               gsap.to(arrow, {
