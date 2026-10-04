@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import texts from "../../../data/texts";
 import { BsPerson } from "react-icons/bs";
 import { AiFillGithub, AiOutlineLinkedin } from "react-icons/ai";
@@ -10,10 +11,18 @@ interface MemberCardProps {
 }
 
 export default function MemberCard({ member }: MemberCardProps) {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
   const pending = member.status === "pending";
   const photo = "photo" in member ? member.photo : undefined;
   const linkedin = "linkedin" in member ? member.linkedin : undefined;
   const github = "github" in member ? member.github : undefined;
+
+  useEffect(() => {
+    if (imgRef.current?.complete && imgRef.current.naturalWidth > 0) {
+      setIsLoaded(true);
+    }
+  }, [photo]);
 
   return (
     <article
@@ -21,17 +30,26 @@ export default function MemberCard({ member }: MemberCardProps) {
       data-state={member.status}
       data-animate="member-card"
     >
-      <div className={styles.imageWrapper}>
+      <div
+        className={styles.imageWrapper}
+        data-loaded={isLoaded ? "true" : undefined}
+      >
         {pending || !photo ? (
           <span className={styles.pendingAvatar} aria-hidden="true">
             <BsPerson />
           </span>
         ) : (
           <img
+            ref={imgRef}
             className={styles.memberPhoto}
             src={photo}
             alt=""
-            loading="lazy"
+            loading="eager"
+            decoding="async"
+            data-loaded={isLoaded ? "true" : undefined}
+            onLoad={() => {
+              setIsLoaded(true);
+            }}
           />
         )}
       </div>
