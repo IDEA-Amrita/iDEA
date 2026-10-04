@@ -34,7 +34,10 @@
     font-size: clamp(2.25rem, 4vw, 4.25rem);
     font-weight: 600;
     letter-spacing: -0.05em;
-    line-height: 1.02;
+    line-height: 1.05;
+  }
+  .calloutLine {
+    display: block;
   }
   .callout > a {
     flex-shrink: 0;
