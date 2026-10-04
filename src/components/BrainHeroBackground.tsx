@@ -1,6 +1,6 @@
 import { memo, useEffect, useRef, useState } from "react";
 
-const CIRCUIT_PALETTE = ["#5a4dff", "#059669", "#0284c7", "#e11d48"] as const;
+const CIRCUIT_PALETTE = ["#8b80ff", "#059669", "#0284c7", "#e11d48"] as const;
 
 interface Props {
   isIntro?: boolean;
