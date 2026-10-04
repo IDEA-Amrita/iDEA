@@ -1,4 +1,7 @@
+import { useEffect } from "react";
 import texts from "../../../data/texts";
+import faculty from "../../../data/faculty";
+import { teamGroups } from "../../../data/team";
 import { PageShell, SectionShell } from "../../../components/Layout";
 import SectionTitle from "../../../components/SectionTitle";
 import FacultyGrid from "./FacultyGrid";
@@ -9,6 +12,22 @@ import type { SectionNavigationProps } from "../../../types/navigation";
 export default function TeamSection({
   onNavigateAlumni,
 }: Partial<SectionNavigationProps> = {}) {
+  useEffect(() => {
+    // Pre-warm team and faculty photos into memory cache
+    const urls: string[] = [];
+    faculty.forEach((f) => {
+      if ("photo" in f && f.photo) urls.push(f.photo);
+    });
+    teamGroups.forEach((g) => {
+      g.members.forEach((m) => {
+        if ("photo" in m && m.photo) urls.push(m.photo);
+      });
+    });
+    urls.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
   return (
     <PageShell id="team" aria-labelledby="team-title">
       <SectionShell className={styles.section} aria-labelledby="team-title">
