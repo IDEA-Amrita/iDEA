@@ -18,13 +18,19 @@
     color: var(--color-text-secondary);
     background: var(--color-surface);
     cursor: pointer;
-    transition: all var(--duration-fast) var(--ease-out);
+    transition:
+      transform var(--duration-fast) var(--ease-out),
+      box-shadow var(--duration-fast) var(--ease-out),
+      background-color var(--duration-fast) var(--ease-out),
+      color var(--duration-fast) var(--ease-out),
+      border-color var(--duration-fast) var(--ease-out);
   }
 
   .button:hover {
     color: var(--color-action);
     border-color: var(--color-action);
-    box-shadow: var(--shadow-offset-sm);
+    transform: translate(0.0625rem, 0.0625rem);
+    box-shadow: 0.0625rem 0.0625rem 0 var(--color-shadow);
   }
 
   .button:focus-visible {
@@ -32,20 +38,28 @@
   }
 
   .button:active {
+    transform: translate(0.1875rem, 0.1875rem);
     box-shadow: none;
   }
 
   .primary {
-    color: var(--color-success-text);
+    color: #0e0e0e;
     background: var(--color-success);
-    border-color: var(--color-border-strong);
+    border: var(--border-strong) solid #0e0e0e;
     box-shadow: var(--shadow-offset-sm);
+    transform: translate(0, 0);
   }
 
   .primary:hover {
-    color: var(--color-success-text);
+    color: #0e0e0e;
     background: var(--color-success-hover);
-    border-color: var(--color-border-strong);
-    box-shadow: var(--shadow-offset-md);
+    border: var(--border-strong) solid #0e0e0e;
+    transform: translate(0.09375rem, 0.09375rem);
+    box-shadow: 0.09375rem 0.09375rem 0 var(--color-shadow);
+  }
+
+  .primary:active {
+    transform: translate(0.1875rem, 0.1875rem);
+    box-shadow: none;
   }
 }

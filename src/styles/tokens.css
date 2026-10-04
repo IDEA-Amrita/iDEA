@@ -47,9 +47,8 @@
     --radius-xl: 1.75rem;
     --radius-pill: 999rem;
     --shadow-soft: 0 0.5rem 1.5rem #0e0e0e14;
-    --shadow-lifted: 0 1rem 3rem #0e0e0e1f;
-    --shadow-offset-sm: 0.125rem 0.125rem 0 var(--color-shadow);
-    --shadow-offset-md: 0.25rem 0.25rem 0 var(--color-shadow);
+    --shadow-offset-sm: 0.1875rem 0.1875rem 0 var(--color-shadow);
+    --shadow-offset-md: 0.3125rem 0.3125rem 0 var(--color-shadow);
 
     /* Motion and layers */
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -115,7 +114,7 @@
     --color-success-hover: #a8e62e;
     --color-success-text: #181816;
     --color-focus: #c6ff3d;
-    --color-shadow: #f4f2ed;
+    --color-shadow: #ffffff;
     --color-grid: #f4f2ed0d;
   }
 }
