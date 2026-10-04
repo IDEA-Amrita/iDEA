@@ -70,13 +70,13 @@
     --color-text-muted: #555;
     --color-border: #c8c8c8;
     --color-border-strong: #0e0e0e;
-    --color-action: #5a4dff;
-    --color-action-hover: #4338ca;
+    --color-action: #8b80ff;
+    --color-action-hover: #a89fff;
     --color-action-text: #fff;
     --color-success: #c6ff3d;
     --color-success-hover: #a8e62e;
     --color-success-text: #0e0e0e;
-    --color-focus: #4338ca;
+    --color-focus: #8b80ff;
     --color-shadow: #0e0e0e;
     --color-grid: #0e0e0e0f;
   }
