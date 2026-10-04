@@ -374,7 +374,7 @@ export default function AlumniPage({
                         <span className={styles.memberBatch}>
                           {member.batch}
                         </span>
-                        {(member.linkedin || member.github) && (
+                        {/* {(member.linkedin || member.github) && (
                           <div className={styles.socialLinks}>
                             {member.linkedin && (
                               <a
@@ -399,7 +399,7 @@ export default function AlumniPage({
                               </a>
                             )}
                           </div>
-                        )}
+                        )} */}
                       </div>
                     </div>
                   </article>
