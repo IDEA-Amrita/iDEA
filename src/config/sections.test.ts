@@ -9,6 +9,7 @@ describe("section registry", () => {
       { id: "team", label: "Team" },
       { id: "projects", label: "Projects" },
       { id: "contribute", label: "Contribute" },
+      { id: "faq", label: "FAQ" },
     ]);
     expect(new Set(sections.map(({ id }) => id)).size).toBe(sections.length);
   });

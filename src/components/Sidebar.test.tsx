@@ -3,7 +3,7 @@ import { renderWithProviders, screen, within } from "../test/render";
 import Sidebar from "./Sidebar";
 
 describe("Section navigation", () => {
-  it("names all five destinations, reports progress, and supports keyboard navigation", async () => {
+  it("names all six destinations, reports progress, and supports keyboard navigation", async () => {
     const onNavigate = vi.fn();
     const { user } = renderWithProviders(
       <Sidebar activeSection="team" onNavigate={onNavigate} />,
@@ -13,8 +13,8 @@ describe("Section navigation", () => {
       within(nav)
         .getAllByRole("link")
         .map((link) => link.textContent),
-    ).toEqual(["Home", "About", "Team", "Projects", "Contribute"]);
-    expect(within(nav).getByText("3 of 5")).toBeInTheDocument();
+    ).toEqual(["Home", "About", "Team", "Projects", "Contribute", "FAQ"]);
+    expect(within(nav).getByText("3 of 6")).toBeInTheDocument();
     const team = within(nav).getByRole("link", { name: "Team" });
     expect(team).toHaveAttribute("aria-current", "location");
     team.focus();

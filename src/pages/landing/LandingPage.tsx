@@ -12,6 +12,7 @@ import ContributeSection from "../sections/contribute/ContributeSection";
 import HomeSection from "../sections/home/HomeSection";
 import ProjectsSection from "../sections/projects/ProjectsSection";
 import TeamSection from "../sections/team/TeamSection";
+import FaqSection from "../sections/faq/FaqSection";
 import type { SectionNavigationProps } from "../../types/navigation";
 import classNames from "../../utils/classNames";
 import styles from "./LandingPage.module.css";
@@ -25,6 +26,7 @@ const sectionComponents: Record<
   team: TeamSection,
   projects: ProjectsSection,
   contribute: ContributeSection,
+  faq: FaqSection,
 };
 
 interface LandingPageProps {
