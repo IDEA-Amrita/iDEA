@@ -13,54 +13,100 @@ export default function AboutSection() {
     height: number;
     left: number;
     top: number;
-    isUpward: boolean;
+    pathD: string;
   } | null>(null);
 
-  useEffect(() => {
-    function updateConnector() {
-      if (!sectionRef.current || !highlightsRef.current || !lineRef.current)
-        return;
+  const updateConnector = () => {
+    if (!sectionRef.current || !highlightsRef.current || !lineRef.current)
+      return;
 
-      if (window.innerWidth < 896) {
-        setConnector(null);
-        return;
-      }
-
-      const sRect = sectionRef.current.getBoundingClientRect();
-      const hRect = highlightsRef.current.getBoundingClientRect();
-      const lRect = lineRef.current.getBoundingClientRect();
-
-      const startX = hRect.right - sRect.left;
-      const startY = hRect.bottom - sRect.top;
-      const endX = lRect.left - sRect.left;
-      const endY = lRect.top - sRect.top + 1.5;
-
-      const width = endX - startX;
-      const deltaY = startY - endY;
-      const height = Math.abs(deltaY);
-
-      if (width > 5 && height > 2) {
-        setConnector({
-          width,
-          height,
-          left: startX,
-          top: Math.min(startY, endY),
-          isUpward: deltaY > 0,
-        });
-      } else {
-        setConnector(null);
-      }
+    if (window.innerWidth < 896) {
+      setConnector(null);
+      return;
     }
 
-    updateConnector();
+    const sRect = sectionRef.current.getBoundingClientRect();
+    const hRect = highlightsRef.current.getBoundingClientRect();
+    const lRect = lineRef.current.getBoundingClientRect();
+
+    const startX = hRect.right - sRect.left;
+    const endX = lRect.left - sRect.left;
+    const width = endX - startX;
+
+    // Center of 3px bottom border of highlights
+    const hCenterY = hRect.bottom - sRect.top - 1.5;
+    // Center of 3px pedestal line
+    const lCenterY = lRect.top - sRect.top + 1.5;
+
+    const deltaY = lCenterY - hCenterY;
+    const height = Math.max(3, Math.abs(deltaY) + 3);
+    const top = Math.min(hCenterY, lCenterY) - 1.5;
+
+    if (
+      !Number.isFinite(width) ||
+      width <= 0 ||
+      !Number.isFinite(startX) ||
+      !Number.isFinite(top) ||
+      !Number.isFinite(height)
+    ) {
+      setConnector(null);
+      return;
+    }
+
+    const widthStr = width.toFixed(1);
+    let pathD = "";
+    if (Math.abs(deltaY) < 1) {
+      pathD = `M 0 1.5 L ${widthStr} 1.5`;
+    } else if (deltaY > 0) {
+      const yStart = "1.5";
+      const yEnd = (height - 1.5).toFixed(1);
+      const cX = (width * 0.5).toFixed(1);
+      pathD = `M 0 ${yStart} C ${cX} ${yStart}, ${cX} ${yEnd}, ${widthStr} ${yEnd}`;
+    } else {
+      const yStart = (height - 1.5).toFixed(1);
+      const yEnd = "1.5";
+      const cX = (width * 0.5).toFixed(1);
+      pathD = `M 0 ${yStart} C ${cX} ${yStart}, ${cX} ${yEnd}, ${widthStr} ${yEnd}`;
+    }
+
+    setConnector({
+      width,
+      height,
+      left: startX,
+      top,
+      pathD,
+    });
+  };
+
+  useEffect(() => {
     window.addEventListener("resize", updateConnector);
+    window.addEventListener("scroll", updateConnector, { passive: true });
+
+    if (typeof document !== "undefined" && "fonts" in document) {
+      void document.fonts.ready.then(updateConnector).catch(() => {});
+    }
+
     const observer = new ResizeObserver(updateConnector);
+    if (sectionRef.current) observer.observe(sectionRef.current);
     if (highlightsRef.current) observer.observe(highlightsRef.current);
     if (lineRef.current) observer.observe(lineRef.current);
 
+    let rafId: number;
+    let frames = 0;
+    const tick = () => {
+      updateConnector();
+      frames += 1;
+      if (frames < 60) {
+        rafId = requestAnimationFrame(tick);
+      }
+    };
+    rafId = requestAnimationFrame(tick);
+
     return () => {
       window.removeEventListener("resize", updateConnector);
+      window.removeEventListener("scroll", updateConnector);
       observer.disconnect();
+      cancelAnimationFrame(rafId);
     };
   }, []);
 
@@ -101,6 +147,7 @@ export default function AboutSection() {
                 className={styles.image}
                 loading="eager"
                 decoding="async"
+                onLoad={updateConnector}
               />
             </div>
             <div className={styles.pedestal} aria-hidden="true">
@@ -127,31 +174,7 @@ export default function AboutSection() {
             aria-hidden="true"
           >
             <path
-              d={
-                connector.isUpward
-                  ? [
-                      "M 0",
-                      (connector.height - 1.5).toFixed(1),
-                      "C",
-                      (connector.width * 0.45).toFixed(1),
-                      (connector.height - 1.5).toFixed(1),
-                      ",",
-                      (connector.width * 0.55).toFixed(1),
-                      "1.5 ,",
-                      connector.width.toFixed(1),
-                      "1.5",
-                    ].join(" ")
-                  : [
-                      "M 0 1.5 C",
-                      (connector.width * 0.45).toFixed(1),
-                      "1.5 ,",
-                      (connector.width * 0.55).toFixed(1),
-                      (connector.height - 1.5).toFixed(1),
-                      ",",
-                      connector.width.toFixed(1),
-                      (connector.height - 1.5).toFixed(1),
-                    ].join(" ")
-              }
+              d={connector.pathD}
               stroke="var(--color-border)"
               strokeWidth="3"
               vectorEffect="non-scaling-stroke"
