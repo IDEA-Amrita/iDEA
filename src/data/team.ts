@@ -80,6 +80,8 @@ export const teamGroups = [
         name: "Shruhath Reddy",
         designation: "Web Master",
         photo: "/team/2026-27/Shruhath-Webmaster.jpeg",
+        linkedin: "https://www.linkedin.com/in/shruhath-reddy",
+        github: "https://github.com/shruhath",
       },
     ],
   },
@@ -113,6 +115,8 @@ export const teamGroups = [
         name: "A R Nirmal",
         designation: "Treasurer",
         photo: "/team/2026-27/Nirmal-Treasurer.jpeg",
+        linkedin: "https://www.linkedin.com/in/nirmal-ramamoorthy-954729307",
+        github: "https://github.com/nirmal-a-r",
       },
       {
         id: "multimedia-1",
