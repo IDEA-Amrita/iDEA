@@ -2,6 +2,8 @@ import { memo, useEffect, useRef, useState } from "react";
 
 const CIRCUIT_PALETTE = ["#8b80ff", "#059669", "#0284c7", "#e11d48"] as const;
 
+let cachedSvgText: string | null = null;
+
 interface Props {
   isIntro?: boolean;
   onSync?: () => void;
@@ -13,7 +15,12 @@ function BrainHeroBackgroundComponent({
   onSync,
   onComplete,
 }: Props) {
-  const [svgContent, setSvgContent] = useState("");
+  const [svgContent, setSvgContent] = useState(() => {
+    if (!cachedSvgText) return "";
+    return isIntro
+      ? cachedSvgText.replace("<svg ", '<svg class="intro" ')
+      : cachedSvgText;
+  });
   const [circuitColor, setCircuitColor] = useState<string | null>(null);
   const onSyncRef = useRef(onSync);
   const onCompleteRef = useRef(onComplete);
@@ -25,16 +32,19 @@ function BrainHeroBackgroundComponent({
 
   useEffect(() => {
     let isMounted = true;
-    fetch("/brain.svg")
-      .then((res) => res.text())
-      .then((text) => {
-        if (isMounted) {
-          setSvgContent(
-            isIntro ? text.replace("<svg ", '<svg class="intro" ') : text,
-          );
-        }
-      })
-      .catch(() => {});
+    if (!cachedSvgText) {
+      fetch("/brain.svg")
+        .then((res) => res.text())
+        .then((text) => {
+          cachedSvgText = text;
+          if (isMounted) {
+            setSvgContent(
+              isIntro ? text.replace("<svg ", '<svg class="intro" ') : text,
+            );
+          }
+        })
+        .catch(() => {});
+    }
     return () => {
       isMounted = false;
     };
@@ -49,9 +59,18 @@ function BrainHeroBackgroundComponent({
       notifyCompletion();
       return;
     }
-    const timer = setTimeout(notifyCompletion, 1850);
+    const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+    const introDuration = isMobile ? 700 : 1850;
+    const cleanupDuration = isMobile ? 850 : 2000;
+
+    const timer = setTimeout(notifyCompletion, introDuration);
+    const cleanupIntroTimer = setTimeout(() => {
+      setSvgContent((prev) => prev.replace('class="intro" ', ""));
+    }, cleanupDuration);
+
     return () => {
       clearTimeout(timer);
+      clearTimeout(cleanupIntroTimer);
     };
   }, [isIntro]);
 

@@ -23,7 +23,7 @@
 @keyframes ignitePath{0%{stroke-dashoffset:var(--len,600);opacity:0}20%{opacity:1}100%{stroke-dashoffset:0;opacity:1}}
 @keyframes igniteNode{0%{opacity:0;transform:scale(0)}60%{opacity:1;transform:scale(1.15)}100%{opacity:1;transform:scale(1)}}
 
-@keyframes goPath{0%,100%{stroke-dashoffset:0}50%{stroke-dashoffset:var(--len,600)}}
+@keyframes goPath{0%,100%{stroke-dashoffset:0;opacity:1}50%{stroke-dashoffset:var(--len,600);opacity:.75}}
 @keyframes goCircle{0%,100%{opacity:1}50%{opacity:.15}}
 @keyframes goRect{0%,100%{opacity:1}50%{opacity:.15}}
 
@@ -33,8 +33,8 @@
 .brainPath,.brainRect,.brainCircle,.brainEllipse{animation:none!important;opacity:1!important;stroke-dashoffset:0!important;transform:none!important}
 .brainEllipse{scale:.65!important}
 .centerMicro{opacity:0;animation:none}
-.intro .centerMicro{animation:microPulse .65s ease-out .15s forwards!important}
-.intro .brainPath,.intro .brainRect,.intro .brainCircle,.intro .brainEllipse{opacity:0!important;stroke-dashoffset:0!important;animation:mobileIgnite .5s ease-out .3s forwards!important}
+.intro .centerMicro{animation:microPulse .5s ease-out .05s forwards!important}
+.intro .brainPath,.intro .brainRect,.intro .brainCircle,.intro .brainEllipse{opacity:0!important;stroke-dashoffset:0!important;animation:mobileIgnite .5s ease-out .15s forwards!important}
 }
 
 @media (prefers-reduced-motion:reduce){#brain-svg,.brainPath,.brainRect,.brainCircle,.brainEllipse,.centerMicro{animation:none !important;opacity:1 !important;stroke-dashoffset:0 !important;transform:none !important;scale:1 !important;filter:none !important}}

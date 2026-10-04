@@ -37,7 +37,9 @@ export default function HomeSection({ onNavigate }: SectionNavigationProps) {
 
   useEffect(() => {
     if (stage === "all") return;
-    const safety = setTimeout(done, 3600);
+    const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+    const safetyTimeout = isMobile ? 2200 : 3600;
+    const safety = setTimeout(done, safetyTimeout);
     return () => {
       clearTimeout(safety);
     };
