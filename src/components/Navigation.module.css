@@ -15,12 +15,12 @@
     position: fixed;
     inset: 0 auto auto 0;
     z-index: var(--z-overlay);
-    display: flex;
-    width: 25vw;
+    display: inline-flex;
+    width: auto;
+    max-width: calc(100vw - 6rem);
     height: var(--navbar-height);
-    padding-inline: clamp(var(--space-4), 2vw, var(--space-6));
+    padding-inline: clamp(var(--space-3), 1.5vw, var(--space-5));
     align-items: center;
-    gap: var(--space-3);
     background: var(--color-surface-page);
     border-bottom: var(--border-thin) solid var(--color-border);
     border-right: var(--border-thin) solid var(--color-border);
@@ -31,7 +31,7 @@
     display: flex;
     min-width: 0;
     align-items: center;
-    gap: var(--space-6);
+    gap: clamp(var(--space-3), 1.5vw, var(--space-5));
   }
 
   .brandName {
@@ -44,21 +44,24 @@
     font-weight: 400;
     letter-spacing: -0.04em;
     text-decoration: none;
+    flex-shrink: 0;
   }
 
   .socialLinks {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: clamp(0.25rem, 0.5vw, var(--space-2));
+    flex-shrink: 0;
   }
 
   .socialLink {
     display: grid;
-    width: 2.75rem;
-    height: 2.75rem;
+    width: clamp(2.25rem, 2.5vw, 2.5rem);
+    height: clamp(2.25rem, 2.5vw, 2.5rem);
     place-items: center;
     color: var(--color-text-secondary);
     border-radius: 50%;
+    flex-shrink: 0;
     transition:
       color var(--duration-fast) var(--ease-out),
       background-color var(--duration-fast) var(--ease-out),
@@ -72,8 +75,8 @@
   }
 
   .socialLink svg {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1.15rem;
+    height: 1.15rem;
   }
 
   .rail {
@@ -224,14 +227,6 @@
     border-color: var(--color-action);
     color: var(--color-action-hover);
   }
-  @media (min-width: 40.0625rem) and (max-width: 75rem) {
-    .socialLink:not(:last-child) {
-      display: none;
-    }
-    .socialPanel {
-      gap: var(--space-2);
-    }
-  }
   @media (max-width: 40rem) {
     .navbar {
       top: var(--mobile-rail-height);
@@ -294,7 +289,7 @@
     }
     .railList {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(6, minmax(0, 1fr));
       min-height: 0;
       height: 100%;
       align-items: center;
