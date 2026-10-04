@@ -70,6 +70,12 @@
     user-select: none;
   }
 
+  :global([data-theme="light"]) .image {
+    filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.55))
+      drop-shadow(0 0 2px rgba(0, 0, 0, 0.35))
+      drop-shadow(0 0.75rem 2rem rgba(0, 0, 0, 0.12));
+  }
+
   .pedestal {
     position: relative;
     display: flex;
