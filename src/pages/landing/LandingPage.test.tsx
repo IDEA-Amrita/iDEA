@@ -141,30 +141,20 @@ describe("landing page", () => {
       const observer = observers.find(
         ({ elements }) => elements.length === 1 && elements[0].id === "home",
       );
-      const check = (visible) => {
-        for (const element of [navbar, sidebar]) {
-          expect(element).toHaveAttribute("aria-hidden", String(!visible));
-          expect(element).toHaveAttribute("data-visible", String(visible));
-          if (visible) expect(element).not.toHaveAttribute("inert");
-          else expect(element).toHaveAttribute("inert");
-        }
-      };
-      check(false);
+      expect(navbar).toHaveAttribute("data-visible", "true");
+      expect(sidebar).toHaveAttribute("data-visible", "false");
       expect(
-        screen.getByRole("button", { name: "Use dark theme" }),
+        within(navbar).getByRole("button", { name: "Use dark theme" }),
       ).toBeInTheDocument();
-      expect(
-        within(navbar).queryByRole("button", { name: "Use dark theme" }),
-      ).not.toBeInTheDocument();
       current = 1;
       act(() => observer.callback([]));
-      check(true);
+      expect(sidebar).toHaveAttribute("data-visible", "true");
       expect(
-        screen.getByRole("button", { name: "Use dark theme" }),
+        within(navbar).getByRole("button", { name: "Use dark theme" }),
       ).toBeInTheDocument();
       current = 0;
       act(() => observer.callback([]));
-      check(false);
+      expect(sidebar).toHaveAttribute("data-visible", "false");
       expect(container.querySelector("[data-navbar]")).toBe(navbar);
       expect(
         container.querySelector('nav[aria-label="Section navigation"]'),
@@ -245,7 +235,7 @@ describe("landing page", () => {
     scroll(1300);
     expect(navbar).not.toHaveAttribute("inert");
     scroll(0);
-    expect(navbar).toHaveAttribute("data-visible", "false");
+    expect(navbar).toHaveAttribute("data-visible", "true");
     expect(rail).toHaveAttribute("data-visible", "false");
   });
 

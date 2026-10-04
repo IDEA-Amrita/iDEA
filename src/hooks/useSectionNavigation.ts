@@ -168,12 +168,18 @@ export default function useSectionNavigation() {
           frame = 0;
           const distance = window.scrollY - directionOrigin;
           if (Math.abs(distance) >= 8) {
-            const next = distance > 0;
+            const next = distance > 0 && window.scrollY > 20;
             if (next !== lastScrollingDown) {
               lastScrollingDown = next;
               setIsScrollingDown(next);
             }
             directionOrigin = window.scrollY;
+          }
+          if (window.scrollY <= 10) {
+            if (lastScrollingDown) {
+              lastScrollingDown = false;
+              setIsScrollingDown(false);
+            }
           }
           update();
           updateHeroVisibility();
@@ -199,6 +205,6 @@ export default function useSectionNavigation() {
     navigateTo,
     isPastHero,
     isAtPageBottom,
-    isNavbarVisible: isPastHero && !isScrollingDown,
+    isNavbarVisible: !isScrollingDown,
   };
 }

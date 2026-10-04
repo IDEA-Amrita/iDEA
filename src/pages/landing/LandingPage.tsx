@@ -4,7 +4,6 @@ import { useGsapAnimations } from "../../animations/useGsapAnimations";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import Sidebar from "../../components/Sidebar";
-import ThemeToggle from "../../components/ThemeToggle";
 import IconButton from "../../components/IconButton";
 import { sections, type SectionId } from "../../config/sections";
 import AboutSection from "../sections/about/AboutSection";
@@ -53,7 +52,6 @@ export default function LandingPage({
         Skip to content
       </a>
       <Navbar visible={isNavbarVisible} />
-      <ThemeToggle visible={isNavbarVisible} isHero={!isPastHero} />
       <main id="main-content" tabIndex={-1}>
         <HomeSection {...sharedProps} />
         <div className={styles.indexedLayout}>
