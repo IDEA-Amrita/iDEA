@@ -93,13 +93,8 @@ function BrainHeroBackgroundComponent({
           ? ({
               "--bc": circuitColor,
               "--bn": circuitColor,
-              transform: "translateZ(0)",
-              willChange: "transform, opacity",
             } as React.CSSProperties)
-          : {
-              transform: "translateZ(0)",
-              willChange: "transform, opacity",
-            }
+          : undefined
       }
       dangerouslySetInnerHTML={{ __html: svgContent }}
     />
