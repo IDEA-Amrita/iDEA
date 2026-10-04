@@ -22,9 +22,7 @@ describe("landing page", () => {
     for (const id of destinations)
       expect(container.querySelector(`section#${id}`)).toBeInTheDocument();
     expect(
-      within(
-        screen.getByRole("navigation", { name: "Primary navigation" }),
-      ).getByRole("link", { name: "GitHub" }),
+      container.querySelector('a[href="https://github.com/IDEA-Amrita"]'),
     ).toHaveAttribute("href", "https://github.com/IDEA-Amrita");
   });
 

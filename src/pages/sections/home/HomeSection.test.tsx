@@ -7,7 +7,9 @@ describe("HomeSection", () => {
     renderWithProviders(<HomeSection onNavigate={vi.fn()} />);
     expect(screen.getByRole("heading", { name: "iDEA" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "About" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "GitHub" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "Contribute" }),
+    ).toBeInTheDocument();
   });
 
   it("records session storage flag when completed", async () => {

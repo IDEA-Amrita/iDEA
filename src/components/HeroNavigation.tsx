@@ -1,4 +1,4 @@
-import { Fragment, type CSSProperties } from "react";
+import type { CSSProperties } from "react";
 import BrandStar from "./BrandStar";
 import isModifiedClick from "../utils/isModifiedClick";
 import texts from "../data/texts";
@@ -68,35 +68,7 @@ export default function HeroNavigation({
           {sections
             .filter(({ id }) => id !== "home")
             .map((section, idx) => {
-              if (section.id === "contribute") {
-                return (
-                  <Fragment key={section.id}>
-                    <li style={{ "--btn-i": idx } as CSSProperties}>
-                      <ButtonLink
-                        href="https://github.com/IDEA-Amrita"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        GitHub
-                      </ButtonLink>
-                    </li>
-                    <li style={{ "--btn-i": idx + 1 } as CSSProperties}>
-                      <ButtonLink
-                        href={`#${section.id}`}
-                        variant="primary"
-                        onClick={(event) => {
-                          if (isModifiedClick(event)) return;
-                          event.preventDefault();
-                          onNavigate(section.id);
-                        }}
-                      >
-                        <BrandStar /> {section.label}
-                      </ButtonLink>
-                    </li>
-                  </Fragment>
-                );
-              }
-
+              const isContribute = section.id === "contribute";
               return (
                 <li
                   key={section.id}
@@ -104,13 +76,14 @@ export default function HeroNavigation({
                 >
                   <ButtonLink
                     href={`#${section.id}`}
+                    variant={isContribute ? "primary" : undefined}
                     onClick={(event) => {
                       if (isModifiedClick(event)) return;
                       event.preventDefault();
                       onNavigate(section.id);
                     }}
                   >
-                    {section.label}
+                    {isContribute && <BrandStar />} {section.label}
                   </ButtonLink>
                 </li>
               );

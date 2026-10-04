@@ -13,7 +13,7 @@
 
   .kicker {
     order: -1;
-    margin-bottom: var(--space-5);
+    margin-bottom: clamp(3.5rem, 7vh, 5.5rem);
     color: var(--color-text);
     font-family: var(--font-mono);
     font-size: var(--text-xs);
@@ -87,7 +87,7 @@
 
   .destinations {
     display: flex;
-    max-width: 36rem;
+    max-width: 48rem;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -108,7 +108,7 @@
       padding-top: 5.5rem;
     }
     .kicker {
-      margin-bottom: var(--space-4);
+      margin-bottom: clamp(2.5rem, 5vh, 4rem);
       line-height: 1.5;
     }
     .kickerDivider {
