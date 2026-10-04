@@ -1,4 +1,11 @@
-import { BsArrowUpRight, BsCodeSlash, BsInstagram, BsLinkedin, BsMegaphoneFill, BsSendFill } from "react-icons/bs";
+import {
+  BsArrowUpRight,
+  BsCodeSlash,
+  BsInstagram,
+  BsLinkedin,
+  BsMegaphoneFill,
+  BsSendFill,
+} from "react-icons/bs";
 import { ButtonLink } from "../../../components/Button";
 import BrandStar from "../../../components/BrandStar";
 import { PageShell, SectionShell } from "../../../components/Layout";
@@ -20,7 +27,7 @@ I would like to propose a new project idea for iDEA!
 • Proposed Solution & Architecture: 
 • Target Tech Stack: 
 
-Looking forward to discussing this with the core team!`
+Looking forward to discussing this with the core team!`,
 );
 
 const proposalMailto = `mailto:${clubContact.email}?subject=${emailSubject}&body=${emailBody}`;
@@ -28,14 +35,18 @@ const proposalMailto = `mailto:${clubContact.email}?subject=${emailSubject}&body
 export default function ContributeSection() {
   return (
     <PageShell id="contribute" aria-labelledby="contribute-title">
-      <SectionShell className={styles.section} aria-labelledby="contribute-title">
+      <SectionShell
+        className={styles.section}
+        aria-labelledby="contribute-title"
+      >
         <div className={styles.container}>
           <div className={styles.header}>
             <SectionTitle sectionId="contribute" id="contribute-title">
               Get Involved & Contribute
             </SectionTitle>
             <p className={styles.subtitle}>
-              Whether you want to pitch an idea, join an active project, or connect with fellow builders, here is how to get started.
+              Whether you want to pitch an idea, join an active project, or
+              connect with fellow builders, here is how to get started.
             </p>
           </div>
 
@@ -48,7 +59,8 @@ export default function ContributeSection() {
                 </div>
                 <h3 className={styles.cardTitle}>Check Out Our Socials</h3>
                 <p className={styles.copy}>
-                  Follow our latest project rollouts, workshop announcements, and behind-the-scenes build logs across our official channels.
+                  Follow our latest project rollouts, workshop announcements,
+                  and behind-the-scenes build logs across our official channels.
                 </p>
               </div>
               <div className={styles.buttonRow}>
@@ -58,8 +70,10 @@ export default function ContributeSection() {
                   href="https://www.instagram.com/idea_amrita/"
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="Instagram"
                 >
-                  <BsInstagram aria-hidden="true" /> Instagram <BsArrowUpRight aria-hidden="true" />
+                  <BrandStar />
+                  <BsInstagram aria-hidden="true" />
                 </ButtonLink>
                 <ButtonLink
                   className={styles.rowButton}
@@ -67,8 +81,10 @@ export default function ContributeSection() {
                   href={clubContact.linkedin}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="LinkedIn"
                 >
-                  <BsLinkedin aria-hidden="true" /> LinkedIn <BsArrowUpRight aria-hidden="true" />
+                  <BrandStar />
+                  <BsLinkedin aria-hidden="true" />
                 </ButtonLink>
               </div>
             </article>
@@ -81,7 +97,9 @@ export default function ContributeSection() {
                 </div>
                 <h3 className={styles.cardTitle}>Propose a Project</h3>
                 <p className={styles.copy}>
-                  Have an innovative product concept or research problem? Send a structured proposal directly to the core team to kick off review.
+                  Have an innovative product concept or research problem? Send a
+                  structured proposal directly to the core team to kick off
+                  review.
                 </p>
               </div>
               <div className={styles.buttonGroup}>
@@ -90,7 +108,8 @@ export default function ContributeSection() {
                   variant="primary"
                   href={proposalMailto}
                 >
-                  <BrandStar /> Draft Proposal <BsArrowUpRight aria-hidden="true" />
+                  <BrandStar /> Draft Proposal{" "}
+                  <BsArrowUpRight aria-hidden="true" />
                 </ButtonLink>
               </div>
             </article>
@@ -103,7 +122,9 @@ export default function ContributeSection() {
                 </div>
                 <h3 className={styles.cardTitle}>Build on GitHub</h3>
                 <p className={styles.copy}>
-                  Explore our open-source repositories, pick up beginner-friendly issues, or collaborate on live campus software alongside fellow iDEators.
+                  Explore our open-source repositories, pick up
+                  beginner-friendly issues, or collaborate on live campus
+                  software alongside fellow iDEators.
                 </p>
               </div>
               <div className={styles.buttonGroup}>
