@@ -6,6 +6,22 @@ function hashSection(): SectionId | undefined {
   return sections.find(({ id }) => `#${id}` === window.location.hash)?.id;
 }
 
+function getScrollOffset(id: SectionId): number {
+  if (id === "home") return 0;
+  if (typeof window === "undefined" || typeof document === "undefined")
+    return 0;
+  const navbar = document.querySelector<HTMLElement>("[data-navbar]");
+  const rail = document.querySelector<HTMLElement>(
+    'nav[aria-label="Section navigation"]',
+  );
+  const isMobile = window.innerWidth <= 640;
+  const mobileRailHeight = isMobile && rail ? rail.offsetHeight : 0;
+  const navbarHeight = navbar?.offsetHeight ?? (isMobile ? 48 : 76);
+  const chromeHeight = navbarHeight + mobileRailHeight;
+  const topGap = 16;
+  return chromeHeight + topGap;
+}
+
 export default function useSectionNavigation() {
   const lenis = useLenis();
   const [isScrollingDown, setIsScrollingDown] = useState(false);
@@ -29,7 +45,11 @@ export default function useSectionNavigation() {
         "(prefers-reduced-motion: reduce)",
       ).matches;
       if (lenis) {
-        lenis.scrollTo(target, { immediate: immediate || reduceMotion });
+        const offset = -getScrollOffset(id);
+        lenis.scrollTo(target, {
+          offset,
+          immediate: immediate || reduceMotion,
+        });
       } else {
         target.scrollIntoView({
           block: "start",

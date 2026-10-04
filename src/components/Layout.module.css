@@ -1,7 +1,7 @@
 @layer components {
   .page {
     min-height: calc(100dvh - var(--section-chrome-height));
-    scroll-margin-top: var(--section-chrome-height);
+    scroll-margin-top: calc(var(--section-chrome-height) + var(--space-4));
     color: var(--color-text);
     background: transparent;
     border-bottom: var(--border-thin) solid var(--color-border);

@@ -72,7 +72,7 @@ export default function LandingPage({
           </div>
         </div>
       </main>
-      <Footer />
+      <Footer onNavigate={navigateTo} />
 
       <IconButton
         className={classNames(

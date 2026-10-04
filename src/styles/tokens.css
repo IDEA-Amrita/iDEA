@@ -33,7 +33,7 @@
     --section-heading-gap: 1.5rem;
     --content-reading: 42rem;
     --content-wide: 80rem;
-    --section-padding-y: clamp(4.5rem, 9vw, 8rem);
+    --section-padding-y: clamp(2.5rem, 5vw, 4.5rem);
     --grid-size: 4rem;
     --control-sm: 2.25rem;
     --control-md: 3rem;
