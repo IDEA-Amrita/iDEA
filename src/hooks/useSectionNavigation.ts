@@ -10,16 +10,8 @@ function getScrollOffset(id: SectionId): number {
   if (id === "home") return 0;
   if (typeof window === "undefined" || typeof document === "undefined")
     return 0;
-  const navbar = document.querySelector<HTMLElement>("[data-navbar]");
-  const rail = document.querySelector<HTMLElement>(
-    'nav[aria-label="Section navigation"]',
-  );
   const isMobile = window.innerWidth <= 640;
-  const mobileRailHeight = isMobile && rail ? rail.offsetHeight : 0;
-  const navbarHeight = navbar?.offsetHeight ?? (isMobile ? 48 : 76);
-  const chromeHeight = navbarHeight + mobileRailHeight;
-  const topGap = 16;
-  return chromeHeight + topGap;
+  return isMobile ? 16 : 0;
 }
 
 export default function useSectionNavigation() {
