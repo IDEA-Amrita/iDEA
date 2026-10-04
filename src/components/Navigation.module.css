@@ -13,22 +13,16 @@
   }
   .navbar {
     position: fixed;
-    inset: 0 auto auto 0;
+    inset: 0 0 auto 0;
     z-index: var(--z-overlay);
-    display: inline-flex;
-    width: auto;
-    max-width: 100vw;
+    display: flex;
+    width: 100%;
     height: var(--navbar-height);
     align-items: center;
+    justify-content: space-between;
+    padding-right: var(--page-gutter);
     background: transparent;
     pointer-events: none;
-  }
-
-  .navGroup {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-3);
-    height: 100%;
   }
 
   .navBox {
@@ -242,12 +236,13 @@
   }
   @media (max-width: 40rem) {
     .navbar {
-      top: var(--mobile-rail-height);
+      top: 0;
       left: 0;
       right: 0;
       width: 100%;
       height: var(--navbar-height);
       padding-inline: var(--space-3);
+      padding-right: var(--space-3);
       border-right: none;
       border-bottom: var(--border-thin) solid var(--color-border);
       background: var(--color-surface-page);
@@ -255,17 +250,26 @@
       z-index: 25;
       pointer-events: auto;
       display: flex;
-      justify-content: center;
-    }
-    .navGroup {
-      display: flex;
-      width: 100%;
-      max-width: 28rem;
-      height: 100%;
       align-items: center;
       justify-content: space-between;
       gap: var(--space-2);
-      margin: 0 auto;
+      transform: translateY(0);
+      transition:
+        transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 240ms var(--ease-out);
+    }
+    .navbar[data-has-rail="true"] {
+      transform: translateY(var(--mobile-rail-height));
+    }
+    .navbar[data-visible="false"] {
+      opacity: 0;
+      transform: translateY(-100%);
+      pointer-events: none;
+    }
+    .navbar[data-visible="false"][data-has-rail="true"] {
+      opacity: 0;
+      transform: translateY(calc(var(--mobile-rail-height) - 100%));
+      pointer-events: none;
     }
     .navBox {
       display: flex;
@@ -325,6 +329,9 @@
       background: var(--color-surface-page);
       border-bottom: var(--border-thin) solid var(--color-border);
       z-index: 30;
+      transition:
+        transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 240ms var(--ease-out);
     }
     .progress {
       display: none;
