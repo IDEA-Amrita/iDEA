@@ -2,7 +2,7 @@
 <style>
 :root{--bp:#5a4dff52;--bn:#5a4dff;--bap:#65a30d70;--ba:#65a30d}
 :root[data-theme="dark"]{--bp:#8b80ff73;--bn:#8b80ff;--bap:#c6ff3d75;--ba:#c6ff3d}
-#brain-svg{position:absolute;top:50%;left:50%;width:min(620px,72vw);aspect-ratio:1;transform:translate(-50%,-50%);opacity:.65;cursor:pointer;-webkit-mask-image:radial-gradient(circle,#000 80%,transparent 100%);mask-image:radial-gradient(circle,#000 80%,transparent 100%);transition:opacity .3s}
+#brain-svg{position:absolute;top:50%;left:50%;width:min(620px,72vw);aspect-ratio:1;transform:translate3d(-50%,-50%,0);opacity:.65;cursor:pointer;-webkit-mask-image:radial-gradient(circle,#000 80%,transparent 100%);mask-image:radial-gradient(circle,#000 80%,transparent 100%);transition:opacity .3s;will-change:opacity,transform;contain:paint layout;backface-visibility:hidden}
 #brain-svg:hover{opacity:.92}
 .brainPath{fill:none;stroke:var(--bc,var(--bp));stroke-width:1;stroke-dasharray:var(--len,600);stroke-dashoffset:0;opacity:1;animation:goPath 3200ms ease-in-out var(--rand,0s) infinite alternate}
 .brainPath:nth-of-type(3n+1){stroke:var(--bc,var(--bap))}
