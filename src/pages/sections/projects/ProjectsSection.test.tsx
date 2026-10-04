@@ -14,12 +14,9 @@ describe("Projects", () => {
     const messfit = screen.getByRole("button", { name: "MessFit" });
     expect(messfit).toHaveAttribute("aria-expanded", "true");
 
-    await user.click(
-      screen.getByRole("button", { name: "Show project contact options" }),
-    );
     expect(
-      screen.queryByRole("group", { name: "Project contact options" }),
-    ).toBeInTheDocument();
+      screen.getByRole("link", { name: "View MessFit on GitHub" }),
+    ).toHaveAttribute("href", "https://github.com/IDEA-Amrita/Mess-Fit");
 
     const nodeshare = screen.getByRole("button", {
       name: "NodeShare",
@@ -29,38 +26,22 @@ describe("Projects", () => {
     expect(screen.getAllByText("iDEA, CSE").length).toBeGreaterThan(0);
     expect(nodeshare).toHaveAttribute("aria-expanded", "true");
     expect(messfit).toHaveAttribute("aria-expanded", "false");
-    expect(
-      screen.queryByRole("group", { name: "Project contact options" }),
-    ).toBeNull();
-
-    await user.click(
-      screen.getByRole("button", { name: "Show project contact options" }),
-    );
-
-    const contactGroup = screen.getByRole("group", {
-      name: "Project contact options",
-    });
-    const contactActions = within(contactGroup);
 
     expect(
-      contactActions.getByRole("link", { name: "Email iDEA" }),
-    ).toHaveAttribute("href", "mailto:ideatech@cb.amrita.edu");
-    expect(
-      contactActions.getByRole("link", { name: "iDEA on GitHub" }),
+      screen.getByRole("link", { name: "View NodeShare on GitHub" }),
     ).toHaveAttribute("href", "https://github.com/IDEA-Amrita/NodeShare");
+
     await user.click(nodeshare);
     expect(nodeshare).toHaveAttribute("aria-expanded", "false");
     const controlsId = nodeshare.getAttribute("aria-controls")!;
     const panel = document.getElementById(controlsId)!;
     expect(panel).toHaveAttribute("aria-hidden", "true");
     expect(panel.firstElementChild).toHaveAttribute("inert");
-    expect(
-      screen.queryByRole("group", { name: "Project contact options" }),
-    ).toBeNull();
+
     await user.click(nodeshare);
     expect(nodeshare).toHaveAttribute("aria-expanded", "true");
     expect(
-      screen.queryByRole("group", { name: "Project contact options" }),
-    ).toBeNull();
+      screen.getByRole("link", { name: "View NodeShare on GitHub" }),
+    ).toHaveAttribute("href", "https://github.com/IDEA-Amrita/NodeShare");
   });
 });
