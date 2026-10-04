@@ -35,7 +35,11 @@ export default function Footer({
         <div>
           <p className={styles.calloutKicker}>{texts.footer.kicker}</p>
           <h2 className={styles.calloutTitle} id="footer-callout">
-            {texts.footer.callout}
+            {texts.footer.calloutLines.map((line) => (
+              <span key={line} className={styles.calloutLine}>
+                {line}
+              </span>
+            ))}
           </h2>
         </div>
         <ButtonLink

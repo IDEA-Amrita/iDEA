@@ -11,6 +11,7 @@ const texts = {
     description: "Student community at Amrita Vishwa Vidyapeetham, Coimbatore.",
     kicker: "Build with iDEA",
     callout: "Find your people. Build something real.",
+    calloutLines: ["Find your people.", "Build something real."],
     explore: "Explore",
     findUs: "Find us",
     connect: "Connect",
