@@ -56,4 +56,3 @@ for (const budget of budgets) {
     process.exitCode = 1;
   }
 }
-

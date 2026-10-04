@@ -35,11 +35,16 @@ export default function FaqSection() {
               Frequently Asked Questions
             </SectionTitle>
             <p className={styles.subtitle}>
-              Everything you need to know about joining, building, and growing with iDEA.
+              Everything you need to know about joining, building, and growing
+              with iDEA.
             </p>
           </div>
 
-          <div className={styles.accordion} role="region" aria-label="FAQ Accordion">
+          <div
+            className={styles.accordion}
+            role="region"
+            aria-label="FAQ Accordion"
+          >
             {faqItems.map((item, index) => {
               const isOpen = openIndex === index;
               const triggerId = `faq-trigger-${item.id}`;
@@ -66,7 +71,9 @@ export default function FaqSection() {
                       <span className={styles.number} aria-hidden="true">
                         {item.number}
                       </span>
-                      <span className={styles.questionText}>{item.question}</span>
+                      <span className={styles.questionText}>
+                        {item.question}
+                      </span>
                     </div>
                     <span className={styles.iconWrapper} aria-hidden="true">
                       <FaPlus />

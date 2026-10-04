@@ -91,7 +91,6 @@ iDEA/
 └── vite.config.ts                   # Vite configuration
 ```
 
-
 ## Deployment
 
 The project is configured for deployment on Vercel. `vercel.json` defines the Vite build command and `dist` output directory, while production URLs and Open Graph metadata use Vercel environment variables when available.
