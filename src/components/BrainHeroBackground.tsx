@@ -136,6 +136,7 @@ function BrainHeroBackgroundComponent({
             isIntro={isIntro}
             circuitColor={circuitColor}
             svgText={rawSvg}
+            onClick={cycleCircuitColor}
             onSync={onSync}
             onComplete={onComplete}
           />
