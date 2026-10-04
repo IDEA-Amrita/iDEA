@@ -214,6 +214,34 @@ export function useGsapAnimations() {
               }
             },
           });
+        // -------------------------------------------------------------
+        // Section: FAQ
+        // -------------------------------------------------------------
+        const faqSection = document.getElementById("faq");
+        if (faqSection) {
+          const title = faqSection.querySelector('[data-animate="title"]');
+          const items = faqSection.querySelectorAll(
+            '[data-animate="faq-item"]',
+          );
+          const elements = [title, ...Array.from(items)].filter(Boolean);
+
+          gsap.set(elements, { opacity: 0, y: 28 });
+
+          ScrollTrigger.create({
+            trigger: faqSection,
+            start: "top 80%",
+            once: true,
+            onEnter: () => {
+              gsap.to(elements, {
+                opacity: 1,
+                y: 0,
+                duration: 0.7,
+                stagger: 0.08,
+                ease: "power2.out",
+                overwrite: "auto",
+              });
+            },
+          });
         }
 
         // -------------------------------------------------------------

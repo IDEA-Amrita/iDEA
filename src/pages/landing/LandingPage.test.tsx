@@ -4,7 +4,7 @@ import { renderWithProviders, screen, within, act } from "../../test/render";
 
 import LandingPage from "./LandingPage";
 
-const destinations = ["home", "about", "team", "projects", "contribute"];
+const destinations = ["home", "about", "team", "projects", "contribute", "faq"];
 describe("landing page", () => {
   beforeEach(() => {
     Element.prototype.scrollIntoView.mockClear();
@@ -180,6 +180,7 @@ describe("landing page", () => {
     ["Team", "team"],
     ["Projects", "projects"],
     ["Contribute", "contribute"],
+    ["FAQ", "faq"],
   ])("scrolls %s to its document section", async (name, id) => {
     const { user } = renderWithProviders(<LandingPage />);
     await user.click(
