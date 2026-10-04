@@ -51,7 +51,7 @@ export default function LandingPage({
       <a className={styles.skipLink} href="#main-content">
         Skip to content
       </a>
-      <Navbar visible={isNavbarVisible} />
+      <Navbar visible={isNavbarVisible} hasRail={isPastHero} />
       <main id="main-content" tabIndex={-1}>
         <HomeSection {...sharedProps} />
         <div className={styles.indexedLayout}>
