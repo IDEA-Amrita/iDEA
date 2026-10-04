@@ -46,8 +46,8 @@ describe("Projects", () => {
       contactActions.getByRole("link", { name: "Email iDEA" }),
     ).toHaveAttribute("href", "mailto:ideatech@cb.amrita.edu");
     expect(
-      contactActions.getByRole("link", { name: "iDEA on Instagram" }),
-    ).toHaveAttribute("href", "https://www.instagram.com/idea_amrita/");
+      contactActions.getByRole("link", { name: "iDEA on GitHub" }),
+    ).toHaveAttribute("href", "https://github.com/IDEA-Amrita/NodeShare");
     await user.click(nodeshare);
     expect(nodeshare).toHaveAttribute("aria-expanded", "false");
     const controlsId = nodeshare.getAttribute("aria-controls")!;

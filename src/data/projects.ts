@@ -12,9 +12,9 @@ const projects = [
     tags: ["Optimization", "RAG", "FitnessTech", "pgvector", "OpenTelemetry"],
     contacts: {
       email: { type: "email", address: "ideatech@cb.amrita.edu" },
-      instagram: {
+      github: {
         type: "web",
-        url: "https://www.instagram.com/idea_amrita/",
+        url: "https://github.com/IDEA-Amrita/Mess-Fit",
       },
     },
   },
@@ -29,9 +29,9 @@ const projects = [
     tags: ["P2PNetworking", "RemoteExecution", "Docker", "CLI"],
     contacts: {
       email: { type: "email", address: "ideatech@cb.amrita.edu" },
-      instagram: {
+      github: {
         type: "web",
-        url: "https://www.instagram.com/idea_amrita/",
+        url: "https://github.com/IDEA-Amrita/NodeShare",
       },
     },
   },
@@ -46,9 +46,9 @@ const projects = [
     tags: ["Payments", "Webhooks", "StateMachine", "BackendDevelopment"],
     contacts: {
       email: { type: "email", address: "ideatech@cb.amrita.edu" },
-      instagram: {
+      github: {
         type: "web",
-        url: "https://www.instagram.com/idea_amrita/",
+        url: "https://github.com/IDEA-Amrita/paystable",
       },
     },
   },

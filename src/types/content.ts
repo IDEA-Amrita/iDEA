@@ -51,7 +51,7 @@ export interface WebContact {
 
 export interface ExternalContacts {
   email: EmailContact;
-  instagram: WebContact;
+  github: WebContact;
 }
 
 export type ProjectTimeline =

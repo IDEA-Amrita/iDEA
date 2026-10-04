@@ -1,4 +1,4 @@
-import { AiFillInstagram, AiOutlineMail } from "react-icons/ai";
+import { AiFillGithub, AiOutlineMail } from "react-icons/ai";
 import { Button } from "../../../components/Button";
 import type { Project } from "../../../types/content";
 import styles from "./ProjectsSection.module.css";
@@ -43,12 +43,12 @@ export default function ProjectContactActions({
           </a>
           <a
             className={styles.contactLink}
-            href={project.contacts.instagram.url}
+            href={project.contacts.github.url}
             target="_blank"
             rel="noreferrer"
-            aria-label={`${project.lead.name} on Instagram`}
+            aria-label={`${project.lead.name} on GitHub`}
           >
-            <AiFillInstagram aria-hidden="true" />
+            <AiFillGithub aria-hidden="true" />
           </a>
         </div>
       )}
