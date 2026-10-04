@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f4f0" />
+    <meta
+      name="description"
+      content="A space for curious builders to shape ideas into collaborative technology projects. Student developer community at Amrita Vishwa Vidyapeetham."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="iDEA — Ideas brought to life" />
+    <meta
+      property="og:description"
+      content="A space for curious builders to shape ideas into collaborative technology projects. Student developer community at Amrita Vishwa Vidyapeetham."
+    />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="iDEA — Ideas brought to life" />
+    <meta
+      name="twitter:description"
+      content="A space for curious builders to shape ideas into collaborative technology projects. Student developer community at Amrita Vishwa Vidyapeetham."
+    />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+    <link rel="preload" href="/brain.svg" as="fetch" crossorigin />
+    <link rel="manifest" href="/manifest.json" />
+    <script>
+      (() => {
+        let preference;
+        try {
+          preference = localStorage.getItem("idea-theme");
+        } catch {}
+        const dark =
+          preference === "dark" ||
+          (preference !== "light" &&
+            matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.dataset.theme = dark ? "dark" : "light";
+        document.querySelector('meta[name="theme-color"]').content = dark
+          ? "#181816"
+          : "#f5f4f0";
+      })();
+    </script>
+    <title>iDEA</title>
+  </head>
+  <body>
+    <noscript>%NOSCRIPT%</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
+</html>

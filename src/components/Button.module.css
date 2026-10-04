@@ -1,0 +1,51 @@
+@layer components {
+  .button {
+    display: inline-flex;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-height: 2.75rem;
+    padding: var(--space-2) var(--space-4);
+    border: var(--border-strong) solid var(--color-border);
+    border-radius: var(--radius-pill);
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: var(--tracking-label);
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    background: var(--color-surface);
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--ease-out);
+  }
+
+  .button:hover {
+    color: var(--color-action);
+    border-color: var(--color-action);
+    box-shadow: var(--shadow-offset-sm);
+  }
+
+  .button:focus-visible {
+    outline-offset: 0.25rem;
+  }
+
+  .button:active {
+    box-shadow: none;
+  }
+
+  .primary {
+    color: var(--color-success-text);
+    background: var(--color-success);
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-offset-sm);
+  }
+
+  .primary:hover {
+    color: var(--color-success-text);
+    background: var(--color-success-hover);
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-offset-md);
+  }
+}

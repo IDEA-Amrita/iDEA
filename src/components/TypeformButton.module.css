@@ -1,0 +1,76 @@
+@layer components {
+  .dialog {
+    width: min(52rem, calc(100% - 2rem));
+    max-height: calc(100dvh - 2rem);
+    padding: var(--space-5);
+    color: var(--color-text);
+    background: var(--color-surface-page);
+    border: var(--border-strong) solid var(--color-border-strong);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lifted);
+    overflow: auto;
+  }
+  .dialog::backdrop {
+    background: rgb(0 0 0 / 65%);
+  }
+  .dialogHeader {
+    position: sticky;
+    z-index: 1;
+    top: calc(var(--space-5) * -1);
+    display: flex;
+    padding-block: var(--space-3);
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    background: var(--color-surface-page);
+    border-bottom: var(--border-thin) solid var(--color-border);
+  }
+  .dialogHeader h2 {
+    font-size: var(--text-heading-sm);
+  }
+  .close {
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+    color: var(--color-text);
+    background: var(--color-surface-card);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition:
+      color var(--duration-fast) var(--ease-out),
+      background-color var(--duration-fast) var(--ease-out);
+  }
+  .close:hover {
+    color: var(--color-action-hover);
+    background: var(--color-surface-accent);
+  }
+  .embed {
+    width: 100%;
+    height: min(32rem, 65dvh);
+    margin-top: var(--space-4);
+  }
+  .dialog p,
+  .dialog a {
+    display: block;
+    margin-top: var(--space-3);
+    overflow-wrap: anywhere;
+  }
+
+  .button {
+    font-size: var(--text-sm);
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  .large {
+    width: min(15rem, 80vw);
+    min-height: 4rem;
+    padding: var(--space-3) var(--space-5);
+  }
+
+  .compact {
+    align-self: flex-start;
+    min-height: 2.75rem;
+    padding: var(--space-2) var(--space-5);
+  }
+}

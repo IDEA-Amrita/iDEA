@@ -1,0 +1,73 @@
+@layer components {
+  .indexedLayout {
+    display: grid;
+    grid-template-columns: var(--sidebar-offset) minmax(0, 1fr);
+    padding-top: var(--navbar-height);
+  }
+  .railScope {
+    grid-column: 1;
+    grid-row: 1;
+    padding: var(--space-5) 0 var(--space-5) var(--page-gutter);
+  }
+  .indexedSections {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    background: transparent;
+  }
+
+  .skipLink {
+    position: fixed;
+    top: var(--space-3);
+    left: var(--space-3);
+    z-index: 2000;
+    padding: var(--space-3) var(--space-4);
+    color: var(--color-action-text);
+    background: var(--color-action);
+    transform: translateY(-200%);
+  }
+  .skipLink:focus {
+    transform: translateY(0);
+  }
+  .nextSection {
+    position: fixed;
+    z-index: var(--z-overlay);
+    right: var(--page-gutter);
+    bottom: var(--space-6);
+    opacity: 1;
+    transition:
+      opacity var(--duration-base) var(--ease-out),
+      visibility var(--duration-base) var(--ease-out);
+  }
+
+  .nextSectionHidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @media (max-width: 40rem) {
+    .indexedLayout {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: 1fr;
+      padding-top: 0;
+    }
+    .railScope {
+      display: contents;
+    }
+    .indexedSections {
+      grid-column: 1;
+      grid-row: 1;
+      min-width: 0;
+      width: 100%;
+      overflow-x: clip;
+    }
+    .indexedSections > section:first-child {
+      scroll-margin-top: 0;
+      padding-top: var(--section-chrome-height);
+    }
+    .nextSection {
+      display: none;
+    }
+  }
+}

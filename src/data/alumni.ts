@@ -1,0 +1,104 @@
+import type { AlumniMember } from "../types/content";
+
+export const alumniBatches: readonly string[] = ["2025-26"];
+
+export type AlumniBatch = string;
+
+export const alumniData: Record<AlumniBatch, readonly AlumniMember[]> = {
+  "2025-26": [
+    {
+      id: "alumni-25-kavinesh",
+      name: "Kavinesh Parthasarthi",
+      role: "President",
+      batch: "2025-26",
+      status: "filled",
+      photo: encodeURI("/team/2025-26/Kavinesh Parthasarthi President.webp"),
+      linkedin: "https://linkedin.com",
+      github: "https://github.com",
+    },
+    {
+      id: "alumni-25-barinidharan",
+      name: "Barinidharan Selvaraj",
+      role: "Vice President - Dev Relations",
+      batch: "2025-26",
+      status: "filled",
+      photo: encodeURI(
+        "/team/2025-26/Barinidharan Selvaraj Vice President Dev Relations.webp",
+      ),
+      linkedin: "https://linkedin.com",
+      github: "https://github.com",
+    },
+    {
+      id: "alumni-25-pongopika",
+      name: "Pon Gopika",
+      role: "Vice President - Corporate Relations",
+      batch: "2025-26",
+      status: "filled",
+      photo: encodeURI(
+        "/team/2025-26/Pon Gopika Vice President Corporate Relations.webp",
+      ),
+      linkedin: "https://linkedin.com",
+      github: "https://github.com",
+    },
+    {
+      id: "alumni-25-sainivedh",
+      name: "Sai Nivedh",
+      role: "Tech Lead",
+      batch: "2025-26",
+      status: "filled",
+      photo: encodeURI("/team/2025-26/Sai Nivedh Tech Lead.webp"),
+      linkedin: "https://linkedin.com",
+      github: "https://github.com",
+    },
+    {
+      id: "alumni-25-srikrishna",
+      name: "Sri Krishna Vundavalli",
+      role: "AI Lead",
+      batch: "2025-26",
+      status: "filled",
+      photo: encodeURI("/team/2025-26/Sri Krishna Vundavalli AI Lead.webp"),
+      linkedin: "https://linkedin.com",
+      github: "https://github.com",
+    },
+    {
+      id: "alumni-25-roshan",
+      name: "Roshan T",
+      role: "Webmaster",
+      batch: "2025-26",
+      status: "filled",
+      photo: encodeURI("/team/2025-26/Roshan T Webmaster.webp"),
+      linkedin: "https://linkedin.com",
+      github: "https://github.com",
+    },
+    {
+      id: "alumni-25-sudharshan",
+      name: "Sudharshan",
+      role: "Webmaster",
+      batch: "2025-26",
+      status: "filled",
+      photo: encodeURI("/team/2025-26/Sudharshan Webmaster.webp"),
+      linkedin: "https://linkedin.com",
+      github: "https://github.com",
+    },
+    {
+      id: "alumni-25-swetha",
+      name: "Swetha",
+      role: "Webmaster",
+      batch: "2025-26",
+      status: "filled",
+      photo: encodeURI("/team/2025-26/Swetha Webmaster.webp"),
+      linkedin: "https://linkedin.com",
+      github: "https://github.com",
+    },
+    {
+      id: "alumni-25-mokitha",
+      name: "Mokitha Sakthi",
+      role: "Secretary",
+      batch: "2025-26",
+      status: "filled",
+      photo: encodeURI("/team/2025-26/Mokitha Sakthi Secretary.webp"),
+      linkedin: "https://linkedin.com",
+      github: "https://github.com",
+    },
+  ],
+};

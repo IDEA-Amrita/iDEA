@@ -1,0 +1,105 @@
+@layer components {
+  .section {
+    display: grid;
+    min-height: 100dvh;
+    grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
+    align-items: center;
+    gap: clamp(var(--space-5), 4vw, var(--space-8));
+    padding: var(--section-padding-y) var(--page-gutter);
+  }
+
+  .content {
+    display: flex;
+    max-width: var(--content-reading);
+    min-width: 0;
+    width: 100%;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .copy {
+    max-width: 36rem;
+    min-width: 0;
+    width: 100%;
+    color: var(--color-text-secondary);
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+    text-align: start;
+    overflow-wrap: break-word;
+  }
+
+  .image {
+    min-height: min(36rem, 62vh);
+    max-width: 100%;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lifted);
+  }
+
+  .highlights {
+    display: grid;
+    margin-top: var(--space-7);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: var(--border-thin) solid var(--color-border);
+    border-bottom: var(--border-thin) solid var(--color-border);
+    width: 100%;
+    min-width: 0;
+  }
+  .highlights li {
+    display: flex;
+    min-width: 0;
+    padding: var(--space-4) var(--space-3);
+    flex-direction: column;
+    gap: var(--space-1);
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+  .highlights li + li {
+    border-left: var(--border-thin) solid var(--color-border);
+  }
+  .highlights span {
+    color: var(--color-action-hover);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+  }
+
+  @media (max-width: 56rem) {
+    .section {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .content {
+      padding: 0;
+    }
+
+    .image {
+      min-height: 0;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+  }
+
+  @media (max-width: 40rem) {
+    .section {
+      padding-inline: var(--space-4);
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .highlights {
+      grid-template-columns: 1fr;
+    }
+    .highlights li {
+      flex-direction: row;
+    }
+    .highlights li + li {
+      border-top: var(--border-thin) solid var(--color-border);
+      border-left: 0;
+    }
+    .image {
+      min-height: 0;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@layer components {
+  .page {
+    min-height: calc(100dvh - var(--section-chrome-height));
+    scroll-margin-top: var(--section-chrome-height);
+    color: var(--color-text);
+    background: transparent;
+    border-bottom: var(--border-thin) solid var(--color-border);
+  }
+
+  .section {
+    width: min(100%, var(--content-wide));
+    min-height: calc(100dvh - var(--section-chrome-height));
+    margin-inline: auto;
+  }
+}

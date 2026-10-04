@@ -1,0 +1,23 @@
+@layer components {
+  .composition {
+    max-width: 48rem;
+    margin-bottom: var(--section-heading-gap);
+  }
+  .eyebrow {
+    margin-bottom: var(--space-3);
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+  .title {
+    color: var(--color-text);
+    font-size: var(--text-heading);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+  }
+}

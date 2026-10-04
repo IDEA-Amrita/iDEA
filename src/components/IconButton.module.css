@@ -1,0 +1,32 @@
+@layer components {
+  .button {
+    display: inline-grid;
+    width: var(--control-md);
+    height: var(--control-md);
+    padding: 0;
+    place-items: center;
+    color: var(--color-text);
+    background: var(--color-surface);
+    border: var(--border-strong) solid var(--color-border-strong);
+    border-radius: 50%;
+    box-shadow: var(--shadow-offset-sm);
+    cursor: pointer;
+    transition:
+      color var(--duration-fast) var(--ease-out),
+      background-color var(--duration-fast) var(--ease-out),
+      box-shadow var(--duration-fast) var(--ease-out),
+      transform var(--duration-fast) var(--ease-out);
+  }
+
+  .button:hover {
+    color: var(--color-action-text);
+    background: var(--color-action);
+    box-shadow: var(--shadow-offset-md);
+    transform: translate(-0.0625rem, -0.0625rem);
+  }
+
+  .button:active {
+    box-shadow: none;
+    transform: translate(0.0625rem, 0.0625rem);
+  }
+}

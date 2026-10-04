@@ -1,0 +1,181 @@
+@layer components {
+  .footer {
+    scroll-margin-top: var(--navbar-height);
+    padding: 0 var(--page-gutter) var(--space-5);
+    color: var(--color-text);
+    background-color: var(--color-surface-card);
+    background-image:
+      linear-gradient(var(--color-grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
+    background-size: var(--grid-size) var(--grid-size);
+    border-top: var(--border-thin) solid var(--color-border);
+  }
+  .callout {
+    display: flex;
+    max-width: var(--content-wide);
+    margin-inline: auto;
+    padding-block: clamp(5rem, 9vw, 8rem);
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-6);
+    border-bottom: var(--border-thin) solid var(--color-border);
+  }
+  .calloutKicker {
+    margin-bottom: var(--space-3);
+    color: var(--color-action-hover);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+  .calloutTitle {
+    max-width: 40rem;
+    font-size: clamp(2.25rem, 4vw, 4.25rem);
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    line-height: 1.02;
+  }
+  .callout > a {
+    flex-shrink: 0;
+  }
+  .content {
+    display: grid;
+    max-width: var(--content-wide);
+    margin-inline: auto;
+    padding-block: var(--space-7);
+    grid-template-columns: minmax(14rem, 20rem) max-content minmax(15rem, 22rem);
+    align-items: start;
+    justify-content: space-between;
+    gap: clamp(var(--space-5), 5vw, var(--space-8));
+  }
+  .brand,
+  .explore,
+  .connect {
+    min-width: 0;
+  }
+  .wordmark {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-action);
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3vw, 2.75rem);
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+  .description {
+    color: var(--color-text-secondary);
+    font-size: var(--text-xs);
+    line-height: 1.5;
+    max-width: 17rem;
+    margin-top: var(--space-3);
+  }
+  .heading {
+    margin-bottom: var(--space-2);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+  .address {
+    font-style: normal;
+    margin-bottom: var(--space-2);
+  }
+  .footerList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+  .explore .footerList {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    column-gap: var(--space-5);
+  }
+  .footerLink,
+  .contactText {
+    display: inline-flex;
+    min-height: 2.25rem;
+    align-items: center;
+    color: var(--color-text-secondary);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  .footerLink {
+    text-decoration: none;
+  }
+  .footerLink:hover {
+    color: var(--color-action-hover);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+  .socialIcons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  .socialIconLink {
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    place-items: center;
+    color: var(--color-text-secondary);
+    border-radius: 50%;
+    transition: all var(--duration-fast) var(--ease-out);
+  }
+  .socialIconLink:hover {
+    color: var(--color-action-hover);
+    transform: translateY(-0.125rem);
+  }
+  .socialIconLink svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .bottom {
+    display: flex;
+    max-width: var(--content-wide);
+    margin-inline: auto;
+    padding-top: var(--space-5);
+    align-items: center;
+    flex-direction: column;
+    gap: var(--space-2);
+    text-align: center;
+    border-top: var(--border-thin) solid var(--color-border);
+  }
+  .copyright {
+    color: var(--color-text-muted);
+    font-size: var(--text-xs);
+    line-height: 1.5;
+  }
+  @media (max-width: 64rem) {
+    .content {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 40rem) {
+    .footer {
+      padding-inline: var(--space-4);
+    }
+    .content {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+    .callout {
+      padding-block: var(--space-8);
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .calloutTitle {
+      max-width: 20rem;
+    }
+    .footerList {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .connect .footerList {
+      grid-template-columns: 1fr;
+    }
+  }
+}
