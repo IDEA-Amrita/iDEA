@@ -20,7 +20,7 @@ describe("Team", () => {
     ]);
     expect(container.querySelector("img")).toHaveAttribute(
       "src",
-      "/faculty/vedaj_sir.jpg",
+      "/faculty/vedaj_sir.webp",
     );
     const vicePresidents = screen.getByRole("button", {
       name: "VICE PRESIDENTS",

@@ -6,7 +6,7 @@ const faculty = [
     status: "filled",
     name: "Vedaj J. Padman",
     designation: "Faculty Mentor",
-    photo: "/faculty/vedaj_sir.jpg",
+    photo: "/faculty/vedaj_sir.webp",
   },
 ] as const satisfies readonly FacultyMember[];
 
