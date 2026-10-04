@@ -16,7 +16,7 @@ describe("BrainHeroBackground", () => {
     vi.unstubAllGlobals();
   });
 
-  it("renders SVG fallback in non-WebGL environments", async () => {
+  it("renders brain SVG element", async () => {
     const { container } = render(<BrainHeroBackground />);
     await act(async () => {
       await new Promise((r) => setTimeout(r, 20));

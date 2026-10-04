@@ -1,22 +1,8 @@
-import { lazy, memo, Suspense, useEffect, useRef, useState } from "react";
-
-const BrainWebGLCanvas = lazy(() => import("./BrainWebGLCanvas"));
+import { memo, useEffect, useRef, useState } from "react";
 
 const CIRCUIT_PALETTE = ["#8b80ff", "#059669", "#0284c7", "#e11d48"] as const;
 
 let cachedSvgText: string | null = null;
-
-function checkWebGLSupport(): boolean {
-  if (typeof window === "undefined") return false;
-  try {
-    const canvas = document.createElement("canvas");
-    const gl =
-      canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
-    return Boolean(gl);
-  } catch {
-    return false;
-  }
-}
 
 interface Props {
   isIntro?: boolean | undefined;
@@ -29,7 +15,6 @@ function BrainHeroBackgroundComponent({
   onSync,
   onComplete,
 }: Props) {
-  const [rawSvg, setRawSvg] = useState(() => cachedSvgText ?? "");
   const [svgContent, setSvgContent] = useState(() => {
     if (!cachedSvgText) return "";
     return isIntro
@@ -37,11 +22,6 @@ function BrainHeroBackgroundComponent({
       : cachedSvgText;
   });
   const [circuitColor, setCircuitColor] = useState<string | null>(null);
-  const [useWebGL, setUseWebGL] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return window.innerWidth > 768 && checkWebGLSupport();
-  });
-
   const onSyncRef = useRef(onSync);
   const onCompleteRef = useRef(onComplete);
 
@@ -51,16 +31,6 @@ function BrainHeroBackgroundComponent({
   }, [onSync, onComplete]);
 
   useEffect(() => {
-    const handleResize = () => {
-      setUseWebGL(window.innerWidth > 768 && checkWebGLSupport());
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
     let isMounted = true;
     if (!cachedSvgText) {
       fetch("/brain.svg")
@@ -68,7 +38,6 @@ function BrainHeroBackgroundComponent({
         .then((text) => {
           cachedSvgText = text;
           if (isMounted) {
-            setRawSvg(text);
             setSvgContent(
               isIntro ? text.replace("<svg ", '<svg class="intro" ') : text,
             );
@@ -124,27 +93,16 @@ function BrainHeroBackgroundComponent({
           ? ({
               "--bc": circuitColor,
               "--bn": circuitColor,
+              transform: "translateZ(0)",
+              willChange: "transform, opacity",
             } as React.CSSProperties)
-          : undefined
+          : {
+              transform: "translateZ(0)",
+              willChange: "transform, opacity",
+            }
       }
-    >
-      {useWebGL && rawSvg ? (
-        <Suspense
-          fallback={<div dangerouslySetInnerHTML={{ __html: svgContent }} />}
-        >
-          <BrainWebGLCanvas
-            isIntro={isIntro}
-            circuitColor={circuitColor}
-            svgText={rawSvg}
-            onClick={cycleCircuitColor}
-            onSync={onSync}
-            onComplete={onComplete}
-          />
-        </Suspense>
-      ) : (
-        <div dangerouslySetInnerHTML={{ __html: svgContent }} />
-      )}
-    </div>
+      dangerouslySetInnerHTML={{ __html: svgContent }}
+    />
   );
 }
 
