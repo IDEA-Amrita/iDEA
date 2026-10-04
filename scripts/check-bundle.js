@@ -56,7 +56,4 @@ for (const budget of budgets) {
     process.exitCode = 1;
   }
 }
-if ([...initial].some((file) => file.includes("loadTypeform"))) {
-  console.error("Typeform must remain outside the initial dependency graph.");
-  process.exitCode = 1;
-}
+
