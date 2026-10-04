@@ -164,21 +164,68 @@
     .content {
       grid-template-columns: 1fr;
       gap: var(--space-6);
+      text-align: center;
+      justify-items: center;
+    }
+    .brand,
+    .explore,
+    .connect {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+    .wordmark {
+      justify-content: center;
+    }
+    .description {
+      text-align: center;
+      margin-inline: auto;
+    }
+    .heading {
+      text-align: center;
+    }
+    .address {
+      text-align: center;
     }
     .callout {
       padding-block: var(--space-8);
-      align-items: flex-start;
+      align-items: center;
+      text-align: center;
       flex-direction: column;
     }
     .calloutTitle {
-      max-width: 20rem;
+      max-width: 24rem;
+      text-align: center;
+      margin-inline: auto;
+    }
+    .calloutKicker {
+      text-align: center;
     }
     .footerList {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
+      justify-items: center;
+      width: 100%;
+      max-width: 18rem;
+      margin-inline: auto;
+    }
+    .explore .footerList {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      justify-items: center;
+      width: 100%;
+      max-width: 18rem;
+      margin-inline: auto;
+      column-gap: var(--space-4);
     }
     .connect .footerList {
       grid-template-columns: 1fr;
+      width: 100%;
+    }
+    .socialIcons {
+      justify-content: center;
     }
   }
 }

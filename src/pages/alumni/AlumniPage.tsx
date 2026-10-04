@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import type { gsap as GSAP } from "gsap";
 import type { ScrollTrigger as ScrollTriggerType } from "gsap/ScrollTrigger";
 import { BsPerson } from "react-icons/bs";
-import { AiFillGithub, AiOutlineLinkedin } from "react-icons/ai";
 import { alumniBatches, alumniData, type AlumniBatch } from "../../data/alumni";
 import Footer from "../../components/Footer";
 import ThemeToggle from "../../components/ThemeToggle";

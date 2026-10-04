@@ -16,11 +16,11 @@ export default function TeamSection({
     // Pre-warm team and faculty photos into memory cache
     const urls: string[] = [];
     faculty.forEach((f) => {
-      if ("photo" in f && f.photo) urls.push(f.photo);
+      if ("photo" in f) urls.push(f.photo);
     });
     teamGroups.forEach((g) => {
       g.members.forEach((m) => {
-        if ("photo" in m && m.photo) urls.push(m.photo);
+        if ("photo" in m) urls.push(m.photo);
       });
     });
     urls.forEach((src) => {
