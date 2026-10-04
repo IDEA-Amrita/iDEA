@@ -2,7 +2,7 @@ import { lazy, Suspense, useCallback, useEffect, useState } from "react";
 import LandingPage from "./pages/landing/LandingPage";
 import ThemeProvider from "./providers/ThemeProvider";
 import AppErrorBoundary from "./components/AppErrorBoundary";
-import { ReactLenis } from "lenis/react";
+import { ReactLenis, useLenis } from "lenis/react";
 
 const AlumniPage = lazy(() => import("./pages/alumni/AlumniPage"));
 
@@ -14,6 +14,43 @@ function getRoute(): "landing" | "alumni" {
     return "alumni";
   }
   return "landing";
+}
+
+function LenisScrollTriggerSync() {
+  const lenis = useLenis();
+  useEffect(() => {
+    if (!lenis || typeof window === "undefined") return;
+    if (import.meta.env.MODE === "test") return;
+    let disposed = false;
+    let cleanup: (() => void) | undefined;
+    void Promise.all([import("gsap"), import("gsap/ScrollTrigger")]).then(
+      ([gsapModule, scrollTriggerModule]) => {
+        if (disposed) return;
+        const gsap = gsapModule.gsap;
+        const ScrollTrigger = scrollTriggerModule.ScrollTrigger;
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.ticker.lagSmoothing(0);
+        const onLenisScroll = () => {
+          ScrollTrigger.update();
+        };
+        const onLoad = () => {
+          ScrollTrigger.refresh();
+        };
+        if (typeof lenis.on === "function") lenis.on("scroll", onLenisScroll);
+        window.addEventListener("load", onLoad);
+        cleanup = () => {
+          if (typeof lenis.off === "function")
+            lenis.off("scroll", onLenisScroll);
+          window.removeEventListener("load", onLoad);
+        };
+      },
+    );
+    return () => {
+      disposed = true;
+      cleanup?.();
+    };
+  }, [lenis]);
+  return null;
 }
 
 export default function App() {
@@ -46,6 +83,7 @@ export default function App() {
     <ThemeProvider>
       <AppErrorBoundary>
         <ReactLenis root options={{ smoothWheel: true, syncTouch: false }}>
+          <LenisScrollTriggerSync />
           {route === "alumni" ? (
             <Suspense fallback={null}>
               <AlumniPage

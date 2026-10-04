@@ -27,14 +27,10 @@ export default function Sidebar({
     ] as HTMLElement | undefined;
     if (!list || !dot) return;
     const update = () => {
-      let x = dot.offsetWidth / 2;
-      let y = dot.offsetHeight / 2;
-      let el: HTMLElement | null = dot;
-      while (el && el !== list) {
-        x += el.offsetLeft;
-        y += el.offsetTop;
-        el = el.offsetParent as HTMLElement | null;
-      }
+      const listRect = list.getBoundingClientRect();
+      const dotRect = dot.getBoundingClientRect();
+      const x = dotRect.left - listRect.left + dotRect.width / 2;
+      const y = dotRect.top - listRect.top + dotRect.height / 2;
       const s = list.style;
       s.setProperty("--orb-x", String(x) + "px");
       s.setProperty("--orb-y", String(y) + "px");
@@ -45,9 +41,18 @@ export default function Sidebar({
       }
     };
     update();
-    window.addEventListener("resize", update);
+    let resizeFrame = 0;
+    const onResize = () => {
+      if (resizeFrame) return;
+      resizeFrame = window.requestAnimationFrame(() => {
+        resizeFrame = 0;
+        update();
+      });
+    };
+    window.addEventListener("resize", onResize);
     return () => {
-      window.removeEventListener("resize", update);
+      window.cancelAnimationFrame(resizeFrame);
+      window.removeEventListener("resize", onResize);
     };
   }, [currentIndex, visible]);
 

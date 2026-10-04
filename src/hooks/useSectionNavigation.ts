@@ -119,15 +119,26 @@ export default function useSectionNavigation() {
       }
     };
     const hero = document.getElementById("home");
+    let lastPastHero = false;
+    let lastAtBottom = false;
+    let lastScrollingDown = false;
     const updateHeroVisibility = () => {
-      if (hero) setIsPastHero(hero.getBoundingClientRect().bottom <= 0);
+      if (!hero) return;
+      const next = hero.getBoundingClientRect().bottom <= 0;
+      if (next !== lastPastHero) {
+        lastPastHero = next;
+        setIsPastHero(next);
+      }
     };
     const updatePageBottom = () => {
       const scrollHeight = document.documentElement.scrollHeight;
-      setIsAtPageBottom(
+      const next =
         window.scrollY > 0 &&
-          window.scrollY + window.innerHeight >= scrollHeight - 2,
-      );
+        window.scrollY + window.innerHeight >= scrollHeight - 2;
+      if (next !== lastAtBottom) {
+        lastAtBottom = next;
+        setIsAtPageBottom(next);
+      }
     };
     const heroObserver =
       hero && typeof IntersectionObserver !== "undefined"
@@ -138,13 +149,18 @@ export default function useSectionNavigation() {
     updatePageBottom();
     observeSections();
     const onResize = () => {
-      updateChromeMetrics();
-      observeSections();
-      update();
-      updateHeroVisibility();
-      updatePageBottom();
+      if (resizeFrame) return;
+      resizeFrame = window.requestAnimationFrame(() => {
+        resizeFrame = 0;
+        updateChromeMetrics();
+        observeSections();
+        update();
+        updateHeroVisibility();
+        updatePageBottom();
+      });
     };
     let frame = 0;
+    let resizeFrame = 0;
     let directionOrigin = window.scrollY;
     const onScroll = () => {
       if (!frame)
@@ -152,7 +168,11 @@ export default function useSectionNavigation() {
           frame = 0;
           const distance = window.scrollY - directionOrigin;
           if (Math.abs(distance) >= 8) {
-            setIsScrollingDown(distance > 0);
+            const next = distance > 0;
+            if (next !== lastScrollingDown) {
+              lastScrollingDown = next;
+              setIsScrollingDown(next);
+            }
             directionOrigin = window.scrollY;
           }
           update();
@@ -168,6 +188,7 @@ export default function useSectionNavigation() {
       heroObserver?.disconnect();
       window.cancelAnimationFrame(restoreFrame);
       window.cancelAnimationFrame(frame);
+      window.cancelAnimationFrame(resizeFrame);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
       window.removeEventListener("hashchange", restoreHash);

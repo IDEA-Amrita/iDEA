@@ -25,6 +25,7 @@ export function useGsapAnimations() {
 
     let isDisposed = false;
     let ctx: { revert: () => void } | null = null;
+    let teardownListeners: (() => void) | null = null;
 
     void Promise.all([
       import("gsap") as Promise<GsapModule>,
@@ -36,6 +37,29 @@ export function useGsapAnimations() {
       const ScrollTrigger = scrollTriggerModule.ScrollTrigger;
 
       gsap.registerPlugin(ScrollTrigger);
+
+      const cleanups: Array<() => void> = [];
+      const pendingFrames = new Set<number>();
+      const listen = (
+        el: HTMLElement,
+        type: string,
+        handler: EventListener,
+      ) => {
+        el.addEventListener(type, handler);
+        cleanups.push(() => {
+          el.removeEventListener(type, handler);
+        });
+      };
+      teardownListeners = () => {
+        cleanups.forEach((fn) => {
+          fn();
+        });
+        cleanups.length = 0;
+        pendingFrames.forEach((id) => {
+          window.cancelAnimationFrame(id);
+        });
+        pendingFrames.clear();
+      };
 
       ctx = gsap.context(() => {
         // -------------------------------------------------------------
@@ -66,7 +90,7 @@ export function useGsapAnimations() {
           ScrollTrigger.create({
             trigger: aboutSection,
             start: "top 80%",
-            end: "bottom 15%",
+            once: true,
             onEnter: () => {
               gsap.to(elements, {
                 opacity: 1,
@@ -74,36 +98,6 @@ export function useGsapAnimations() {
                 duration: 0.7,
                 stagger: 0.08,
                 ease: "power2.out",
-                overwrite: "auto",
-              });
-            },
-            onLeave: () => {
-              gsap.to(elements, {
-                opacity: 0.1,
-                y: -24,
-                duration: 0.45,
-                stagger: 0.04,
-                ease: "power2.in",
-                overwrite: "auto",
-              });
-            },
-            onEnterBack: () => {
-              gsap.to(elements, {
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                stagger: 0.06,
-                ease: "power2.out",
-                overwrite: "auto",
-              });
-            },
-            onLeaveBack: () => {
-              gsap.to(elements, {
-                opacity: 0,
-                y: 28,
-                duration: 0.4,
-                stagger: 0.04,
-                ease: "power2.in",
                 overwrite: "auto",
               });
             },
@@ -126,7 +120,7 @@ export function useGsapAnimations() {
           ScrollTrigger.create({
             trigger: projectsSection,
             start: "top 78%",
-            end: "bottom 15%",
+            once: true,
             onEnter: () => {
               gsap.to(elements, {
                 opacity: 1,
@@ -134,33 +128,6 @@ export function useGsapAnimations() {
                 duration: 0.75,
                 stagger: 0.1,
                 ease: "power2.out",
-                overwrite: "auto",
-              });
-            },
-            onLeave: () => {
-              gsap.to(elements, {
-                opacity: 0.1,
-                y: -28,
-                duration: 0.45,
-                ease: "power2.in",
-                overwrite: "auto",
-              });
-            },
-            onEnterBack: () => {
-              gsap.to(elements, {
-                opacity: 1,
-                y: 0,
-                duration: 0.65,
-                ease: "power2.out",
-                overwrite: "auto",
-              });
-            },
-            onLeaveBack: () => {
-              gsap.to(elements, {
-                opacity: 0,
-                y: 32,
-                duration: 0.4,
-                ease: "power2.in",
                 overwrite: "auto",
               });
             },
@@ -191,7 +158,7 @@ export function useGsapAnimations() {
           ScrollTrigger.create({
             trigger: teamSection,
             start: "top 80%",
-            end: "bottom 15%",
+            once: true,
             onEnter: () => {
               gsap.to(elements, {
                 opacity: 1,
@@ -199,36 +166,6 @@ export function useGsapAnimations() {
                 duration: 0.7,
                 stagger: 0.08,
                 ease: "power3.out",
-                overwrite: "auto",
-              });
-            },
-            onLeave: () => {
-              gsap.to(elements, {
-                opacity: 0.15,
-                y: -24,
-                duration: 0.45,
-                stagger: 0.04,
-                ease: "power2.in",
-                overwrite: "auto",
-              });
-            },
-            onEnterBack: () => {
-              gsap.to(elements, {
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                stagger: 0.06,
-                ease: "power3.out",
-                overwrite: "auto",
-              });
-            },
-            onLeaveBack: () => {
-              gsap.to(elements, {
-                opacity: 0,
-                y: 30,
-                duration: 0.4,
-                stagger: 0.04,
-                ease: "power2.in",
                 overwrite: "auto",
               });
             },
@@ -252,7 +189,7 @@ export function useGsapAnimations() {
           ScrollTrigger.create({
             trigger: contributeSection,
             start: "top 80%",
-            end: "bottom 15%",
+            once: true,
             onEnter: () => {
               if (cardLeft) {
                 gsap.to(cardLeft, {
@@ -275,60 +212,6 @@ export function useGsapAnimations() {
                   overwrite: "auto",
                 });
               }
-            },
-            onLeave: () => {
-              if (cardLeft)
-                gsap.to(cardLeft, {
-                  opacity: 0.1,
-                  x: -16,
-                  duration: 0.4,
-                  overwrite: "auto",
-                });
-              if (cardRight)
-                gsap.to(cardRight, {
-                  opacity: 0.1,
-                  x: 16,
-                  duration: 0.4,
-                  overwrite: "auto",
-                });
-            },
-            onEnterBack: () => {
-              if (cardLeft)
-                gsap.to(cardLeft, {
-                  opacity: 1,
-                  x: 0,
-                  y: 0,
-                  duration: 0.6,
-                  ease: "expo.out",
-                  overwrite: "auto",
-                });
-              if (cardRight)
-                gsap.to(cardRight, {
-                  opacity: 1,
-                  x: 0,
-                  y: 0,
-                  duration: 0.6,
-                  ease: "expo.out",
-                  overwrite: "auto",
-                });
-            },
-            onLeaveBack: () => {
-              if (cardLeft)
-                gsap.to(cardLeft, {
-                  opacity: 0,
-                  x: -28,
-                  y: 16,
-                  duration: 0.4,
-                  overwrite: "auto",
-                });
-              if (cardRight)
-                gsap.to(cardRight, {
-                  opacity: 0,
-                  x: 28,
-                  y: 16,
-                  duration: 0.4,
-                  overwrite: "auto",
-                });
             },
           });
         }
@@ -362,9 +245,9 @@ export function useGsapAnimations() {
                 overwrite: "auto",
               });
             };
-            btn.addEventListener("pointerdown", onPointerDown);
-            btn.addEventListener("pointerup", onPointerUp);
-            btn.addEventListener("pointerleave", onPointerUp);
+            listen(btn, "pointerdown", onPointerDown);
+            listen(btn, "pointerup", onPointerUp);
+            listen(btn, "pointerleave", onPointerUp);
           });
 
           // 2. Member Card 3D Perspective Tilt
@@ -372,20 +255,35 @@ export function useGsapAnimations() {
             '[data-animate="member-card"]',
           );
           memberCards.forEach((card) => {
-            const onMouseMove = (e: MouseEvent) => {
-              const rect = card.getBoundingClientRect();
-              const xRel = (e.clientX - rect.left) / rect.width - 0.5;
-              const yRel = (e.clientY - rect.top) / rect.height - 0.5;
-              gsap.to(card, {
-                rotationY: xRel * 5,
-                rotationX: -yRel * 5,
-                transformPerspective: 800,
-                duration: 0.25,
-                ease: "power1.out",
-                overwrite: "auto",
+            let ticking = false;
+            let latest: MouseEvent | null = null;
+            const onMouseMove = (e: Event) => {
+              latest = e as MouseEvent;
+              if (ticking) return;
+              ticking = true;
+              const frame = window.requestAnimationFrame(() => {
+                pendingFrames.delete(frame);
+                ticking = false;
+                const evt = latest;
+                latest = null;
+                if (!evt) return;
+                const rect = card.getBoundingClientRect();
+                if (rect.width === 0 || rect.height === 0) return;
+                const xRel = (evt.clientX - rect.left) / rect.width - 0.5;
+                const yRel = (evt.clientY - rect.top) / rect.height - 0.5;
+                gsap.to(card, {
+                  rotationY: xRel * 5,
+                  rotationX: -yRel * 5,
+                  transformPerspective: 800,
+                  duration: 0.25,
+                  ease: "power1.out",
+                  overwrite: "auto",
+                });
               });
+              pendingFrames.add(frame);
             };
             const onMouseLeave = () => {
+              latest = null;
               gsap.to(card, {
                 rotationY: 0,
                 rotationX: 0,
@@ -394,8 +292,8 @@ export function useGsapAnimations() {
                 overwrite: "auto",
               });
             };
-            card.addEventListener("mousemove", onMouseMove);
-            card.addEventListener("mouseleave", onMouseLeave);
+            listen(card, "mousemove", onMouseMove);
+            listen(card, "mouseleave", onMouseLeave);
           });
 
           // 3. Diagonal Arrow Micro-Glide
@@ -423,8 +321,8 @@ export function useGsapAnimations() {
                 overwrite: "auto",
               });
             };
-            btn.addEventListener("mouseenter", onEnter);
-            btn.addEventListener("mouseleave", onLeave);
+            listen(btn, "mouseenter", onEnter);
+            listen(btn, "mouseleave", onLeave);
           });
         }
       });
@@ -432,6 +330,8 @@ export function useGsapAnimations() {
 
     return () => {
       isDisposed = true;
+      teardownListeners?.();
+      teardownListeners = null;
       if (ctx) {
         ctx.revert();
       }
