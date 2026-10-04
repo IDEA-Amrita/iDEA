@@ -33,3 +33,7 @@ yarn-error.log*
 
 # Vercel local project settings
 .vercel
+
+# Playwright MCP artifacts
+.playwright-mcp
+
